@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+<head>
+  
+  <title>地球科学导论 笔记#01 - 一切都会好起来的哟</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="Ning Chenhui">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  
+  
+
+  <link rel="shortcut icon" href="/pictures/icon.jpg" type="image/png" />
+  <meta name="description" content="地球科学导论–开始">
+<meta property="og:type" content="article">
+<meta property="og:title" content="地球科学导论 笔记#01">
+<meta property="og:url" content="https://ningchenhui.github.io/2020/10/09/es1009/index.html">
+<meta property="og:site_name" content="一切都会好起来的哟">
+<meta property="og:description" content="地球科学导论–开始">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-10-09T06:34:31.000Z">
+<meta property="article:modified_time" content="2020-10-09T07:53:02.000Z">
+<meta property="article:author" content="Ning Chenhui">
+<meta property="article:tag" content="地球科学">
+<meta name="twitter:card" content="summary">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/nexmoe/nexmoe.github.io@latest/lib/mdui_043tiny/css/mdui.css,gh/nexmoe/nexmoe.github.io@latest/lib/iconfont/iconfont.css?v=233" crossorigin>
+  
+  <link rel="stylesheet" href="/css/style.css?v=1604230636871">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body class="mdui-drawer-body-left">
+  
+  <div id="nexmoe-background">
+    <div class="nexmoe-bg" style="background-image: url(/pictures/background.jpg)"></div>
+    <div class="mdui-appbar mdui-shadow-0">
+      <div class="mdui-toolbar">
+        <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
+        <div class="mdui-toolbar-spacer"></div>
+        <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+        <a href="/" title="Ning Chenhui" class="mdui-btn mdui-btn-icon"><img src="https://avatars0.githubusercontent.com/u/11815134?s=460&amp;v=4" alt="Ning Chenhui"></a>
+       </div>
+    </div>
+  </div>
+  <div id="nexmoe-header">
+      <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="Ning Chenhui">
+            <img src="https://avatars0.githubusercontent.com/u/11815134?s=460&amp;v=4" alt="Ning Chenhui" alt="Ning Chenhui">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>文章</span>21</div>
+        <div><span>标签</span>8</div>
+        <div><span>分类</span>4</div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/" title="首页">
+            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/archives" title="归档">
+            <i class="mdui-list-item-icon nexmoefont icon-container"></i>
+            <div class="mdui-list-item-content">
+                归档
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/about-welcome.html" title="关于">
+            <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+            <div class="mdui-list-item-content">
+                关于
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/donate.html" title="起飞">
+            <i class="mdui-list-item-icon nexmoefont icon-coffee"></i>
+            <div class="mdui-list-item-content">
+                起飞
+            </div>
+        </a>
+        
+    </div>
+    <aside id="nexmoe-sidebar">
+  
+  <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-search">
+        <form id="search_form" action_e="https://cn.bing.com/search?q=" onsubmit="return search();">
+            <label><input id="search_value" name="q" type="search" placeholder="搜索"></label>
+        </form>
+    </div>
+</div>
+  
+  <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-social">
+        <a class="mdui-ripple" href="https://space.bilibili.com/316021638" target="_blank" mdui-tooltip="{content: '哔哩哔哩'}" style="color: rgb(231, 106, 141);background-color: rgba(231, 106, 141, .15);">
+            <i class="nexmoefont icon-bilibili"></i>
+        </a><a class="mdui-ripple" href="https://github.com/NingChenhui" target="_blank" mdui-tooltip="{content: 'GitHub'}" style="color: rgb(25, 23, 23);background-color: rgba(25, 23, 23, .15);">
+            <i class="nexmoefont icon-github"></i>
+        </a>
+    </div>
+</div>
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <div id="randomtagcloud" class="nexmoe-widget tagcloud nexmoe-rainbow">
+      <a href="/tags/Mirror/" style="font-size: 13.33px;">Mirror</a> <a href="/tags/%E4%BF%9D%E7%A0%94/" style="font-size: 20px;">保研</a> <a href="/tags/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/" style="font-size: 16.67px;">地球科学</a> <a href="/tags/%E5%BB%BA%E7%AB%99/" style="font-size: 13.33px;">建站</a> <a href="/tags/%E6%97%A5%E8%AF%AD/" style="font-size: 10px;">日语</a> <a href="/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 20px;">生活</a> <a href="/tags/%E8%AF%BE%E7%A8%8B%E8%B5%84%E6%96%99/" style="font-size: 10px;">课程资料</a> <a href="/tags/%E8%BD%AC%E8%BD%BD/" style="font-size: 10px;">转载</a>
+    </div>
+    
+  </div>
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章归档</h3>
+    <div class="nexmoe-widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a><span class="archive-list-count">21</span></li></ul>
+    </div>
+  </div>
+
+
+<style>
+.nexmoe-widget .archive-list-count{
+	position : absolute;
+	right: 15px;
+	top:9px;
+	color: #DDD;
+}
+</style>
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章分类</h3>
+    <div class="nexmoe-widget">
+
+      <ul class="category-list">
+
+        
+
+
+        
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/学习/">学习</a>
+          <span class="category-list-count">5</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/小记/">小记</a>
+          <span class="category-list-count">8</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/经验/">经验</a>
+          <span class="category-list-count">6</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/资料/">资料</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+      </ul>
+
+    </div>
+  </div>
+
+
+  
+</aside>
+
+<center>
+<font color="#FF4E6A">您</font><font color="#FF6751">是</font><font color="#FF804D">本</font><font color="#FF924D">站</font><font color="#FF924D">第</font><font color="#FF924D"> <span id="busuanzi_value_site_uv"></span> </font><font color="#FF924D">个</font><font color="#FF924D">小</font><font color="#FF924D">伙</font><font color="#FF924D">伴</font>
+ <br> </br>
+</center>
+    <div class="nexmoe-copyright">
+        &copy; 2020 Ning Chenhui
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://github.com/theme-nexmoe/hexo-theme-nexmoe" target="_blank">Nexmoe</a>
+    </div>
+</div><!-- .nexmoe-drawer -->
+  </div>
+  <div id="nexmoe-content">
+    <div class="nexmoe-primary">
+        <div class="nexmoe-post">
+  
+      <div class="nexmoe-post-cover" style="padding-bottom: 75.23840841828347%;"> 
+          <img data-src="https://raw.githubusercontent.com/NingChenhui/NingChenhui.github.io/master/2020/10/09/es1009/es.jpg" data-sizes="auto" alt="地球科学导论 笔记#01" class="lazyload">
+          <h1>地球科学导论 笔记#01</h1>
+      </div>
+  
+   
+
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
+	
+
+
+    <a><i class="nexmoefont icon-calendar-fill"></i>2020年10月09日</a>
+    <a><i class="nexmoefont icon-areachart"></i>737 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 2 分钟</a>
+</div>
+
+   
+
+  <div class="nexmoe-post-right">
+
+    
+      <div class="nexmoe-fixed">
+        <div class="nexmoe-valign">
+            <div class="nexmoe-toc">
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC0%E7%AB%A0-%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6%E5%AF%BC%E8%AE%BA"><span class="toc-number">1.</span> <span class="toc-text">第0章 地球科学导论</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6"><span class="toc-number">1.1.</span> <span class="toc-text">什么是地球科学</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%88%E5%B1%82"><span class="toc-number">1.2.</span> <span class="toc-text">圈层</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B0%B4%E5%9C%88"><span class="toc-number">1.2.1.</span> <span class="toc-text">水圈</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%A7%E6%B0%94%E5%9C%88"><span class="toc-number">1.2.2.</span> <span class="toc-text">大气圈</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%9F%E7%89%A9%E5%9C%88"><span class="toc-number">1.2.3.</span> <span class="toc-text">生物圈</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B2%A9%E7%9F%B3%E5%9C%88"><span class="toc-number">1.2.4.</span> <span class="toc-text">岩石圈</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%B0%E7%90%83%E7%B3%BB%E7%BB%9F"><span class="toc-number">1.3.</span> <span class="toc-text">地球系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E5%92%8C%E7%A9%BA%E9%97%B4%E5%B0%BA%E5%BA%A6"><span class="toc-number">1.4.</span> <span class="toc-text">时间和空间尺度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B5%84%E6%BA%90%E5%92%8C%E7%8E%AF%E5%A2%83%E9%97%AE%E9%A2%98"><span class="toc-number">1.5.</span> <span class="toc-text">资源和环境问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A7%91%E5%AD%A6%E6%8E%A2%E7%B4%A2%E7%9A%84%E6%9C%AC%E8%B4%A8"><span class="toc-number">1.6.</span> <span class="toc-text">科学探索的本质</span></a></li></ol></li></ol>
+            </div>
+        </div>
+      </div>
+    
+  </div>
+
+  <article>
+    <p>地球科学导论–开始</p>
+<a id="more"></a>
+
+<h2 id="第0章-地球科学导论"><a href="#第0章-地球科学导论" class="headerlink" title="第0章 地球科学导论"></a>第0章 地球科学导论</h2><h3 id="什么是地球科学"><a href="#什么是地球科学" class="headerlink" title="什么是地球科学"></a>什么是地球科学</h3><p>它是试图了解地球及其周围空间的所有学科的总称，包括：  </p>
+<ul>
+<li>地质学<ul>
+<li>自然地质学 物质组成，了解地表附近的过程</li>
+<li>历史地质学 了解地球起源与演化</li>
+</ul>
+</li>
+<li>海洋学 涉及所有领域，综合化学、物理学、地质学、生物学</li>
+<li>气象学 研究大气圈及其作用过程</li>
+<li>天文学 地球在宇宙空间中的位置</li>
+</ul>
+<h3 id="圈层"><a href="#圈层" class="headerlink" title="圈层"></a>圈层</h3><p>4个圈层间相互作用。</p>
+<h4 id="水圈"><a href="#水圈" class="headerlink" title="水圈"></a>水圈</h4><p>海洋：71%地球表面，地球上96%的水<br>地下淡水，河流，湖泊，冰川。<br>大气、云层中的水和水蒸气。</p>
+<h4 id="大气圈"><a href="#大气圈" class="headerlink" title="大气圈"></a>大气圈</h4><p>防御太阳辐射，能量交换导致天气与气候。</p>
+<h4 id="生物圈"><a href="#生物圈" class="headerlink" title="生物圈"></a>生物圈</h4><p>地表附近，天空，海底。维持自然环境。</p>
+<h4 id="岩石圈"><a href="#岩石圈" class="headerlink" title="岩石圈"></a>岩石圈</h4><p>地表延伸到地心，厚约6400千米。地球内部包括</p>
+<ul>
+<li>地核 高密度</li>
+<li>地幔 密度较小的中层</li>
+<li>地壳 密度很小，很薄</li>
+</ul>
+<p>岩石圈：刚性外层 包含地壳和地幔最上层</p>
+<p>软流圈的岩石是软塑性的，根据热量分布缓慢移动。</p>
+<h3 id="地球系统"><a href="#地球系统" class="headerlink" title="地球系统"></a>地球系统</h3><p>四个圈层相互作用，形成的复杂整体称为地球系统。采用<strong>跨学科</strong>方法了解与解决<u>全球性环境问题</u>。</p>
+<p>时间和空间尺度：毫米至数千千米，毫秒到几十亿年。<br>地球系统的能量：太阳驱动的外力作用，地球内部。<br>人类和地球系统：人是地球系统的一部分。</p>
+<h3 id="时间和空间尺度"><a href="#时间和空间尺度" class="headerlink" title="时间和空间尺度"></a>时间和空间尺度</h3><p>常常面对巨大的时间跨度，地质学家：1亿年前为“近”，1000万年演示样品为“年轻”。</p>
+<h3 id="资源和环境问题"><a href="#资源和环境问题" class="headerlink" title="资源和环境问题"></a>资源和环境问题</h3><p>资源包括水、土壤、矿产、能源等。地球科学探讨资源的形成和发展，及维持资源平衡、开发利用对环境的影响。<br>无生命的统称为自然环境，包括水、空气、土壤和岩石，以及温度、湿度和阳光等。现在环境通常指人和自然环境间的关系。<br>环境问题有局部性的，区域性的，以及全球性的。除人为加剧的，还有自然灾害。</p>
+<h3 id="科学探索的本质"><a href="#科学探索的本质" class="headerlink" title="科学探索的本质"></a>科学探索的本质</h3><p>科学是形成知识的过程，所有科学基于自然界是以统一和可预测的方式运行的这一假设，科学的最终目标是发现自然界中的潜在规律，并利用这些知识作出可以期望的预测。</p>
+<p>观测数据获得事实，根据现象提出试探性的说法或假说，假说经过审查并去除有争议的内容上升为科学理论。这些通常称为科学方法，是涉及创造力和洞察力的一种尝试。</p>
+<p>最具说服力的科学理论也只是自然界的简化解释。</p>
+
+  </article>
+
+  
+    
+  <div class="nexmoe-post-copyright">
+    <strong>本文作者：</strong>Ning Chenhui<br>
+    <strong>本文链接：</strong><a href="https://ningchenhui.github.io/2020/10/09/es1009/" title="https:&#x2F;&#x2F;ningchenhui.github.io&#x2F;2020&#x2F;10&#x2F;09&#x2F;es1009&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;ningchenhui.github.io&#x2F;2020&#x2F;10&#x2F;09&#x2F;es1009&#x2F;</a><br>
+    
+      <strong>版权声明：</strong>未经作者授权禁止转载
+    
+  </div>
+
+
+
+<center>
+<font color="#FF4E6A">~</font><font color="#FF6355">本</font><font color="#FF784D">页</font><font color="#FF8D4D">已</font><font color="#FF924D">被</font><font color="#FF924D">访</font><font color="#FF924D">问</font><font color="#FF924D"> <span id="busuanzi_value_page_pv"></span> </font><font color="#FF924D">次</font><font color="#FF924D">了</font><font color="#FF924D">哦</font><font color="#FF924D">~</font>
+ <br> </br>
+</center>
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow">
+    
+        <a class="nexmoefont icon-appstore-fill -link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
+    
+    
+        <a class="nexmoefont icon-tag-fill -none-link" href="/tags/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/" rel="tag">地球科学</a>
+    
+</div>
+
+  <div class="nexmoe-post-footer">
+    <section class="nexmoe-comment">
+    <!-- Unpkg -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/disqusjs@1.2.5/dist/disqusjs.min.css">
+<script src="https://cdn.jsdelivr.net/npm/disqusjs@1.2.5/dist/disqus.min.js"></script>
+<div id="disqus_thread"></div>
+<script>
+var dsqjs = new DisqusJS({
+    shortname: 'ningchenhui-github-io',
+    siteName: 'ningchenhui.github.io',
+    identifier: 'https://ningchenhui.github.io/2020/10/09/es1009/',
+    url: 'https://ningchenhui.github.io/2020/10/09/es1009/',
+    title: '地球科学导论 笔记#01',
+    api: 'https://disqus.skk.moe/disqus/',
+    apikey: 'e6evOgi4KaQOW9DrrU1gkzYWj6dsm3Pl5ZMMS8kUw46BtSz8Ze355Igzqu11XhhI',
+    admin: 'disqus_7i3NGTLGyS',
+    adminLabel: ''
+});
+</script>
+</section>
+  </div>
+</div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/combine/npm/lazysizes@5.1.0/lazysizes.min.js,gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js,npm/mdui@0.4.3/dist/js/mdui.min.js?v=1"></script>
+<script >hljs.initHighlightingOnLoad();</script>
+
+
+    <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
+
+
+<script src="/js/app.js?v=1604230636906"></script>
+
+
+  
+
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
+
+
+
+</html>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+<script src="/live2d-widget/autoload.js"></script>
+

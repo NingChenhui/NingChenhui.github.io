@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+<head>
+  
+  <title>Mirror 更新日志 - 一切都会好起来的哟</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="Ning Chenhui">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  
+  
+
+  <link rel="shortcut icon" href="/pictures/icon.jpg" type="image/png" />
+  <meta name="description" content="这里是Ruby的成长史哦~！">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mirror 更新日志">
+<meta property="og:url" content="https://ningchenhui.github.io/2020/10/25/mirror-info/index.html">
+<meta property="og:site_name" content="一切都会好起来的哟">
+<meta property="og:description" content="这里是Ruby的成长史哦~！">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-10-25T02:37:28.000Z">
+<meta property="article:modified_time" content="2020-11-01T03:14:54.000Z">
+<meta property="article:author" content="Ning Chenhui">
+<meta property="article:tag" content="Mirror">
+<meta name="twitter:card" content="summary">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/nexmoe/nexmoe.github.io@latest/lib/mdui_043tiny/css/mdui.css,gh/nexmoe/nexmoe.github.io@latest/lib/iconfont/iconfont.css?v=233" crossorigin>
+  
+  <link rel="stylesheet" href="/css/style.css?v=1604230636687">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body class="mdui-drawer-body-left">
+  
+  <div id="nexmoe-background">
+    <div class="nexmoe-bg" style="background-image: url(/pictures/background.jpg)"></div>
+    <div class="mdui-appbar mdui-shadow-0">
+      <div class="mdui-toolbar">
+        <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
+        <div class="mdui-toolbar-spacer"></div>
+        <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+        <a href="/" title="Ning Chenhui" class="mdui-btn mdui-btn-icon"><img src="https://avatars0.githubusercontent.com/u/11815134?s=460&amp;v=4" alt="Ning Chenhui"></a>
+       </div>
+    </div>
+  </div>
+  <div id="nexmoe-header">
+      <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="Ning Chenhui">
+            <img src="https://avatars0.githubusercontent.com/u/11815134?s=460&amp;v=4" alt="Ning Chenhui" alt="Ning Chenhui">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>文章</span>21</div>
+        <div><span>标签</span>8</div>
+        <div><span>分类</span>4</div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/" title="首页">
+            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/archives" title="归档">
+            <i class="mdui-list-item-icon nexmoefont icon-container"></i>
+            <div class="mdui-list-item-content">
+                归档
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/about-welcome.html" title="关于">
+            <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+            <div class="mdui-list-item-content">
+                关于
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/donate.html" title="起飞">
+            <i class="mdui-list-item-icon nexmoefont icon-coffee"></i>
+            <div class="mdui-list-item-content">
+                起飞
+            </div>
+        </a>
+        
+    </div>
+    <aside id="nexmoe-sidebar">
+  
+  <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-search">
+        <form id="search_form" action_e="https://cn.bing.com/search?q=" onsubmit="return search();">
+            <label><input id="search_value" name="q" type="search" placeholder="搜索"></label>
+        </form>
+    </div>
+</div>
+  
+  <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-social">
+        <a class="mdui-ripple" href="https://space.bilibili.com/316021638" target="_blank" mdui-tooltip="{content: '哔哩哔哩'}" style="color: rgb(231, 106, 141);background-color: rgba(231, 106, 141, .15);">
+            <i class="nexmoefont icon-bilibili"></i>
+        </a><a class="mdui-ripple" href="https://github.com/NingChenhui" target="_blank" mdui-tooltip="{content: 'GitHub'}" style="color: rgb(25, 23, 23);background-color: rgba(25, 23, 23, .15);">
+            <i class="nexmoefont icon-github"></i>
+        </a>
+    </div>
+</div>
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <div id="randomtagcloud" class="nexmoe-widget tagcloud nexmoe-rainbow">
+      <a href="/tags/Mirror/" style="font-size: 13.33px;">Mirror</a> <a href="/tags/%E4%BF%9D%E7%A0%94/" style="font-size: 20px;">保研</a> <a href="/tags/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/" style="font-size: 16.67px;">地球科学</a> <a href="/tags/%E5%BB%BA%E7%AB%99/" style="font-size: 13.33px;">建站</a> <a href="/tags/%E6%97%A5%E8%AF%AD/" style="font-size: 10px;">日语</a> <a href="/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 20px;">生活</a> <a href="/tags/%E8%AF%BE%E7%A8%8B%E8%B5%84%E6%96%99/" style="font-size: 10px;">课程资料</a> <a href="/tags/%E8%BD%AC%E8%BD%BD/" style="font-size: 10px;">转载</a>
+    </div>
+    
+  </div>
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章归档</h3>
+    <div class="nexmoe-widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a><span class="archive-list-count">21</span></li></ul>
+    </div>
+  </div>
+
+
+<style>
+.nexmoe-widget .archive-list-count{
+	position : absolute;
+	right: 15px;
+	top:9px;
+	color: #DDD;
+}
+</style>
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章分类</h3>
+    <div class="nexmoe-widget">
+
+      <ul class="category-list">
+
+        
+
+
+        
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/学习/">学习</a>
+          <span class="category-list-count">5</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/小记/">小记</a>
+          <span class="category-list-count">8</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/经验/">经验</a>
+          <span class="category-list-count">6</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/资料/">资料</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+      </ul>
+
+    </div>
+  </div>
+
+
+  
+</aside>
+
+<center>
+<font color="#FF4E6A">您</font><font color="#FF6751">是</font><font color="#FF804D">本</font><font color="#FF924D">站</font><font color="#FF924D">第</font><font color="#FF924D"> <span id="busuanzi_value_site_uv"></span> </font><font color="#FF924D">个</font><font color="#FF924D">小</font><font color="#FF924D">伙</font><font color="#FF924D">伴</font>
+ <br> </br>
+</center>
+    <div class="nexmoe-copyright">
+        &copy; 2020 Ning Chenhui
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://github.com/theme-nexmoe/hexo-theme-nexmoe" target="_blank">Nexmoe</a>
+    </div>
+</div><!-- .nexmoe-drawer -->
+  </div>
+  <div id="nexmoe-content">
+    <div class="nexmoe-primary">
+        <div class="nexmoe-post">
+  
+      <div class="nexmoe-post-cover" style="padding-bottom: 75%;"> 
+          <img data-src="https://raw.githubusercontent.com/NingChenhui/NingChenhui.github.io/master/2020/10/25/mirror-info/miku.png" data-sizes="auto" alt="Mirror 更新日志" class="lazyload">
+          <h1>Mirror 更新日志</h1>
+      </div>
+  
+   
+
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
+	
+
+
+    <a><i class="nexmoefont icon-calendar-fill"></i>2020年10月25日</a>
+    <a><i class="nexmoefont icon-areachart"></i>1.2k 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 5 分钟</a>
+</div>
+
+   
+
+  <div class="nexmoe-post-right">
+
+    
+      <div class="nexmoe-fixed">
+        <div class="nexmoe-valign">
+            <div class="nexmoe-toc">
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%88%E6%9C%AC%EF%BC%9Av5-2"><span class="toc-number">1.</span> <span class="toc-text">版本：v5.2</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%A5%E6%9C%9F%EF%BC%9A2020-11-1"><span class="toc-number">1.1.</span> <span class="toc-text">日期：2020.11.1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B0%E5%8A%9F%E8%83%BD%EF%BC%9A"><span class="toc-number">1.2.</span> <span class="toc-text">新功能：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9B%B4%E6%96%B0%EF%BC%9A"><span class="toc-number">1.3.</span> <span class="toc-text">更新：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%88%E6%9C%AC%EF%BC%9Av5-1"><span class="toc-number">2.</span> <span class="toc-text">版本：v5.1</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%A5%E6%9C%9F%EF%BC%9A2020-10-25"><span class="toc-number">2.1.</span> <span class="toc-text">日期：2020.10.25</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B0%E5%8A%9F%E8%83%BD%EF%BC%9A-1"><span class="toc-number">2.2.</span> <span class="toc-text">新功能：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9B%B4%E6%96%B0%EF%BC%9A-1"><span class="toc-number">2.3.</span> <span class="toc-text">更新：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%88%E6%9C%AC%EF%BC%9Av5-0"><span class="toc-number">3.</span> <span class="toc-text">版本：v5.0</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%A5%E6%9C%9F%EF%BC%9A2020-10-24"><span class="toc-number">3.1.</span> <span class="toc-text">日期：2020.10.24</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B0%E5%8A%9F%E8%83%BD%EF%BC%9A-2"><span class="toc-number">3.2.</span> <span class="toc-text">新功能：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9B%B4%E6%96%B0%EF%BC%9A-2"><span class="toc-number">3.3.</span> <span class="toc-text">更新：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%88%E6%9C%AC%EF%BC%9Av4-2"><span class="toc-number">4.</span> <span class="toc-text">版本：v4.2</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%A5%E6%9C%9F%EF%BC%9A2020-3-1"><span class="toc-number">4.1.</span> <span class="toc-text">日期：2020.3.1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%9F%E8%83%BD%E5%8F%98%E5%8C%96%EF%BC%9A"><span class="toc-number">4.2.</span> <span class="toc-text">功能变化：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9B%B4%E6%96%B0%EF%BC%9A-3"><span class="toc-number">4.3.</span> <span class="toc-text">更新：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%88%E6%9C%AC%EF%BC%9Av4-1"><span class="toc-number">5.</span> <span class="toc-text">版本：v4.1</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%A5%E6%9C%9F%EF%BC%9A2020-2-29"><span class="toc-number">5.1.</span> <span class="toc-text">日期：2020.2.29</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%9F%E8%83%BD%E5%8F%98%E5%8C%96%EF%BC%9A-1"><span class="toc-number">5.2.</span> <span class="toc-text">功能变化：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9B%B4%E6%96%B0%EF%BC%9A-4"><span class="toc-number">5.3.</span> <span class="toc-text">更新：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%88%E6%9C%AC%EF%BC%9Av4-0"><span class="toc-number">6.</span> <span class="toc-text">版本：v4.0</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%A5%E6%9C%9F%EF%BC%9A2020-2-27"><span class="toc-number">6.1.</span> <span class="toc-text">日期：2020.2.27</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%9F%E8%83%BD%E5%8F%98%E5%8C%96%EF%BC%9A-2"><span class="toc-number">6.2.</span> <span class="toc-text">功能变化：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9B%B4%E6%96%B0%EF%BC%9A-5"><span class="toc-number">6.3.</span> <span class="toc-text">更新：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%88%E6%9C%AC%EF%BC%9Av3-0"><span class="toc-number">7.</span> <span class="toc-text">版本：v3.0</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%A5%E6%9C%9F%EF%BC%9A2018-12-20"><span class="toc-number">7.1.</span> <span class="toc-text">日期：2018.12.20</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B0%E5%8A%9F%E8%83%BD%EF%BC%9A-3"><span class="toc-number">7.2.</span> <span class="toc-text">新功能：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%88%E6%9C%AC%EF%BC%9Av2-0"><span class="toc-number">8.</span> <span class="toc-text">版本：v2.0</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%A5%E6%9C%9F%EF%BC%9A2018-12-15"><span class="toc-number">8.1.</span> <span class="toc-text">日期：2018.12.15</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B0%E5%8A%9F%E8%83%BD%EF%BC%9A-4"><span class="toc-number">8.2.</span> <span class="toc-text">新功能：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%88%E6%9C%AC%EF%BC%9Av1-2"><span class="toc-number">9.</span> <span class="toc-text">版本：v1.2</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%A5%E6%9C%9F%EF%BC%9A2018-12-14"><span class="toc-number">9.1.</span> <span class="toc-text">日期：2018.12.14</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9B%B4%E6%96%B0%EF%BC%9A-6"><span class="toc-number">9.2.</span> <span class="toc-text">更新：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%88%E6%9C%AC%EF%BC%9Av1-1"><span class="toc-number">10.</span> <span class="toc-text">版本：v1.1</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%A5%E6%9C%9F%EF%BC%9A2018-12-13"><span class="toc-number">10.1.</span> <span class="toc-text">日期：2018.12.13</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9B%B4%E6%96%B0%EF%BC%9A-7"><span class="toc-number">10.2.</span> <span class="toc-text">更新：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%88%E6%9C%AC%EF%BC%9Av1-01"><span class="toc-number">11.</span> <span class="toc-text">版本：v1.01</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%A5%E6%9C%9F%EF%BC%9A2018-12-12"><span class="toc-number">11.1.</span> <span class="toc-text">日期：2018.12.12</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9B%B4%E6%96%B0%EF%BC%9A-8"><span class="toc-number">11.2.</span> <span class="toc-text">更新：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%88%E6%9C%AC%EF%BC%9Av1-0"><span class="toc-number">12.</span> <span class="toc-text">版本：v1.0</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%A5%E6%9C%9F%EF%BC%9A2018-12-11"><span class="toc-number">12.1.</span> <span class="toc-text">日期：2018.12.11</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%9F%E8%83%BD%EF%BC%9A"><span class="toc-number">12.2.</span> <span class="toc-text">功能：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%97%A5%E8%AE%B0%E6%A0%BC%E5%BC%8F%E8%AF%B4%E6%98%8E%EF%BC%88%E6%9A%82%E6%97%B6%E5%BC%83%E7%94%A8%EF%BC%89%EF%BC%9A"><span class="toc-number">13.</span> <span class="toc-text">日记格式说明（暂时弃用）：</span></a></li></ol>
+            </div>
+        </div>
+      </div>
+    
+  </div>
+
+  <article>
+    <p>这里是Ruby的成长史哦~！ <a id="more"></a></p>
+<hr>
+<pre><code>                      镜  v5.2
+
+                  The Mirror</code></pre>
+<hr>
+<p><strong>制作：</strong>    小灰02010号<br><strong>说明：</strong></p>
+<ul>
+<li>该系统通过数据化的日记信息统计日常信息，并通过light系统限制贪图享乐的猴子，便于监督自我。</li>
+<li>使用app 记录数据，导出数据后覆盖根目录中的文件即可。</li>
+<li>事件种类固定，需要事先运行tag.py生成数据文件导入app中。</li>
+</ul>
+<hr>
+<h2 id="版本：v5-2"><a href="#版本：v5-2" class="headerlink" title="版本：v5.2"></a>版本：v5.2</h2><h3 id="日期：2020-11-1"><a href="#日期：2020-11-1" class="headerlink" title="日期：2020.11.1"></a>日期：2020.11.1</h3><h3 id="新功能："><a href="#新功能：" class="headerlink" title="新功能："></a>新功能：</h3><ol>
+<li>   增加活动功能！目前还在完善中。</li>
+</ol>
+<h3 id="更新："><a href="#更新：" class="headerlink" title="更新："></a>更新：</h3><ol>
+<li>   图表样式修改。</li>
+<li>   “リリース記念”活动已开始！</li>
+</ol>
+<hr>
+<h2 id="版本：v5-1"><a href="#版本：v5-1" class="headerlink" title="版本：v5.1"></a>版本：v5.1</h2><h3 id="日期：2020-10-25"><a href="#日期：2020-10-25" class="headerlink" title="日期：2020.10.25"></a>日期：2020.10.25</h3><h3 id="新功能：-1"><a href="#新功能：-1" class="headerlink" title="新功能："></a>新功能：</h3><ol>
+<li>   日志搬到小灰的个人网站上了。</li>
+<li>   增加了每月汇报！图终于不丑了呜呜。</li>
+<li>   恢复了任务的截止日期。</li>
+</ol>
+<h3 id="更新：-1"><a href="#更新：-1" class="headerlink" title="更新："></a>更新：</h3><ol>
+<li>   使用pyecharts模块处理图表。</li>
+</ol>
+<hr>
+<h2 id="版本：v5-0"><a href="#版本：v5-0" class="headerlink" title="版本：v5.0"></a>版本：v5.0</h2><h3 id="日期：2020-10-24"><a href="#日期：2020-10-24" class="headerlink" title="日期：2020.10.24"></a>日期：2020.10.24</h3><h3 id="新功能：-2"><a href="#新功能：-2" class="headerlink" title="新功能："></a>新功能：</h3><ol>
+<li>   增加了添加任务模块，可以直接在系统里增加任务了。</li>
+<li>   增加了每月的Exp和Light的趋势统计。</li>
+<li>   恢复了任务的完成日期。</li>
+<li>   Ruby会碎碎念了哦。</li>
+</ol>
+<h3 id="更新：-2"><a href="#更新：-2" class="headerlink" title="更新："></a>更新：</h3><ol>
+<li>   修改了时间分类。</li>
+<li>   新版本更新奖励：60000 light！</li>
+</ol>
+<hr>
+<h2 id="版本：v4-2"><a href="#版本：v4-2" class="headerlink" title="版本：v4.2"></a>版本：v4.2</h2><h3 id="日期：2020-3-1"><a href="#日期：2020-3-1" class="headerlink" title="日期：2020.3.1"></a>日期：2020.3.1</h3><h3 id="功能变化："><a href="#功能变化：" class="headerlink" title="功能变化："></a>功能变化：</h3><ol>
+<li>   任务的完成条件新增 多种事物。</li>
+</ol>
+<h3 id="更新：-3"><a href="#更新：-3" class="headerlink" title="更新："></a>更新：</h3><ol>
+<li>   新版本更新奖励：60000 light！</li>
+</ol>
+<hr>
+<h2 id="版本：v4-1"><a href="#版本：v4-1" class="headerlink" title="版本：v4.1"></a>版本：v4.1</h2><h3 id="日期：2020-2-29"><a href="#日期：2020-2-29" class="headerlink" title="日期：2020.2.29"></a>日期：2020.2.29</h3><h3 id="功能变化：-1"><a href="#功能变化：-1" class="headerlink" title="功能变化："></a>功能变化：</h3><ol>
+<li>   恢复任务系统。</li>
+<li>   任务暂时只能通过文件更改。</li>
+</ol>
+<h3 id="更新：-4"><a href="#更新：-4" class="headerlink" title="更新："></a>更新：</h3><ol>
+<li>   使用json模块存储所有数据。</li>
+<li>   <em>暂时取消了任务的完成日期与截止日期。</em></li>
+</ol>
+<hr>
+<h2 id="版本：v4-0"><a href="#版本：v4-0" class="headerlink" title="版本：v4.0"></a>版本：v4.0</h2><h3 id="日期：2020-2-27"><a href="#日期：2020-2-27" class="headerlink" title="日期：2020.2.27"></a>日期：2020.2.27</h3><p>好久不见。</p>
+<h3 id="功能变化：-2"><a href="#功能变化：-2" class="headerlink" title="功能变化："></a>功能变化：</h3><ol>
+<li>   <em>暂时弃用日记记录，使用app记录。</em></li>
+<li>   <em>暂时下线任务系统。</em></li>
+</ol>
+<h3 id="更新：-5"><a href="#更新：-5" class="headerlink" title="更新："></a>更新：</h3><ol>
+<li>   使用json模块，适配app的数据文件。</li>
+<li>   优化存档方式，由只能按天更新改为按事件更新。</li>
+<li>   使用datetime模块处理日期信息。</li>
+</ol>
+<hr>
+<h2 id="版本：v3-0"><a href="#版本：v3-0" class="headerlink" title="版本：v3.0"></a>版本：v3.0</h2><h3 id="日期：2018-12-20"><a href="#日期：2018-12-20" class="headerlink" title="日期：2018.12.20"></a>日期：2018.12.20</h3><h3 id="新功能：-3"><a href="#新功能：-3" class="headerlink" title="新功能："></a>新功能：</h3><ol>
+<li>   代码重写与优化，不兼容之前的日记格式！</li>
+<li>   <em>弃用原来的@和%标志。</em></li>
+<li>   <em>弃用关系统计与地点时长统计。</em></li>
+<li>   使用新式标签，空格连接更方便。</li>
+</ol>
+<hr>
+<h2 id="版本：v2-0"><a href="#版本：v2-0" class="headerlink" title="版本：v2.0"></a>版本：v2.0</h2><h3 id="日期：2018-12-15"><a href="#日期：2018-12-15" class="headerlink" title="日期：2018.12.15"></a>日期：2018.12.15</h3><p>line: 1074</p>
+<h3 id="新功能：-4"><a href="#新功能：-4" class="headerlink" title="新功能："></a>新功能：</h3><ol>
+<li>   命令交互界面可用！让Ruby帮助你处理日记吧！</li>
+<li>任务系统完全可用！给自己设个小目标吧！<ul>
+<li>虽然只有累计时间类的任务可以自动判断……</li>
+<li>特殊任务的完成可要遵循实际哦？</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="版本：v1-2"><a href="#版本：v1-2" class="headerlink" title="版本：v1.2"></a>版本：v1.2</h2><h3 id="日期：2018-12-14"><a href="#日期：2018-12-14" class="headerlink" title="日期：2018.12.14"></a>日期：2018.12.14</h3><h3 id="更新：-6"><a href="#更新：-6" class="headerlink" title="更新："></a>更新：</h3><ol>
+<li>   完善镜子系统。</li>
+<li>   实现存档读档。至此系统可以投入使用。游戏开始！</li>
+<li>   优化目录结构。</li>
+<li>   增加帮助文档，用help查看。</li>
+<li>   新增release版（含三天日记内容的样例）</li>
+</ol>
+<hr>
+<h2 id="版本：v1-1"><a href="#版本：v1-1" class="headerlink" title="版本：v1.1"></a>版本：v1.1</h2><h3 id="日期：2018-12-13"><a href="#日期：2018-12-13" class="headerlink" title="日期：2018.12.13"></a>日期：2018.12.13</h3><h3 id="更新：-7"><a href="#更新：-7" class="headerlink" title="更新："></a>更新：</h3><ol>
+<li>   日记月类代码重构。</li>
+<li>   添加镜子系统，初步调试。</li>
+<li>   优化时间标记，增加梦境标记。</li>
+</ol>
+<hr>
+<h2 id="版本：v1-01"><a href="#版本：v1-01" class="headerlink" title="版本：v1.01"></a>版本：v1.01</h2><h3 id="日期：2018-12-12"><a href="#日期：2018-12-12" class="headerlink" title="日期：2018.12.12"></a>日期：2018.12.12</h3><h3 id="更新：-8"><a href="#更新：-8" class="headerlink" title="更新："></a>更新：</h3><ol>
+<li>   绘图函数重构，简化代码，完善注释。</li>
+<li>   新增日记格式说明。</li>
+</ol>
+<hr>
+<h2 id="版本：v1-0"><a href="#版本：v1-0" class="headerlink" title="版本：v1.0"></a>版本：v1.0</h2><h3 id="日期：2018-12-11"><a href="#日期：2018-12-11" class="headerlink" title="日期：2018.12.11"></a>日期：2018.12.11</h3><h3 id="功能："><a href="#功能：" class="headerlink" title="功能："></a>功能：</h3><ol>
+<li>   数据化储存一天所有信息，各个事项分门别类，方便查询。</li>
+<li> 日统计：<ul>
+<li><pre><code>饼图显示一天做的各类事所花时间的占比。</code></pre>
+</li>
+<li><pre><code>显示每天的详细信息。    </code></pre>
+</li>
+</ul>
+</li>
+<li> 月统计：<ul>
+<li><pre><code>折线图显示每日心情。</code></pre>
+</li>
+<li><pre><code>条形图显示每日花费。</code></pre>
+</li>
+<li><pre><code>显示人际关系排行榜。</code></pre>
+</li>
+<li><pre><code>饼图显示在各场所、各事物上花费的总时间占比。</code></pre>
+</li>
+<li><pre><code>柱状图显示每天在各场所、各事物上花费的时间。</code></pre>
+</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="日记格式说明（暂时弃用）："><a href="#日记格式说明（暂时弃用）：" class="headerlink" title="日记格式说明（暂时弃用）："></a>日记格式说明（暂时弃用）：</h2><p>占用符号：<br>在开头        · # * + ￥【 ？/ 数字<br>在标签中    】. ：</p>
+<p>标签样例：</p>
+<p>·9 1 晴 其它信息 70<br>·开头，该月几号，周几，天气情况，其他 ，心情分数</p>
+<p>7.20 宿舍<br>时刻开始表示在某个地方，空格后跟一个值表地点</p>
+<p>20（11.20 11.40） 吃饭 包子 +zxw  ￥9<br>以时长开头表事情。<br>空格后附加属性。<br>每个事情的参数含义不同，可用‘，’分隔并列的属性，<br>可无参数，最多一个参数。（参照diarything类）</p>
+<p>￥7.2<br>放在事情标签或地点末尾，表示消耗的钱</p>
+<p>时刻：含.的表示时刻，如 9.20 6.40 7.00（可简写为7.）<br>时长：空格连接的两个时刻表时长，或30 45（单位：分）</p>
+<p>+zz<br>+后加名字，表示关于其他人的事</p>
+<p>*重要事件<br>*后标重要时间节点</p>
+<p>/其他<br>以/开头表示具体内容 若单独一行开头无标记也是内容<br>可跟在其他标签后面</p>
+<p>占一行的标签：</p>
+<p>#截图<br>#表示有附件， 一般为图片</p>
+<p>【成绩】数分：90 高代：90<br>【】  表示重要信息。格式：名字：数据</p>
+<p>？梦见了<br>？后跟梦的内容。</p>
+
+  </article>
+
+  
+    
+  <div class="nexmoe-post-copyright">
+    <strong>本文作者：</strong>Ning Chenhui<br>
+    <strong>本文链接：</strong><a href="https://ningchenhui.github.io/2020/10/25/mirror-info/" title="https:&#x2F;&#x2F;ningchenhui.github.io&#x2F;2020&#x2F;10&#x2F;25&#x2F;mirror-info&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;ningchenhui.github.io&#x2F;2020&#x2F;10&#x2F;25&#x2F;mirror-info&#x2F;</a><br>
+    
+      <strong>版权声明：</strong>未经作者授权禁止转载
+    
+  </div>
+
+
+
+<center>
+<font color="#FF4E6A">~</font><font color="#FF6355">本</font><font color="#FF784D">页</font><font color="#FF8D4D">已</font><font color="#FF924D">被</font><font color="#FF924D">访</font><font color="#FF924D">问</font><font color="#FF924D"> <span id="busuanzi_value_page_pv"></span> </font><font color="#FF924D">次</font><font color="#FF924D">了</font><font color="#FF924D">哦</font><font color="#FF924D">~</font>
+ <br> </br>
+</center>
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow">
+    
+        <a class="nexmoefont icon-appstore-fill -link" href="/categories/%E5%B0%8F%E8%AE%B0/">小记</a>
+    
+    
+        <a class="nexmoefont icon-tag-fill -none-link" href="/tags/Mirror/" rel="tag">Mirror</a>
+    
+</div>
+
+  <div class="nexmoe-post-footer">
+    <section class="nexmoe-comment">
+    <!-- Unpkg -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/disqusjs@1.2.5/dist/disqusjs.min.css">
+<script src="https://cdn.jsdelivr.net/npm/disqusjs@1.2.5/dist/disqus.min.js"></script>
+<div id="disqus_thread"></div>
+<script>
+var dsqjs = new DisqusJS({
+    shortname: 'ningchenhui-github-io',
+    siteName: 'ningchenhui.github.io',
+    identifier: 'https://ningchenhui.github.io/2020/10/25/mirror-info/',
+    url: 'https://ningchenhui.github.io/2020/10/25/mirror-info/',
+    title: 'Mirror 更新日志',
+    api: 'https://disqus.skk.moe/disqus/',
+    apikey: 'e6evOgi4KaQOW9DrrU1gkzYWj6dsm3Pl5ZMMS8kUw46BtSz8Ze355Igzqu11XhhI',
+    admin: 'disqus_7i3NGTLGyS',
+    adminLabel: ''
+});
+</script>
+</section>
+  </div>
+</div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/combine/npm/lazysizes@5.1.0/lazysizes.min.js,gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js,npm/mdui@0.4.3/dist/js/mdui.min.js?v=1"></script>
+<script >hljs.initHighlightingOnLoad();</script>
+
+
+    <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
+
+
+<script src="/js/app.js?v=1604230636719"></script>
+
+
+  
+
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
+
+
+
+</html>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+<script src="/live2d-widget/autoload.js"></script>
+
