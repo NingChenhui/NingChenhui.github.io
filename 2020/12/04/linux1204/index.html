@@ -12,21 +12,21 @@
   
 
   <link rel="shortcut icon" href="/pictures/icon.jpg" type="image/png" />
-  <meta name="description" content="Linpack测试 OPENBLAS+OPENMPI+HPL">
+  <meta name="description" content="- Linpack测试 OPENBLAS+OPENMPI+HPL -">
 <meta property="og:type" content="article">
 <meta property="og:title" content="高性能计算#02 HPL再次搭建">
 <meta property="og:url" content="https://ningchenhui.github.io/2020/12/04/linux1204/index.html">
 <meta property="og:site_name" content="一切都会好起来的哟">
-<meta property="og:description" content="Linpack测试 OPENBLAS+OPENMPI+HPL">
+<meta property="og:description" content="- Linpack测试 OPENBLAS+OPENMPI+HPL -">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-12-04T10:57:06.000Z">
-<meta property="article:modified_time" content="2020-12-05T02:32:29.827Z">
+<meta property="article:modified_time" content="2020-12-05T09:28:01.187Z">
 <meta property="article:author" content="Ning Chenhui">
 <meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/nexmoe/nexmoe.github.io@latest/lib/mdui_043tiny/css/mdui.css,gh/nexmoe/nexmoe.github.io@latest/lib/iconfont/iconfont.css?v=233" crossorigin>
   
-  <link rel="stylesheet" href="/css/style.css?v=1607135593940">
+  <link rel="stylesheet" href="/css/style.css?v=1607160847312">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
 
 <meta name="generator" content="Hexo 5.2.0"></head>
@@ -52,7 +52,7 @@
         </a>
     </div>
     <div class="nexmoe-count">
-        <div><span>文章</span>33</div>
+        <div><span>文章</span>34</div>
         <div><span>标签</span>10</div>
         <div><span>分类</span>4</div>
     </div>
@@ -120,7 +120,7 @@
   <div class="nexmoe-widget-wrap">
     <h3 class="nexmoe-widget-title">文章归档</h3>
     <div class="nexmoe-widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a><span class="archive-list-count">33</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a><span class="archive-list-count">34</span></li></ul>
     </div>
   </div>
 
@@ -151,7 +151,7 @@
 
         <li class="category-list-item">
           <a class="category-list-link" href="/categories/学习/">学习</a>
-          <span class="category-list-count">14</span>
+          <span class="category-list-count">15</span>
         </li>
 
         
@@ -213,8 +213,8 @@
 
 
     <a><i class="nexmoefont icon-calendar-fill"></i>2020年12月04日</a>
-    <a><i class="nexmoefont icon-areachart"></i>473 字</a>
-    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 2 分钟</a>
+    <a><i class="nexmoefont icon-areachart"></i>941 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 5 分钟</a>
 </div>
 
    
@@ -233,7 +233,7 @@
   </div>
 
   <article>
-    <p> Linpack测试 OPENBLAS+OPENMPI+HPL <a id="more"></a></p>
+    <p>- Linpack测试 OPENBLAS+OPENMPI+HPL -<a id="more"></a></p>
 <h2 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h2><h3 id="安装OPENBLAS"><a href="#安装OPENBLAS" class="headerlink" title="安装OPENBLAS"></a>安装OPENBLAS</h3><ol>
 <li><p>官方下载<a target="_blank" rel="noopener" href="https://www.openblas.net/">OpenBLAS-0.3.10.tar.gz</a></p>
 </li>
@@ -280,7 +280,7 @@
  export LD_LIBRARY_PATH=/home/riolu/HPL/openmpi/lib:$LD_LIBRARY_PATH</code></pre>
 <p>保存后</p>
 <pre><code> source ~/.bashrc</code></pre>
-<p>（恶心的libreOffice保存会改编码，还是在Windows上改完传过去，我tm</p>
+<p>（恶心的libreOffice保存会改编码，还是在Windows上改完传过去或者在jupyter上改，我tm</p>
 </li>
 </ol>
 <h2 id="HPL安装与编译"><a href="#HPL安装与编译" class="headerlink" title="HPL安装与编译"></a>HPL安装与编译</h2><ol>
@@ -320,6 +320,102 @@
 </li>
 </ol>
 <p>使用50G，1个节点，则$N=sqrt(50)*10000=&gt;70000$，</p>
+<ol start="2">
+<li><p>测试运行：</p>
+<pre><code> ~/HPL/hpl-2.3/bin/Linux$ mpirun -np 8 ./xhpl 
+ ================================================================================
+ HPLinpack 2.3  --  High-Performance Linpack benchmark  --   December 2, 2018
+ Written by A. Petitet and R. Clint Whaley,  Innovative Computing Laboratory, UTK
+ Modified by Piotr Luszczek, Innovative Computing Laboratory, UTK
+ Modified by Julien Langou, University of Colorado Denver
+ ================================================================================
+
+ An explanation of the input/output parameters follows:
+ T/V    : Wall time / encoded variant.
+ N      : The order of the coefficient matrix A.
+ NB     : The partitioning blocking factor.
+ P      : The number of process rows.
+ Q      : The number of process columns.
+ Time   : Time in seconds to solve the linear system.
+ Gflops : Rate of execution for solving the linear system.
+
+ The following parameter values will be used:
+
+ N      :   70000
+ NB     :     256      192
+ PMAP   : Row-major process mapping
+ P      :       2
+ Q      :       4
+ PFACT  :    Left
+ NBMIN  :       2
+ NDIV   :       2
+ RFACT  :    Left
+ BCAST  :   1ring
+ DEPTH  :       0
+ SWAP   : Mix (threshold = 64)
+ L1     : transposed form
+ U      : transposed form
+ EQUIL  : yes
+ ALIGN  : 8 double precision words
+
+ --------------------------------------------------------------------------------
+
+ + The matrix A is randomly generated for each test.
+ + The following scaled residual check will be computed:
+       ||Ax-b||_oo / ( eps * ( || x ||_oo * || A ||_oo + || b ||_oo ) * N )
+ + The relative machine precision (eps) is taken to be               1.110223e-16
+ + Computational tests pass if scaled residuals are less than                16.0
+
+ ================================================================================
+ T/V                N    NB     P     Q               Time                 Gflops
+ --------------------------------------------------------------------------------
+ WR00L2L2       70000   256     2     4             894.95             2.5551e+02
+ HPL_pdgesv() start time Fri Dec  4 22:56:34 2020
+
+ HPL_pdgesv() end time   Fri Dec  4 23:11:29 2020
+
+ --------------------------------------------------------------------------------
+ ||Ax-b||_oo/(eps*(||A||_oo*||x||_oo+||b||_oo)*N)=   1.51800829e-03 ...... PASSED
+ ================================================================================
+ T/V                N    NB     P     Q               Time                 Gflops
+ --------------------------------------------------------------------------------
+ WR00L2L2       70000   192     2     4             927.80             2.4647e+02
+ HPL_pdgesv() start time Fri Dec  4 23:12:17 2020
+
+ HPL_pdgesv() end time   Fri Dec  4 23:27:45 2020
+
+ --------------------------------------------------------------------------------
+ ||Ax-b||_oo/(eps*(||A||_oo*||x||_oo+||b||_oo)*N)=   1.48198443e-03 ...... PASSED
+ ================================================================================
+
+ Finished      2 tests with the following results:
+               2 tests completed and passed residual checks,
+               0 tests completed and failed residual checks,
+               0 tests skipped because of illegal input values.
+ --------------------------------------------------------------------------------
+
+ End of Tests.
+ ================================================================================</code></pre>
+</li>
+</ol>
+<ol start="3">
+<li><p>结果整合：</p>
+<pre><code> ================================================================================
+ T/V                N    NB     P     Q               Time                 Gflops
+ --------------------------------------------------------------------------------
+ WR00L2L2       70000   192     2     4             927.80             2.4647e+02
+ WR00L2L2       70000   256     2     4             910.19             2.5124e+02
+ WR00L2L2       70000   256     2     4             894.95             2.5551e+02
+ WR00L2L2       70000   256     2     4             902.53             2.5337e+02
+ WR00L2L2       70000   336     2     4             877.33             2.6065e+02
+ WR00L2L2       70000   336     2     4             894.92             2.5553e+02
+ WR00L2L2       70000   384     2     4             862.82             2.6503e+02
+ ================================================================================</code></pre>
+</li>
+</ol>
+<p>看起来选<code>NB=384</code>比较好呢，实测浮点峰值为265.03Gflops＝2.6503千亿次/秒。</p>
+<hr>
+<p><em>修改日期：2020年12月5日</em></p>
 
   </article>
 
@@ -381,7 +477,7 @@ var dsqjs = new DisqusJS({
     <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
 
 
-<script src="/js/app.js?v=1607135593967"></script>
+<script src="/js/app.js?v=1607160847320"></script>
 
 
   
@@ -390,6 +486,21 @@ var dsqjs = new DisqusJS({
 
 
 
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </body>
 
 

@@ -4,7 +4,7 @@
 
 <head>
   
-  <title>标签：地球科学 - 一切都会好起来的哟</title>
+  <title>高性能计算#03 HPCG搭建 - 一切都会好起来的哟</title>
   <meta charset="UTF-8">
   <meta name="description" content="Ning Chenhui">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
@@ -12,19 +12,21 @@
   
 
   <link rel="shortcut icon" href="/pictures/icon.jpg" type="image/png" />
-  <meta name="description" content="Ning Chenhui">
-<meta property="og:type" content="website">
-<meta property="og:title" content="一切都会好起来的哟">
-<meta property="og:url" content="https://ningchenhui.github.io/tags/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/index.html">
+  <meta name="description" content="- HPCG测试 OPENBLAS+OPENMPI -">
+<meta property="og:type" content="article">
+<meta property="og:title" content="高性能计算#03 HPCG搭建">
+<meta property="og:url" content="https://ningchenhui.github.io/2020/12/05/linux1205/index.html">
 <meta property="og:site_name" content="一切都会好起来的哟">
-<meta property="og:description" content="Ning Chenhui">
+<meta property="og:description" content="- HPCG测试 OPENBLAS+OPENMPI -">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-12-05T08:13:18.000Z">
+<meta property="article:modified_time" content="2020-12-05T09:21:00.507Z">
 <meta property="article:author" content="Ning Chenhui">
-<meta property="article:tag" content="Ning Chenhui">
+<meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/nexmoe/nexmoe.github.io@latest/lib/mdui_043tiny/css/mdui.css,gh/nexmoe/nexmoe.github.io@latest/lib/iconfont/iconfont.css?v=233" crossorigin>
   
-  <link rel="stylesheet" href="/css/style.css?v=1607160847941">
+  <link rel="stylesheet" href="/css/style.css?v=1607160847303">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
 
 <meta name="generator" content="Hexo 5.2.0"></head>
@@ -196,36 +198,122 @@
   </div>
   <div id="nexmoe-content">
     <div class="nexmoe-primary">
-        
-<section class="nexmoe-archives">
+        <div class="nexmoe-post">
+  
+      <div class="nexmoe-post-cover" style="padding-bottom: 46.833333333333336%;"> 
+          <img data-src="/pictures/compute/hpc.jpg" data-sizes="auto" alt="高性能计算#03 HPCG搭建" class="lazyload">
+          <h1>高性能计算#03 HPCG搭建</h1>
+      </div>
+  
+   
 
-    <article>
-        
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
+	
 
-        
-            <h2>2020</h2>
-            <ul>
-            
-                <li><span>11-24</span><a href="/2020/11/24/ocean1124/" >物理海洋学基础 笔记#03</a></li>
-            
-                <li><span>11-20</span><a href="/2020/11/20/ocean1120/" >物理海洋学基础 笔记#02</a></li>
-            
-                <li><span>11-16</span><a href="/2020/11/16/es1116/" >地球科学导论 笔记#05</a></li>
-            
-                <li><span>11-11</span><a href="/2020/11/11/es1111/" >地球科学导论 笔记#04</a></li>
-            
-                <li><span>11-10</span><a href="/2020/11/10/ocean1110/" >物理海洋学基础 笔记#01</a></li>
-            
-                <li><span>10-29</span><a href="/2020/10/29/es1029/" >地球科学导论 笔记#03</a></li>
-            
-                <li><span>10-23</span><a href="/2020/10/23/es1023/" >地球科学导论 笔记#02</a></li>
-            
-                <li><span>10-09</span><a href="/2020/10/09/es1009/" >地球科学导论 笔记#01</a></li>
-            
-            </ul>
-        
-    </article>
+
+    <a><i class="nexmoefont icon-calendar-fill"></i>2020年12月05日</a>
+    <a><i class="nexmoefont icon-areachart"></i>416 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 2 分钟</a>
+</div>
+
+   
+
+  <div class="nexmoe-post-right">
+
+    
+      <div class="nexmoe-fixed">
+        <div class="nexmoe-valign">
+            <div class="nexmoe-toc">
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA"><span class="toc-number">1.</span> <span class="toc-text">环境搭建</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HPCG%E5%AE%89%E8%A3%85%E4%B8%8E%E7%BC%96%E8%AF%91"><span class="toc-number">2.</span> <span class="toc-text">HPCG安装与编译</span></a></li></ol>
+            </div>
+        </div>
+      </div>
+    
+  </div>
+
+  <article>
+    <p>- HPCG测试 OPENBLAS+OPENMPI - <a id="more"></a></p>
+<h2 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h2><p>前几篇中已经配置好了<a href="/2020/12/02/linux1202/#%E5%AE%89%E8%A3%85MPICH">c++编译器</a>，以及<a href="/2020/12/04/linux1204/#%E5%AE%89%E8%A3%85openMPI">openmpi并行环境</a>。</p>
+<p>#TODO 若是在Intel处理器上建议用Intel自家的编译器、mpi、hpcg执行文件……</p>
+<h2 id="HPCG安装与编译"><a href="#HPCG安装与编译" class="headerlink" title="HPCG安装与编译"></a>HPCG安装与编译</h2><ol>
+<li><p>官方下载网站下载：<a target="_blank" rel="noopener" href="https://github.com/hpcg-benchmark/hpcg">hpcg-master</a></p>
+</li>
+<li><p>进入<code>setup</code>文件夹下，修改<code>Make.Linux_MPI</code>，另存为<code>Make.Linux</code>。</p>
+<pre><code> MPdir        = $(HOME)/HPL/openmpi
+ MPinc        = -I$(MPdir)/include
+ MPlib        = -L$(MPdir)/lib
+
+ CXX          = $(MPdir)/bin/mpicxx</code></pre>
+</li>
+<li><p>设置安装环境：到安装目录下，<code>mkdir hpcg</code>, <code>cd hpcg</code>, <code>~/HPL/hpcg-master/configure Linux</code></p>
+</li>
+<li><p>安装测试：<code>make</code>，<code>cd bin</code>，<code>mpirun -np 8 ./xhpcg</code>。<br><code>hpcg.dat</code>很简单，第三行是执行的问题的规模，第四行是执行的时间（秒）。<br>HPCG测试很快（整机仅需几分钟），测试时需要不断调节n值，以获得一个较好的测试结果。<br>注意：n值不能设置太小，否则测试完全在缓存中进行，测试需要保证内存占用&gt;25%。<br>官方规定，hpcg运行时间必须要1800s才能得到一个正式的结果。</p>
+</li>
+<li><p>测试结束后在bin文件夹中得到一个HPCG-Benchmark文件，这个文件详细记录了运行结果，运行的问题规模占用内存的量，以及各个主要的函数所占运行时间。</p>
+<pre><code> Final Summary=
+ Final Summary::HPCG result is VALID with a GFLOP/s rating of=1.08827
+ Final Summary::HPCG 2.4 rating for historical reasons is=1.23954
+ Final Summary::Reference version of ComputeDotProduct used=Performance results are most likely suboptimal
+ Final Summary::Reference version of ComputeSPMV used=Performance results are most likely suboptimal
+ Final Summary::Reference version of ComputeMG used=Performance results are most likely suboptimal
+ Final Summary::Reference version of ComputeWAXPBY used=Performance results are most likely suboptimal
+ Final Summary::Results are valid but execution time (sec) is=66.7002
+ Final Summary::Official results execution time (sec) must be at least=1800</code></pre>
+</li>
+</ol>
+
+  </article>
+
+  
+    
+  <div class="nexmoe-post-copyright">
+    <strong>本文作者：</strong>Ning Chenhui<br>
+    <strong>本文链接：</strong><a href="https://ningchenhui.github.io/2020/12/05/linux1205/" title="https:&#x2F;&#x2F;ningchenhui.github.io&#x2F;2020&#x2F;12&#x2F;05&#x2F;linux1205&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;ningchenhui.github.io&#x2F;2020&#x2F;12&#x2F;05&#x2F;linux1205&#x2F;</a><br>
+    
+      <strong>版权声明：</strong>未经作者授权禁止转载
+    
+  </div>
+
+
+
+<center>
+<font color="#FF4E6A">~</font><font color="#FF6355">本</font><font color="#FF784D">页</font><font color="#FF8D4D">已</font><font color="#FF924D">被</font><font color="#FF924D">访</font><font color="#FF924D">问</font><font color="#FF924D"> <span id="busuanzi_value_page_pv"></span> </font><font color="#FF924D">次</font><font color="#FF924D">了</font><font color="#FF924D">哦</font><font color="#FF924D">~</font>
+ <br> </br>
+</center>
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow">
+    
+        <a class="nexmoefont icon-appstore-fill -link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
+    
+    
+        <a class="nexmoefont icon-tag-fill -none-link" href="/tags/Linux/" rel="tag">Linux</a>
+    
+</div>
+
+  <div class="nexmoe-post-footer">
+    <section class="nexmoe-comment">
+    <!-- Unpkg -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/disqusjs@1.2.5/dist/disqusjs.min.css">
+<script src="https://cdn.jsdelivr.net/npm/disqusjs@1.2.5/dist/disqus.min.js"></script>
+<div id="disqus_thread"></div>
+<script>
+var dsqjs = new DisqusJS({
+    shortname: 'ningchenhui-github-io',
+    siteName: 'ningchenhui.github.io',
+    identifier: 'https://ningchenhui.github.io/2020/12/05/linux1205/',
+    url: 'https://ningchenhui.github.io/2020/12/05/linux1205/',
+    title: '高性能计算#03 HPCG搭建',
+    api: 'https://disqus.skk.moe/disqus/',
+    apikey: 'e6evOgi4KaQOW9DrrU1gkzYWj6dsm3Pl5ZMMS8kUw46BtSz8Ze355Igzqu11XhhI',
+    admin: 'disqus_7i3NGTLGyS',
+    adminLabel: ''
+});
+</script>
 </section>
+  </div>
+</div>
     </div>
   </div>
   <script src="https://cdn.jsdelivr.net/combine/npm/lazysizes@5.1.0/lazysizes.min.js,gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js,npm/mdui@0.4.3/dist/js/mdui.min.js?v=1"></script>
@@ -235,7 +323,7 @@
     <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
 
 
-<script src="/js/app.js?v=1607160847944"></script>
+<script src="/js/app.js?v=1607160847310"></script>
 
 
   
