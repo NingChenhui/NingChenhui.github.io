@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+<head>
+  
+  <title>高性能计算#04 HPL测试GPU - 一切都会好起来的哟</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="Ning Chenhui">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  
+  
+
+  <link rel="shortcut icon" href="/pictures/icon.jpg" type="image/png" />
+  <meta name="description" content="- HPL测试 MKL+MPICH -">
+<meta property="og:type" content="article">
+<meta property="og:title" content="高性能计算#04 HPL测试GPU">
+<meta property="og:url" content="https://ningchenhui.github.io/2020/12/06/hpc1206/index.html">
+<meta property="og:site_name" content="一切都会好起来的哟">
+<meta property="og:description" content="- HPL测试 MKL+MPICH -">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-12-06T08:44:18.000Z">
+<meta property="article:modified_time" content="2020-12-07T10:32:42.576Z">
+<meta property="article:author" content="Ning Chenhui">
+<meta property="article:tag" content="Linux">
+<meta name="twitter:card" content="summary">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/nexmoe/nexmoe.github.io@latest/lib/mdui_043tiny/css/mdui.css,gh/nexmoe/nexmoe.github.io@latest/lib/iconfont/iconfont.css?v=233" crossorigin>
+  
+  <link rel="stylesheet" href="/css/style.css?v=1607337592114">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body class="mdui-drawer-body-left">
+  
+  <div id="nexmoe-background">
+    <div class="nexmoe-bg" style="background-image: url(/pictures/background.jpg)"></div>
+    <div class="mdui-appbar mdui-shadow-0">
+      <div class="mdui-toolbar">
+        <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
+        <div class="mdui-toolbar-spacer"></div>
+        <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+        <a href="/" title="Ning Chenhui" class="mdui-btn mdui-btn-icon"><img src="https://avatars0.githubusercontent.com/u/11815134?s=460&amp;v=4" alt="Ning Chenhui"></a>
+       </div>
+    </div>
+  </div>
+  <div id="nexmoe-header">
+      <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="Ning Chenhui">
+            <img src="https://avatars0.githubusercontent.com/u/11815134?s=460&amp;v=4" alt="Ning Chenhui" alt="Ning Chenhui">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>文章</span>36</div>
+        <div><span>标签</span>10</div>
+        <div><span>分类</span>4</div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/" title="首页">
+            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/archives" title="归档">
+            <i class="mdui-list-item-icon nexmoefont icon-container"></i>
+            <div class="mdui-list-item-content">
+                归档
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/about-welcome.html" title="关于">
+            <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+            <div class="mdui-list-item-content">
+                关于
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/donate.html" title="起飞">
+            <i class="mdui-list-item-icon nexmoefont icon-coffee"></i>
+            <div class="mdui-list-item-content">
+                起飞
+            </div>
+        </a>
+        
+    </div>
+    <aside id="nexmoe-sidebar">
+  
+  <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-search">
+        <form id="search_form" action_e="https://cn.bing.com/search?q=" onsubmit="return search();">
+            <label><input id="search_value" name="q" type="search" placeholder="搜索"></label>
+        </form>
+    </div>
+</div>
+  
+  <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-social">
+        <a class="mdui-ripple" href="https://space.bilibili.com/316021638" target="_blank" mdui-tooltip="{content: '哔哩哔哩'}" style="color: rgb(231, 106, 141);background-color: rgba(231, 106, 141, .15);">
+            <i class="nexmoefont icon-bilibili"></i>
+        </a><a class="mdui-ripple" href="https://github.com/NingChenhui" target="_blank" mdui-tooltip="{content: 'GitHub'}" style="color: rgb(25, 23, 23);background-color: rgba(25, 23, 23, .15);">
+            <i class="nexmoefont icon-github"></i>
+        </a>
+    </div>
+</div>
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <div id="randomtagcloud" class="nexmoe-widget tagcloud nexmoe-rainbow">
+      <a href="/tags/Linux/" style="font-size: 18px;">Linux</a> <a href="/tags/Mirror/" style="font-size: 14px;">Mirror</a> <a href="/tags/%E4%BF%9D%E7%A0%94/" style="font-size: 16px;">保研</a> <a href="/tags/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/" style="font-size: 20px;">地球科学</a> <a href="/tags/%E5%BB%BA%E7%AB%99/" style="font-size: 12px;">建站</a> <a href="/tags/%E6%97%A5%E8%AF%AD/" style="font-size: 10px;">日语</a> <a href="/tags/%E6%B8%B8%E6%88%8F/" style="font-size: 10px;">游戏</a> <a href="/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 18px;">生活</a> <a href="/tags/%E8%AF%BE%E7%A8%8B%E8%B5%84%E6%96%99/" style="font-size: 10px;">课程资料</a> <a href="/tags/%E8%BD%AC%E8%BD%BD/" style="font-size: 10px;">转载</a>
+    </div>
+    
+  </div>
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章归档</h3>
+    <div class="nexmoe-widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a><span class="archive-list-count">36</span></li></ul>
+    </div>
+  </div>
+
+
+<style>
+.nexmoe-widget .archive-list-count{
+	position : absolute;
+	right: 15px;
+	top:9px;
+	color: #DDD;
+}
+</style>
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章分类</h3>
+    <div class="nexmoe-widget">
+
+      <ul class="category-list">
+
+        
+
+
+        
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/学习/">学习</a>
+          <span class="category-list-count">17</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/小记/">小记</a>
+          <span class="category-list-count">11</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/经验/">经验</a>
+          <span class="category-list-count">6</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/资料/">资料</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+      </ul>
+
+    </div>
+  </div>
+
+
+  
+</aside>
+
+<center>
+<font color="#FF4E6A">您</font><font color="#FF6751">是</font><font color="#FF804D">本</font><font color="#FF924D">站</font><font color="#FF924D">第</font><font color="#FF924D"> <span id="busuanzi_value_site_uv"></span> </font><font color="#FF924D">个</font><font color="#FF924D">小</font><font color="#FF924D">伙</font><font color="#FF924D">伴</font>
+ <br> </br>
+</center>
+    <div class="nexmoe-copyright">
+        &copy; 2020 Ning Chenhui
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://github.com/theme-nexmoe/hexo-theme-nexmoe" target="_blank">Nexmoe</a>
+    </div>
+</div><!-- .nexmoe-drawer -->
+  </div>
+  <div id="nexmoe-content">
+    <div class="nexmoe-primary">
+        <div class="nexmoe-post">
+  
+      <div class="nexmoe-post-cover" style="padding-bottom: 46.833333333333336%;"> 
+          <img data-src="/pictures/compute/hpc.jpg" data-sizes="auto" alt="高性能计算#04 HPL测试GPU" class="lazyload">
+          <h1>高性能计算#04 HPL测试GPU</h1>
+      </div>
+  
+   
+
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
+	
+
+
+    <a><i class="nexmoefont icon-calendar-fill"></i>2020年12月06日</a>
+    <a><i class="nexmoefont icon-areachart"></i>1.5k 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 8 分钟</a>
+</div>
+
+   
+
+  <div class="nexmoe-post-right">
+
+    
+      <div class="nexmoe-fixed">
+        <div class="nexmoe-valign">
+            <div class="nexmoe-toc">
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA"><span class="toc-number">1.</span> <span class="toc-text">环境搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#MPICH2"><span class="toc-number">1.0.1.</span> <span class="toc-text">MPICH2</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Intel-MKL"><span class="toc-number">1.0.2.</span> <span class="toc-text">Intel MKL</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HPL"><span class="toc-number">2.</span> <span class="toc-text">HPL</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9D%E6%AD%A5%E7%BB%93%E6%9E%9C"><span class="toc-number">3.</span> <span class="toc-text">初步结果</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#GPU%E4%BF%A1%E6%81%AF%E8%8E%B7%E5%8F%96"><span class="toc-number">3.1.</span> <span class="toc-text">GPU信息获取</span></a></li></ol></li></ol>
+            </div>
+        </div>
+      </div>
+    
+  </div>
+
+  <article>
+    <p>- HPL测试 MKL+MPICH - <a id="more"></a></p>
+<h2 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h2><ol>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/liu_feng_zi_/article/details/107232252">GPU驱动</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/liu_feng_zi_/article/details/107234271">CUDA</a><br><del>3. <a href="/2020/12/04/hpc1204/#%E5%AE%89%E8%A3%85OpenBLAS">OpenBLAS</a></del><br><del>4. <a href="/2020/12/04/hpc1204/#%E5%AE%89%E8%A3%85openMPI">OpenMPI</a></del></li>
+<li>编译器：系统自带的GNU编译器</li>
+</ol>
+<p><em>可惜集群上的CUDA是9.0的，不支持MPI-3.0，想着下一个Intel mpi，结果这玩意不能单独下，要下一个OneAPI，压缩包和CUDA 11.0一样大的要死，浪费我一晚上，几个T的盘不给用属实可恶。</em></p>
+<h4 id="MPICH2"><a href="#MPICH2" class="headerlink" title="MPICH2"></a>MPICH2</h4><ol start="2">
+<li>官方下载：<a target="_blank" rel="noopener" href="http://www.mpich.org/static/downloads/3.2.1/mpich-3.2.1.tar.gz">mpich-3.2.1.tar.gz</a>，可以用<code>wget</code>。</li>
+<li>解压，新建文件夹<code>mpich</code>作为安装文件夹<pre><code>  cd mpich-3.2.1/
+ ./configure --prefix=/home/riolu/HPL/mpich CFLAGS=&quot;-fPIC&quot; CXXFLAGS=&quot;-fPIC&quot; --enable-shared --enable-sharedlibs=gcc --with-cuda=/usr/local/cuda-10.0/ --with-cuda-include=/usr/local/cuda-10.0/include --with-cuda-libpath=/usr/local/cuda-10.0/lib64</code></pre>
+如果不加这些参数会报错：<pre><code> libmpich.a(allreduce.o): relocation R_X86_64_32 against `.rodata.str1.8&#39; can not be used when making a shared object; recompile with -fPIC</code></pre>
+</li>
+<li>接下来<pre><code> make clean
+ make
+ make install
+ gedit ~/.bashrc</code></pre>
+在后面加上<pre><code> export PATH=/home/riolu/HPL/mpich/bin:$PATH
+ export MANPATH=/home/riolu/HPL/mpich/man:$MANPATH
+ export LD_LIBRARY_PATH=/home/riolu/HPL/mpich/lib:$LD_LIBRARY_PATH //不知要不要</code></pre>
+保存后<pre><code> source ~/.bashrc</code></pre>
+</li>
+</ol>
+<h4 id="Intel-MKL"><a href="#Intel-MKL" class="headerlink" title="Intel MKL"></a>Intel MKL</h4><ol>
+<li>下载单独安装包：<a target="_blank" rel="noopener" href="http://registrationcenter-download.intel.com/akdlm/irc_nas/tec/15816/l_mkl_2019.5.281.tgz">l_mkl_2019.5.281.tgz</a></li>
+<li>解压后进入，执行<code>sh install.sh</code>，按提示进行。</li>
+<li>配置<code>.bashrc</code>，添加<pre><code> # added for intel
+ export LD_LIBRARY_PATH=/home/riolu/intel/mkl/lib/intel64:$LD_LIBRARY_PATH</code></pre>
+执行<code>source ~/.bashrc</code>。<br>如果报错找不到共享库的话可能是因为没有加这个路径。</li>
+</ol>
+<h2 id="HPL"><a href="#HPL" class="headerlink" title="HPL"></a>HPL</h2><ol>
+<li><p>官方下载网站下载：<a target="_blank" rel="noopener" href="https://developer.nvidia.com/computeworks-developer-exclusive-downloads">hpl-2.0_FERMI_v15.tgz</a><br>需要注册一下。</p>
+</li>
+<li><p>进入解压后的文件夹，修改Make.CUDA的参数</p>
+<pre><code> TOPdir = $(HOME)/HPL/hpl-2.0_FERMI_v15 #hpl所在的路径目录
+ .............................................................. 
+ MPdir  = $(HOME)/HPL/mpich
+ MPinc = -I$(MPdir)/include          
+ MPlib = -L$(MPdir)/lib
+ ..............................................................    
+ LAdir   =$(HOME)/intel/mkl/lib/intel64
+ LAMP5dir    = $(HOME)/intel/compilers_and_libraries/linux/lib/intel64
+ LAinc        = -I$(HOME)/intel/mkl/include
+ LAlib        = -L $(TOPdir)/src/cuda  -ldgemm -L/usr/local/cuda-10.0/lib64 -lcuda -lcudart -lcublas -L$(LAdir) -lmkl_intel_lp64 -lmkl_intel_thread -lmkl_core -liomp5
+
+ HPL_INCLUDES = -I$(INCdir) -I$(INCdir)/$(ARCH) $(LAinc) $(MPinc) -I/usr/local/cuda-10.0/include
+ ..............................................................
+ CC   =$(MPdir)/bin/mpicc
+
+ ..............................................................</code></pre>
+</li>
+<li><p>修改<code>src/cuda/Makefile</code>为里的<code>cuda</code>路径为<code>cuda-10.0</code></p>
+</li>
+<li><p>编译</p>
+<pre><code> make arch=CUDA clean_arch_all
+ make arch=CUDA</code></pre>
+<p>若报错<code>/usr/bin/ld: 找不到 -liomp5</code>则可以做一个软链接，执行</p>
+<pre><code> ln -s /home/intel/lib/intel64/libiomp5.so /home/intel/mkl/lib/intel64/libiomp5.so</code></pre>
+</li>
+<li><p><code>/bin/CUDA</code>目录下生成两个文件：HPL.dat和xhpl。在该目录新建一个<code>test.sh</code>文件，内容为</p>
+<pre><code> export HPL_DIR=/home/riolu/HPL/hpl-2.0_FERMI_v15
+ export MKL_NUM_THREADS=6
+ export OMP_NUM_THREADS=2
+ export MKL_DYNAMIC=FALSE
+ export CUDA_DGEMM_SPLIT=0.954
+ export CUDA_DTRSM_SPLIT=0.946
+ export LD_LIBRARY_PATH=$HPL_DIR/src/cuda:$LD_LIBRARY_PATH
+ $HPL_DIR/bin/CUDA/xhpl</code></pre>
+<p>其中</p>
+<ul>
+<li>MKL_NUM_THREADS：每个进程使用的CPU核的数量</li>
+<li>OMP_NUM_THREADS：每个GPU使用的CPU核的数量<br>例如：2个GPU和8个CPU，则OMP_NUM_THREADS=4</li>
+<li>CUDA_DGEMM_SPLIT：发送给GPU的DGEMM占总的百分比，大致等于(GPU GFLOPS)/(GPU GFLOPS + CPU GFLOPS)，或者 350  / ( 350 + 每个GPU的CPU数量 * 4 * CPU基本频率 )</li>
+<li>CUDA_DTRSM_SPLIT：发送给GPU的DTRSM占总的百分比，通常比DGEMM低0.05-0.10</li>
+<li>HPL_DIR：文件的路径</li>
+</ul>
+</li>
+<li><p>单节点执行：<code>./run_linpack.sh</code><br>多节点执行（没有测试过，仅供参考）：<code>mpirun -np N ./run_linpack.sh</code></p>
+</li>
+</ol>
+<h2 id="初步结果"><a href="#初步结果" class="headerlink" title="初步结果"></a>初步结果</h2><pre><code>================================================================================
+HPLinpack 2.0  --  High-Performance Linpack benchmark  --   September 10, 2008
+Written by A. Petitet and R. Clint Whaley,  Innovative Computing Laboratory, UTK
+Modified by Piotr Luszczek, Innovative Computing Laboratory, UTK
+Modified by Julien Langou, University of Colorado Denver
+================================================================================
+
+An explanation of the input/output parameters follows:
+T/V    : Wall time / encoded variant.
+N      : The order of the coefficient matrix A.
+NB     : The partitioning blocking factor.
+P      : The number of process rows.
+Q      : The number of process columns.
+Time   : Time in seconds to solve the linear system.
+Gflops : Rate of execution for solving the linear system.
+
+The following parameter values will be used:
+
+N      :   25000
+NB     :     768
+PMAP   : Row-major process mapping
+P      :       1
+Q      :       1
+PFACT  :    Left
+NBMIN  :       2
+NDIV   :       2
+RFACT  :    Left
+BCAST  :   1ring
+DEPTH  :       1
+SWAP   : Spread-roll (long)
+L1     : no-transposed form
+U      : no-transposed form
+EQUIL  : yes
+ALIGN  : 8 double precision words
+
+--------------------------------------------------------------------------------
+
+- The matrix A is randomly generated for each test.
+- The following scaled residual check will be computed:
+      ||Ax-b||_oo / ( eps * ( || x ||_oo * || A ||_oo + || b ||_oo ) * N )
+- The relative machine precision (eps) is taken to be               1.110223e-16
+- Computational tests pass if scaled residuals are less than                16.0
+
+================================================================================
+T/V                N    NB     P     Q               Time                 Gflops
+--------------------------------------------------------------------------------
+WR10L2L2       25000   768     1     1              10.58              9.843e+02
+--------------------------------------------------------------------------------
+||Ax-b||_oo/(eps*(||A||_oo*||x||_oo+||b||_oo)*N)=        0.0044272 ...... PASSED
+================================================================================
+
+Finished      1 tests with the following results:
+              1 tests completed and passed residual checks,
+              0 tests completed and failed residual checks,
+              0 tests skipped because of illegal input values.
+--------------------------------------------------------------------------------
+
+End of Tests.
+================================================================================</code></pre>
+<p>速度是CPU的3倍……</p>
+<h3 id="GPU信息获取"><a href="#GPU信息获取" class="headerlink" title="GPU信息获取"></a>GPU信息获取</h3><ol>
+<li><p>查看nvidia GPU型号<br><code>lspci | grep -i nvidia</code></p>
+</li>
+<li><p>查看Nvidia显卡信息及使用情况<br><code>nvidia-smi</code></p>
+<pre><code> Sat Dec  5 20:46:03 2020
+ +-----------------------------------------------------------------------------+
+ | NVIDIA-SMI 410.129      Driver Version: 410.129      CUDA Version: 10.0     |
+ |-------------------------------+----------------------+----------------------+
+ | GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+ | Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+ |===============================+======================+======================|
+ |   0  Tesla P100-PCIE...  Off  | 00000000:05:00.0 Off |                    0 |
+ | N/A   29C    P0    31W / 250W |      0MiB / 16280MiB |      0%      Default |
+ +-------------------------------+----------------------+----------------------+
+ |   1  Tesla P100-PCIE...  Off  | 00000000:08:00.0 Off |                    0 |
+ | N/A   33C    P0    31W / 250W |      0MiB / 16280MiB |      0%      Default |
+ +-------------------------------+----------------------+----------------------+
+ |   2  Tesla P100-PCIE...  Off  | 00000000:09:00.0 Off |                    0 |
+ | N/A   36C    P0    33W / 250W |      0MiB / 16280MiB |      0%      Default |
+ +-------------------------------+----------------------+----------------------+
+ |   3  Tesla P100-PCIE...  Off  | 00000000:84:00.0 Off |                    0 |
+ | N/A   33C    P0    31W / 250W |      0MiB / 16280MiB |      0%      Default |
+ +-------------------------------+----------------------+----------------------+
+ |   4  Tesla P100-PCIE...  Off  | 00000000:88:00.0 Off |                    0 |
+ | N/A   29C    P0    30W / 250W |      0MiB / 16280MiB |      0%      Default |
+ +-------------------------------+----------------------+----------------------+
+ |   5  Tesla P100-PCIE...  Off  | 00000000:89:00.0 Off |                    0 |
+ | N/A   32C    P0    27W / 250W |      0MiB / 16280MiB |      4%      Default |
+ +-------------------------------+----------------------+----------------------+
+
+ +-----------------------------------------------------------------------------+
+ | Processes:                                                       GPU Memory |
+ |  GPU       PID   Type   Process name                             Usage      |
+ |=============================================================================|
+ |  No running processes found                                                 |
+ +-----------------------------------------------------------------------------+</code></pre>
+<p>表头释义： </p>
+<ul>
+<li>Fan：显示风扇转速，数值在0到100%之间，是计算机的期望转速，如果不是通过风扇冷却或者风扇坏了，显示出来就是N/A； </li>
+<li>Temp：显卡内部的温度，单位是摄氏度；</li>
+<li>Perf：表征性能状态，从P0到P12，P0表示最大性能，P12表示状态最小性能；</li>
+<li>Pwr：能耗表示； </li>
+<li>Bus-Id：涉及GPU总线的相关信息； </li>
+<li>Disp.A：是Display Active的意思，表示GPU的显示是否初始化； </li>
+<li>Memory Usage：显存的使用率； </li>
+<li>Volatile GPU-Util：浮动的GPU利用率；</li>
+<li>Compute M：计算模式； </li>
+<li>Processes 显示每块GPU上每个进程所使用的显存情况。</li>
+</ul>
+</li>
+<li><p>周期性输出显卡的使用情况<br><code>watch -n 10 nvidia-smi</code><br>命令行参数-n后边跟的是执行命令的周期，以s为单位。</p>
+</li>
+<li><p>查看GPU名称<br><code>nvidia-smi -L</code></p>
+<pre><code> GPU 0: Tesla P100-PCIE-16GB (UUID: GPU-1f613914-b422-06ad-cd7d-d2649435f480)
+ GPU 1: Tesla P100-PCIE-16GB (UUID: GPU-d8f026e7-9714-39f6-af4a-f8328cbdb3c9)
+ GPU 2: Tesla P100-PCIE-16GB (UUID: GPU-fb22db8b-9de3-691e-53da-d34aec4b6abb)
+ GPU 3: Tesla P100-PCIE-16GB (UUID: GPU-ddf0cbc8-3c92-0b3d-5496-b65361fe18a0)
+ GPU 4: Tesla P100-PCIE-16GB (UUID: GPU-7a94ce44-3e66-d05d-3d58-d625930a2aad)
+ GPU 5: Tesla P100-PCIE-16GB (UUID: GPU-16423caf-0037-6742-2977-ba03f4937b9b)</code></pre>
+<p>（可惜院里这么好的GPU资源没人用</p>
+</li>
+</ol>
+<hr>
+<p><em>修改日期：2020年12月7日</em></p>
+
+  </article>
+
+  
+    
+  <div class="nexmoe-post-copyright">
+    <strong>本文作者：</strong>Ning Chenhui<br>
+    <strong>本文链接：</strong><a href="https://ningchenhui.github.io/2020/12/06/hpc1206/" title="https:&#x2F;&#x2F;ningchenhui.github.io&#x2F;2020&#x2F;12&#x2F;06&#x2F;hpc1206&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;ningchenhui.github.io&#x2F;2020&#x2F;12&#x2F;06&#x2F;hpc1206&#x2F;</a><br>
+    
+      <strong>版权声明：</strong>未经作者授权禁止转载
+    
+  </div>
+
+
+
+<center>
+<font color="#FF4E6A">~</font><font color="#FF6355">本</font><font color="#FF784D">页</font><font color="#FF8D4D">已</font><font color="#FF924D">被</font><font color="#FF924D">访</font><font color="#FF924D">问</font><font color="#FF924D"> <span id="busuanzi_value_page_pv"></span> </font><font color="#FF924D">次</font><font color="#FF924D">了</font><font color="#FF924D">哦</font><font color="#FF924D">~</font>
+ <br> </br>
+</center>
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow">
+    
+        <a class="nexmoefont icon-appstore-fill -link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
+    
+    
+        <a class="nexmoefont icon-tag-fill -none-link" href="/tags/Linux/" rel="tag">Linux</a>
+    
+</div>
+
+  <div class="nexmoe-post-footer">
+    <section class="nexmoe-comment">
+    <!-- Unpkg -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/disqusjs@1.2.5/dist/disqusjs.min.css">
+<script src="https://cdn.jsdelivr.net/npm/disqusjs@1.2.5/dist/disqus.min.js"></script>
+<div id="disqus_thread"></div>
+<script>
+var dsqjs = new DisqusJS({
+    shortname: 'ningchenhui-github-io',
+    siteName: 'ningchenhui.github.io',
+    identifier: 'https://ningchenhui.github.io/2020/12/06/hpc1206/',
+    url: 'https://ningchenhui.github.io/2020/12/06/hpc1206/',
+    title: '高性能计算#04 HPL测试GPU',
+    api: 'https://disqus.skk.moe/disqus/',
+    apikey: 'e6evOgi4KaQOW9DrrU1gkzYWj6dsm3Pl5ZMMS8kUw46BtSz8Ze355Igzqu11XhhI',
+    admin: 'disqus_7i3NGTLGyS',
+    adminLabel: ''
+});
+</script>
+</section>
+  </div>
+</div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/combine/npm/lazysizes@5.1.0/lazysizes.min.js,gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js,npm/mdui@0.4.3/dist/js/mdui.min.js?v=1"></script>
+<script >hljs.initHighlightingOnLoad();</script>
+
+
+    <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
+
+
+<script src="/js/app.js?v=1607337592148"></script>
+
+
+  
+
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
+
+
+
+</html>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+<script src="/live2d-widget/autoload.js"></script>
+

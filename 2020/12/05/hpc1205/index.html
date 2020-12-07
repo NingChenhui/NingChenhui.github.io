@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+<head>
+  
+  <title>高性能计算#03 HPCG搭建 - 一切都会好起来的哟</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="Ning Chenhui">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  
+  
+
+  <link rel="shortcut icon" href="/pictures/icon.jpg" type="image/png" />
+  <meta name="description" content="- HPCG测试 OPENBLAS+OPENMPI -">
+<meta property="og:type" content="article">
+<meta property="og:title" content="高性能计算#03 HPCG搭建">
+<meta property="og:url" content="https://ningchenhui.github.io/2020/12/05/hpc1205/index.html">
+<meta property="og:site_name" content="一切都会好起来的哟">
+<meta property="og:description" content="- HPCG测试 OPENBLAS+OPENMPI -">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-12-05T08:13:18.000Z">
+<meta property="article:modified_time" content="2020-12-07T10:32:56.557Z">
+<meta property="article:author" content="Ning Chenhui">
+<meta property="article:tag" content="Linux">
+<meta name="twitter:card" content="summary">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/nexmoe/nexmoe.github.io@latest/lib/mdui_043tiny/css/mdui.css,gh/nexmoe/nexmoe.github.io@latest/lib/iconfont/iconfont.css?v=233" crossorigin>
+  
+  <link rel="stylesheet" href="/css/style.css?v=1607337592178">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body class="mdui-drawer-body-left">
+  
+  <div id="nexmoe-background">
+    <div class="nexmoe-bg" style="background-image: url(/pictures/background.jpg)"></div>
+    <div class="mdui-appbar mdui-shadow-0">
+      <div class="mdui-toolbar">
+        <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
+        <div class="mdui-toolbar-spacer"></div>
+        <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+        <a href="/" title="Ning Chenhui" class="mdui-btn mdui-btn-icon"><img src="https://avatars0.githubusercontent.com/u/11815134?s=460&amp;v=4" alt="Ning Chenhui"></a>
+       </div>
+    </div>
+  </div>
+  <div id="nexmoe-header">
+      <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="Ning Chenhui">
+            <img src="https://avatars0.githubusercontent.com/u/11815134?s=460&amp;v=4" alt="Ning Chenhui" alt="Ning Chenhui">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>文章</span>36</div>
+        <div><span>标签</span>10</div>
+        <div><span>分类</span>4</div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/" title="首页">
+            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/archives" title="归档">
+            <i class="mdui-list-item-icon nexmoefont icon-container"></i>
+            <div class="mdui-list-item-content">
+                归档
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/about-welcome.html" title="关于">
+            <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+            <div class="mdui-list-item-content">
+                关于
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/donate.html" title="起飞">
+            <i class="mdui-list-item-icon nexmoefont icon-coffee"></i>
+            <div class="mdui-list-item-content">
+                起飞
+            </div>
+        </a>
+        
+    </div>
+    <aside id="nexmoe-sidebar">
+  
+  <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-search">
+        <form id="search_form" action_e="https://cn.bing.com/search?q=" onsubmit="return search();">
+            <label><input id="search_value" name="q" type="search" placeholder="搜索"></label>
+        </form>
+    </div>
+</div>
+  
+  <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-social">
+        <a class="mdui-ripple" href="https://space.bilibili.com/316021638" target="_blank" mdui-tooltip="{content: '哔哩哔哩'}" style="color: rgb(231, 106, 141);background-color: rgba(231, 106, 141, .15);">
+            <i class="nexmoefont icon-bilibili"></i>
+        </a><a class="mdui-ripple" href="https://github.com/NingChenhui" target="_blank" mdui-tooltip="{content: 'GitHub'}" style="color: rgb(25, 23, 23);background-color: rgba(25, 23, 23, .15);">
+            <i class="nexmoefont icon-github"></i>
+        </a>
+    </div>
+</div>
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <div id="randomtagcloud" class="nexmoe-widget tagcloud nexmoe-rainbow">
+      <a href="/tags/Linux/" style="font-size: 18px;">Linux</a> <a href="/tags/Mirror/" style="font-size: 14px;">Mirror</a> <a href="/tags/%E4%BF%9D%E7%A0%94/" style="font-size: 16px;">保研</a> <a href="/tags/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/" style="font-size: 20px;">地球科学</a> <a href="/tags/%E5%BB%BA%E7%AB%99/" style="font-size: 12px;">建站</a> <a href="/tags/%E6%97%A5%E8%AF%AD/" style="font-size: 10px;">日语</a> <a href="/tags/%E6%B8%B8%E6%88%8F/" style="font-size: 10px;">游戏</a> <a href="/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 18px;">生活</a> <a href="/tags/%E8%AF%BE%E7%A8%8B%E8%B5%84%E6%96%99/" style="font-size: 10px;">课程资料</a> <a href="/tags/%E8%BD%AC%E8%BD%BD/" style="font-size: 10px;">转载</a>
+    </div>
+    
+  </div>
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章归档</h3>
+    <div class="nexmoe-widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a><span class="archive-list-count">36</span></li></ul>
+    </div>
+  </div>
+
+
+<style>
+.nexmoe-widget .archive-list-count{
+	position : absolute;
+	right: 15px;
+	top:9px;
+	color: #DDD;
+}
+</style>
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章分类</h3>
+    <div class="nexmoe-widget">
+
+      <ul class="category-list">
+
+        
+
+
+        
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/学习/">学习</a>
+          <span class="category-list-count">17</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/小记/">小记</a>
+          <span class="category-list-count">11</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/经验/">经验</a>
+          <span class="category-list-count">6</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/资料/">资料</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+      </ul>
+
+    </div>
+  </div>
+
+
+  
+</aside>
+
+<center>
+<font color="#FF4E6A">您</font><font color="#FF6751">是</font><font color="#FF804D">本</font><font color="#FF924D">站</font><font color="#FF924D">第</font><font color="#FF924D"> <span id="busuanzi_value_site_uv"></span> </font><font color="#FF924D">个</font><font color="#FF924D">小</font><font color="#FF924D">伙</font><font color="#FF924D">伴</font>
+ <br> </br>
+</center>
+    <div class="nexmoe-copyright">
+        &copy; 2020 Ning Chenhui
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://github.com/theme-nexmoe/hexo-theme-nexmoe" target="_blank">Nexmoe</a>
+    </div>
+</div><!-- .nexmoe-drawer -->
+  </div>
+  <div id="nexmoe-content">
+    <div class="nexmoe-primary">
+        <div class="nexmoe-post">
+  
+      <div class="nexmoe-post-cover" style="padding-bottom: 46.833333333333336%;"> 
+          <img data-src="/pictures/compute/hpc.jpg" data-sizes="auto" alt="高性能计算#03 HPCG搭建" class="lazyload">
+          <h1>高性能计算#03 HPCG搭建</h1>
+      </div>
+  
+   
+
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
+	
+
+
+    <a><i class="nexmoefont icon-calendar-fill"></i>2020年12月05日</a>
+    <a><i class="nexmoefont icon-areachart"></i>1.4k 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 7 分钟</a>
+</div>
+
+   
+
+  <div class="nexmoe-post-right">
+
+    
+      <div class="nexmoe-fixed">
+        <div class="nexmoe-valign">
+            <div class="nexmoe-toc">
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA"><span class="toc-number">1.</span> <span class="toc-text">环境搭建</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HPCG%E5%AE%89%E8%A3%85%E4%B8%8E%E7%BC%96%E8%AF%91"><span class="toc-number">2.</span> <span class="toc-text">HPCG安装与编译</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F%E4%BF%A1%E6%81%AF%E8%8E%B7%E5%8F%96"><span class="toc-number">3.</span> <span class="toc-text">系统信息获取</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#CPU"><span class="toc-number">3.1.</span> <span class="toc-text">CPU</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Linux"><span class="toc-number">3.2.</span> <span class="toc-text">Linux</span></a></li></ol></li></ol>
+            </div>
+        </div>
+      </div>
+    
+  </div>
+
+  <article>
+    <p>- HPCG测试 OPENBLAS+OPENMPI - <a id="more"></a></p>
+<h2 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h2><p>前几篇中已经配置好了<a href="/2020/12/02/hpc1202/#%E5%AE%89%E8%A3%85MPICH">c++编译器</a>，以及<a href="/2020/12/04/hpc1204/#%E5%AE%89%E8%A3%85openMPI">openmpi并行环境</a>。</p>
+<p>#TODO 若是在Intel处理器上建议用Intel自家的编译器、mpi、hpcg执行文件……</p>
+<h2 id="HPCG安装与编译"><a href="#HPCG安装与编译" class="headerlink" title="HPCG安装与编译"></a>HPCG安装与编译</h2><ol>
+<li><p>官方下载网站下载：<a target="_blank" rel="noopener" href="https://github.com/hpcg-benchmark/hpcg">hpcg-master</a></p>
+</li>
+<li><p>进入<code>setup</code>文件夹下，修改<code>Make.Linux_MPI</code>，另存为<code>Make.Linux</code>。</p>
+<pre><code> MPdir        = $(HOME)/HPL/openmpi
+ MPinc        = -I$(MPdir)/include
+ MPlib        = -L$(MPdir)/lib
+
+ CXX          = $(MPdir)/bin/mpicxx</code></pre>
+</li>
+<li><p>设置安装环境：到安装目录下，<code>mkdir hpcg</code>, <code>cd hpcg</code>, <code>~/HPL/hpcg-master/configure Linux</code></p>
+</li>
+<li><p>安装测试：<code>make</code>，<code>cd bin</code>，<code>mpirun -np 8 ./xhpcg</code>。<br><code>hpcg.dat</code>很简单，第三行是执行的问题的规模，第四行是执行的时间（秒）。<br>HPCG测试很快（整机仅需几分钟），测试时需要不断调节n值，以获得一个较好的测试结果。<br>n值不能设置太小，否则测试完全在缓存中进行，测试需要保证内存占用&gt;25%。<br>官方规定运行时间必须要1800s才能得到一个正式的结果。但t较小时得到的结果相差不大。</p>
+</li>
+<li><p>测试结束后在bin文件夹中得到一个HPCG-Benchmark文件，这个文件详细记录了运行结果，运行的问题规模占用内存的量，以及各个主要的函数所占运行时间。</p>
+</li>
+</ol>
+<pre><code>Ns = 256 256 128
+t = 1800
+
+Benchmark Time Summary::Total=1890.2
+Final Summary=
+Final Summary::HPCG result is VALID with a GFLOP/s rating of=8.03429
+Final Summary::HPCG 2.4 rating for historical reasons is=8.61255
+Final Summary::Reference version of ComputeDotProduct used=Performance results are most likely suboptimal
+Final Summary::Reference version of ComputeSPMV used=Performance results are most likely suboptimal
+Final Summary::Reference version of ComputeMG used=Performance results are most likely suboptimal
+Final Summary::Reference version of ComputeWAXPBY used=Performance results are most likely suboptimal
+Final Summary::Please upload results from the YAML file contents to=http://hpcg-benchmark.org</code></pre>
+<hr>
+<pre><code>Ns = 256 256 128
+t = 60
+
+Benchmark Time Summary::Total=144.725
+Final Summary=
+Final Summary::HPCG result is VALID with a GFLOP/s rating of=8.01359
+Final Summary::HPCG 2.4 rating for historical reasons is=8.65271
+Final Summary::Reference version of ComputeDotProduct used=Performance results are most likely suboptimal
+Final Summary::Reference version of ComputeSPMV used=Performance results are most likely suboptimal
+Final Summary::Reference version of ComputeMG used=Performance results are most likely suboptimal
+Final Summary::Reference version of ComputeWAXPBY used=Performance results are most likely suboptimal
+Final Summary::Results are valid but execution time (sec) is=144.725
+Final Summary::Official results execution time (sec) must be at least=1800</code></pre>
+<h2 id="系统信息获取"><a href="#系统信息获取" class="headerlink" title="系统信息获取"></a>系统信息获取</h2><h3 id="CPU"><a href="#CPU" class="headerlink" title="CPU"></a>CPU</h3><ol>
+<li>逻辑CPU个数与CPU型号<br><code>cat /proc/cpuinfo | grep name | cut -f2 -d: | uniq -c</code><pre><code> 32  Intel(R) Xeon(R) CPU E5-2620 v4 @ 2.10GHz</code></pre>
+网上查到TDP为85W，睿频3.0 GHz。</li>
+<li>物理CPU个数<br><code>grep &quot;physical id&quot; /proc/cpuinfo|sort -u</code><pre><code> physical id     : 0
+ physical id     : 1</code></pre>
+</li>
+<li>每个物理CPU内核个数<br><code>grep &quot;cpu cores&quot; /proc/cpuinfo|uniq</code><pre><code> cpu cores       : 8</code></pre>
+</li>
+<li>每个物理CPU上逻辑CPU个数<br><code>grep &quot;siblings&quot; /proc/cpuinfo|uniq</code>        <pre><code> siblings        : 16</code></pre>
+逻辑CPU个数是物理个数的两倍，说明开启了超线程。</li>
+<li>每个逻辑CPU对应的物理位置<br><code>cat /proc/cpuinfo | grep -E &quot;physical id|processor&quot;</code></li>
+</ol>
+<h3 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h3><ol>
+<li><p>操作系统信息<br><code>uname -a</code></p>
+<pre><code> Linux amax 4.2.0-42-generic #49~14.04.1-Ubuntu SMP Wed Jun 29 20:22:11 UTC 2016 x86_64 x86_64 x86_64 GNU/Linux</code></pre>
+</li>
+<li><p>操作系统发行版信息<br><code>cat /etc/issue</code></p>
+<pre><code> Ubuntu 14.04.6 LTS</code></pre>
+</li>
+<li><p>内存<br><code>cat /proc/meminfo</code><br>或<br><code>free -h</code><br>集群共有251.8G内存，猜测是64G×4。</p>
+</li>
+<li><p>内存设备<br><code>dmidecode |grep -A16 &quot;Memory Device$&quot;</code><br>或<br><code>dmidecode -t memory</code><br>无权限……</p>
+</li>
+<li><p>硬盘空间<br><code>df -hl</code></p>
+<pre><code> Filesystem      Size  Used Avail Use% Mounted on
+ udev            126G   12K  126G   1% /dev
+ tmpfs            26G  2.1M   26G   1% /run
+ /dev/sda6       188G   37G  142G  21% /
+ none            4.0K     0  4.0K   0% /sys/fs/cgroup
+ none            5.0M     0  5.0M   0% /run/lock
+ none            126G  1.3M  126G   1% /run/shm
+ none            100M  188K  100M   1% /run/user
+ /dev/sda1       453M   73M  353M  17% /boot
+ /dev/sda7       274G  258G  1.8G 100% /home
+ /dev/sdc1       1.8T  167G  1.6T  10% /data1
+ /dev/sdb1       1.8T   33G  1.7T   2% /data0</code></pre>
+</li>
+<li><p>硬盘设备<br><code>fdisk -l</code><br>无信息？需要管理员？</p>
+</li>
+<li><p>网卡信息<br><code>dmesg | grep -i eth</code></p>
+</li>
+<li><p>设备接口信息<br><code>lspci</code><br> <code>-v</code>    ：显示更多的 PCI 接口装置的详细信息<br> <code>-vv</code>    ：比 -v 还要更详细的信息<br> <code>-n</code>     ：直接观察 PCI 的 ID 而不是厂商名称<br> <code>-s 00:01.0</code> ：查看地址00:01.0的信息</p>
+</li>
+<li><p>查看节点/主机名称<br><code>cat /etc/hosts</code></p>
+<pre><code> 127.0.0.1       localhost
+ 127.0.1.1       amax
+
+ # The following lines are desirable for IPv6 capable hosts
+ ::1     ip6-localhost ip6-loopback
+ fe00::0 ip6-localnet
+ ff00::0 ip6-mcastprefix
+ ff02::1 ip6-allnodes
+ ff02::2 ip6-allrouters</code></pre>
+<p>经测试集群应该是在amax节点下布置了两块Intel Xeon CPU，localhost指向amax。<br>即单节点双路8核？</p>
+<pre><code> @amax:~/HPL$mpirun -np 16 ./cpi
+ Process 5 of 16 is on amax
+ Process 7 of 16 is on amax
+ Process 8 of 16 is on amax
+ Process 9 of 16 is on amax
+ Process 10 of 16 is on amax
+ Process 12 of 16 is on amax
+ Process 14 of 16 is on amax
+ Process 0 of 16 is on amax
+ Process 1 of 16 is on amax
+ Process 2 of 16 is on amax
+ Process 3 of 16 is on amax
+ Process 4 of 16 is on amax
+ Process 11 of 16 is on amax
+ Process 13 of 16 is on amax
+ Process 15 of 16 is on amax
+ Process 6 of 16 is on amax
+ pi is approximately 3.1415926544231274, Error is 0.0000000008333343
+ wall clock time = 0.004565
+ @amax:~/HPL$ mpirun -np 16 -nolocal ./cpi
+ --------------------------------------------------------------------------
+ All nodes which are allocated for this job are already filled.
+ --------------------------------------------------------------------------</code></pre>
+</li>
+<li><p>查看当前进程<br><code>top</code></p>
+<pre><code>top - 15:32:47 up 148 days,  5:36,  6 users,  load average: 107.26, 100.88, 63.62
+ Tasks: 933 total,  17 running, 916 sleeping,   0 stopped,   0 zombie
+ %Cpu(s): 81.9 us, 13.4 sy,  0.0 ni,  4.8 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+ KiB Mem:  26404217+total, 17041590+used, 93626272 free,  3731332 buffers
+ KiB Swap:  7999484 total,  1274312 used,  6725172 free. 88929968 cached Mem
+
+   PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND                                               P
+  5173 riolu     20   0 5448340 2.788g   8492 R 429.5  1.1  24:00.06 xhpl                                                 30 1
+  5033 riolu     20   0 5450740 2.788g   8404 R 428.5  1.1  23:58.68 xhpl                                                 13 1</code></pre>
+</li>
+</ol>
+<p><code>1</code>： 查看各逻辑cpu情况。<br><code>F</code>-<code>方向键选择P=Last Used Cpu</code>-<code>空格</code>：显示进程在哪个CPU上运行。<br><code>q</code>： 退出。<br>参考：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/mengchunchen/p/9669704.html">Linux查看CPU和内存使用情况</a></p>
+
+  </article>
+
+  
+    
+  <div class="nexmoe-post-copyright">
+    <strong>本文作者：</strong>Ning Chenhui<br>
+    <strong>本文链接：</strong><a href="https://ningchenhui.github.io/2020/12/05/hpc1205/" title="https:&#x2F;&#x2F;ningchenhui.github.io&#x2F;2020&#x2F;12&#x2F;05&#x2F;hpc1205&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;ningchenhui.github.io&#x2F;2020&#x2F;12&#x2F;05&#x2F;hpc1205&#x2F;</a><br>
+    
+      <strong>版权声明：</strong>未经作者授权禁止转载
+    
+  </div>
+
+
+
+<center>
+<font color="#FF4E6A">~</font><font color="#FF6355">本</font><font color="#FF784D">页</font><font color="#FF8D4D">已</font><font color="#FF924D">被</font><font color="#FF924D">访</font><font color="#FF924D">问</font><font color="#FF924D"> <span id="busuanzi_value_page_pv"></span> </font><font color="#FF924D">次</font><font color="#FF924D">了</font><font color="#FF924D">哦</font><font color="#FF924D">~</font>
+ <br> </br>
+</center>
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow">
+    
+        <a class="nexmoefont icon-appstore-fill -link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
+    
+    
+        <a class="nexmoefont icon-tag-fill -none-link" href="/tags/Linux/" rel="tag">Linux</a>
+    
+</div>
+
+  <div class="nexmoe-post-footer">
+    <section class="nexmoe-comment">
+    <!-- Unpkg -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/disqusjs@1.2.5/dist/disqusjs.min.css">
+<script src="https://cdn.jsdelivr.net/npm/disqusjs@1.2.5/dist/disqus.min.js"></script>
+<div id="disqus_thread"></div>
+<script>
+var dsqjs = new DisqusJS({
+    shortname: 'ningchenhui-github-io',
+    siteName: 'ningchenhui.github.io',
+    identifier: 'https://ningchenhui.github.io/2020/12/05/hpc1205/',
+    url: 'https://ningchenhui.github.io/2020/12/05/hpc1205/',
+    title: '高性能计算#03 HPCG搭建',
+    api: 'https://disqus.skk.moe/disqus/',
+    apikey: 'e6evOgi4KaQOW9DrrU1gkzYWj6dsm3Pl5ZMMS8kUw46BtSz8Ze355Igzqu11XhhI',
+    admin: 'disqus_7i3NGTLGyS',
+    adminLabel: ''
+});
+</script>
+</section>
+  </div>
+</div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/combine/npm/lazysizes@5.1.0/lazysizes.min.js,gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js,npm/mdui@0.4.3/dist/js/mdui.min.js?v=1"></script>
+<script >hljs.initHighlightingOnLoad();</script>
+
+
+    <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
+
+
+<script src="/js/app.js?v=1607337592198"></script>
+
+
+  
+
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
+
+
+
+</html>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+<script src="/live2d-widget/autoload.js"></script>
+
