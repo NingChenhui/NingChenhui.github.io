@@ -31,11 +31,11 @@
 <meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://ningchenhui.github.io/2020/11/11/linux1111/linux.jpg">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/nexmoe/nexmoe.github.io@latest/lib/mdui_043tiny/css/mdui.css,gh/nexmoe/nexmoe.github.io@latest/lib/iconfont/iconfont.css?v=233" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/theme-nexmoe/hexo-theme-nexmoe@latest/source/lib/mdui_043tiny/css/mdui.css,gh/theme-nexmoe/hexo-theme-nexmoe@latest/source/lib/iconfont/iconfont.css,gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css?v=233" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css">
   
-  <link rel="stylesheet" href="/css/style.css?v=1615885970109">
+  <link rel="stylesheet" href="/css/style.css?v=1615892362579">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
-
 <meta name="generator" content="Hexo 5.2.0"></head>
 
 <body class="mdui-drawer-body-left">
@@ -72,7 +72,7 @@
             </div>
         </a>
         
-        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/archives" title="归档">
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/archives.html" title="归档">
             <i class="mdui-list-item-icon nexmoefont icon-container"></i>
             <div class="mdui-list-item-content">
                 归档
@@ -132,14 +132,6 @@
   </div>
 
 
-<style>
-.nexmoe-widget .archive-list-count{
-	position : absolute;
-	right: 15px;
-	top:9px;
-	color: #DDD;
-}
-</style>
 
   
   
@@ -193,13 +185,14 @@
 </aside>
 
 <center>
-<font color="#FF4E6A">您</font><font color="#FF6751">是</font><font color="#FF804D">本</font><font color="#FF924D">站</font><font color="#FF924D">第</font><font color="#FF924D"> <span id="busuanzi_value_site_uv"></span> </font><font color="#FF924D">个</font><font color="#FF924D">小</font><font color="#FF924D">伙</font><font color="#FF924D">伴</font>
- <br> </br>
-</center>
+  <font color="#FF4E6A">您</font><font color="#FF6751">是</font><font color="#FF804D">本</font><font color="#FF924D">站</font><font color="#FF924D">第</font><font color="#FF924D"> <span id="busuanzi_value_site_uv"></span> </font><font color="#FF924D">个</font><font color="#FF924D">小</font><font color="#FF924D">伙</font><font color="#FF924D">伴</font>
+   <br> </br>
+  </center>
     <div class="nexmoe-copyright">
         &copy; 2021 Ning Chenhui
         Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
         & <a href="https://github.com/theme-nexmoe/hexo-theme-nexmoe" target="_blank">Nexmoe</a>
+        
     </div>
 </div><!-- .nexmoe-drawer -->
   </div>
@@ -212,27 +205,23 @@
           <h1>Linux学习 笔记#01</h1>
       </div>
   
-   
-
   
   <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
-	
-
-
     <a><i class="nexmoefont icon-calendar-fill"></i>2020年11月11日</a>
     <a><i class="nexmoefont icon-areachart"></i>998 字</a>
     <a><i class="nexmoefont icon-time-circle-fill"></i>大概 4 分钟</a>
+    
 </div>
 
-   
-
   <div class="nexmoe-post-right">
-
     
       <div class="nexmoe-fixed">
         <div class="nexmoe-valign">
             <div class="nexmoe-toc">
-                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85"><span class="toc-number">1.</span> <span class="toc-text">安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE"><span class="toc-number">1.1.</span> <span class="toc-text">配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9D%91%E4%B8%80"><span class="toc-number">1.2.</span> <span class="toc-text">坑一</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9D%91%E4%BA%8C"><span class="toc-number">1.3.</span> <span class="toc-text">坑二</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9D%91%E4%B8%89"><span class="toc-number">1.4.</span> <span class="toc-text">坑三</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9D%91%E5%9B%9B"><span class="toc-number">1.5.</span> <span class="toc-text">坑四</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AD%A6%E4%B8%80"><span class="toc-number">1.6.</span> <span class="toc-text">警一</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%80%E7%BB%88"><span class="toc-number">1.7.</span> <span class="toc-text">最终</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Ch3-%E6%89%8B%E5%8A%A8%E5%AE%89%E8%A3%85"><span class="toc-number">2.</span> <span class="toc-text">Ch3 手动安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%8A%E6%97%A5%E8%B6%A3%E4%BA%8B"><span class="toc-number">3.</span> <span class="toc-text">今日趣事</span></a></li></ol>
+                
+                
+                  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85"><span class="toc-number">1.</span> <span class="toc-text">安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE"><span class="toc-number">1.1.</span> <span class="toc-text">配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9D%91%E4%B8%80"><span class="toc-number">1.2.</span> <span class="toc-text">坑一</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9D%91%E4%BA%8C"><span class="toc-number">1.3.</span> <span class="toc-text">坑二</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9D%91%E4%B8%89"><span class="toc-number">1.4.</span> <span class="toc-text">坑三</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9D%91%E5%9B%9B"><span class="toc-number">1.5.</span> <span class="toc-text">坑四</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AD%A6%E4%B8%80"><span class="toc-number">1.6.</span> <span class="toc-text">警一</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%80%E7%BB%88"><span class="toc-number">1.7.</span> <span class="toc-text">最终</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Ch3-%E6%89%8B%E5%8A%A8%E5%AE%89%E8%A3%85"><span class="toc-number">2.</span> <span class="toc-text">Ch3 手动安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%8A%E6%97%A5%E8%B6%A3%E4%BA%8B"><span class="toc-number">3.</span> <span class="toc-text">今日趣事</span></a></li></ol>
+                
             </div>
         </div>
       </div>
@@ -289,9 +278,9 @@
 
 
 <center>
-<font color="#FF4E6A">~</font><font color="#FF6355">本</font><font color="#FF784D">页</font><font color="#FF8D4D">已</font><font color="#FF924D">被</font><font color="#FF924D">访</font><font color="#FF924D">问</font><font color="#FF924D"> <span id="busuanzi_value_page_pv"></span> </font><font color="#FF924D">次</font><font color="#FF924D">了</font><font color="#FF924D">哦</font><font color="#FF924D">~</font>
- <br> </br>
-</center>
+  <font color="#FF4E6A">~</font><font color="#FF6355">本</font><font color="#FF784D">页</font><font color="#FF8D4D">已</font><font color="#FF924D">被</font><font color="#FF924D">访</font><font color="#FF924D">问</font><font color="#FF924D"> <span id="busuanzi_value_page_pv"></span> </font><font color="#FF924D">次</font><font color="#FF924D">了</font><font color="#FF924D">哦</font><font color="#FF924D">~</font>
+   <br> </br>
+  </center>
   
   
   <div class="nexmoe-post-meta nexmoe-rainbow">
@@ -325,17 +314,36 @@ var dsqjs = new DisqusJS({
 </section>
   </div>
 </div>
+        <div class="nexmoe-post-right">
+          <div class="nexmoe-fixed">
+            <div class="nexmoe-tool">
+              <a href="#nexmoe-content" class="toc-link" aria-label="回到顶部" title="top"><button class="mdui-fab mdui-ripple"><i class="nexmoefont icon-caret-top"></i></button></a>
+            </div>
+          </div>
+        </div>
     </div>
   </div>
   <script src="https://cdn.jsdelivr.net/combine/npm/lazysizes@5.1.0/lazysizes.min.js,gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js,npm/mdui@0.4.3/dist/js/mdui.min.js?v=1"></script>
-<script >hljs.initHighlightingOnLoad();</script>
+<script>
+	hljs.initHighlightingOnLoad();
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
 
 
-    <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
+ 
 
+<script src="/js/app.js?v=1615892362582"></script>
 
-<script src="/js/app.js?v=1615885970112"></script>
-
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js"></script>
+<script>
+	$(".justified-gallery").justifiedGallery({
+		rowHeight: 160,
+		margins: 10,
+	});
+</script>
 
   
 
@@ -360,12 +368,7 @@ var dsqjs = new DisqusJS({
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </body>
 
-
-
 </html>
-
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>
-
 <script src="/live2d-widget/autoload.js"></script>
-
