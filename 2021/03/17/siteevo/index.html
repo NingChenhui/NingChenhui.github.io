@@ -15,19 +15,19 @@
   <meta name="description" content="记录一下网站的进化史~">
 <meta property="og:type" content="article">
 <meta property="og:title" content="建站历程">
-<meta property="og:url" content="https://ningchenhui.github.io/2021/03/16/siteevo/index.html">
+<meta property="og:url" content="https://ningchenhui.github.io/2021/03/17/siteevo/index.html">
 <meta property="og:site_name" content="一切都会好起来的哟">
 <meta property="og:description" content="记录一下网站的进化史~">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-03-16T15:23:32.000Z">
-<meta property="article:modified_time" content="2021-03-16T15:23:36.613Z">
+<meta property="article:published_time" content="2021-03-16T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-03-16T15:55:06.035Z">
 <meta property="article:author" content="Ning Chenhui">
 <meta property="article:tag" content="建站">
 <meta name="twitter:card" content="summary">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/theme-nexmoe/hexo-theme-nexmoe@latest/source/lib/mdui_043tiny/css/mdui.css,gh/theme-nexmoe/hexo-theme-nexmoe@latest/source/lib/iconfont/iconfont.css,gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css?v=233" crossorigin>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css">
   
-  <link rel="stylesheet" href="/css/style.css?v=1615908242941">
+  <link rel="stylesheet" href="/css/style.css?v=1615910118744">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
   <script src="/live2d-widget/autoload.js"></script>
 <meta name="generator" content="Hexo 5.2.0"></head>
@@ -41,7 +41,7 @@
         <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
         <div class="mdui-toolbar-spacer"></div>
         <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
-        <a href="/" title="Ning Chenhui" class="mdui-btn mdui-btn-icon"><img src="https://avatars0.githubusercontent.com/u/11815134?s=460&amp;v=4" alt="Ning Chenhui"></a>
+        <a href="/" title="Ning Chenhui" class="mdui-btn mdui-btn-icon"><img src="/pictures/me.jpg" alt="Ning Chenhui"></a>
        </div>
     </div>
   </div>
@@ -49,7 +49,7 @@
       <div class="nexmoe-drawer mdui-drawer" id="drawer">
     <div class="nexmoe-avatar mdui-ripple">
         <a href="/" title="Ning Chenhui">
-            <img src="https://avatars0.githubusercontent.com/u/11815134?s=460&amp;v=4" alt="Ning Chenhui" alt="Ning Chenhui">
+            <img src="/pictures/me.jpg" alt="Ning Chenhui" alt="Ning Chenhui">
         </a>
     </div>
     <div class="nexmoe-count">
@@ -205,9 +205,9 @@
   
   
   <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
-    <a><i class="nexmoefont icon-calendar-fill"></i>2021年03月16日</a>
+    <a><i class="nexmoefont icon-calendar-fill"></i>2021年03月17日</a>
     <a><i class="nexmoefont icon-areachart"></i>1.1k 字</a>
-    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 4 分钟</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 5 分钟</a>
     
 </div>
 
@@ -232,7 +232,8 @@
 
 <h2 id="2021年"><a href="#2021年" class="headerlink" title="2021年"></a>2021年</h2><h3 id="3月16日"><a href="#3月16日" class="headerlink" title="3月16日"></a>3月16日</h3><ul>
 <li>更新nexmoe主题，添加<a target="_blank" rel="noopener" href="https://docs.nexmoe.com/hexo-nexmoe/use#gui-dang-ye-mian">归档</a>。更新后需重新恢复计数器、看板娘、置顶标签。<del>其实是发现样式崩了才爬过去更新</del></li>
-<li>更换网站标签图标，添加联系方式组件。</li>
+<li>更换网站标签图标和个人头像，添加联系方式组件（在主题的配置文件中修改）。</li>
+<li>删除回到顶部按钮：注释<code>\layout\layout.ejs</code>里含有<code>回到顶部</code>的一行。（因为挡住咱的看板娘了！人又菜不懂怎么改位置</li>
 <li>取消复制文本时追加的著作权信息，作为小白找的好苦…… 删除<code>\nexmoe\layout\_partial\after-footer.ejs</code>里的<pre><code>  &lt;% if (theme.cdn.copy) &#123; %&gt;
   &lt;script src=&quot;&lt;%- theme.cdn.copy %&gt;&quot;&gt;&lt;/script&gt;
   &lt;% &#125; %&gt; </code></pre>
@@ -258,7 +259,7 @@
 </ul>
 <h3 id="10月4日"><a href="#10月4日" class="headerlink" title="10月4日"></a>10月4日</h3><ul>
 <li>网站主页：目前是仿着11岁时的网站搭的页面~ 使用了主题里的<a target="_blank" rel="noopener" href="https://docs.nexmoe.com/hexo-nexmoe/use">py模板</a>。</li>
-<li>置顶文章：参考<a target="_blank" rel="noopener" href="https://blog.csdn.net/qwerty200696/article/details/79010629">hexo博客优化之文章置顶+置顶标签</a>。不过这篇是next主题的，Nexmoe需要在<code>\\layout\\_partial\\_post\\meta.ejs</code>里的<code>&lt;div class=&quot;nexmoe-post-meta nexmoe-rainbow&quot;&gt;</code> 和 <code>\\layout\\index.ejs</code>里的<code>&lt;div class=&quot;nexmoe-post-meta nexmoe-rainbow&quot;&gt;</code>中插入<pre><code>  &lt;% if (page.top)&#123; %&gt;
+<li>置顶文章：参考<a target="_blank" rel="noopener" href="https://blog.csdn.net/qwerty200696/article/details/79010629">hexo博客优化之文章置顶+置顶标签</a>。不过这篇是next主题的，Nexmoe需要在<code>\layout\_partial\_post\meta.ejs</code>里的<code>&lt;div class=&quot;nexmoe-post-meta nexmoe-rainbow&quot;&gt;</code> 和 <code>\layout\index.ejs</code>里的<code>&lt;div class=&quot;nexmoe-post-meta nexmoe-rainbow&quot;&gt;</code>中插入<pre><code>  &lt;% if (page.top)&#123; %&gt;
      &lt;a&gt; &lt;i class=&quot;nexmoefont icon-right&quot;&gt;&lt;/i&gt;
       置顶&lt;/a&gt;
   &lt;% &#125; %&gt;</code></pre>
@@ -306,7 +307,7 @@
     
   <div class="nexmoe-post-copyright">
     <strong>本文作者：</strong>Ning Chenhui<br>
-    <strong>本文链接：</strong><a href="https://ningchenhui.github.io/2021/03/16/siteevo/" title="https:&#x2F;&#x2F;ningchenhui.github.io&#x2F;2021&#x2F;03&#x2F;16&#x2F;siteevo&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;ningchenhui.github.io&#x2F;2021&#x2F;03&#x2F;16&#x2F;siteevo&#x2F;</a><br>
+    <strong>本文链接：</strong><a href="https://ningchenhui.github.io/2021/03/17/siteevo/" title="https:&#x2F;&#x2F;ningchenhui.github.io&#x2F;2021&#x2F;03&#x2F;17&#x2F;siteevo&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;ningchenhui.github.io&#x2F;2021&#x2F;03&#x2F;17&#x2F;siteevo&#x2F;</a><br>
     
       <strong>版权声明：</strong>未经作者授权禁止转载
     
@@ -339,8 +340,8 @@
 var dsqjs = new DisqusJS({
     shortname: 'ningchenhui-github-io',
     siteName: 'ningchenhui.github.io',
-    identifier: 'https://ningchenhui.github.io/2021/03/16/siteevo/',
-    url: 'https://ningchenhui.github.io/2021/03/16/siteevo/',
+    identifier: 'https://ningchenhui.github.io/2021/03/17/siteevo/',
+    url: 'https://ningchenhui.github.io/2021/03/17/siteevo/',
     title: '建站历程',
     api: 'https://disqus.skk.moe/disqus/',
     apikey: 'e6evOgi4KaQOW9DrrU1gkzYWj6dsm3Pl5ZMMS8kUw46BtSz8Ze355Igzqu11XhhI',
@@ -372,7 +373,7 @@ var dsqjs = new DisqusJS({
 
 
 
-<script src="/js/app.js?v=1615908242944"></script>
+<script src="/js/app.js?v=1615910118747"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js"></script>
 <script>
