@@ -94,7 +94,7 @@ function loadWidget(config) {
 			showMessage("哈哈，你打开了控制台，是想要看看我的小秘密吗？", 6000, 9);
 		};
 		window.addEventListener("copy", () => {
-			showMessage("你都复制了些什么呀，转载要记得加上出处哦！", 6000, 9);
+			showMessage("你都复制了些什么呀，转载要记得询问小灰哦！", 6000, 9);
 		});
 		window.addEventListener("visibilitychange", () => {
 			if (!document.hidden) showMessage("哇，你终于回来了～", 6000, 9);
