@@ -4,7 +4,7 @@
 
 <head>
   
-  <title>物理海洋学基础 笔记#02 - 一切都会好起来的哟</title>
+  <title>安装NCL - 一切都会好起来的哟</title>
   <meta charset="UTF-8">
   <meta name="description" content="Ning Chenhui">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
@@ -12,24 +12,25 @@
   
 
   <link rel="shortcut icon" href="/pictures/icon.jpg" type="image/png" />
-  <meta name="description" content="海水部分性质与海洋通量。">
+  <meta name="description" content="NCAR command language (NCL)">
 <meta property="og:type" content="article">
-<meta property="og:title" content="物理海洋学基础 笔记#02">
-<meta property="og:url" content="https://ningchenhui.github.io/2020/11/20/ocean1120/index.html">
+<meta property="og:title" content="安装NCL">
+<meta property="og:url" content="https://ningchenhui.github.io/2021/03/19/model02/index.html">
 <meta property="og:site_name" content="一切都会好起来的哟">
-<meta property="og:description" content="海水部分性质与海洋通量。">
+<meta property="og:description" content="NCAR command language (NCL)">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://ningchenhui.github.io/2020/11/20/ocean1120/1.png">
-<meta property="article:published_time" content="2020-11-20T06:32:21.000Z">
-<meta property="article:modified_time" content="2020-12-22T15:10:10.796Z">
+<meta property="og:image" content="https://ningchenhui.github.io/2021/03/19/model02/1.png">
+<meta property="og:image" content="https://ningchenhui.github.io/2021/03/19/model02/2.png">
+<meta property="article:published_time" content="2021-03-19T06:52:20.000Z">
+<meta property="article:modified_time" content="2021-03-19T06:52:21.392Z">
 <meta property="article:author" content="Ning Chenhui">
 <meta property="article:tag" content="地球科学">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://ningchenhui.github.io/2020/11/20/ocean1120/1.png">
+<meta name="twitter:image" content="https://ningchenhui.github.io/2021/03/19/model02/1.png">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/theme-nexmoe/hexo-theme-nexmoe@latest/source/lib/mdui_043tiny/css/mdui.css,gh/theme-nexmoe/hexo-theme-nexmoe@latest/source/lib/iconfont/iconfont.css,gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css?v=233" crossorigin>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css">
   
-  <link rel="stylesheet" href="/css/style.css?v=1616136753380">
+  <link rel="stylesheet" href="/css/style.css?v=1616136752837">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
   <script src="/live2d-widget/autoload.js"></script>
 <meta name="generator" content="Hexo 5.2.0"></head>
@@ -200,16 +201,16 @@
     <div class="nexmoe-primary">
         <div class="nexmoe-post">
   
-      <div class="nexmoe-post-cover" style="padding-bottom: 55.53235908141963%;"> 
-          <img data-src="/pictures/ESS/ocean.png" data-sizes="auto" alt="物理海洋学基础 笔记#02" class="lazyload">
-          <h1>物理海洋学基础 笔记#02</h1>
+      <div class="nexmoe-post-cover" style="padding-bottom: 33.72859025032938%;"> 
+          <img data-src="/pictures/ESS/ncl.png" data-sizes="auto" alt="安装NCL" class="lazyload">
+          <h1>安装NCL</h1>
       </div>
   
   
   <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
-    <a><i class="nexmoefont icon-calendar-fill"></i>2020年11月20日</a>
-    <a><i class="nexmoefont icon-areachart"></i>819 字</a>
-    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 3 分钟</a>
+    <a><i class="nexmoefont icon-calendar-fill"></i>2021年03月19日</a>
+    <a><i class="nexmoefont icon-areachart"></i>524 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 2 分钟</a>
     
 </div>
 
@@ -220,7 +221,7 @@
             <div class="nexmoe-toc">
                 
                 
-                  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0%EF%BC%9A%E6%B5%B7%E6%B0%B4%E6%80%A7%E8%B4%A8"><span class="toc-number">1.</span> <span class="toc-text">第二章：海水性质</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%90%E5%BA%A6"><span class="toc-number">1.1.</span> <span class="toc-text">盐度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%86%E5%BA%A6"><span class="toc-number">1.2.</span> <span class="toc-text">密度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%B9%E5%BE%81%E5%88%86%E5%B8%83"><span class="toc-number">1.3.</span> <span class="toc-text">特征分布</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E7%AB%A0%EF%BC%9A%E6%B5%B7%E6%B4%8B%E9%80%9A%E9%87%8F"><span class="toc-number">2.</span> <span class="toc-text">第三章：海洋通量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B4%A8%E9%87%8F%E9%80%9A%E9%87%8F"><span class="toc-number">2.1.</span> <span class="toc-text">质量通量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%90%E5%BA%A6%E9%80%9A%E9%87%8F"><span class="toc-number">2.2.</span> <span class="toc-text">盐度通量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%93%E7%A7%AF%E9%80%9A%E9%87%8F"><span class="toc-number">2.3.</span> <span class="toc-text">体积通量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%83%AD%E9%80%9A%E9%87%8F"><span class="toc-number">2.4.</span> <span class="toc-text">热通量</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9F%AD%E6%B3%A2%E8%BE%90%E5%B0%84-Qs"><span class="toc-number">2.4.1.</span> <span class="toc-text">短波辐射 Qs</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%95%BF%E6%B3%A2%E8%BE%90%E5%B0%84-Qb"><span class="toc-number">2.4.2.</span> <span class="toc-text">长波辐射 Qb</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%84%9F%E7%83%AD%E9%80%9A%E9%87%8F-Qh"><span class="toc-number">2.4.3.</span> <span class="toc-text">感热通量 Qh</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%BD%9C%E7%83%AD%E9%80%9A%E9%87%8F-Qe"><span class="toc-number">2.4.4.</span> <span class="toc-text">潜热通量 Qe</span></a></li></ol></li></ol></li></ol>
+                  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E"><span class="toc-number">1.</span> <span class="toc-text">关于</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E7%BD%91%E7%AB%99"><span class="toc-number">2.</span> <span class="toc-text">参考网站</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85"><span class="toc-number">3.</span> <span class="toc-text">安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83"><span class="toc-number">4.</span> <span class="toc-text">配置环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%86%E5%A4%87%E5%AD%A6%E4%B9%A0"><span class="toc-number">5.</span> <span class="toc-text">准备学习</span></a></li></ol>
                 
             </div>
         </div>
@@ -229,36 +230,35 @@
   </div>
 
   <article>
-    <p>海水部分性质与海洋通量。</p>
+    <p>NCAR command language (NCL)</p>
 <a id="more"></a>
 
-<h2 id="第二章：海水性质"><a href="#第二章：海水性质" class="headerlink" title="第二章：海水性质"></a>第二章：海水性质</h2><p>回顾：<a href="/2020/10/23/es1023/#%E6%B8%A9%E5%BA%A6%E3%80%81%E5%AF%86%E5%BA%A6%E9%9A%8F%E6%B7%B1%E5%BA%A6%E7%9A%84%E5%8F%98%E5%8C%96">地球科学导论中的概念</a></p>
-<h3 id="盐度"><a href="#盐度" class="headerlink" title="盐度"></a>盐度</h3><p>溶解在水中的固体物质的总量。平均盐度为3.5%。</p>
-<h3 id="密度"><a href="#密度" class="headerlink" title="密度"></a>密度</h3><p>依赖于温度，盐度，压力。非线性关系需用“经验状态方程”。<br>物以类聚，水以团分。较冷的水可压缩性强一些。<br>Cabbel混合：不同特定温盐的水混合在一起密度变大，体积变小。<br>中性面提出是为了消除压力对密度的影响。</p>
-<h3 id="特征分布"><a href="#特征分布" class="headerlink" title="特征分布"></a>特征分布</h3><p>海温的复杂特征是由海洋环流和大气强迫的空间变化形成的。<br>上层海洋温度分布、温跃层等概念，</p>
-<p>盐度分布为双叶结构，亚热带盐度最高，热带和亚极地盐度最低。<br>开阔大洋中盐度的年变化一般小于千分之0.5。<br>大西洋具有明显的盐度结构，太平洋深水的盐度比较均匀。</p>
-<p>深海海水的密度比海洋表面的密度大5%。</p>
-<h2 id="第三章：海洋通量"><a href="#第三章：海洋通量" class="headerlink" title="第三章：海洋通量"></a>第三章：海洋通量</h2><p>通量：单位时间内流经某单位面的某属性量，表示的是某属性量输运强度的物理量。</p>
-<img style="display: inline-block; width: 80%; max-width: 80%; height: auto;" src="1.png" />
+<h2 id="关于"><a href="#关于" class="headerlink" title="关于"></a>关于</h2><p>NCAR命令语言（NCL）是美国国家大气研究中心（NCAR）计算与信息系统实验室的产品，是一种专门为科学数据处理和可视化设计的解释语言。学习使用NCL主要是为了处理NetCDF格式。</p>
+<h2 id="参考网站"><a href="#参考网站" class="headerlink" title="参考网站"></a>参考网站</h2><ul>
+<li><a target="_blank" rel="noopener" href="http://www.ncl.ucar.edu/">官网</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.ncl.ucar.edu/get_started.shtml">安装指导</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.ncl.ucar.edu/Document/Manuals/NCL_User_Guide/">用户指导手册</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.ncl.ucar.edu/Document/Manuals/NCL_User_Guide/Data/">手册的数据文件</a></li>
+</ul>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>NCL 适用于 MacOS，Linux 和运行 Windows 10 Linux 子系统的 Windows 系统。换新笔记本后我安装了 WSL，所以这里在 WSL 中安装。<br>首先要安装 conda，这里按提示安装了 miniconda。（难怪我在超算的<code>.bashrc</code>里只看到了 miniconda，没找到 NCL，但找到了 NCO……<br>然后按照建议在 conda 环境下安装 NCL，新环境为 ncl_stable。</p>
+<pre><code>conda create -n ncl_stable -c conda-forge ncl</code></pre>
+<p>每次进入该环境，执行</p>
+<pre><code>source activate ncl_stable</code></pre>
+<p>要显示图形化界面，首先启动 Xming 开启 X11 转接…… 然后执行下面的命令检测</p>
+<pre><code>ncl -V
+ncl $NCARG_ROOT/lib/ncarg/nclex/gsun/gsun02n.ncl
+ncl $NCARG_ROOT/lib/ncarg/nclex/nug/NUG_multi_timeseries.ncl</code></pre>
+<p>就可以看到很漂亮的图啦！</p>
+<p>于是又登上超算找<code>conda</code>，结果不能直接用。在<code>.conda</code>文件夹里有个<code>environment.txt</code>里明明看到了有<code>anaconda</code>和 ncl_stable 环境。翻bashrc发现有句</p>
+<pre><code>alias wanwb=&#39;source /home/export/online3/cesm06/wanwb/.bashrc&#39;</code></pre>
+<p>果断执行<code>wanwb</code>，可以用 conda 了！可以用 ncl！<br><img style="display: inline-block; width: 70%; max-width: 70%; height: auto;" src="1.png" /></p>
+<p>回到 WSL，执行<code>ng4ex gsun01n</code>提示 /bin/csh: bad interpreter: No such file or directory 查一下需要安装 C-shell。再次执行，可以看到一些折线图，且工作路径下多了一个<code>gsun01n.ncl</code>文件。</p>
+<h2 id="配置环境"><a href="#配置环境" class="headerlink" title="配置环境"></a>配置环境</h2><p>由于使用了 ncl_stable 环境，就不用再设置变量<code>NCARG_ROOT</code>和路径<code>$NCARG_ROOT/bin</code>了。<br>在家目录下放置<code>.hluresfile</code>文件来个性化设置 NCL 图形环境。<br>关于代码编辑的高亮，我用了 vscode 连接 WSL，打开 ncl 文件后安装 NCL 扩展即可。不得不说这真的好用。</p>
+<h2 id="准备学习"><a href="#准备学习" class="headerlink" title="准备学习"></a>准备学习</h2><p>把手册下载下来进行学习！有些大的数据文件在官网上，参考中已经列出来了。</p>
+<img style="display: inline-block; width: 70%; max-width: 70%; height: auto;" src="2.png" />
 
-<h3 id="质量通量"><a href="#质量通量" class="headerlink" title="质量通量"></a>质量通量</h3><p>$M=\rho\times v\times a(sec/kg)$<br>质量=密度x速度x面积。</p>
-<h3 id="盐度通量"><a href="#盐度通量" class="headerlink" title="盐度通量"></a>盐度通量</h3><p>盐量守恒原理：海洋中溶解盐的总质量是恒定的（近乎）。</p>
-<p>$V_i\cdot \rho_i\cdot S_i=V_o \cdot \rho_o \cdot S_o$<br>S是盐度。密度变化不大，可以略掉。</p>
-<p>记$F=R+P-E$为淡水输入量，则结合体积守恒和盐度守恒得</p>
-<p>$F=V_i\cdot(S_i/S_o-1)$或$F=V_o\cdot(1-S_o/S_i)$</p>
-<h3 id="体积通量"><a href="#体积通量" class="headerlink" title="体积通量"></a>体积通量</h3><p>每秒通过的体积，单位Sv = Sverdrup，$1 Sv = 10^6 m^3/s$。</p>
-<h3 id="热通量"><a href="#热通量" class="headerlink" title="热通量"></a>热通量</h3><p>$Q_t=Q_s+Q_b+Q_h+Q_e+Q_v$<br>热收支=短波辐射+长波辐射+感热通量+潜热通量+？</p>
-<h4 id="短波辐射-Qs"><a href="#短波辐射-Qs" class="headerlink" title="短波辐射 Qs"></a>短波辐射 Qs</h4><ol>
-<li>角度越小反射越大，吸收越小</li>
-<li>云，冰雪反射</li>
-<li>吸收度（比热，温度，热能）与海水性质（叶绿素浓度）</li>
-</ol>
-<h4 id="长波辐射-Qb"><a href="#长波辐射-Qb" class="headerlink" title="长波辐射 Qb"></a>长波辐射 Qb</h4><p>海中能量的净损失，海面向外辐射与接受大气辐射（与绝对温度的四次方成正比）</p>
-<h4 id="感热通量-Qh"><a href="#感热通量-Qh" class="headerlink" title="感热通量 Qh"></a>感热通量 Qh</h4><p>海洋上方空气温度的垂直差（梯度）。</p>
-<h4 id="潜热通量-Qe"><a href="#潜热通量-Qe" class="headerlink" title="潜热通量 Qe"></a>潜热通量 Qe</h4><p>蒸发降雨带来的热量变化，一般是海洋释放热量。</p>
-<p>百科：<br>方程式：Qs-Qc-Qe-Qn±Qw±QA=Qt<br>Qc为海水通过与大气的辐射热交换而失去的热量；<br>Qn为海水通过与大气的接触热交换失去的热量；<br>Qw为该水层与垂直方向上其他水层的涡动热交换；<br>QA为水平方向上的海洋热平流。<br>如方程左边各项之和大于零，Qt为正，表示给定时间内该水层收入的热量较放出的热量为大，海水的热含量增加，水温因而增高。<br>反之，Qt为负，表示热支出大于热收入，海水热含量减少，水温随之降低。<br>因此，Qt是直接体现海洋温度变化的热量要素，可用来说明给定海区的水温变化的过程。</p>
-<hr>
-<p>下一篇：<a href="/2020/12/22/ocean1124/">海洋观测数据，观测方法，基本方程</a><br>上一篇：<a href="/2020/11/10/ocean1110/">走进物理海洋学</a></p>
+
+<p><em>创建日期：2021年3月18日</em></p>
 
   </article>
 
@@ -266,7 +266,7 @@
     
   <div class="nexmoe-post-copyright">
     <strong>本文作者：</strong>Ning Chenhui<br>
-    <strong>本文链接：</strong><a href="https://ningchenhui.github.io/2020/11/20/ocean1120/" title="https:&#x2F;&#x2F;ningchenhui.github.io&#x2F;2020&#x2F;11&#x2F;20&#x2F;ocean1120&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;ningchenhui.github.io&#x2F;2020&#x2F;11&#x2F;20&#x2F;ocean1120&#x2F;</a><br>
+    <strong>本文链接：</strong><a href="https://ningchenhui.github.io/2021/03/19/model02/" title="https:&#x2F;&#x2F;ningchenhui.github.io&#x2F;2021&#x2F;03&#x2F;19&#x2F;model02&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;ningchenhui.github.io&#x2F;2021&#x2F;03&#x2F;19&#x2F;model02&#x2F;</a><br>
     
       <strong>版权声明：</strong>未经作者授权禁止转载
     
@@ -299,9 +299,9 @@
 var dsqjs = new DisqusJS({
     shortname: 'ningchenhui-github-io',
     siteName: 'ningchenhui.github.io',
-    identifier: 'https://ningchenhui.github.io/2020/11/20/ocean1120/',
-    url: 'https://ningchenhui.github.io/2020/11/20/ocean1120/',
-    title: '物理海洋学基础 笔记#02',
+    identifier: 'https://ningchenhui.github.io/2021/03/19/model02/',
+    url: 'https://ningchenhui.github.io/2021/03/19/model02/',
+    title: '安装NCL',
     api: 'https://disqus.skk.moe/disqus/',
     apikey: 'e6evOgi4KaQOW9DrrU1gkzYWj6dsm3Pl5ZMMS8kUw46BtSz8Ze355Igzqu11XhhI',
     admin: 'disqus_7i3NGTLGyS',
@@ -332,7 +332,7 @@ var dsqjs = new DisqusJS({
 
 
 
-<script src="/js/app.js?v=1616136753383"></script>
+<script src="/js/app.js?v=1616136752840"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js"></script>
 <script>
