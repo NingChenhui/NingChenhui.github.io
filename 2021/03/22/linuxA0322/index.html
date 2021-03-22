@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+<head>
+  
+  <title>Linux学习 笔记#05 文件与目录管理 - 一切都会好起来的哟</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="Ning Chenhui">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  
+  
+
+  <link rel="shortcut icon" href="/pictures/icon.jpg" type="image/png" />
+  <meta name="description" content="继续学习。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux学习 笔记#05 文件与目录管理">
+<meta property="og:url" content="https://ningchenhui.github.io/2021/03/22/linuxA0322/index.html">
+<meta property="og:site_name" content="一切都会好起来的哟">
+<meta property="og:description" content="继续学习。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-03-22T07:26:07.000Z">
+<meta property="article:modified_time" content="2021-03-22T14:05:32.481Z">
+<meta property="article:author" content="Ning Chenhui">
+<meta property="article:tag" content="Linux">
+<meta name="twitter:card" content="summary">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/theme-nexmoe/hexo-theme-nexmoe@latest/source/lib/mdui_043tiny/css/mdui.css,gh/theme-nexmoe/hexo-theme-nexmoe@latest/source/lib/iconfont/iconfont.css,gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css?v=233" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css?v=1616422103366">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+  <script src="/live2d-widget/autoload.js"></script>
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body class="mdui-drawer-body-left">
+  
+  <div id="nexmoe-background">
+    <div class="nexmoe-bg" style="background-image: url(/pictures/dream/eve.png)"></div>
+    <div class="mdui-appbar mdui-shadow-0">
+      <div class="mdui-toolbar">
+        <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
+        <div class="mdui-toolbar-spacer"></div>
+        <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+        <a href="/" title="Ning Chenhui" class="mdui-btn mdui-btn-icon"><img src="/pictures/me.jpg" alt="Ning Chenhui"></a>
+       </div>
+    </div>
+  </div>
+  <div id="nexmoe-header">
+      <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="Ning Chenhui">
+            <img src="/pictures/me.jpg" alt="Ning Chenhui" alt="Ning Chenhui">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>文章</span>48</div>
+        <div><span>标签</span>10</div>
+        <div><span>分类</span>4</div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/" title="首页">
+            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/archives.html" title="归档">
+            <i class="mdui-list-item-icon nexmoefont icon-container"></i>
+            <div class="mdui-list-item-content">
+                归档
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/about-welcome.html" title="关于">
+            <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+            <div class="mdui-list-item-content">
+                关于
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/donate.html" title="起飞">
+            <i class="mdui-list-item-icon nexmoefont icon-coffee"></i>
+            <div class="mdui-list-item-content">
+                起飞
+            </div>
+        </a>
+        
+    </div>
+    <aside id="nexmoe-sidebar">
+  
+  <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-search">
+        <form id="search_form" action_e="https://cn.bing.com/search?q=" onsubmit="return search();">
+            <label><input id="search_value" name="q" type="search" placeholder="搜索"></label>
+        </form>
+    </div>
+</div>
+  
+  <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-social">
+        <a class="mdui-ripple" href="/about-welcome.html#%E8%81%94%E7%B3%BB%E6%88%91" target="_blank" mdui-tooltip="{content: 'QQ'}" style="color: rgb(249, 174, 8);background-color: rgba(249, 174, 8, .1);">
+            <i class="nexmoefont icon-QQ"></i>
+        </a><a class="mdui-ripple" href="https://space.bilibili.com/316021638" target="_blank" mdui-tooltip="{content: '哔哩哔哩'}" style="color: rgb(231, 106, 141);background-color: rgba(231, 106, 141, .15);">
+            <i class="nexmoefont icon-bilibili"></i>
+        </a><a class="mdui-ripple" href="https://github.com/NingChenhui" target="_blank" mdui-tooltip="{content: 'GitHub'}" style="color: rgb(25, 23, 23);background-color: rgba(25, 23, 23, .15);">
+            <i class="nexmoefont icon-github"></i>
+        </a><a class="mdui-ripple" href="mailto:sinkihosizuki@gmail.com" target="_blank" mdui-tooltip="{content: '邮箱'}" style="color: rgb(106,90,205);background-color: rgba(230,230,250);">
+            <i class="nexmoefont icon-mail-fill"></i>
+        </a>
+    </div>
+</div>
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <div id="randomtagcloud" class="nexmoe-widget tagcloud nexmoe-rainbow">
+      <a href="/tags/Linux/" style="font-size: 20px;">Linux</a> <a href="/tags/Mirror/" style="font-size: 16px;">Mirror</a> <a href="/tags/%E4%BF%9D%E7%A0%94/" style="font-size: 16px;">保研</a> <a href="/tags/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/" style="font-size: 20px;">地球科学</a> <a href="/tags/%E5%BB%BA%E7%AB%99/" style="font-size: 12px;">建站</a> <a href="/tags/%E6%97%A5%E8%AF%AD/" style="font-size: 10px;">日语</a> <a href="/tags/%E6%B8%B8%E6%88%8F/" style="font-size: 14px;">游戏</a> <a href="/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 18px;">生活</a> <a href="/tags/%E8%AF%BE%E7%A8%8B%E8%B5%84%E6%96%99/" style="font-size: 10px;">课程资料</a> <a href="/tags/%E8%BD%AC%E8%BD%BD/" style="font-size: 10px;">转载</a>
+    </div>
+    
+  </div>
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章归档</h3>
+    <div class="nexmoe-widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a><span class="archive-list-count">37</span></li></ul>
+    </div>
+  </div>
+
+
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章分类</h3>
+    <div class="nexmoe-widget">
+
+      <ul class="category-list">
+
+        
+
+
+        
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/学习/">学习</a>
+          <span class="category-list-count">22</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/小记/">小记</a>
+          <span class="category-list-count">18</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/经验/">经验</a>
+          <span class="category-list-count">6</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/资料/">资料</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+      </ul>
+
+    </div>
+  </div>
+
+
+  
+</aside>
+
+<center>
+  <font color="#FF4E6A">您</font><font color="#FF6751">是</font><font color="#FF804D">本</font><font color="#FF924D">站</font><font color="#FF924D">第</font><font color="#FF924D"> <span id="busuanzi_value_site_uv"></span> </font><font color="#FF924D">个</font><font color="#FF924D">小</font><font color="#FF924D">伙</font><font color="#FF924D">伴</font>
+   <br> </br>
+  </center>
+    <div class="nexmoe-copyright">
+        &copy; 2021 Ning Chenhui
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://github.com/theme-nexmoe/hexo-theme-nexmoe" target="_blank">Nexmoe</a>
+        
+    </div>
+</div><!-- .nexmoe-drawer -->
+  </div>
+  <div id="nexmoe-content">
+    <div class="nexmoe-primary">
+        <div class="nexmoe-post">
+  
+      <div class="nexmoe-post-cover" style="padding-bottom: 36.241610738255034%;"> 
+          <img data-src="/pictures/compute/ubuntu.png" data-sizes="auto" alt="Linux学习 笔记#05 文件与目录管理" class="lazyload">
+          <h1>Linux学习 笔记#05 文件与目录管理</h1>
+      </div>
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
+    <a><i class="nexmoefont icon-calendar-fill"></i>2021年03月22日</a>
+    <a><i class="nexmoefont icon-areachart"></i>1.4k 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 6 分钟</a>
+    
+</div>
+
+  <div class="nexmoe-post-right">
+    
+      <div class="nexmoe-fixed">
+        <div class="nexmoe-valign">
+            <div class="nexmoe-toc">
+                
+                
+                  <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%92%E6%9B%B2%EF%BC%9AWin-10-WSL-%E6%8D%A2%E6%BA%90"><span class="toc-number">1.</span> <span class="toc-text">插曲：Win 10 WSL 换源</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Ch6-Linux-%E6%96%87%E4%BB%B6%E4%B8%8E%E7%9B%AE%E5%BD%95%E7%AE%A1%E7%90%86"><span class="toc-number"></span> <span class="toc-text">Ch6 Linux 文件与目录管理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E5%A4%84%E7%90%86%E7%9B%AE%E5%BD%95%E5%91%BD%E4%BB%A4"><span class="toc-number">1.</span> <span class="toc-text">常见处理目录命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%8D%E5%88%B6%E6%96%87%E4%BB%B6"><span class="toc-number">2.</span> <span class="toc-text">复制文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6"><span class="toc-number">3.</span> <span class="toc-text">删除文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A7%BB%E5%8A%A8%E6%96%87%E4%BB%B6"><span class="toc-number">4.</span> <span class="toc-text">移动文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%96%E5%BE%97%E6%96%87%E4%BB%B6%E5%90%8D%E5%92%8C%E8%B7%AF%E5%BE%84"><span class="toc-number">5.</span> <span class="toc-text">取得文件名和路径</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9"><span class="toc-number">6.</span> <span class="toc-text">查看文件内容</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E6%96%87%E4%BB%B6%E4%B8%8E%E4%BF%AE%E6%94%B9%E6%96%87%E4%BB%B6%E6%97%B6%E9%97%B4"><span class="toc-number">7.</span> <span class="toc-text">创建文件与修改文件时间</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%84%E8%AE%BE%E6%9D%83%E9%99%90%EF%BC%8C%E9%9A%90%E8%97%8F%E5%B1%9E%E6%80%A7%E4%B8%8E%E7%89%B9%E6%AE%8A%E7%9A%84%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90"><span class="toc-number">8.</span> <span class="toc-text">预设权限，隐藏属性与特殊的文件权限</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%82%E5%AF%9F%E6%96%87%E4%BB%B6%E7%B1%BB%E5%9E%8B"><span class="toc-number">9.</span> <span class="toc-text">观察文件类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E6%89%BE%E6%8C%87%E4%BB%A4%E4%B8%8E%E6%96%87%E4%BB%B6"><span class="toc-number">10.</span> <span class="toc-text">查找指令与文件</span></a></li></ol>
+                
+            </div>
+        </div>
+      </div>
+    
+  </div>
+
+  <article>
+    <p>继续学习。 <a id="more"></a><br>装了 VScode 和 WSL Ubuntu 18.04 LTS 继续学习 Linux ！之前的虚拟机就不用了。</p>
+<h3 id="插曲：Win-10-WSL-换源"><a href="#插曲：Win-10-WSL-换源" class="headerlink" title="插曲：Win 10 WSL 换源"></a>插曲：Win 10 WSL 换源</h3><ol>
+<li>备份原始文件，便于出错后恢复<br><code>cp /etc/apt/sources.list /etc/apt/sources.list.bak</code></li>
+<li>修改服务器地址，把<code>/etc/apt/sources.list</code>中的内容改为<pre><code> deb http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse
+ deb http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse
+ deb http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted universe multiverse
+ deb http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiverse
+ deb http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiverse
+ deb-src http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse
+ deb-src http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse
+ deb-src http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted universe multiverse
+ deb-src http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiverse
+ deb-src http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiverse</code></pre>
+</li>
+<li>更新<code>sudo apt update</code></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_34512244/article/details/107516628">参考博客</a></li>
+</ol>
+<h2 id="Ch6-Linux-文件与目录管理"><a href="#Ch6-Linux-文件与目录管理" class="headerlink" title="Ch6 Linux 文件与目录管理"></a>Ch6 Linux 文件与目录管理</h2><h3 id="常见处理目录命令"><a href="#常见处理目录命令" class="headerlink" title="常见处理目录命令"></a>常见处理目录命令</h3><ul>
+<li><code>cd dirname</code> 变换目录，<code>cd == cd ~</code>都是回到家目录，<code>cd -</code>是回到刚才的目录。</li>
+<li><code>pwd</code> 显示当前目录，<code>-P</code>可以显示无链接的实际路径。</li>
+<li><code>mkdir newdir</code> 建立新目录，<code>-p d1/d2/d3</code>建立多层目录，<code>-m 711</code>设定权限。</li>
+<li><code>rmdir olddir</code> 删除目录，<code>-p</code>删除多层空目录。</li>
+<li><code>ls</code> 查看目录文件，一般<code>ll == ls -al</code>为所有文件及信息，<code>-h</code>显示可读文件大小。</li>
+</ul>
+<p>另外，<code>.</code>或<code>./</code>代表当前目录，<code>..</code>是上一层哦。</p>
+<h3 id="复制文件"><a href="#复制文件" class="headerlink" title="复制文件"></a>复制文件</h3><p><code>cp</code> （是 copy 不是 couple</p>
+<ul>
+<li><code>-a</code> == <code>-d</code> + <code>-r</code> + <code>--preserve=all</code> == link 复制链接 + 递归复制 + 保持属性复制</li>
+<li><code>-s</code> 创建快捷方式（符号链接）</li>
+<li><code>-i</code> 询问是否覆盖</li>
+<li><code>-l</code> 硬式链接</li>
+<li><code>-u</code> update，时间更新才复制</li>
+<li><code>-f</code> 强制复制，若目标已存在且无法开启，则移除后再试一次</li>
+<li><code>cp source1 source2 ... dir</code> 多个文件复制，只能复制到目录下</li>
+</ul>
+<h3 id="删除文件"><a href="#删除文件" class="headerlink" title="删除文件"></a>删除文件</h3><p><code>rm</code> remove</p>
+<ul>
+<li><code>-i</code> 询问是否删除，root 默认</li>
+<li><code>-r</code> 递归删除</li>
+<li><code>-f</code> 强制删除，不询问<br>使用通配符<code>*</code>来批量删除，如<code>rm *.txt</code><br>使用<code>\rm</code>来忽略<code>alias</code> 的指定选项。</li>
+</ul>
+<h3 id="移动文件"><a href="#移动文件" class="headerlink" title="移动文件"></a>移动文件</h3><p><code>mv -fiu</code> 与复制的选项一致。也可以多文件一起移动到某个目录下。</p>
+<h3 id="取得文件名和路径"><a href="#取得文件名和路径" class="headerlink" title="取得文件名和路径"></a>取得文件名和路径</h3><p>对于绝对路径，使用<code>basename</code>和<code>dirname</code>分别取得文件名和文件路径。</p>
+<h3 id="查看文件内容"><a href="#查看文件内容" class="headerlink" title="查看文件内容"></a>查看文件内容</h3><ul>
+<li><code>cat</code>  由第一行开始显示文件内容 <code>-n</code>显示行号，<code>-T</code>用^T显示Tab键，<code>-v</code>列出看不见的特殊字符，<code>-E</code>显示结尾的断行字符$，<code>-A</code>==<code>-vET</code></li>
+<li><code>tac</code>  从最后一行倒着显示（还是 cat 的倒着写 </li>
+<li><code>nl</code>   显示的时候输出行号！ </li>
+<li><code>less</code> 与 more 类似，但是比 more 更好的是，他可以往前翻页！ </li>
+<li><code>head</code> 只看头几行 </li>
+<li><code>tail</code> 只看尾巴几行 </li>
+<li><code>od</code>   以二进制的方式读取文件内容</li>
+</ul>
+<h3 id="创建文件与修改文件时间"><a href="#创建文件与修改文件时间" class="headerlink" title="创建文件与修改文件时间"></a>创建文件与修改文件时间</h3><p><code>touch</code> 后接不存在的文件==创建该文件，存在文件则修改 access time 和 modification time 为当前。</p>
+<h3 id="预设权限，隐藏属性与特殊的文件权限"><a href="#预设权限，隐藏属性与特殊的文件权限" class="headerlink" title="预设权限，隐藏属性与特殊的文件权限"></a>预设权限，隐藏属性与特殊的文件权限</h3><p>与umask，chattr，S*ID有关，先略过。</p>
+<h3 id="观察文件类型"><a href="#观察文件类型" class="headerlink" title="观察文件类型"></a>观察文件类型</h3><p><code>file</code> 可以简单的先判断这个文件的格式为何，比如 ASCII text，data等等。</p>
+<h3 id="查找指令与文件"><a href="#查找指令与文件" class="headerlink" title="查找指令与文件"></a>查找指令与文件</h3><p><code>which [-a] command</code> <code>-a</code>显示所有由 PATH 目录中可以找到的指令<br><code>whereis [-bmsu] 文件或目或目录名</code> </p>
+<ul>
+<li><code>-l</code>    :列出 whereis 会去查询的几个主要目录 </li>
+<li><code>-b</code>    :只找 binary 格式的文件 </li>
+<li><code>-m</code>    :只找在说明文件 manual 路径下的文件 </li>
+<li><code>-s</code>    :只找 source 来源文件 </li>
+<li><code>-u</code>    :搜寻不在上述三个项目当中的其他特殊文件</li>
+</ul>
+<p><code>locate [-ir] keyword</code></p>
+<ul>
+<li><code>-i</code>  ：忽略大小写的差异； </li>
+<li><code>-c</code>  ：不输出档名，仅计算找到的文件数量 </li>
+<li><code>-l</code>  ：仅输出几行的意思，例如输出五行则是 <code>-l 5</code></li>
+<li><code>-S</code>  ：输出 locate 所使用的数据库文件的相关信息，包括该数据库纪录的文件/目录数量等 </li>
+<li><code>-r</code>  ：后面可接正规表示法的显示方式</li>
+</ul>
+<p><code>find [PATH] [option] [action]</code></p>
+<ol>
+<li>与时间有关的选项：共有 -atime, -ctime 与 -mtime ，以 -mtime 说明 <ul>
+<li><code>-mtime  n</code> ：n 为数字，意义为在 n 天之前的”一天之内”被更动过内容的文件； </li>
+<li><code>-mtime +n</code> ：列出在 n 天之前(不含 n 天本身)被更动过内容的文件档名； </li>
+<li><code>-mtime -n</code> ：列出在 n 天之内(含 n 天本身)被更动过内容的文件档名。 </li>
+<li><code>-newer file</code> ：file 为一个存在的文件，列出比 file 还要新的文件档名</li>
+</ul>
+</li>
+<li>与使用者或组名有关的参数： <ul>
+<li><code>-uid n</code> ：n 为数字，这个数字是用户的账号 ID，亦即 UID ，这个 UID 是记录在 <code>/etc/passwd</code> 里面与账号名称对应的数字。</li>
+<li><code>-gid n</code> ：n 为数字，这个数字是组名的 ID，亦即 GID，这个 GID 记录在 <code>/etc/group</code> </li>
+<li><code>-user name</code> ：name 为使用者账号名称喔！例如 sinki  ；</li>
+<li><code>-group name</code>：name 为组名喔，例如 users ； </li>
+<li><code>-nouser</code>    ：寻找文件的拥有者不存在 <code>/etc/passwd</code> 的文件。</li>
+<li><code>-nogroup</code>   ：寻找文件的拥有群组不存在于 <code>/etc/group</code> 的文件。当自行安装软件时，很可能该软件的属性当中并没有文件拥有者，在这个时候，就可以使用 <code>-nouser </code>与 <code>-nogroup</code> 搜寻。</li>
+</ul>
+</li>
+<li>其他<ul>
+<li><code>-name filename</code>：搜寻文件名为 filename 的文件，可以使用通配符*；</li>
+<li><code>-size [+-]SIZE</code>：搜寻比 SIZE 还要大(+)或小(-)的文件。这个 SIZE 的规格有： c: 代表 byte， k: 代表 1024bytes。</li>
+<li><code>-type TYPE</code>    ：搜寻文件的类型为 TYPE 的，类型主要有：一般正规文件 (f), 装置文件 (b, c), 目录 (d), 连结档 (l), socket (s), 及 FIFO (p) 等属性。</li>
+<li><code>-exec command</code> ：command 为其他指令，<code>-exec</code> 后面可再接额外的指令来处理搜寻到的结果，比如<code>ls -l</code>，但不能用别名<code>ll</code>。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<p>下一篇：<a href="/2021/03/22/linuxA0322/">-</a><br>上一篇：<a href="/2020/12/24/linux1224/">文件权限与目录配置</a></p>
+
+  </article>
+
+  
+    
+  <div class="nexmoe-post-copyright">
+    <strong>本文作者：</strong>Ning Chenhui<br>
+    <strong>本文链接：</strong><a href="https://ningchenhui.github.io/2021/03/22/linuxA0322/" title="https:&#x2F;&#x2F;ningchenhui.github.io&#x2F;2021&#x2F;03&#x2F;22&#x2F;linuxA0322&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;ningchenhui.github.io&#x2F;2021&#x2F;03&#x2F;22&#x2F;linuxA0322&#x2F;</a><br>
+    
+      <strong>版权声明：</strong>未经作者授权禁止转载
+    
+  </div>
+
+
+
+<center>
+  <font color="#FF4E6A">~</font><font color="#FF6355">本</font><font color="#FF784D">页</font><font color="#FF8D4D">已</font><font color="#FF924D">被</font><font color="#FF924D">访</font><font color="#FF924D">问</font><font color="#FF924D"> <span id="busuanzi_value_page_pv"></span> </font><font color="#FF924D">次</font><font color="#FF924D">了</font><font color="#FF924D">哦</font><font color="#FF924D">~</font>
+   <br> </br>
+  </center>
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow">
+    
+        <a class="nexmoefont icon-appstore-fill -link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
+    
+    
+        <a class="nexmoefont icon-tag-fill -none-link" href="/tags/Linux/" rel="tag">Linux</a>
+    
+</div>
+
+  <div class="nexmoe-post-footer">
+    <section class="nexmoe-comment">
+    <!-- Unpkg -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/disqusjs@1.2.5/dist/disqusjs.min.css">
+<script src="https://cdn.jsdelivr.net/npm/disqusjs@1.2.5/dist/disqus.min.js"></script>
+<div id="disqus_thread"></div>
+<script>
+var dsqjs = new DisqusJS({
+    shortname: 'ningchenhui-github-io',
+    siteName: 'ningchenhui.github.io',
+    identifier: 'https://ningchenhui.github.io/2021/03/22/linuxA0322/',
+    url: 'https://ningchenhui.github.io/2021/03/22/linuxA0322/',
+    title: 'Linux学习 笔记#05 文件与目录管理',
+    api: 'https://disqus.skk.moe/disqus/',
+    apikey: 'e6evOgi4KaQOW9DrrU1gkzYWj6dsm3Pl5ZMMS8kUw46BtSz8Ze355Igzqu11XhhI',
+    admin: 'disqus_7i3NGTLGyS',
+    adminLabel: ''
+});
+</script>
+</section>
+  </div>
+</div>
+        <div class="nexmoe-post-right">
+          <div class="nexmoe-fixed">
+            <div class="nexmoe-tool">
+              <!-- 回到顶部
+              <a href="#nexmoe-content" class="toc-link" aria-label="回到顶部" title="top"><button class="mdui-fab mdui-ripple"><i class="nexmoefont icon-caret-top"></i></button></a>
+              -->
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/combine/npm/lazysizes@5.1.0/lazysizes.min.js,gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js,npm/mdui@0.4.3/dist/js/mdui.min.js?v=1"></script>
+<script>
+	hljs.initHighlightingOnLoad();
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+
+
+<script src="/js/app.js?v=1616422103369"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js"></script>
+<script>
+	$(".justified-gallery").justifiedGallery({
+		rowHeight: 160,
+		margins: 10,
+	});
+</script>
+
+  
+
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
+
+</html>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
