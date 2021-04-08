@@ -4,7 +4,7 @@
 
 <head>
   
-  <title>地球科学导论 笔记#05 - 一切都会好起来的哟</title>
+  <title>粗化网格的变形速率计算 - 一切都会好起来的哟</title>
   <meta charset="UTF-8">
   <meta name="description" content="Ning Chenhui">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
@@ -12,22 +12,25 @@
   
 
   <link rel="shortcut icon" href="/pictures/icon.jpg" type="image/png" />
-  <meta name="description" content="地球科学导论–冰川">
+  <meta name="description" content="应该没推错。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="地球科学导论 笔记#05">
-<meta property="og:url" content="https://ningchenhui.github.io/2020/11/16/es1116/index.html">
+<meta property="og:title" content="粗化网格的变形速率计算">
+<meta property="og:url" content="https://ningchenhui.github.io/2021/04/08/esA0408/index.html">
 <meta property="og:site_name" content="一切都会好起来的哟">
-<meta property="og:description" content="地球科学导论–冰川">
+<meta property="og:description" content="应该没推错。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-11-16T02:08:33.000Z">
-<meta property="article:modified_time" content="2020-11-16T03:02:58.944Z">
+<meta property="og:image" content="https://ningchenhui.github.io/2021/04/08/esA0408/grid.png">
+<meta property="og:image" content="https://ningchenhui.github.io/2021/04/08/esA0408/new.png">
+<meta property="article:published_time" content="2021-04-08T10:12:04.000Z">
+<meta property="article:modified_time" content="2021-04-08T11:48:04.092Z">
 <meta property="article:author" content="Ning Chenhui">
 <meta property="article:tag" content="地球科学">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://ningchenhui.github.io/2021/04/08/esA0408/grid.png">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/theme-nexmoe/hexo-theme-nexmoe@latest/source/lib/mdui_043tiny/css/mdui.css,gh/theme-nexmoe/hexo-theme-nexmoe@latest/source/lib/iconfont/iconfont.css,gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css?v=233" crossorigin>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css">
   
-  <link rel="stylesheet" href="/css/style.css?v=1617882526827">
+  <link rel="stylesheet" href="/css/style.css?v=1617882526774">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
   <script src="/live2d-widget/autoload.js"></script>
 <meta name="generator" content="Hexo 5.2.0"></head>
@@ -198,16 +201,16 @@
     <div class="nexmoe-primary">
         <div class="nexmoe-post">
   
-      <div class="nexmoe-post-cover" style="padding-bottom: 75.23840841828347%;"> 
-          <img data-src="/pictures/ESS/es.jpg" data-sizes="auto" alt="地球科学导论 笔记#05" class="lazyload">
-          <h1>地球科学导论 笔记#05</h1>
+      <div class="nexmoe-post-cover" style="padding-bottom: 50.55555555555556%;"> 
+          <img data-src="/pictures/ESS/strain.png" data-sizes="auto" alt="粗化网格的变形速率计算" class="lazyload">
+          <h1>粗化网格的变形速率计算</h1>
       </div>
   
   
   <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
-    <a><i class="nexmoefont icon-calendar-fill"></i>2020年11月16日</a>
-    <a><i class="nexmoefont icon-areachart"></i>890 字</a>
-    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 3 分钟</a>
+    <a><i class="nexmoefont icon-calendar-fill"></i>2021年04月08日</a>
+    <a><i class="nexmoefont icon-areachart"></i>1k 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 5 分钟</a>
     
 </div>
 
@@ -218,7 +221,7 @@
             <div class="nexmoe-toc">
                 
                 
-                  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC4%E7%AB%A0-%E5%86%B0%E5%B7%9D"><span class="toc-number">1.</span> <span class="toc-text">第4章 冰川</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%A4%E4%B8%AA%E5%9F%BA%E6%9C%AC%E5%BE%AA%E7%8E%AF%E7%9A%84%E4%B8%80%E9%83%A8%E5%88%86"><span class="toc-number">1.1.</span> <span class="toc-text">两个基本循环的一部分</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B1%B1%E5%B2%B3%E5%86%B0%E5%B7%9D"><span class="toc-number">1.1.1.</span> <span class="toc-text">山岳冰川</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%86%B0%E7%9B%96"><span class="toc-number">1.1.2.</span> <span class="toc-text">冰盖</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%86%B0%E5%B7%9D"><span class="toc-number">1.1.3.</span> <span class="toc-text">其他类型的冰川</span></a></li></ol></li></ol></li></ol>
+                  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BD%91%E6%A0%BC"><span class="toc-number">1.</span> <span class="toc-text">网格</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#B-grid"><span class="toc-number">1.1.</span> <span class="toc-text">B-grid</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%8B%E8%BD%AC"><span class="toc-number">1.2.</span> <span class="toc-text">旋转</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Strain-rate-%E5%BA%94%E5%8F%98%E9%80%9F%E7%8E%87-deformation-rate-%E5%8F%98%E5%BD%A2%E9%80%9F%E7%8E%87"><span class="toc-number">2.</span> <span class="toc-text">Strain rate 应变速率 &#x2F; deformation rate 变形速率</span></a></li></ol>
                 
             </div>
         </div>
@@ -227,28 +230,92 @@
   </div>
 
   <article>
-    <p>地球科学导论–冰川<a id="more"></a></p>
-<h2 id="第4章-冰川"><a href="#第4章-冰川" class="headerlink" title="第4章 冰川"></a>第4章 冰川</h2><h3 id="两个基本循环的一部分"><a href="#两个基本循环的一部分" class="headerlink" title="两个基本循环的一部分"></a>两个基本循环的一部分</h3><p>冰川是地球上水循环和岩石循环的一部分。在水循环中，高纬度或高海拔地区降雨时，水不会很快流回海洋，而是可能成为冰川的一部分，存储数十年、数百年甚至数千年之久。大冰块的移动会洗擦地表并捕获、搬运和沉积大量的沉积物。这种作用也是岩石循环的一个基本部分。</p>
-<p>冰川是数百年或数千年形成的巨厚冰块。它由陆地上的积雪经过堆积、压实和再结晶组成。冰川表面看是静止不动的，但实际上移动很缓慢，也是动态的侵蚀因素。冰川大部分分布在两级地区或高山地区。</p>
-<h4 id="山岳冰川"><a href="#山岳冰川" class="headerlink" title="山岳冰川"></a>山岳冰川</h4><p>高山地区的冰川通常沿原来河流占据的山谷中分布，每天移动或许几厘米。每个冰川都是一条被限定在陡峭岩壁中的冰河，并从山顶的积雪中心向山谷移动。高山冰川的宽度通常小于其长度，有的冰川长度在1km以内，有的则长达数十千米。</p>
-<h4 id="冰盖"><a href="#冰盖" class="headerlink" title="冰盖"></a>冰盖</h4><p>冰盖的规模比山谷冰川更大，它们从一个或多个积雪中心向不同方向流动，几乎掩盖了下面地形的最高处。极地地区积累了大量的冰盖，即北半球的格陵兰和南半球的南极洲。</p>
-<ol>
-<li><p>冰期的冰盖<br>大约18000年前，冰川甚至覆盖了北美洲、欧洲和西伯利亚的大部分地区，这一时期称为末次盛冰期。在整个第四纪（260万年前开始），冰盖形成并覆盖了广大地区，然后又慢慢融化。这种交替的冰期和间冰期一直反复出现。</p>
-</li>
-<li><p>格陵兰岛和南极洲<br>北极并不是被冰川覆盖，覆盖北冰洋的冰是海冰——冻结的海水，海冰从未完全地从北冰洋中消失过，覆盖范围的扩大和缩小与季节变化有关。海冰的厚度可从几厘米厚的新冰到4米厚的海冰。相比之下，冰川可达数百米至数千米厚。</p>
-</li>
-</ol>
-<p>格陵兰岛这个最大的岛屿约被170万平方千米的冰盖所覆盖，覆盖面积约占这个岛屿面积的80%，平均厚度1.5km。而巨大的南极冰盖最厚达4.3km，覆盖面积大于1390万平方千米，几乎为整个南极大陆的面积。如今大陆冰盖的总面积约占整个地球陆地面积的10%。</p>
-<ol start="3">
-<li>冰架<br>沿着部分南极海岸线，冰川冰流入临近海洋并形成冰架。这些巨大而相对平坦的浮冰块从海岸向海洋方向延伸，并与陆地保持一侧或多侧的连接。</li>
-</ol>
-<h4 id="其他类型的冰川"><a href="#其他类型的冰川" class="headerlink" title="其他类型的冰川"></a>其他类型的冰川</h4><ol>
-<li>覆盖在一些高地和高原上的大块冰川冰称为冰帽。</li>
-<li>山麓冰川占据着陡峭山峰底部的广泛低地，并从山谷中的一个或多个山谷冰川出露，前行的冰展开形成宽阔的冰层。</li>
-<li>通常冰盖和冰帽会提供注出冰川。在它们遇到海洋的地方，一些注出冰川以漂浮的冰架分散开来，形成大量的冰山。</li>
-</ol>
+    <p>应该没推错。<a id="more"></a></p>
+<h2 id="网格"><a href="#网格" class="headerlink" title="网格"></a>网格</h2><h3 id="B-grid"><a href="#B-grid" class="headerlink" title="B-grid"></a>B-grid</h3><p>CSIM uses a generalized orthogonal <strong>B-grid</strong>, where tracer quantities are located at the center of the grid cells, and velocities are located at the corners. The internal ice stress tensor takes four different values within a grid cell. Tracer quantities in the ice model include ice and snow area, volume, energy and temperature. The grid comprised of the <strong>center points of the grid cells is referred to as the “T grid”.</strong> <strong>The “U grid” is comprised of the ponts at the northeast corner of the corresponding cell on the T grid.</strong> Quantities that are defined on the U grid include ice and ocean dynamics variables. </p>
+<p>计算应变速率所需要的速度是定义在 U grid 上的，也就是每个 cell 的东北角。论文中网格为$n_i$行$n_j$列，右端是高纬地区。</p>
+<img style="display: inline-block; width: 50%; max-width: 50%; height: auto;" src="grid.png" />
+
+<h3 id="旋转"><a href="#旋转" class="headerlink" title="旋转"></a>旋转</h3><p>在截取了高纬地区<code>nj*5/7 : nj</code>列后，将下半部分旋转到右端拼接海洋。</p>
+<pre><code>% 更新维度为截取北极后
+nj = size(uVel,2);
+
+% 把下半数据旋转到右边
+u = [ uVel([ni,1:ni/2],1:nj), -uVel(ni:-1:ni/2,nj-1:-1:1) ];
+v = [ vVel([ni,1:ni/2],1:nj), -vVel(ni:-1:ni/2,nj-1:-1:1) ];
+
+% 旋转后的网格去掉西边界和南边界
+lat = [lat(1:ni/2,2:nj),   lat(ni-1:-1:ni/2,nj-1:-1:1) ];
+lon = [lon(1:ni/2,2:nj),   lon(ni-1:-1:ni/2,nj-1:-1:1) ];
+
+dx = [ dx(1:ni/2,1:nj), dx(ni:-1:ni/2+1,nj-1:-1:1) ];
+dy = [ dy([ni,1:ni/2],2:nj), dy(ni:-1:ni/2,nj:-1:2) ];
+
+% 更新维度为旋转后
+ni = size(dx,1);
+nj = size(dy,2);</code></pre>
+<p>新的网格:</p>
+<img style="display: inline-block; width: 80%; max-width: 80%; height: auto;" src="new.png" />
+
+
+
+<h2 id="Strain-rate-应变速率-deformation-rate-变形速率"><a href="#Strain-rate-应变速率-deformation-rate-变形速率" class="headerlink" title="Strain rate 应变速率 / deformation rate 变形速率"></a>Strain rate 应变速率 / deformation rate 变形速率</h2><p>根据论文中的定义，<br>$u_x=\frac{1}{A}\oint u \text{d}y$,<br>$u_y=-\frac{1}{A}\oint u \text{d}x$,<br>$v_x=\frac{1}{A}\oint v \text{d}y$,<br>$v_y=-\frac{1}{A}\oint v \text{d}x$,</p>
+<p>剪切率 $\dot{\varepsilon}_{\textrm{shear}}=\sqrt{\left ( u_{x}-v_{y}\right )^2+\left ( u_{y}+v_{x}\right )^2}$,<br>散度率 $\dot{\varepsilon }_{\textrm{div}} = u_x+v_y $,<br>总应变率 $\dot{\varepsilon }_{\textrm{tot}}=\sqrt{\dot{\varepsilon }_{\textrm{shear}}^{2}+\dot{\varepsilon }_{\textrm{div}}^{2}}$。</p>
+<p>在数值计算中，首先线性插值计算网格中点的速率（与$dx,dy$对应）</p>
+<pre><code>uMidy = (u(:,1:nj)+u(:,2:nj+1))/2;
+vMidx = (v(1:ni,:)+v(2:ni+1,:))/2;
+uMidx = (u(1:ni,:)+u(2:ni+1,:))/2;
+vMidy = (v(:,1:nj)+v(:,2:nj+1))/2;</code></pre>
+<p>当网格粗化<code>times</code>倍时（以3为例），粗化后的网格单元即为上图中灰色的单元。</p>
+<pre><code>nx=fix(ni/times);  %粗化后网格个数
+ny=fix(nj/times);
+ni=nx*times;
+nj=ny*times;</code></pre>
+<p>每个大单元的速率偏导的计算公式为</p>
+<p>$A=\sum_{i,j=1}^{3}dx_{i,j}dy_{i,j},$</p>
+<p>$u_x \approx \frac{1}{A} \sum_{j=1}^{3} \left ( \left ( u_{midy_{4,j}} dy_{4,j} \right ) - \left ( u_{midy_{1,j}} dy_{1,j} \right ) \right ),$<br>$v_x \approx \frac{1}{A} \sum_{j=1}^{3} \left ( \left ( v_{midy_{4,j}} dy_{4,j} \right ) - \left ( v_{midy_{1,j}} dy_{1,j} \right ) \right ),$<br>$v_y \approx \frac{1}{A} \sum_{i=1}^{3} \left ( \left ( v_{midx_{i,4}} dx_{i,4} \right ) - \left ( v_{midx_{i,1}} dx_{i,1} \right ) \right ),$<br>$u_y \approx \frac{1}{A} \sum_{i=1}^{3} \left ( \left ( u_{midx_{i,4}} dx_{i,4} \right ) - \left ( u_{midx_{i,1}} dx_{i,1} \right ) \right ),$</p>
+<p>对应代码：</p>
+<pre><code>%计算每个大网格第1：times的相应数值
+for i=1:times
+    dxs(i,:,:)=dx(i:times:ni,1:times:nj);
+    dxn(i,:,:) = dx(i:times:ni,1+times:times:nj+1);
+    dye(i,:,:)=dy(1+times:times:ni+1,i:times:nj);
+    dyw(i,:,:)=dy(times:times:ni,i:times:nj);
+    ue(i,:,:) = uMidy(1+times:times:ni+1,i:times:nj);
+    uw(i,:,:) = uMidy(times:times:ni,i:times:nj);
+    ve(i,:,:) = vMidy(1+times:times:ni+1,i:times:nj);
+    vw(i,:,:) = vMidy(times:times:ni,i:times:nj);
+    vn(i,:,:) = vMidx(i:times:ni,1+times:times:nj+1);
+    vs(i,:,:) = vMidx(i:times:ni,1:times:nj);
+    un(i,:,:) = uMidx(i:times:ni,1+times:times:nj+1);
+    us(i,:,:) = uMidx(i:times:ni,1:times:nj);
+end
+%累加小网格的近似面积作为大网格的面积，经纬坐标取平均
+for i=1:times
+    for j=1:times
+        area=area+((dx(i:times:ni,j:times:nj)+dx(i:times:ni,1+j:times:nj+1))/2).*...
+            ((dy(i+1:times:ni+1,j:times:nj)+dy(i:times:ni,j:times:nj))/2);
+        latMid=latMid+lat(i:times:ni,j:times:nj);
+        lonMid=lonMid+lon(i:times:ni,j:times:nj);
+    end
+end
+latMid=latMid/(times^2);
+lonMid=lonMid/(times^2);
+
+ux = ( ue .* dye - uw .* dyw );
+vy = ( vn .* dxn - vs .* dxs );
+uy = ( un .* dxn - us .* dxs );
+vx = ( ve .* dye - vw .* dyw );
+ux=squeeze(sum(ux,1)) ./ area;
+vy=squeeze(sum(vy,1)) ./ area;
+uy=squeeze(sum(uy,1)) ./ area;
+vx=squeeze(sum(vx,1)) ./ area;</code></pre>
+<p>因此最后变形率的计算为：</p>
+<pre><code>div = ux + vy;
+%shr = abs(ux-vy);
+shr = sqrt((ux-vy).^2+(uy+vx).^2);
+tot = sqrt(shr.^2+div.^2);</code></pre>
 <hr>
-<p>上一篇：<a href="/2020/11/11/es1111/">第10章 动荡的海洋 续</a></p>
+<p><em>创建日期：2021.04.08</em></p>
 
   </article>
 
@@ -256,7 +323,7 @@
     
   <div class="nexmoe-post-copyright">
     <strong>本文作者：</strong>Ning Chenhui<br>
-    <strong>本文链接：</strong><a href="https://ningchenhui.github.io/2020/11/16/es1116/" title="https:&#x2F;&#x2F;ningchenhui.github.io&#x2F;2020&#x2F;11&#x2F;16&#x2F;es1116&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;ningchenhui.github.io&#x2F;2020&#x2F;11&#x2F;16&#x2F;es1116&#x2F;</a><br>
+    <strong>本文链接：</strong><a href="https://ningchenhui.github.io/2021/04/08/esA0408/" title="https:&#x2F;&#x2F;ningchenhui.github.io&#x2F;2021&#x2F;04&#x2F;08&#x2F;esA0408&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;ningchenhui.github.io&#x2F;2021&#x2F;04&#x2F;08&#x2F;esA0408&#x2F;</a><br>
     
       <strong>版权声明：</strong>未经作者授权禁止转载
     
@@ -289,9 +356,9 @@
 var dsqjs = new DisqusJS({
     shortname: 'ningchenhui-github-io',
     siteName: 'ningchenhui.github.io',
-    identifier: 'https://ningchenhui.github.io/2020/11/16/es1116/',
-    url: 'https://ningchenhui.github.io/2020/11/16/es1116/',
-    title: '地球科学导论 笔记#05',
+    identifier: 'https://ningchenhui.github.io/2021/04/08/esA0408/',
+    url: 'https://ningchenhui.github.io/2021/04/08/esA0408/',
+    title: '粗化网格的变形速率计算',
     api: 'https://disqus.skk.moe/disqus/',
     apikey: 'e6evOgi4KaQOW9DrrU1gkzYWj6dsm3Pl5ZMMS8kUw46BtSz8Ze355Igzqu11XhhI',
     admin: 'disqus_7i3NGTLGyS',
@@ -322,7 +389,7 @@ var dsqjs = new DisqusJS({
 
 
 
-<script src="/js/app.js?v=1617882526828"></script>
+<script src="/js/app.js?v=1617882526775"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js"></script>
 <script>
