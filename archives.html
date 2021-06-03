@@ -25,7 +25,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/theme-nexmoe/hexo-theme-nexmoe@latest/source/lib/mdui_043tiny/css/mdui.css,gh/theme-nexmoe/hexo-theme-nexmoe@latest/source/lib/iconfont/iconfont.css,gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css?v=233" crossorigin>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css">
   
-  <link rel="stylesheet" href="/css/style.css?v=1622535247959">
+  <link rel="stylesheet" href="/css/style.css?v=1622738963723">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
   <script src="/live2d-widget/autoload.js"></script>
 <meta name="generator" content="Hexo 5.2.0"></head>
@@ -82,11 +82,24 @@
     <aside id="nexmoe-sidebar">
   
   <div class="nexmoe-widget-wrap">
+
+    <!--
     <div class="nexmoe-widget nexmoe-search">
-        <form id="search_form" action_e="https://cn.bing.com/search?q=" onsubmit="return search();">
+        <form id="search_form" action_e="" onsubmit="return search();">
             <label><input id="search_value" name="q" type="search" placeholder="搜索"></label>
         </form>
     </div>
+    -->
+
+    <!-- 测试搜索 -->
+    <div class="nexmoe-widget nexmoe-search">
+        <form id="search_form">
+            <label><input id="local-search-input" name="q" type="text" results="0" placeholder="搜索" class="st-search-input st-default-search-input form-control"/></label>
+        </form>
+        <div id="local-search-result"></div>
+    </div>
+
+
 </div>
   
   <div class="nexmoe-widget-wrap">
@@ -205,6 +218,8 @@
             <h2>2021</h2>
             <ul>
             
+                <li><span>06-04</span><a href="/2021/06/04/siteevo/" >建站历程</a></li>
+            
                 <li><span>06-01</span><a href="/2021/06/01/mirror-2105/" >Mirror 2021.05 月报</a></li>
             
                 <li><span>05-30</span><a href="/2021/05/30/game210530/" >Need for Speed™ Rivals</a></li>
@@ -246,8 +261,6 @@
                 <li><span>03-18</span><a href="/2021/03/18/mirror-info/" >Mirror 更新日志</a></li>
             
                 <li><span>03-18</span><a href="/2021/03/18/model01/" >初识NetCDF</a></li>
-            
-                <li><span>03-17</span><a href="/2021/03/17/siteevo/" >建站历程</a></li>
             
                 <li><span>03-16</span><a href="/2021/03/16/sunway01/" >超算远程访问</a></li>
             
@@ -363,7 +376,7 @@
 
 
 
-<script src="/js/app.js?v=1622535247962"></script>
+<script src="/js/app.js?v=1622738963726"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js"></script>
 <script>
@@ -373,6 +386,17 @@
 	});
 </script>
 
+<!-- 测试搜索 -->
+
+	<script type="text/javascript">      
+	  var search_path = "./public/search.xml";
+	  if (search_path.length == 0) {
+		  search_path = "search.xml";
+	  }
+	  var path = "/" + search_path;
+	  searchFunc(path, 'local-search-input', 'local-search-result');
+	</script>
+ 
   
 
 

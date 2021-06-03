@@ -30,7 +30,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/theme-nexmoe/hexo-theme-nexmoe@latest/source/lib/mdui_043tiny/css/mdui.css,gh/theme-nexmoe/hexo-theme-nexmoe@latest/source/lib/iconfont/iconfont.css,gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css?v=233" crossorigin>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css">
   
-  <link rel="stylesheet" href="/css/style.css?v=1622535247946">
+  <link rel="stylesheet" href="/css/style.css?v=1622738963705">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
   <script src="/live2d-widget/autoload.js"></script>
 <meta name="generator" content="Hexo 5.2.0"></head>
@@ -87,11 +87,24 @@
     <aside id="nexmoe-sidebar">
   
   <div class="nexmoe-widget-wrap">
+
+    <!--
     <div class="nexmoe-widget nexmoe-search">
-        <form id="search_form" action_e="https://cn.bing.com/search?q=" onsubmit="return search();">
+        <form id="search_form" action_e="" onsubmit="return search();">
             <label><input id="search_value" name="q" type="search" placeholder="搜索"></label>
         </form>
     </div>
+    -->
+
+    <!-- 测试搜索 -->
+    <div class="nexmoe-widget nexmoe-search">
+        <form id="search_form">
+            <label><input id="local-search-input" name="q" type="text" results="0" placeholder="搜索" class="st-search-input st-default-search-input form-control"/></label>
+        </form>
+        <div id="local-search-result"></div>
+    </div>
+
+
 </div>
   
   <div class="nexmoe-widget-wrap">
@@ -244,7 +257,7 @@
 <h2 id="网站相关"><a href="#网站相关" class="headerlink" title="网站相关"></a>网站相关</h2><p><em>科学上网以获得最佳体验</em></p>
 <p><strong>创立时间：</strong>2020年9月24日<br><strong>发布内容：</strong>学习整理、经验分享、小记等<br><strong>主机：</strong>Github Pages<br><strong>现存问题：</strong>目前只能在Github上找到<br><strong>评论功能：</strong>目前可以正常查看评论，发表需要科学 (勾选匿名则不用注册<br><strong>搜索功能：</strong>目前的搜索框直接导向Bing搜索……</p>
 <h2 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h2><p><a href="about.html">应该没有人会在意我吧。</a></p>
-<h2 id="联系我"><a href="#联系我" class="headerlink" title="联系我"></a>联系我</h2><p><strong>QQ：</strong>NTcxMDg0NTc4<br><strong>Email：</strong><a href="mailto:&#x73;&#105;&#x6e;&#x6b;&#x69;&#x68;&#111;&#115;&#x69;&#122;&#x75;&#x6b;&#x69;&#64;&#x67;&#109;&#x61;&#105;&#108;&#x2e;&#x63;&#111;&#109;">&#x73;&#105;&#x6e;&#x6b;&#x69;&#x68;&#111;&#115;&#x69;&#122;&#x75;&#x6b;&#x69;&#64;&#x67;&#109;&#x61;&#105;&#108;&#x2e;&#x63;&#111;&#109;</a></p>
+<h2 id="联系我"><a href="#联系我" class="headerlink" title="联系我"></a>联系我</h2><p><strong>QQ：</strong>NTcxMDg0NTc4<br><strong>Email：</strong><a href="mailto:&#115;&#105;&#x6e;&#107;&#105;&#x68;&#111;&#x73;&#x69;&#122;&#x75;&#x6b;&#105;&#64;&#103;&#109;&#x61;&#x69;&#x6c;&#46;&#x63;&#x6f;&#109;">&#115;&#105;&#x6e;&#107;&#105;&#x68;&#111;&#x73;&#x69;&#122;&#x75;&#x6b;&#105;&#64;&#103;&#109;&#x61;&#x69;&#x6c;&#46;&#x63;&#x6f;&#109;</a></p>
 <hr>
 <p><em>创建日期：2020年9月25日</em></p>
 
@@ -316,7 +329,7 @@ var dsqjs = new DisqusJS({
 
 
 
-<script src="/js/app.js?v=1622535247952"></script>
+<script src="/js/app.js?v=1622738963711"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js"></script>
 <script>
@@ -326,6 +339,17 @@ var dsqjs = new DisqusJS({
 	});
 </script>
 
+<!-- 测试搜索 -->
+
+	<script type="text/javascript">      
+	  var search_path = "./public/search.xml";
+	  if (search_path.length == 0) {
+		  search_path = "search.xml";
+	  }
+	  var path = "/" + search_path;
+	  searchFunc(path, 'local-search-input', 'local-search-result');
+	</script>
+ 
   
 
 
