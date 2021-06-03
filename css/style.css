@@ -863,6 +863,21 @@ body {
   margin: 0;
   color: #ff4e6a;
 }
+#nexmoe-header .nexmoe-widget-wrap .nexmoe-widget {
+  max-height: 500px;
+  min-height: 0;
+  height: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+#nexmoe-header .nexmoe-widget-wrap .nexmoe-widget .local-search-empty {
+  color: #888;
+  line-height: 44px;
+  text-align: center;
+  display: block;
+  font-size: 16px;
+  font-weight: normal;
+}
 #nexmoe-header .nexmoe-widget-wrap .nexmoe-widget ul {
   list-style-type: none;
   padding: 0;
@@ -871,12 +886,20 @@ body {
 #nexmoe-header .nexmoe-widget-wrap .nexmoe-widget ul li {
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap;
   position: relative;
   padding: 12px 18px;
 }
 #nexmoe-header .nexmoe-widget-wrap .nexmoe-widget ul li a {
   color: #606266;
+}
+#nexmoe-header .nexmoe-widget-wrap .nexmoe-widget ul li p {
+  margin-top: 10px;
+  font-size: 14px;
+  max-height: 124px;
+  overflow: hidden;
+}
+#nexmoe-header .nexmoe-widget-wrap .nexmoe-widget ul li em.search-keyword {
+  color: #e58c7c;
 }
 #nexmoe-header .nexmoe-widget-wrap .nexmoe-widget ul li:last-child {
   border-bottom: none;
