@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+<head>
+  
+  <title>搜索功能已实装！ - 一切都会好起来的哟</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="Ning Chenhui">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  
+  
+
+  <link rel="shortcut icon" href="/pictures/icon.jpg" type="image/png" />
+  <meta name="description" content="侧边栏的搜索框终于可以用啦！顺便改了下网站主题色！">
+<meta property="og:type" content="article">
+<meta property="og:title" content="搜索功能已实装！">
+<meta property="og:url" content="https://ningchenhui.github.io/2021/06/04/sitesearch/index.html">
+<meta property="og:site_name" content="一切都会好起来的哟">
+<meta property="og:description" content="侧边栏的搜索框终于可以用啦！顺便改了下网站主题色！">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://ningchenhui.github.io/2021/06/04/sitesearch/search.png">
+<meta property="og:image" content="https://ningchenhui.github.io/2021/06/04/sitesearch/search2.png">
+<meta property="article:published_time" content="2021-06-04T05:58:00.000Z">
+<meta property="article:modified_time" content="2021-06-04T11:32:04.773Z">
+<meta property="article:author" content="Ning Chenhui">
+<meta property="article:tag" content="建站">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://ningchenhui.github.io/2021/06/04/sitesearch/search.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/theme-nexmoe/hexo-theme-nexmoe@latest/source/lib/mdui_043tiny/css/mdui.css,gh/theme-nexmoe/hexo-theme-nexmoe@latest/source/lib/iconfont/iconfont.css,gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css?v=233" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css?v=1622806417400">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+  <script src="/live2d-widget/autoload.js"></script>
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body class="mdui-drawer-body-left">
+  
+  <div id="nexmoe-background">
+    <div class="nexmoe-bg" style="background-image: url(/pictures/dream/yokina.PNG)"></div>
+    <div class="mdui-appbar mdui-shadow-0">
+      <div class="mdui-toolbar">
+        <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
+        <div class="mdui-toolbar-spacer"></div>
+        <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+        <a href="/" title="Ning Chenhui" class="mdui-btn mdui-btn-icon"><img src="/pictures/me.jpg" alt="Ning Chenhui"></a>
+       </div>
+    </div>
+  </div>
+  <div id="nexmoe-header">
+      <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="Ning Chenhui">
+            <img src="/pictures/me.jpg" alt="Ning Chenhui" alt="Ning Chenhui">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>文章</span>65</div>
+        <div><span>标签</span>11</div>
+        <div><span>分类</span>4</div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/" title="首页">
+            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/archives.html" title="归档">
+            <i class="mdui-list-item-icon nexmoefont icon-container"></i>
+            <div class="mdui-list-item-content">
+                归档
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/about-welcome.html" title="关于">
+            <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+            <div class="mdui-list-item-content">
+                关于
+            </div>
+        </a>
+        
+    </div>
+    <aside id="nexmoe-sidebar">
+  
+  <div class="nexmoe-widget-wrap">
+
+    <!--
+    <div class="nexmoe-widget nexmoe-search">
+        <form id="search_form" action_e="" onsubmit="return search();">
+            <label><input id="search_value" name="q" type="search" placeholder="搜索"></label>
+        </form>
+    </div>
+    -->
+
+    <!-- 我的搜索 -->
+    <div class="nexmoe-widget nexmoe-search">
+        <form id="search_form">
+            <label><input id="local-search-input" name="q" type="text" results="0" placeholder="搜全站！" class="st-search-input st-default-search-input form-control"/></label>
+        </form>
+        <div id="local-search-result" ></div>
+    </div>
+    
+
+</div>
+
+  
+  <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-social">
+        <a class="mdui-ripple" href="/about-welcome.html#%E8%81%94%E7%B3%BB%E6%88%91" target="_blank" mdui-tooltip="{content: 'QQ'}" style="color: rgb(249, 174, 8);background-color: rgba(249, 174, 8, .1);">
+            <i class="nexmoefont icon-QQ"></i>
+        </a><a class="mdui-ripple" href="https://space.bilibili.com/316021638" target="_blank" mdui-tooltip="{content: '哔哩哔哩'}" style="color: rgb(231, 106, 141);background-color: rgba(231, 106, 141, .15);">
+            <i class="nexmoefont icon-bilibili"></i>
+        </a><a class="mdui-ripple" href="https://github.com/NingChenhui" target="_blank" mdui-tooltip="{content: 'GitHub'}" style="color: rgb(25, 23, 23);background-color: rgba(25, 23, 23, .15);">
+            <i class="nexmoefont icon-github"></i>
+        </a><a class="mdui-ripple" href="mailto:sinkihosizuki@gmail.com" target="_blank" mdui-tooltip="{content: '邮箱'}" style="color: rgb(106,90,205);background-color: rgba(230,230,250);">
+            <i class="nexmoefont icon-mail-fill"></i>
+        </a>
+    </div>
+</div>
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <div id="randomtagcloud" class="nexmoe-widget tagcloud nexmoe-rainbow">
+      <a href="/tags/Linux/" style="font-size: 18.75px;">Linux</a> <a href="/tags/Mirror/" style="font-size: 16.25px;">Mirror</a> <a href="/tags/%E4%BF%9D%E7%A0%94/" style="font-size: 13.75px;">保研</a> <a href="/tags/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/" style="font-size: 20px;">地球科学</a> <a href="/tags/%E5%BB%BA%E7%AB%99/" style="font-size: 11.25px;">建站</a> <a href="/tags/%E6%97%A5%E8%AF%AD/" style="font-size: 10px;">日语</a> <a href="/tags/%E6%A8%A1%E5%BC%8F/" style="font-size: 12.5px;">模式</a> <a href="/tags/%E6%B8%B8%E6%88%8F/" style="font-size: 15px;">游戏</a> <a href="/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 17.5px;">生活</a> <a href="/tags/%E8%AF%BE%E7%A8%8B%E8%B5%84%E6%96%99/" style="font-size: 10px;">课程资料</a> <a href="/tags/%E8%BD%AC%E8%BD%BD/" style="font-size: 10px;">转载</a>
+    </div>
+    
+  </div>
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章归档</h3>
+    <div class="nexmoe-widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a><span class="archive-list-count">37</span></li></ul>
+    </div>
+  </div>
+
+
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章分类</h3>
+    <div class="nexmoe-widget">
+
+      <ul class="category-list">
+
+        
+
+
+        
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/学习/">学习</a>
+          <span class="category-list-count">29</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/小记/">小记</a>
+          <span class="category-list-count">28</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/经验/">经验</a>
+          <span class="category-list-count">6</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/资料/">资料</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+      </ul>
+
+    </div>
+  </div>
+
+
+  
+</aside>
+
+<center>
+    <font color="#6495ED"> 营业中 [<span id="busuanzi_value_site_uv"></span>/1000] </font>
+  <br> </br>
+  </center>
+    <div class="nexmoe-copyright">
+        &copy; 2021 Ning Chenhui
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://github.com/theme-nexmoe/hexo-theme-nexmoe" target="_blank">Nexmoe</a>
+        
+    </div>
+</div><!-- .nexmoe-drawer -->
+  </div>
+  <div id="nexmoe-content">
+    <div class="nexmoe-primary">
+        <div class="nexmoe-post">
+  
+      <div class="nexmoe-post-cover" style="padding-bottom: 75%;"> 
+          <img data-src="/pictures/dream/yokina.PNG" data-sizes="auto" alt="搜索功能已实装！" class="lazyload">
+          <h1>搜索功能已实装！</h1>
+      </div>
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
+    <a><i class="nexmoefont icon-calendar-fill"></i>2021年06月04日</a>
+    <a><i class="nexmoefont icon-areachart"></i>1.7k 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 9 分钟</a>
+    
+</div>
+
+  <div class="nexmoe-post-right">
+    
+      <div class="nexmoe-fixed">
+        <div class="nexmoe-valign">
+            <div class="nexmoe-toc">
+                
+                
+                  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD"><span class="toc-number">1.</span> <span class="toc-text">搜索功能</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%90%9C%E7%B4%A2%E6%A1%86%E6%A0%B7%E5%BC%8F"><span class="toc-number">2.</span> <span class="toc-text">搜索框样式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95%E7%BB%93%E6%9E%9C"><span class="toc-number">3.</span> <span class="toc-text">测试结果</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AD%A3%E5%B8%B8%E6%A0%B7%E5%BC%8F"><span class="toc-number">3.0.1.</span> <span class="toc-text">正常样式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BE%A7%E8%BE%B9%E6%A0%B7%E5%BC%8F"><span class="toc-number">3.0.2.</span> <span class="toc-text">侧边样式</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BB%E9%A2%98%E9%A2%9C%E8%89%B2"><span class="toc-number">4.</span> <span class="toc-text">主题颜色</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#themes-nexmoe-source-css-style-styl"><span class="toc-number">4.0.1.</span> <span class="toc-text">\themes\nexmoe\source\css\style.styl</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#themes-nexmoe-source-css-partial-archives-styl"><span class="toc-number">4.0.2.</span> <span class="toc-text">\themes\nexmoe\source\css_partial\archives.styl</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#themes-nexmoe-source-css-partial-article-styl"><span class="toc-number">4.0.3.</span> <span class="toc-text">\themes\nexmoe\source\css_partial\article.styl</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8"><span class="toc-number">5.</span> <span class="toc-text">音乐播放器</span></a></li></ol>
+                
+            </div>
+        </div>
+      </div>
+    
+  </div>
+
+  <article>
+    <p>侧边栏的搜索框终于可以用啦！顺便改了下网站主题色！<a id="more"></a></p>
+<h2 id="搜索功能"><a href="#搜索功能" class="headerlink" title="搜索功能"></a>搜索功能</h2><ol>
+<li><p>在根目录下<code>Git Bash</code>，执行<code>npm install hexo-generator-search --save</code>安装搜索插件。</p>
+</li>
+<li><p>查看<code>\node_modules\hexo-generator-search\README.md</code>，这个插件用于生成搜索目录文件，真正实装则需要插入代码。</p>
+</li>
+<li><p>在根目录的<code>_config.yml</code>中插入</p>
+<pre><code> search:
+   path: ./public/search.xml
+   field: post
+   format: html
+   limit: 10000</code></pre>
+</li>
+<li><p>删除<code>\themes\nexmoe\_config.yml</code>中的<code>search</code>字段。</p>
+</li>
+<li><p>修改<code>\themes\nexmoe\layout\_widget\search.ejs</code>内容为</p>
+<pre><code> &lt;div class=&quot;nexmoe-widget-wrap&quot;&gt;
+     &lt;!-- 我的搜索 --&gt;
+     &lt;div class=&quot;nexmoe-widget nexmoe-search&quot;&gt;
+         &lt;form id=&quot;search_form&quot;&gt;
+             &lt;label&gt;&lt;input id=&quot;local-search-input&quot; name=&quot;q&quot; type=&quot;text&quot; results=&quot;0&quot; placeholder=&quot;搜全站！&quot; class=&quot;st-search-input st-default-search-input form-control&quot;/&gt;&lt;/label&gt;
+         &lt;/form&gt;
+         &lt;div id=&quot;local-search-result&quot; &gt;&lt;/div&gt;
+     &lt;/div&gt;
+ &lt;/div&gt;</code></pre>
+</li>
+<li><p>在<code>\themes\nexmoe\source\js\app.js</code>中添加<code>searchFunc</code>。</p>
+<pre><code> // 我的搜索
+ var searchFunc = function (path, search_id, content_id) &#123;
+   // 0x00. environment initialization
+   &#39;use strict&#39;;
+   var $input = document.getElementById(search_id);
+   var $resultContent = document.getElementById(content_id);
+   $resultContent.innerHTML =  &quot;&lt;ul&gt;&lt;span class=&#39;local-search-empty&#39;&gt;正在载入索引文件……&lt;span&gt;&lt;/ul&gt;&quot;;
+   $.ajax(&#123;
+     // 0x01. load xml file
+     url: path,
+     dataType: &quot;xml&quot;,
+     success: function (xmlResponse) &#123;
+       // 0x02. parse xml file
+       var datas = $(&quot;entry&quot;, xmlResponse).map(function () &#123;
+         return &#123;
+           title: $(&quot;title&quot;, this).text(),
+           content: $(&quot;content&quot;, this).text(),
+           url: $(&quot;url&quot;, this).text()
+         &#125;;
+       &#125;).get();
+       $resultContent.innerHTML = &quot;&quot;;
+
+       $input.addEventListener(&#39;input&#39;, function () &#123;
+         // 0x03. parse query to keywords list
+         var str = &#39;&lt;ul class=\&quot;search-result-list\&quot;&gt;&#39;;
+         var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+         $resultContent.innerHTML = &quot;&quot;;
+         if (this.value.trim().length &lt;= 0) &#123;
+           return;
+         &#125;
+         // 0x04. perform local searching
+         datas.forEach(function (data) &#123;
+           var isMatch = true;
+           var content_index = [];
+           if (!data.title || data.title.trim() === &#39;&#39;) &#123;
+             data.title = &quot;Untitled&quot;;
+           &#125;
+           var orig_data_title = data.title.trim();
+           var data_title = orig_data_title.toLowerCase();
+           var orig_data_content = data.content.trim().replace(/&lt;[^&gt;]+&gt;/g, &quot;&quot;);
+           var data_content = orig_data_content.toLowerCase();
+           var data_url = data.url;
+           var index_title = -1;
+           var index_content = -1;
+           var first_occur = -1;
+           // only match artiles with not empty contents
+           if (data_content !== &#39;&#39;) &#123;
+             keywords.forEach(function (keyword, i) &#123;
+               index_title = data_title.indexOf(keyword);
+               index_content = data_content.indexOf(keyword);
+
+               if (index_title &lt; 0 &amp;&amp; index_content &lt; 0) &#123;
+                 isMatch = false;
+               &#125; else &#123;
+                 if (index_content &lt; 0) &#123;
+                   index_content = 0;
+                 &#125;
+                 if (i == 0) &#123;
+                   first_occur = index_content;
+                 &#125;
+                 // content_index.push(&#123;index_content:index_content, keyword_len:keyword_len&#125;);
+               &#125;
+             &#125;);
+           &#125; else &#123;
+             isMatch = false;
+           &#125;
+           // 0x05. show search results
+           if (isMatch) &#123;
+             str += &quot;&lt;li&gt;&lt;a href=&#39;/&quot; + data_url + &quot;&#39; class=&#39;search-result-title&#39; target=&#39;_blank&#39;&gt;&quot; + orig_data_title + &quot;&lt;/a&gt;&quot;;
+             var content = orig_data_content;
+             if (first_occur &gt;= 0) &#123;
+               // cut out 100 characters
+               var start = first_occur - 20;
+               var end = first_occur + 80;
+
+               if (start &lt; 0) &#123;
+                 start = 0;
+               &#125;
+
+               if (start == 0) &#123;
+                 end = 100;
+               &#125;
+
+               if (end &gt; content.length) &#123;
+                 end = content.length;
+               &#125;
+
+               var match_content = content.substr(start, end);
+
+               // highlight all keywords
+               keywords.forEach(function (keyword) &#123;
+                 var regS = new RegExp(keyword, &quot;gi&quot;);
+                 match_content = match_content.replace(regS, &quot;&lt;em class=\&quot;search-keyword\&quot;&gt;&quot; + keyword + &quot;&lt;/em&gt;&quot;);
+               &#125;);
+
+               str += &quot;&lt;p class=\&quot;search-result\&quot;&gt;&quot; +match_content + &quot;...&lt;/p&gt;&quot;
+             &#125;
+             str += &quot;&lt;/li&gt;&quot;;
+           &#125;
+         &#125;);
+         str += &quot;&lt;/ul&gt;&quot;;
+         if (str.indexOf(&#39;&lt;li&gt;&#39;) === -1) &#123;
+           return $resultContent.innerHTML = &quot;&lt;ul&gt;&lt;span class=&#39;local-search-empty&#39;&gt;没有找到内容QAQ&lt;span&gt;&lt;/ul&gt;&quot;;
+         &#125;
+         $resultContent.innerHTML =  str;
+       &#125;);
+     &#125;
+   &#125;);
+ &#125;</code></pre>
+</li>
+<li><p>在<code>\themes\nexmoe\layout\_partial\after-footer.ejs</code>中添加代码</p>
+<pre><code> &lt;!-- 我的搜索 --&gt;
+ &lt;% if (config.search) &#123; %&gt;
+   &lt;script type=&quot;text/javascript&quot;&gt;      
+     var search_path = &quot;&lt;%= config.search.path %&gt;&quot;;
+     if (search_path.length == 0) &#123;
+       search_path = &quot;search.xml&quot;;
+     &#125;
+     var path = &quot;&lt;%= config.root %&gt;&quot; + search_path;
+     searchFunc(path, &#39;local-search-input&#39;, &#39;local-search-result&#39;);
+   &lt;/script&gt;
+ &lt;% &#125; %&gt;</code></pre>
+</li>
+</ol>
+<p>这样一来就可以搜索了！但是样式有限问题，内容没有换行而且很窄，于是修改样式。可惜不懂<code>html</code>，调宽后会被右侧的栏挡住，嘛……</p>
+<h2 id="搜索框样式"><a href="#搜索框样式" class="headerlink" title="搜索框样式"></a>搜索框样式</h2><p>本来安照参考代码加了个<code>class</code>，后来感觉不好看，就直接改了原有的。</p>
+<p>在<code>\themes\nexmoe\source\css\style.styl</code>中修改<code>.nexmoe-widget</code>为</p>
+<pre><code>.nexmoe-widget &#123;
+      max-height: 500px;
+      min-height: 0;
+      height: auto;
+      overflow-y: auto;
+      overflow-x: hidden;
+  .local-search-empty &#123;
+      color: #888;
+      line-height: 44px;
+      text-align: center;
+      display: block;
+      font-size: 16px;
+      font-weight: normal;
+  &#125;
+  ul &#123;
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      li &#123;
+          overflow: hidden;
+          text-overflow: ellipsis;
+
+          position: relative;
+          padding: 12px 18px;
+          a &#123;
+              color: #606266;
+          &#125;
+          p &#123;
+              color: #808286;
+              margin-top: 10px;
+              font-size: 13px;
+              max-height: 124px;
+              overflow: hidden;
+          &#125;
+          em.search-keyword &#123;
+              color: #e58c7c;
+              &#125;
+      &#125;
+          li:last-child &#123;
+              border-bottom: none;
+              padding-bottom: 24px;
+          &#125;
+  &#125;
+      .category-list-count, .archive-list-count &#123;
+          background-color: rgba(65,105,225, .1);
+          display: inline-block;
+          width: 26px;
+          height: 26px;
+          line-height: 26px;
+          text-align: center;
+          border-radius: 100%;
+          color: rgba(65,105,225, 1);
+          position: absolute;
+          right: 18px;
+          top: 10px;
+      &#125;
+  &#125;</code></pre>
+<h2 id="测试结果"><a href="#测试结果" class="headerlink" title="测试结果"></a>测试结果</h2><p>齐了！先上搜索效果：</p>
+<h4 id="正常样式"><a href="#正常样式" class="headerlink" title="正常样式"></a>正常样式</h4><img style="display: inline-block; width: 40%; max-width: 40%; height: auto;" src="search.png"/>
+
+<h4 id="侧边样式"><a href="#侧边样式" class="headerlink" title="侧边样式"></a>侧边样式</h4><img style="display: inline-block; width: 60%; max-width: 60%; height: auto;" src="search2.png"/>
+
+<p>加密的文章不会被搜到，因为目录里是加密后的字符串。也可以在 front-matter 里加<code>indexing: false</code>避免搜索。<br>不会根据<code>hexo s</code>后本地实时更新，在<code>hexo g</code>后才会更新。</p>
+<h2 id="主题颜色"><a href="#主题颜色" class="headerlink" title="主题颜色"></a>主题颜色</h2><p>既然牵扯到样式了，那一不做二不休，把网站主题色也改一下吧！新色彩新心情！</p>
+<p>修改位置：</p>
+<h4 id="themes-nexmoe-source-css-style-styl"><a href="#themes-nexmoe-source-css-style-styl" class="headerlink" title="\themes\nexmoe\source\css\style.styl"></a>\themes\nexmoe\source\css\style.styl</h4><pre><code>...
+$color =  #6495ED
+...
+.category-list-count, .archive-list-count &#123;
+    background-color: rgba(65,105,225, .1);
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    line-height: 26px;
+    text-align: center;
+    border-radius: 100%;
+    color: rgba(65,105,225, 1);
+...
+.nexmoe-copyright &#123;
+    padding: 0 30px;
+    text-align: center;
+    color: #777;
+    white-space: normal;
+    margin-bottom: 20px;
+    a &#123;
+        color: rgba(65,105,225,1);
+...
+.nexmoe-post-copyright &#123;
+    margin: 0 -25px;
+    margin-bottom: 25px;
+    padding: 25px;
+    color: #191919;
+    background-color: #fafafa;
+    line-height: 1.5em;
+    position: relative;
+    overflow: hidden;
+    a &#123;
+        color: rgb(65,105,225);
+...
+.nexmoe-rainbow &#123;
+    a:nth-child(7n+1) &#123;
+        background-color: rgba(65,105,225,0.15);
+        color: rgba(65,105,225,1);
+...</code></pre>
+<h4 id="themes-nexmoe-source-css-partial-archives-styl"><a href="#themes-nexmoe-source-css-partial-archives-styl" class="headerlink" title="\themes\nexmoe\source\css_partial\archives.styl"></a>\themes\nexmoe\source\css_partial\archives.styl</h4><pre><code>...
+.nexmoe-archives li::after &#123;
+    content: &quot;&quot;;
+    height: 100%;
+    width: 2px;
+    background: rgba(65,105,225, 0.2);
+...</code></pre>
+<h4 id="themes-nexmoe-source-css-partial-article-styl"><a href="#themes-nexmoe-source-css-partial-article-styl" class="headerlink" title="\themes\nexmoe\source\css_partial\article.styl"></a>\themes\nexmoe\source\css_partial\article.styl</h4><pre><code>...
+article &gt; ol &gt; li::before &#123;
+    content: counter(item);
+    counter-increment: item;
+    position: absolute;
+    top: 0.2rem;
+    left: -2.5em;
+    height: 1.6rem;
+    width: 1.6rem;
+    text-align: center;
+    border-radius: 8px;
+    line-height: 1.6rem;
+    background-color: rgba(65,105,225,.1);
+...
+article ul li::before &#123;
+    content: &quot;&quot;;
+    width: 14px;
+    height: 14px;
+    background: #4169E1;
+...
+article ul li::after &#123;
+    content: &quot;&quot;;
+    height: 100%;
+    width: 2px;
+    background: rgba(65,105,225, 0.2);
+...</code></pre>
+<p>颜色改成自己喜欢的就好了！</p>
+<h2 id="音乐播放器"><a href="#音乐播放器" class="headerlink" title="音乐播放器"></a>音乐播放器</h2><p>播放器的样式看不顺眼很久了，今天花一下午搞掉了…… 直接用<code>aplayer</code>，代码如下</p>
+<pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;\assets\css\APlayer.min.css&quot; class=&quot;aplayer-style-marker&quot;&gt;
+&lt;script src=&quot;\assets\js\APlayer.min.js&quot; class=&quot;aplayer-script-marker&quot;&gt;&lt;/script&gt;
+
+&lt;div id=&quot;aplayer-NBukazPi&quot; class=&quot;aplayer&quot;&gt;
+&lt;/div&gt;
+&lt;script&gt;
+  var ap = new APlayer(&#123;
+    element: document.getElementById(&quot;aplayer-NBukazPi&quot;),
+    narrow: false,
+    autoplay: false,
+    showlrc: true,
+    fixed: false,
+    lrcType: 3,
+    music: &#123;
+      title: &quot;Freesia&quot;,
+      author: &quot;(K)NoW_NAME&quot;,
+      url: &quot;/music/(K)NoW_NAME - Freesia.mp3&quot;,
+      pic: &quot;/music/pictures/(K)NoW_NAME - Freesia.jpg&quot;,
+      lrc: &quot;/music/(K)NoW_NAME - Freesia.lrc&quot;
+    &#125;
+  &#125;);
+  window.aplayers || (window.aplayers = []);
+  window.aplayers.push(ap);
+&lt;/script&gt;</code></pre>
+<p>也启用了<code>meting</code>。但有些歌没版权就没办法了。</p>
+<link rel="stylesheet" href="\assets\css\APlayer.min.css" class="aplayer-style-marker">
+<script src="\assets\js\APlayer.min.js" class="aplayer-script-marker"></script>
+
+
+
+			<script>
+				console.error("Error: [hexo-tag-aplayer] Meting support is disabled, cannot resolve the meting tags properly.");
+			</script>
+
+
+<p>但与其在这听不如直接在音乐软件里听了= =</p>
+<hr>
+<p>参考： <a target="_blank" rel="noopener" href="https://www.jianshu.com/p/685bf59cde5e">创建本地搜索引擎</a>, <a target="_blank" rel="noopener" href="https://github.com/Liam0205/hexo-search-plugin-snippets">样式美化</a>, <a target="_blank" rel="noopener" href="https://aplayer.js.org/#/zh-Hans/">aplayer</a>,<a target="_blank" rel="noopener" href="https://github.com/moeplayer/hexo-tag-aplayer#meingjs-support-new-in-30">meting</a></p>
+<p><em>原来<code>Ctrl + Shift + V</code>可以预览md文件，good to know.</em></p>
+
+  </article>
+
+  
+    
+  <div class="nexmoe-post-copyright">
+    <strong>本文作者：</strong>Ning Chenhui<br>
+    <strong>本文链接：</strong><a href="https://ningchenhui.github.io/2021/06/04/sitesearch/" title="https:&#x2F;&#x2F;ningchenhui.github.io&#x2F;2021&#x2F;06&#x2F;04&#x2F;sitesearch&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;ningchenhui.github.io&#x2F;2021&#x2F;06&#x2F;04&#x2F;sitesearch&#x2F;</a><br>
+    
+      <strong>版权声明：</strong>未经作者授权禁止转载
+    
+  </div>
+
+
+
+<center>
+   <font color="#6495ED"> ~本页已被访问<span id="busuanzi_value_page_pv"></span>次了哦~ </font>
+  <br> </br>
+  </center>
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow">
+    
+        <a class="nexmoefont icon-appstore-fill -link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
+    
+    
+        <a class="nexmoefont icon-tag-fill -none-link" href="/tags/%E5%BB%BA%E7%AB%99/" rel="tag">建站</a>
+    
+</div>
+
+  <div class="nexmoe-post-footer">
+    <section class="nexmoe-comment">
+    <!-- Unpkg -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/disqusjs@1.2.5/dist/disqusjs.min.css">
+<script src="https://cdn.jsdelivr.net/npm/disqusjs@1.2.5/dist/disqus.min.js"></script>
+<div id="disqus_thread"></div>
+<script>
+var dsqjs = new DisqusJS({
+    shortname: 'ningchenhui-github-io',
+    siteName: 'ningchenhui.github.io',
+    identifier: 'https://ningchenhui.github.io/2021/06/04/sitesearch/',
+    url: 'https://ningchenhui.github.io/2021/06/04/sitesearch/',
+    title: '搜索功能已实装！',
+    api: 'https://disqus.skk.moe/disqus/',
+    apikey: 'e6evOgi4KaQOW9DrrU1gkzYWj6dsm3Pl5ZMMS8kUw46BtSz8Ze355Igzqu11XhhI',
+    admin: 'disqus_7i3NGTLGyS',
+    adminLabel: ''
+});
+</script>
+</section>
+  </div>
+</div>
+        <div class="nexmoe-post-right">
+          <div class="nexmoe-fixed">
+            <div class="nexmoe-tool">
+              <!-- 回到顶部
+              <a href="#nexmoe-content" class="toc-link" aria-label="回到顶部" title="top"><button class="mdui-fab mdui-ripple"><i class="nexmoefont icon-caret-top"></i></button></a>
+              -->
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/combine/npm/lazysizes@5.1.0/lazysizes.min.js,gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js,npm/mdui@0.4.3/dist/js/mdui.min.js?v=1"></script>
+<script>
+	hljs.initHighlightingOnLoad();
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+
+
+<script src="/js/app.js?v=1622806417404"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js"></script>
+<script>
+	$(".justified-gallery").justifiedGallery({
+		rowHeight: 160,
+		margins: 10,
+	});
+</script>
+
+<!-- 我的搜索 -->
+
+	<script type="text/javascript">      
+	  var search_path = "./public/search.xml";
+	  if (search_path.length == 0) {
+		  search_path = "search.xml";
+	  }
+	  var path = "/" + search_path;
+	  searchFunc(path, 'local-search-input', 'local-search-result');
+	</script>
+ 
+  
+
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
+
+</html>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+

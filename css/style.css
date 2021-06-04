@@ -72,7 +72,7 @@
   content: "";
   width: 14px;
   height: 14px;
-  background: #ff4e6a;
+  background: #6495ed;
   display: inline-block;
   vertical-align: middle;
   margin-top: -2px;
@@ -87,7 +87,7 @@
   content: "";
   height: 100%;
   width: 2px;
-  background: rgba(255,78,106,0.2);
+  background: rgba(65,105,225,0.2);
   position: absolute;
   left: 6px;
   top: 20px;
@@ -172,13 +172,13 @@ article pre code:after {
 article a {
   -webkit-transition: all 0.35s ease-out;
   transition: all 0.35s ease-out;
-  color: #ff4e6a;
+  color: #6495ed;
   text-decoration: none;
   word-wrap: break-word;
 }
 article a:hover,
 article a:focus {
-  color: #ff4e6a;
+  color: #6495ed;
 }
 article a:hover {
   text-decoration: underline;
@@ -274,7 +274,7 @@ article h6:before {
   display: inline-block;
   width: 1em;
   content: '#';
-  color: #ff4e6a;
+  color: #6495ed;
 }
 article h1 {
   font-size: 2.5em;
@@ -298,7 +298,7 @@ article h2:after {
   transition: all 0.35s ease-out;
   content: "";
   position: absolute;
-  background: #ff4e6a;
+  background: #6495ed;
   width: 1em;
   height: 5px;
   bottom: -3px;
@@ -400,8 +400,8 @@ article > ol > li::before {
   text-align: center;
   border-radius: 8px;
   line-height: 1.6rem;
-  background-color: rgba(255,78,106,0.1);
-  color: #ff4e6a;
+  background-color: rgba(65,105,225,0.1);
+  color: #6495ed;
 }
 article li {
   line-height: 2rem;
@@ -501,7 +501,7 @@ article ul li::before {
   content: "";
   width: 14px;
   height: 14px;
-  background: #ff4e6a;
+  background: #4169e1;
   display: inline-block;
   vertical-align: middle;
   margin-top: -2px;
@@ -516,7 +516,7 @@ article ul li::after {
   content: "";
   height: 100%;
   width: 2px;
-  background: rgba(255,78,106,0.2);
+  background: rgba(65,105,225,0.2);
   position: absolute;
   left: 6px;
   top: 20px;
@@ -837,8 +837,8 @@ body {
 }
 #nexmoe-header .nexmoe-list .nexmoe-list-item.active {
   opacity: 0.9;
-  background: #ff4e6a;
-  box-shadow: 0 2px 12px #ff4e6a;
+  background: #6495ed;
+  box-shadow: 0 2px 12px #6495ed;
 }
 #nexmoe-header .nexmoe-list .nexmoe-list-item i {
   font-size: 22px;
@@ -861,7 +861,7 @@ body {
   font-weight: 400;
   padding: 24px 18px 12px;
   margin: 0;
-  color: #ff4e6a;
+  color: #6495ed;
 }
 #nexmoe-header .nexmoe-widget-wrap .nexmoe-widget {
   max-height: 500px;
@@ -893,8 +893,9 @@ body {
   color: #606266;
 }
 #nexmoe-header .nexmoe-widget-wrap .nexmoe-widget ul li p {
+  color: #808286;
   margin-top: 10px;
-  font-size: 14px;
+  font-size: 13px;
   max-height: 124px;
   overflow: hidden;
 }
@@ -907,14 +908,14 @@ body {
 }
 #nexmoe-header .nexmoe-widget-wrap .nexmoe-widget .category-list-count,
 #nexmoe-header .nexmoe-widget-wrap .nexmoe-widget .archive-list-count {
-  background-color: rgba(255,78,106,0.1);
+  background-color: rgba(65,105,225,0.1);
   display: inline-block;
   width: 26px;
   height: 26px;
   line-height: 26px;
   text-align: center;
   border-radius: 100%;
-  color: #ff4e6a;
+  color: #4169e1;
   position: absolute;
   right: 18px;
   top: 10px;
@@ -944,7 +945,7 @@ body {
   margin-bottom: 20px;
 }
 #nexmoe-header .nexmoe-copyright a {
-  color: #ff4e6a;
+  color: #4169e1;
 }
 @media screen and (max-width: 1024px) {
   #nexmoe-header {
@@ -980,9 +981,9 @@ body {
 }
 #nexmoe-content .nexmoe-primary .nexmoe-page-nav .current {
   color: #fff;
-  background: #ff4e6a;
+  background: #6495ed;
   opacity: 0.9;
-  box-shadow: 0 2px 12px #ff4e6a;
+  box-shadow: 0 2px 12px #6495ed;
 }
 #nexmoe-content .nexmoe-primary .nexmoe-page-nav > * {
   color: #999;
@@ -1100,7 +1101,7 @@ body {
   overflow: hidden;
 }
 #nexmoe-content .nexmoe-post .nexmoe-post-copyright a {
-  color: #ff4e6a;
+  color: #4169e1;
 }
 #nexmoe-content .nexmoe-post .nexmoe-post-copyright:after {
   position: absolute;
@@ -1175,13 +1176,13 @@ body {
   }
 }
 article .mdui-btn {
-  background-color: #ff4e6a;
+  background-color: #6495ed;
   color: #fff;
   border-radius: 10px;
 }
 article .mdui-btn:focus,
 article .mdui-btn:hover {
-  background-color: #ff4e6a;
+  background-color: #6495ed;
   color: #fff;
 }
 font.douyin {
@@ -1265,8 +1266,8 @@ photos img {
   width: 25%;
 }
 .nexmoe-rainbow a:nth-child(7n+1) {
-  background-color: rgba(255,78,106,0.15);
-  color: #ff4e6a;
+  background-color: rgba(65,105,225,0.15);
+  color: #4169e1;
 }
 .nexmoe-rainbow a:nth-child(7n+2) {
   background-color: rgba(255,118,30,0.15);
