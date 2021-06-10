@@ -1,0 +1,453 @@
+<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><!DOCTYPE html>
+
+<html lang="zh-CN">
+
+<head>
+  
+  <title>一切都会好起来的哟</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="Ning Chenhui">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  
+  <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+<style>
+	* {
+	    margin: 0;
+	    padding: 0;
+	}
+</style>
+<script id="vertex-shader" type="x-shader/x-vertex">
+	//定义一个顶点着色器
+	precision mediump float;
+	attribute vec4 vPosition,vNormal;
+	uniform vec4 materialAmbient,materialDiffuse,materialSpecular;
+	uniform float shininess;
+	varying vec4 fColor;
+	uniform vec4 uColor;
+	uniform mat4 ModelStateMatrix,ModelViewMatrix,ProjectionMatrix;
+	uniform vec4 lightAmbient,lightDiffuse,lightSpecular;
+	uniform vec4 lightPosition;
+	uniform int drawType1;
+	attribute vec2 vTexCoord;
+	varying vec2 fTexCoord;
+	varying float fDrawType;
+
+	uniform vec4 eye;
+
+	void main()
+	{
+		//if(drawType1&(1<<4))vPosition.x+=
+		gl_Position = ProjectionMatrix*ModelViewMatrix*ModelStateMatrix*vPosition;
+		if(drawType1==0){//单色
+			fColor=uColor;
+			return;
+		}else if(drawType1==1){//带颜色
+			fColor=vNormal;
+			return;
+		}else if(drawType1==2){//带材质
+			vec4 pos = ModelStateMatrix*vPosition;
+			vec4 l;
+			if(lightPosition.w==0.0)l=lightPosition;
+			else l = lightPosition-pos;
+			vec3 L = normalize(l.xyz);
+			vec4 e = eye-pos;
+			vec3 E = normalize(e.xyz);
+			vec3 H = normalize(L+E);
+			vec4 n = ModelStateMatrix*vNormal;
+			vec3 N = normalize(n.xyz);
+			vec4 ambient = lightAmbient * materialAmbient;
+			float Kd = max(dot(L, N), 0.0);
+			vec4 diffuse = Kd * (lightDiffuse * materialDiffuse);
+			float Ks = pow(max(dot(N, H), 0.0), shininess);
+			vec4 specular = Ks * (lightSpecular * materialSpecular);
+			if (dot(L, N) < 0.0) {
+				specular = vec4(0.0, 0.0, 0.0, 1.0);
+			}
+			fColor = ambient + diffuse + specular;
+			fColor.a = 1.0;
+			//break;
+		}else if(drawType1==3){//case 3://带位置纹理
+			fTexCoord = vTexCoord;
+			//break;
+		}else if(drawType1==4){//case 3://带参数纹理
+			//fTexCoord = vTexCoord;
+			//break;
+		}
+	}
+</script>
+
+<script id="fragment-shader" type="x-shader/x-fragment">
+//定义一个片元着色器
+//       中等精度
+precision mediump float;
+varying vec4 fColor;
+uniform int drawType2;
+varying vec2 fTexCoord;
+uniform sampler2D textureId;
+
+void main()
+{
+	if(drawType2==3){//带位置纹理
+		gl_FragColor = texture2D( textureId, fTexCoord );
+	}
+	else gl_FragColor = fColor;
+}
+</script>
+
+<script type="text/javascript" src="../Common/webgl-utils.js"></script>
+<script type="text/javascript" src="../Common/initShaders.js"></script>
+<script type="text/javascript" src="../Common/MV.js"></script><!--导入vec2等-->
+<script type="text/javascript" src="map.js"></script>
+<script type="text/javascript" src="Obj.js"></script>
+<script type="text/javascript" src="OnlyMyCube.js"></script>
+
+
+  <link rel="shortcut icon" href="/pictures/icon.jpg" type="image/png" />
+  <meta name="description" content="* { 	    margin: 0; 	    padding: 0; 	}   	&#x2F;&#x2F;定义一个顶点着色器 	precision mediump float; 	attribute vec4 vPosition,vNormal; 	uniform vec4 materialAmbient,materialDiffuse,materialSpecular; 	uniform floa">
+<meta property="og:type" content="website">
+<meta property="og:title" content="一切都会好起来的哟">
+<meta property="og:url" content="https://ningchenhui.github.io/files/OnlyMyCube/OnlyMyCube.html">
+<meta property="og:site_name" content="一切都会好起来的哟">
+<meta property="og:description" content="* { 	    margin: 0; 	    padding: 0; 	}   	&#x2F;&#x2F;定义一个顶点着色器 	precision mediump float; 	attribute vec4 vPosition,vNormal; 	uniform vec4 materialAmbient,materialDiffuse,materialSpecular; 	uniform floa">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-06-10T04:43:36.827Z">
+<meta property="article:modified_time" content="2021-06-10T04:43:36.827Z">
+<meta property="article:author" content="Ning Chenhui">
+<meta property="article:tag" content="Ning Chenhui">
+<meta name="twitter:card" content="summary">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/theme-nexmoe/hexo-theme-nexmoe@latest/source/lib/mdui_043tiny/css/mdui.css,gh/theme-nexmoe/hexo-theme-nexmoe@latest/source/lib/iconfont/iconfont.css,gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css?v=233" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css?v=1623300225673">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+  <script src="/live2d-widget/autoload.js"></script>
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body class="mdui-drawer-body-left">
+  
+  <div id="nexmoe-background">
+    <div class="nexmoe-bg" style="background-image: url(/pictures/dream/yokina.PNG)"></div>
+    <div class="mdui-appbar mdui-shadow-0">
+      <div class="mdui-toolbar">
+        <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
+        <div class="mdui-toolbar-spacer"></div>
+        <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+        <a href="/" title="Ning Chenhui" class="mdui-btn mdui-btn-icon"><img src="/pictures/me.jpg" alt="Ning Chenhui"></a>
+       </div>
+    </div>
+  </div>
+  <div id="nexmoe-header">
+      <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="Ning Chenhui">
+            <img src="/pictures/me.jpg" alt="Ning Chenhui" alt="Ning Chenhui">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>文章</span>65</div>
+        <div><span>标签</span>11</div>
+        <div><span>分类</span>4</div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/" title="首页">
+            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/archives.html" title="归档">
+            <i class="mdui-list-item-icon nexmoefont icon-container"></i>
+            <div class="mdui-list-item-content">
+                归档
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/about-welcome.html" title="关于">
+            <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+            <div class="mdui-list-item-content">
+                关于
+            </div>
+        </a>
+        
+    </div>
+    <aside id="nexmoe-sidebar">
+  
+  <div class="nexmoe-widget-wrap">
+
+    <!--
+    <div class="nexmoe-widget nexmoe-search">
+        <form id="search_form" action_e="" onsubmit="return search();">
+            <label><input id="search_value" name="q" type="search" placeholder="搜索"></label>
+        </form>
+    </div>
+    -->
+
+    <!-- 我的搜索 -->
+    <div class="nexmoe-widget nexmoe-search">
+        <form id="search_form">
+            <label><input id="local-search-input" name="q" type="text" results="0" placeholder="搜全站！" class="st-search-input st-default-search-input form-control"/></label>
+        </form>
+        <div id="local-search-result" ></div>
+    </div>
+    
+
+</div>
+
+  
+  <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-social">
+        <a class="mdui-ripple" href="/about-welcome.html#%E8%81%94%E7%B3%BB%E6%88%91" target="_blank" mdui-tooltip="{content: 'QQ'}" style="color: rgb(249, 174, 8);background-color: rgba(249, 174, 8, .1);">
+            <i class="nexmoefont icon-QQ"></i>
+        </a><a class="mdui-ripple" href="https://space.bilibili.com/316021638" target="_blank" mdui-tooltip="{content: '哔哩哔哩'}" style="color: rgb(231, 106, 141);background-color: rgba(231, 106, 141, .15);">
+            <i class="nexmoefont icon-bilibili"></i>
+        </a><a class="mdui-ripple" href="https://github.com/NingChenhui" target="_blank" mdui-tooltip="{content: 'GitHub'}" style="color: rgb(25, 23, 23);background-color: rgba(25, 23, 23, .15);">
+            <i class="nexmoefont icon-github"></i>
+        </a><a class="mdui-ripple" href="mailto:sinkihosizuki@gmail.com" target="_blank" mdui-tooltip="{content: '邮箱'}" style="color: rgb(106,90,205);background-color: rgba(230,230,250);">
+            <i class="nexmoefont icon-mail-fill"></i>
+        </a>
+    </div>
+</div>
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <div id="randomtagcloud" class="nexmoe-widget tagcloud nexmoe-rainbow">
+      <a href="/tags/Linux/" style="font-size: 18.75px;">Linux</a> <a href="/tags/Mirror/" style="font-size: 16.25px;">Mirror</a> <a href="/tags/%E4%BF%9D%E7%A0%94/" style="font-size: 13.75px;">保研</a> <a href="/tags/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/" style="font-size: 20px;">地球科学</a> <a href="/tags/%E5%BB%BA%E7%AB%99/" style="font-size: 11.25px;">建站</a> <a href="/tags/%E6%97%A5%E8%AF%AD/" style="font-size: 10px;">日语</a> <a href="/tags/%E6%A8%A1%E5%BC%8F/" style="font-size: 12.5px;">模式</a> <a href="/tags/%E6%B8%B8%E6%88%8F/" style="font-size: 15px;">游戏</a> <a href="/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 17.5px;">生活</a> <a href="/tags/%E8%AF%BE%E7%A8%8B%E8%B5%84%E6%96%99/" style="font-size: 10px;">课程资料</a> <a href="/tags/%E8%BD%AC%E8%BD%BD/" style="font-size: 10px;">转载</a>
+    </div>
+    
+  </div>
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章归档</h3>
+    <div class="nexmoe-widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a><span class="archive-list-count">37</span></li></ul>
+    </div>
+  </div>
+
+
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章分类</h3>
+    <div class="nexmoe-widget">
+
+      <ul class="category-list">
+
+        
+
+
+        
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/学习/">学习</a>
+          <span class="category-list-count">29</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/小记/">小记</a>
+          <span class="category-list-count">28</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/经验/">经验</a>
+          <span class="category-list-count">6</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/资料/">资料</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+      </ul>
+
+    </div>
+  </div>
+
+
+  
+</aside>
+
+<center>
+    <font color="#6495ED"> 营业中 [<span id="busuanzi_value_site_uv"></span>/1000] </font>
+  <br> </br>
+  </center>
+    <div class="nexmoe-copyright">
+        &copy; 2021 Ning Chenhui
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://github.com/theme-nexmoe/hexo-theme-nexmoe" target="_blank">Nexmoe</a>
+        
+    </div>
+</div><!-- .nexmoe-drawer -->
+  </div>
+  <div id="nexmoe-content">
+    <div class="nexmoe-primary">
+        <div class="nexmoe-post">
+  
+
+  
+  
+
+
+  <div class="nexmoe-post-right">
+    
+      <div class="nexmoe-fixed">
+        <div class="nexmoe-valign">
+            <div class="nexmoe-toc">
+                
+                
+            </div>
+        </div>
+      </div>
+    
+  </div>
+
+  <article>
+    
+ 
+      <h2 id="Only My Cube"><a href="#Only My Cube" class="headerlink" title="Only My Cube"></a>Only My Cube - a music fan-game like Dancing Line.</h4>
+
+
+<audio id="music" src="omr.mp3"></audio>
+<canvas id="gl-canvas" width="512" height="512" style="display:block;">
+Oops ... your browser doesn't support the HTML5 canvas element
+</canvas>
+
+<h4 id="控制方法"><a href="#控制方法" class="headerlink" title="控制方法"></a>控制方法</h4><ul>
+  <li>B，单击：控制转向</li>
+  <li>F5：刷新重新游戏</li>
+  <li>Z：增加游戏难度</li>
+  <li>X：减小游戏难度</li>
+  <li>自动模式：按A键进入</li>
+  <li>空格：开始/暂停</li>
+  <li>P：转换视角模式 正交/透视（不建议使用）</li>
+  </ul>
+
+  </article>
+
+  
+    
+  <div class="nexmoe-post-copyright">
+    <strong>本文作者：</strong>Ning Chenhui<br>
+    <strong>本文链接：</strong><a href="https://ningchenhui.github.io/files/OnlyMyCube/OnlyMyCube.html" title="https:&#x2F;&#x2F;ningchenhui.github.io&#x2F;files&#x2F;OnlyMyCube&#x2F;OnlyMyCube.html" target="_blank" rel="noopener">https:&#x2F;&#x2F;ningchenhui.github.io&#x2F;files&#x2F;OnlyMyCube&#x2F;OnlyMyCube.html</a><br>
+    
+      <strong>版权声明：</strong>未经作者授权禁止转载
+    
+  </div>
+
+
+
+<center>
+   <font color="#6495ED"> ~本页已被访问<span id="busuanzi_value_page_pv"></span>次了哦~ </font>
+  <br> </br>
+  </center>
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow">
+    
+    
+</div>
+
+  <div class="nexmoe-post-footer">
+    <section class="nexmoe-comment">
+    <!-- Unpkg -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/disqusjs@1.2.5/dist/disqusjs.min.css">
+<script src="https://cdn.jsdelivr.net/npm/disqusjs@1.2.5/dist/disqus.min.js"></script>
+<div id="disqus_thread"></div>
+<script>
+var dsqjs = new DisqusJS({
+    shortname: 'ningchenhui-github-io',
+    siteName: 'ningchenhui.github.io',
+    identifier: 'https://ningchenhui.github.io/files/OnlyMyCube/OnlyMyCube.html',
+    url: 'https://ningchenhui.github.io/files/OnlyMyCube/OnlyMyCube.html',
+    title: '',
+    api: 'https://disqus.skk.moe/disqus/',
+    apikey: 'e6evOgi4KaQOW9DrrU1gkzYWj6dsm3Pl5ZMMS8kUw46BtSz8Ze355Igzqu11XhhI',
+    admin: 'disqus_7i3NGTLGyS',
+    adminLabel: ''
+});
+</script>
+</section>
+  </div>
+</div>
+        <div class="nexmoe-post-right">
+          <div class="nexmoe-fixed">
+            <div class="nexmoe-tool">
+              <!-- 回到顶部
+              <a href="#nexmoe-content" class="toc-link" aria-label="回到顶部" title="top"><button class="mdui-fab mdui-ripple"><i class="nexmoefont icon-caret-top"></i></button></a>
+              -->
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/combine/npm/lazysizes@5.1.0/lazysizes.min.js,gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js,npm/mdui@0.4.3/dist/js/mdui.min.js?v=1"></script>
+<script>
+	hljs.initHighlightingOnLoad();
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+
+
+<script src="/js/app.js?v=1623300225676"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js"></script>
+<script>
+	$(".justified-gallery").justifiedGallery({
+		rowHeight: 160,
+		margins: 10,
+	});
+</script>
+
+<!-- 我的搜索 -->
+
+	<script type="text/javascript">      
+	  var search_path = "./public/search.xml";
+	  if (search_path.length == 0) {
+		  search_path = "search.xml";
+	  }
+	  var path = "/" + search_path;
+	  searchFunc(path, 'local-search-input', 'local-search-result');
+	</script>
+ 
+  
+
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
+
+</html>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
