@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+<head>
+  
+  <title>Linux学习 笔记#07 压缩，备份与Vim - 一切都会好起来的哟</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="Ning Chenhui">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  
+  
+
+  <link rel="shortcut icon" href="/pictures/icon.jpg" type="image/png" />
+  <meta name="description" content="在家逐渐颓废_〆(´Д｀ )">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux学习 笔记#07 压缩，备份与Vim">
+<meta property="og:url" content="https://ningchenhui.github.io/2021/07/03/linuxA0703/index.html">
+<meta property="og:site_name" content="一切都会好起来的哟">
+<meta property="og:description" content="在家逐渐颓废_〆(´Д｀ )">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-07-03T06:22:36.000Z">
+<meta property="article:modified_time" content="2021-07-03T10:14:35.512Z">
+<meta property="article:author" content="Ning Chenhui">
+<meta property="article:tag" content="Linux">
+<meta name="twitter:card" content="summary">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/theme-nexmoe/hexo-theme-nexmoe@latest/source/lib/mdui_043tiny/css/mdui.css,gh/theme-nexmoe/hexo-theme-nexmoe@latest/source/lib/iconfont/iconfont.css,gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css?v=233" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css?v=1625307318242">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+  <script src="/live2d-widget/autoload.js"></script>
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body class="mdui-drawer-body-left">
+  
+  <div id="nexmoe-background">
+    <div class="nexmoe-bg" style="background-image: url(/pictures/dream/yokina.PNG)"></div>
+    <div class="mdui-appbar mdui-shadow-0">
+      <div class="mdui-toolbar">
+        <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
+        <div class="mdui-toolbar-spacer"></div>
+        <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+        <a href="/" title="Ning Chenhui" class="mdui-btn mdui-btn-icon"><img src="/pictures/me.jpg" alt="Ning Chenhui"></a>
+       </div>
+    </div>
+  </div>
+  <div id="nexmoe-header">
+      <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="Ning Chenhui">
+            <img src="/pictures/me.jpg" alt="Ning Chenhui" alt="Ning Chenhui">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>忆</span>70</div>
+        <div><span>签</span>11</div>
+        <div><span>属</span>4</div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/" title="首页">
+            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/archives.html" title="归档">
+            <i class="mdui-list-item-icon nexmoefont icon-container"></i>
+            <div class="mdui-list-item-content">
+                归档
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/about-welcome.html" title="关于">
+            <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+            <div class="mdui-list-item-content">
+                关于
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/files/OnlyMyCube/OnlyMyCube.html" title="游戏">
+            <i class="mdui-list-item-icon nexmoefont icon-coffee"></i>
+            <div class="mdui-list-item-content">
+                游戏
+            </div>
+        </a>
+        
+    </div>
+    <aside id="nexmoe-sidebar">
+  
+  <div class="nexmoe-widget-wrap">
+
+    <!--
+    <div class="nexmoe-widget nexmoe-search">
+        <form id="search_form" action_e="" onsubmit="return search();">
+            <label><input id="search_value" name="q" type="search" placeholder="搜索"></label>
+        </form>
+    </div>
+    -->
+
+    <!-- 我的搜索 -->
+    <div class="nexmoe-widget nexmoe-search">
+        <form id="search_form">
+            <label><input id="local-search-input" name="q" type="text" results="0" placeholder="搜全站！" class="st-search-input st-default-search-input form-control"/></label>
+        </form>
+        <div id="local-search-result" ></div>
+    </div>
+    
+
+</div>
+
+  
+  <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-social">
+        <a class="mdui-ripple" href="/about-welcome.html#%E8%81%94%E7%B3%BB%E6%88%91" target="_blank" mdui-tooltip="{content: 'QQ'}" style="color: rgb(249, 174, 8);background-color: rgba(249, 174, 8, .1);">
+            <i class="nexmoefont icon-QQ"></i>
+        </a><a class="mdui-ripple" href="https://space.bilibili.com/316021638" target="_blank" mdui-tooltip="{content: '哔哩哔哩'}" style="color: rgb(231, 106, 141);background-color: rgba(231, 106, 141, .15);">
+            <i class="nexmoefont icon-bilibili"></i>
+        </a><a class="mdui-ripple" href="https://github.com/NingChenhui" target="_blank" mdui-tooltip="{content: 'GitHub'}" style="color: rgb(25, 23, 23);background-color: rgba(25, 23, 23, .15);">
+            <i class="nexmoefont icon-github"></i>
+        </a><a class="mdui-ripple" href="mailto:sinkihosizuki@gmail.com" target="_blank" mdui-tooltip="{content: '邮箱'}" style="color: rgb(106,90,205);background-color: rgba(230,230,250);">
+            <i class="nexmoefont icon-mail-fill"></i>
+        </a>
+    </div>
+</div>
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <div id="randomtagcloud" class="nexmoe-widget tagcloud nexmoe-rainbow">
+      <a href="/tags/Linux/" style="font-size: 18.57px;">Linux</a> <a href="/tags/Mirror/" style="font-size: 17.14px;">Mirror</a> <a href="/tags/%E4%BF%9D%E7%A0%94/" style="font-size: 14.29px;">保研</a> <a href="/tags/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/" style="font-size: 20px;">地球科学</a> <a href="/tags/%E5%BB%BA%E7%AB%99/" style="font-size: 11.43px;">建站</a> <a href="/tags/%E6%97%A5%E8%AF%AD/" style="font-size: 10px;">日语</a> <a href="/tags/%E6%A8%A1%E5%BC%8F/" style="font-size: 12.86px;">模式</a> <a href="/tags/%E6%B8%B8%E6%88%8F/" style="font-size: 15.71px;">游戏</a> <a href="/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 18.57px;">生活</a> <a href="/tags/%E8%AF%BE%E7%A8%8B%E8%B5%84%E6%96%99/" style="font-size: 10px;">课程资料</a> <a href="/tags/%E8%BD%AC%E8%BD%BD/" style="font-size: 10px;">转载</a>
+    </div>
+    
+  </div>
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章归档</h3>
+    <div class="nexmoe-widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a><span class="archive-list-count">38</span></li></ul>
+    </div>
+  </div>
+
+
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章分类</h3>
+    <div class="nexmoe-widget">
+
+      <ul class="category-list">
+
+        
+
+
+        
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/学习/">学习</a>
+          <span class="category-list-count">30</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/小记/">小记</a>
+          <span class="category-list-count">32</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/经验/">经验</a>
+          <span class="category-list-count">6</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/资料/">资料</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+      </ul>
+
+    </div>
+  </div>
+
+
+  
+</aside>
+
+<center>
+    <font color="#6495ED"> 营业中 [<span id="busuanzi_value_site_uv"></span>/1000] </font>
+  <br> </br>
+  </center>
+    <div class="nexmoe-copyright">
+        &copy; 2021 Ning Chenhui
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://github.com/theme-nexmoe/hexo-theme-nexmoe" target="_blank">Nexmoe</a>
+        
+    </div>
+</div><!-- .nexmoe-drawer -->
+  </div>
+  <div id="nexmoe-content">
+    <div class="nexmoe-primary">
+        <div class="nexmoe-post">
+  
+      <div class="nexmoe-post-cover" style="padding-bottom: 75.11244377811094%;"> 
+          <img data-src="/pictures/dream/lan-scarlet.png" data-sizes="auto" alt="Linux学习 笔记#07 压缩，备份与Vim" class="lazyload">
+          <h1>Linux学习 笔记#07 压缩，备份与Vim</h1>
+      </div>
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
+    <a><i class="nexmoefont icon-calendar-fill"></i>2021年07月03日</a>
+    <a><i class="nexmoefont icon-areachart"></i>1.6k 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 7 分钟</a>
+    
+</div>
+
+  <div class="nexmoe-post-right">
+    
+      <div class="nexmoe-fixed">
+        <div class="nexmoe-valign">
+            <div class="nexmoe-toc">
+                
+                
+                  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Ch8-%E6%96%87%E4%BB%B6%E4%B8%8E%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8E%8B%E7%BC%A9-%E6%89%93%E5%8C%85%E4%B8%8E%E5%A4%87%E4%BB%BD"><span class="toc-number">1.</span> <span class="toc-text">Ch8 文件与文件系统的压缩,打包与备份</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Linux-%E7%B3%BB%E7%BB%9F%E5%B8%B8%E8%A7%81%E7%9A%84%E5%8E%8B%E7%BC%A9%E6%8C%87%E4%BB%A4"><span class="toc-number">1.1.</span> <span class="toc-text">Linux 系统常见的压缩指令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#XFS%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%A4%87%E4%BB%BD%E7%AD%89"><span class="toc-number">1.2.</span> <span class="toc-text">XFS文件系统备份等</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Ch9-vim-%E7%A8%8B%E5%BA%8F%E7%BC%96%E8%BE%91%E5%99%A8"><span class="toc-number">2.</span> <span class="toc-text">Ch9 vim 程序编辑器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#vi-%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-number">2.1.</span> <span class="toc-text">vi 的使用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Start%EF%BC%9Avi-filename%EF%BC%81"><span class="toc-number">2.1.1.</span> <span class="toc-text">Start：vi filename！</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8C%BA%E5%9D%97%E9%80%89%E6%8B%A9-Visual-Block"><span class="toc-number">2.1.2.</span> <span class="toc-text">区块选择(Visual Block)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%9A%E6%96%87%E4%BB%B6%E7%BC%96%E8%BE%91"><span class="toc-number">2.1.3.</span> <span class="toc-text">多文件编辑</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%9A%E7%AA%97%E5%8F%A3"><span class="toc-number">2.1.4.</span> <span class="toc-text">多窗口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A1%A5%E5%85%A8"><span class="toc-number">2.1.5.</span> <span class="toc-text">补全</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#vim-%E7%8E%AF%E5%A2%83%E8%AE%BE%E5%AE%9A%E4%B8%8E%E8%AE%B0%E5%BD%95%EF%BC%9A-vimrc-viminfo%EF%BC%8C%E7%BC%96%E7%A0%81"><span class="toc-number">2.1.6.</span> <span class="toc-text">vim 环境设定与记录： ~&#x2F;.vimrc, ~&#x2F;.viminfo，编码</span></a></li></ol></li></ol></li></ol>
+                
+            </div>
+        </div>
+      </div>
+    
+  </div>
+
+  <article>
+    <p>在家逐渐颓废_〆(´Д｀ ) <a id="more"></a></p>
+<h2 id="Ch8-文件与文件系统的压缩-打包与备份"><a href="#Ch8-文件与文件系统的压缩-打包与备份" class="headerlink" title="Ch8 文件与文件系统的压缩,打包与备份"></a>Ch8 文件与文件系统的压缩,打包与备份</h2><h3 id="Linux-系统常见的压缩指令"><a href="#Linux-系统常见的压缩指令" class="headerlink" title="Linux 系统常见的压缩指令"></a>Linux 系统常见的压缩指令</h3><p>几个常见的压缩文件案扩展名</p>
+<ul>
+<li>*.zip       zip 程序压缩的文件； </li>
+<li>*.gz        gzip 程序压缩的文件； </li>
+<li>*.bz2       bzip2 程序压缩的文件； </li>
+<li>*.xz        xz 程序压缩的文件； </li>
+<li>*.tar       tar 程序打包的数据，并没有压缩过； </li>
+<li>*.tar.gz    tar 程序打包的文件，其中并且经过 gzip 的压缩 </li>
+<li>*.tar.bz2   tar 程序打包的文件，其中并且经过 bzip2 的压缩 </li>
+<li>*.tar.xz    tar 程序打包的文件，其中并且经过 xz 的压缩</li>
+</ul>
+<ol>
+<li><code>gzip [-dtvk19] filename[.gz]</code><br><code>-k</code> 保留原始档, <code>-d</code> 解压缩。用<code>zcat/zmore/zless/zgrep</code>可以直接显示压缩档内容。</li>
+<li><code>bzip2 [-dkv19] filename[.bz2]</code><br>与<code>gzip</code>参数基本一致，压缩比更好，但大文件压缩较慢。同样有<code>bzcat</code>。</li>
+<li><code>xz [-dtvk19] filename[.xz]</code><br>压缩比更好，时间更久。同样有<code>xzcat</code>。</li>
+<li><code>tar</code><br>之前的命令是文件单独压缩，而<code>tar</code>是把目录中的文件打包为一个文件。<ul>
+<li>压 缩：<code>tar -jcv -f filename.tar.bz2 要被压缩的文件或目录名称</code></li>
+<li>查 询：<code>tar -jtv -f filename.tar.bz2</code></li>
+<li>解压缩：<code>tar -jxv -f filename.tar.bz2 -C 欲解压缩的目录</code><br>另外，<code>z</code>为<code>.gz</code>，<code>J</code>为<code>.xz</code>，可代替<code>-j</code>。<code>v</code>为显示处理的文件，<code>f</code>可放在前面参数的最后。</li>
+</ul>
+</li>
+</ol>
+<p>解开单独文件：</p>
+<ol>
+<li>找到文件：<code>tar -jtv -f /root/etc.tar.bz2 | grep &#39;shadow&#39;</code></li>
+<li>解压缩： <code>tar -jxv -f /root/etc.tar.bz2 etc/shadow</code></li>
+</ol>
+<p>排除一些不压缩的文件：<br><code>tar -jcv -f /root/system.tar.bz2 --exclude=/root/etc* --exclude=/root/system.tar.bz2 /etc /root</code><br>只压缩较新的文件：（这个用来备份可以节省空间哦，因为不会重复备份某些文件啦<br><code>tar -jcv jcv -f /root/etc.newer.tar.bz2 --newer-mtime=&quot;2021/06/17&quot; /etc/</code><br>特殊应用：利用管线命令与数据流</p>
+<pre><code>cd /tmp
+tar -cvf - /etc | tar -xvf xvf -</code></pre>
+<h3 id="XFS文件系统备份等"><a href="#XFS文件系统备份等" class="headerlink" title="XFS文件系统备份等"></a>XFS文件系统备份等</h3><p>所用的<code>xfsdump</code>是累积备份的，不过<code>WSL</code>好像有点区别吧，pass<br>光盘相关的也是pass，家里早都莫得CD机了电脑也没驱动<br><code>dd</code>：直接读取扇区的复制，一模一样不用理会文件系统<br><code>cpio</code>：同样用于文件复制，可以备份任何东西。但感觉比较笨。</p>
+<p>不过说起来我现在用的备份都是直接复制粘贴的同步…… 根本没压缩啊！只有很少文件压缩了<br>一个很好用的同步软件：FreeFileSync</p>
+<h2 id="Ch9-vim-程序编辑器"><a href="#Ch9-vim-程序编辑器" class="headerlink" title="Ch9 vim 程序编辑器"></a>Ch9 vim 程序编辑器</h2><p>终于到这个随机字符串生成器了 - -</p>
+<h3 id="vi-的使用"><a href="#vi-的使用" class="headerlink" title="vi 的使用"></a>vi 的使用</h3><ul>
+<li>一般指令模式 (command mode)<br>以 vi 打开一个文件就直接进入一般指令模式。可以使用『上下左右』按键来移动光标，『删除字符』或『删除整行』来处理文件内容， 也可以使用『复制、粘贴』。 </li>
+<li>编辑模式 (insert mode)<br>按下『i, I, o, O, a, A, r, R』等任何一个字母之后进入编辑模式。通常在 Linux 中，按下这些按键时，在画面的左下方会出现『 INSERT 或 REPLACE 』的字样要回到一般指令模式时， 则须按下『Esc』。 </li>
+<li>指令行命令模式 (command-line mode)<br>在一般模式当中，输入『 : / ? 』三个中的任何一个按钮，就可以将光标移动到最底下那一行。在这个模式当中， 可以提供你『搜寻资料』的动作，读取、存盘、大量取代字符、离开 vi 、显示行号等等的动作也是在此模式中达成。</li>
+</ul>
+<h4 id="Start：vi-filename！"><a href="#Start：vi-filename！" class="headerlink" title="Start：vi filename！"></a>Start：<code>vi filename</code>！</h4><p>基础：按<code>i</code>输入文本，<code>esc</code>退出，<code>:wq</code>保存/<code>:wq!</code>强制保存。</p>
+<p>一般指令模式按键</p>
+<table>
+<thead>
+<tr>
+<th align="center">按键</th>
+<th align="left">操作</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">num方向键</td>
+<td align="left">光标移动，前面加数字可批量移动</td>
+</tr>
+<tr>
+<td align="center">ctrl+f，b</td>
+<td align="left">等于Page Down，Up</td>
+</tr>
+<tr>
+<td align="center">num空格</td>
+<td align="left">光标后移num个</td>
+</tr>
+<tr>
+<td align="center">0，Home</td>
+<td align="left">行首</td>
+</tr>
+<tr>
+<td align="center">$,End</td>
+<td align="left">行尾</td>
+</tr>
+<tr>
+<td align="center">G</td>
+<td align="left">最后一行</td>
+</tr>
+<tr>
+<td align="center">gg</td>
+<td align="left">首行</td>
+</tr>
+<tr>
+<td align="center">num回车</td>
+<td align="left">光标下移num行</td>
+</tr>
+<tr>
+<td align="center">/string</td>
+<td align="left">向光标之下寻找一个名称为 string 的字符串</td>
+</tr>
+<tr>
+<td align="center">？string</td>
+<td align="left">向光标之上寻找一个字符串名称为 string 的字符串</td>
+</tr>
+<tr>
+<td align="center">n</td>
+<td align="left">重复上一个搜寻动作</td>
+</tr>
+<tr>
+<td align="center">N</td>
+<td align="left">反向重复上一个搜寻动作</td>
+</tr>
+<tr>
+<td align="center">:n1,n2s/word1/word2/g</td>
+<td align="left">在第 n1 与 n2 行之间寻找 word1 这个字符串，并将该字符串取代为 word2 ！举例『:100,200s/vbird/VBIRD/g』。n2为$则是最后一行，加c则取代时确认</td>
+</tr>
+<tr>
+<td align="center">dd</td>
+<td align="left">删除一整行</td>
+</tr>
+<tr>
+<td align="center">num dd</td>
+<td align="left">删除光标向下num行</td>
+</tr>
+<tr>
+<td align="center">yy</td>
+<td align="left">复制一整行</td>
+</tr>
+<tr>
+<td align="center">num yy</td>
+<td align="left">复制光标向下num行</td>
+</tr>
+<tr>
+<td align="center">p</td>
+<td align="left">将已复制的数据在光标下一行贴上</td>
+</tr>
+<tr>
+<td align="center">u</td>
+<td align="left">复原前一个动作</td>
+</tr>
+<tr>
+<td align="center">CTRL+r</td>
+<td align="left">重做上一个动作</td>
+</tr>
+<tr>
+<td align="center">.</td>
+<td align="left">重复前一个动作</td>
+</tr>
+</tbody></table>
+<p>一般指令模式切换到指令列模式的可用按钮说明</p>
+<table>
+<thead>
+<tr>
+<th align="center">按键</th>
+<th align="left">操作</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">:wq</td>
+<td align="left">储存后离开，若为 :wq! 则为强制储存后离开</td>
+</tr>
+<tr>
+<td align="center">ZZ</td>
+<td align="left">若文件没有更动，则不储存离开，若文件已经被更动过，则储存后离开！</td>
+</tr>
+<tr>
+<td align="center">:w [filename]</td>
+<td align="left">另存为</td>
+</tr>
+<tr>
+<td align="center">:q!</td>
+<td align="left">强制离开不储存文件</td>
+</tr>
+<tr>
+<td align="center">:set nu</td>
+<td align="left">显示行号，nonu为取消</td>
+</tr>
+</tbody></table>
+<h4 id="区块选择-Visual-Block"><a href="#区块选择-Visual-Block" class="headerlink" title="区块选择(Visual Block)"></a>区块选择(Visual Block)</h4><table>
+<thead>
+<tr>
+<th align="center">按键</th>
+<th align="left">操作</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">v</td>
+<td align="left">字符选择，会将光标经过的地方反白选择！</td>
+</tr>
+<tr>
+<td align="center">V</td>
+<td align="left">列选择，会将光标经过的列反白选择！</td>
+</tr>
+<tr>
+<td align="center">[Ctrl]+v</td>
+<td align="left">区块选择，可以方向键移动光标，用长方形的方式选择资料</td>
+</tr>
+<tr>
+<td align="center">y</td>
+<td align="left">将反白的地方复制起来</td>
+</tr>
+<tr>
+<td align="center">d</td>
+<td align="left">将反白的地方删除掉</td>
+</tr>
+<tr>
+<td align="center">p</td>
+<td align="left">将刚刚复制的区块，在游标所在处贴上！</td>
+</tr>
+</tbody></table>
+<h4 id="多文件编辑"><a href="#多文件编辑" class="headerlink" title="多文件编辑"></a>多文件编辑</h4><p><code>vim hosts /etc/hosts</code> 一次开启多个文件</p>
+<table>
+<thead>
+<tr>
+<th align="center">按键</th>
+<th align="left">操作</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">:n</td>
+<td align="left">编辑下一个文件</td>
+</tr>
+<tr>
+<td align="center">:N</td>
+<td align="left">编辑上一个文件</td>
+</tr>
+<tr>
+<td align="center">:files</td>
+<td align="left">列出目前这个 vim 的开启的所有文件</td>
+</tr>
+</tbody></table>
+<p>这样可以跨文件复制粘贴！</p>
+<h4 id="多窗口"><a href="#多窗口" class="headerlink" title="多窗口"></a>多窗口</h4><table>
+<thead>
+<tr>
+<th align="center">按键</th>
+<th align="left">操作</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">:sp [filename]</td>
+<td align="left">开启一个新窗口，如果有加 filename，表示在新窗口开启一个新文件</td>
+</tr>
+<tr>
+<td align="center">[ctrl]+w+↓</td>
+<td align="left">[ctrl]+w 可与下拆开，光标移动到下方的窗口。</td>
+</tr>
+<tr>
+<td align="center">[ctrl]+w+↑</td>
+<td align="left">同上，不过光标移动到上面的窗口。</td>
+</tr>
+</tbody></table>
+<h4 id="补全"><a href="#补全" class="headerlink" title="补全"></a>补全</h4><table>
+<thead>
+<tr>
+<th align="center">组合按钮</th>
+<th align="left">补齐的内容</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">[ctrl]+x -&gt; [ctrl]+n</td>
+<td align="left">透过目前正在编辑的这个『文件的内容文字』作为关键词，予以补齐</td>
+</tr>
+<tr>
+<td align="center">[ctrl]+x -&gt; [ctrl]+f</td>
+<td align="left">以当前目录内的『文件名』作为关键词，予以补齐</td>
+</tr>
+<tr>
+<td align="center">[ctrl]+x -&gt; [ctrl]+o</td>
+<td align="left">以扩展名作为语法补充，以 vim 内建的关键词，予以补齐</td>
+</tr>
+</tbody></table>
+<h4 id="vim-环境设定与记录：-vimrc-viminfo，编码"><a href="#vim-环境设定与记录：-vimrc-viminfo，编码" class="headerlink" title="vim 环境设定与记录： ~/.vimrc, ~/.viminfo，编码"></a>vim 环境设定与记录： ~/.vimrc, ~/.viminfo，编码</h4><p>pass</p>
+<hr>
+<p>下一篇：<a href="/2021/07/03/linuxA0703/">-</a><br>上一篇：<a href="/2021/05/25/linuxA0525/">磁盘与文件系统管理</a></p>
+
+  </article>
+
+  
+    
+  <div class="nexmoe-post-copyright">
+    <strong>本文作者：</strong>Ning Chenhui<br>
+    <strong>本文链接：</strong><a href="https://ningchenhui.github.io/2021/07/03/linuxA0703/" title="https:&#x2F;&#x2F;ningchenhui.github.io&#x2F;2021&#x2F;07&#x2F;03&#x2F;linuxA0703&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;ningchenhui.github.io&#x2F;2021&#x2F;07&#x2F;03&#x2F;linuxA0703&#x2F;</a><br>
+    
+      <strong>版权声明：</strong>未经作者授权禁止转载
+    
+  </div>
+
+
+
+<center>
+   <font color="#6495ED"> ~本页已被访问<span id="busuanzi_value_page_pv"></span>次了哦~ </font>
+  <br> </br>
+  </center>
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow">
+    
+        <a class="nexmoefont icon-appstore-fill -link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
+    
+    
+        <a class="nexmoefont icon-tag-fill -none-link" href="/tags/Linux/" rel="tag">Linux</a>
+    
+</div>
+
+  <div class="nexmoe-post-footer">
+    <section class="nexmoe-comment">
+    <!-- Unpkg -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/disqusjs@1.2.5/dist/disqusjs.min.css">
+<script src="https://cdn.jsdelivr.net/npm/disqusjs@1.2.5/dist/disqus.min.js"></script>
+<div id="disqus_thread"></div>
+<script>
+var dsqjs = new DisqusJS({
+    shortname: 'ningchenhui-github-io',
+    siteName: 'ningchenhui.github.io',
+    identifier: 'https://ningchenhui.github.io/2021/07/03/linuxA0703/',
+    url: 'https://ningchenhui.github.io/2021/07/03/linuxA0703/',
+    title: 'Linux学习 笔记#07 压缩，备份与Vim',
+    api: 'https://disqus.skk.moe/disqus/',
+    apikey: 'e6evOgi4KaQOW9DrrU1gkzYWj6dsm3Pl5ZMMS8kUw46BtSz8Ze355Igzqu11XhhI',
+    admin: 'disqus_7i3NGTLGyS',
+    adminLabel: ''
+});
+</script>
+</section>
+  </div>
+</div>
+        <div class="nexmoe-post-right">
+          <div class="nexmoe-fixed">
+            <div class="nexmoe-tool">
+              <!-- 回到顶部
+              <a href="#nexmoe-content" class="toc-link" aria-label="回到顶部" title="top"><button class="mdui-fab mdui-ripple"><i class="nexmoefont icon-caret-top"></i></button></a>
+              -->
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/combine/npm/lazysizes@5.1.0/lazysizes.min.js,gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js,npm/mdui@0.4.3/dist/js/mdui.min.js?v=1"></script>
+<script>
+	hljs.initHighlightingOnLoad();
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+
+
+<script src="/js/app.js?v=1625307318245"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js"></script>
+<script>
+	$(".justified-gallery").justifiedGallery({
+		rowHeight: 160,
+		margins: 10,
+	});
+</script>
+
+<!-- 我的搜索 -->
+
+	<script type="text/javascript">      
+	  var search_path = "./public/search.xml";
+	  if (search_path.length == 0) {
+		  search_path = "search.xml";
+	  }
+	  var path = "/" + search_path;
+	  searchFunc(path, 'local-search-input', 'local-search-result');
+	</script>
+ 
+  
+
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
+
+</html>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
