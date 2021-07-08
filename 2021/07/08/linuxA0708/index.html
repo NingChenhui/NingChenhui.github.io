@@ -4,7 +4,7 @@
 
 <head>
   
-  <title>Linux学习 笔记#08 bash - 一切都会好起来的哟</title>
+  <title>Linux学习 笔记#09 正规表示法与文件格式化处理 - 一切都会好起来的哟</title>
   <meta charset="UTF-8">
   <meta name="description" content="Ning Chenhui">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
@@ -12,22 +12,22 @@
   
 
   <link rel="shortcut icon" href="/pictures/icon.jpg" type="image/png" />
-  <meta name="description" content="这章是重点，圈起来- -">
+  <meta name="description" content="一直没搞懂的正则表达式！">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linux学习 笔记#08 bash">
-<meta property="og:url" content="https://ningchenhui.github.io/2021/07/05/linuxA0705/index.html">
+<meta property="og:title" content="Linux学习 笔记#09 正规表示法与文件格式化处理">
+<meta property="og:url" content="https://ningchenhui.github.io/2021/07/08/linuxA0708/index.html">
 <meta property="og:site_name" content="一切都会好起来的哟">
-<meta property="og:description" content="这章是重点，圈起来- -">
+<meta property="og:description" content="一直没搞懂的正则表达式！">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-07-05T13:51:36.000Z">
-<meta property="article:modified_time" content="2021-07-06T12:16:38.572Z">
+<meta property="article:published_time" content="2021-07-08T07:20:36.000Z">
+<meta property="article:modified_time" content="2021-07-08T07:24:44.104Z">
 <meta property="article:author" content="Ning Chenhui">
 <meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/theme-nexmoe/hexo-theme-nexmoe@latest/source/lib/mdui_043tiny/css/mdui.css,gh/theme-nexmoe/hexo-theme-nexmoe@latest/source/lib/iconfont/iconfont.css,gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css?v=233" crossorigin>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css">
   
-  <link rel="stylesheet" href="/css/style.css?v=1625729952807">
+  <link rel="stylesheet" href="/css/style.css?v=1625729952812">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
   <script src="/live2d-widget/autoload.js"></script>
 <meta name="generator" content="Hexo 5.2.0"></head>
@@ -213,13 +213,13 @@
         <div class="nexmoe-post">
   
       <div class="nexmoe-post-cover" style="padding-bottom: 75.11244377811094%;"> 
-          <img data-src="/pictures/dream/moka-hungry.png" data-sizes="auto" alt="Linux学习 笔记#08 bash" class="lazyload">
-          <h1>Linux学习 笔记#08 bash</h1>
+          <img data-src="/pictures/dream/tsugumi-barista.png" data-sizes="auto" alt="Linux学习 笔记#09 正规表示法与文件格式化处理" class="lazyload">
+          <h1>Linux学习 笔记#09 正规表示法与文件格式化处理</h1>
       </div>
   
   
   <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
-    <a><i class="nexmoefont icon-calendar-fill"></i>2021年07月05日</a>
+    <a><i class="nexmoefont icon-calendar-fill"></i>2021年07月08日</a>
     <a><i class="nexmoefont icon-areachart"></i>3.4k 字</a>
     <a><i class="nexmoefont icon-time-circle-fill"></i>大概 14 分钟</a>
     
@@ -232,7 +232,7 @@
             <div class="nexmoe-toc">
                 
                 
-                  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Ch10-%E8%AE%A4%E8%AF%86%E4%B8%8E%E5%AD%A6%E4%B9%A0-BASH"><span class="toc-number">1.</span> <span class="toc-text">Ch10 认识与学习 BASH</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Bash-shell-%E7%9A%84%E5%8A%9F%E8%83%BD"><span class="toc-number">1.1.</span> <span class="toc-text">Bash shell 的功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%87%E4%BB%A4%E7%9A%84%E4%B8%8B%E8%BE%BE%E4%B8%8E%E5%BF%AB%E9%80%9F%E7%BC%96%E8%BE%91%E6%8C%89%E9%92%AE"><span class="toc-number">1.2.</span> <span class="toc-text">指令的下达与快速编辑按钮</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%98%E9%87%8F"><span class="toc-number">1.3.</span> <span class="toc-text">变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="toc-number">1.4.</span> <span class="toc-text">环境变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#read-array-declare"><span class="toc-number">1.5.</span> <span class="toc-text">read, array, declare</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%98%E9%87%8F%E5%86%85%E5%AE%B9%E7%9A%84%E5%88%A0%E9%99%A4%E4%B8%8E%E5%8F%96%E4%BB%A3"><span class="toc-number">1.6.</span> <span class="toc-text">变量内容的删除与取代</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#bash-%E7%9A%84%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="toc-number">1.7.</span> <span class="toc-text">bash 的环境配置文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%9A%E9%85%8D%E7%AC%A6-wildcard-%E4%B8%8E%E7%89%B9%E6%AE%8A%E7%AC%A6%E5%8F%B7"><span class="toc-number">1.8.</span> <span class="toc-text">通配符 wildcard 与特殊符号</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E6%B5%81%E9%87%8D%E5%AF%BC%E5%90%91"><span class="toc-number">1.9.</span> <span class="toc-text">数据流重导向</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C%E7%9A%84%E5%88%A4%E6%96%AD%E4%BE%9D%E6%8D%AE%EF%BC%9A-amp-amp"><span class="toc-number">1.10.</span> <span class="toc-text">命令执行的判断依据： ; , &amp;&amp;, ||</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%A1%E7%BA%BF"><span class="toc-number">1.11.</span> <span class="toc-text">管线</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%92%E5%BA%8F"><span class="toc-number">1.12.</span> <span class="toc-text">排序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E8%BD%AC%E6%8D%A2%E5%91%BD%E4%BB%A4%EF%BC%9A-tr-col-join-paste-expand"><span class="toc-number">1.13.</span> <span class="toc-text">字符转换命令： tr, col, join, paste, expand</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%87%E5%89%B2%E6%96%87%E4%BB%B6"><span class="toc-number">1.14.</span> <span class="toc-text">切割文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%82%E6%95%B0%E4%BB%A3%E6%8D%A2%EF%BC%9A-xargs"><span class="toc-number">1.15.</span> <span class="toc-text">参数代换： xargs</span></a></li></ol></li></ol>
+                  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Ch11-%E6%AD%A3%E8%A7%84%E8%A1%A8%E7%A4%BA%E6%B3%95%E4%B8%8E%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%A4%84%E7%90%86"><span class="toc-number">1.</span> <span class="toc-text">Ch11 正规表示法与文件格式化处理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Bash-shell-%E7%9A%84%E5%8A%9F%E8%83%BD"><span class="toc-number">1.1.</span> <span class="toc-text">Bash shell 的功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%87%E4%BB%A4%E7%9A%84%E4%B8%8B%E8%BE%BE%E4%B8%8E%E5%BF%AB%E9%80%9F%E7%BC%96%E8%BE%91%E6%8C%89%E9%92%AE"><span class="toc-number">1.2.</span> <span class="toc-text">指令的下达与快速编辑按钮</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%98%E9%87%8F"><span class="toc-number">1.3.</span> <span class="toc-text">变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="toc-number">1.4.</span> <span class="toc-text">环境变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#read-array-declare"><span class="toc-number">1.5.</span> <span class="toc-text">read, array, declare</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%98%E9%87%8F%E5%86%85%E5%AE%B9%E7%9A%84%E5%88%A0%E9%99%A4%E4%B8%8E%E5%8F%96%E4%BB%A3"><span class="toc-number">1.6.</span> <span class="toc-text">变量内容的删除与取代</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#bash-%E7%9A%84%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="toc-number">1.7.</span> <span class="toc-text">bash 的环境配置文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%9A%E9%85%8D%E7%AC%A6-wildcard-%E4%B8%8E%E7%89%B9%E6%AE%8A%E7%AC%A6%E5%8F%B7"><span class="toc-number">1.8.</span> <span class="toc-text">通配符 wildcard 与特殊符号</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E6%B5%81%E9%87%8D%E5%AF%BC%E5%90%91"><span class="toc-number">1.9.</span> <span class="toc-text">数据流重导向</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C%E7%9A%84%E5%88%A4%E6%96%AD%E4%BE%9D%E6%8D%AE%EF%BC%9A-amp-amp"><span class="toc-number">1.10.</span> <span class="toc-text">命令执行的判断依据： ; , &amp;&amp;, ||</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%A1%E7%BA%BF"><span class="toc-number">1.11.</span> <span class="toc-text">管线</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%92%E5%BA%8F"><span class="toc-number">1.12.</span> <span class="toc-text">排序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E8%BD%AC%E6%8D%A2%E5%91%BD%E4%BB%A4%EF%BC%9A-tr-col-join-paste-expand"><span class="toc-number">1.13.</span> <span class="toc-text">字符转换命令： tr, col, join, paste, expand</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%87%E5%89%B2%E6%96%87%E4%BB%B6"><span class="toc-number">1.14.</span> <span class="toc-text">切割文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%82%E6%95%B0%E4%BB%A3%E6%8D%A2%EF%BC%9A-xargs"><span class="toc-number">1.15.</span> <span class="toc-text">参数代换： xargs</span></a></li></ol></li></ol>
                 
             </div>
         </div>
@@ -241,8 +241,8 @@
   </div>
 
   <article>
-    <p>这章是重点，圈起来- - <a id="more"></a></p>
-<h2 id="Ch10-认识与学习-BASH"><a href="#Ch10-认识与学习-BASH" class="headerlink" title="Ch10 认识与学习 BASH"></a>Ch10 认识与学习 BASH</h2><h3 id="Bash-shell-的功能"><a href="#Bash-shell-的功能" class="headerlink" title="Bash shell 的功能"></a>Bash shell 的功能</h3><ol>
+    <p>一直没搞懂的正则表达式！ <a id="more"></a></p>
+<h2 id="Ch11-正规表示法与文件格式化处理"><a href="#Ch11-正规表示法与文件格式化处理" class="headerlink" title="Ch11 正规表示法与文件格式化处理"></a>Ch11 正规表示法与文件格式化处理</h2><h3 id="Bash-shell-的功能"><a href="#Bash-shell-的功能" class="headerlink" title="Bash shell 的功能"></a>Bash shell 的功能</h3><ol>
 <li>history ~/.bash_history 记录前一次登入以前所执行过的指令，可查询曾经做过的举动 <code>history n</code>查n条, <code>-c</code>清空, <code>-arw</code>与文件读取历史中有关。 <code>!</code>可以跟数字n表示执行第n条命令, 也可以跟部分指令s,由最近的指令向前搜寻『指令串开头为 s』的指令，并执行</li>
 <li>alias 命令别名设定功能 <code>alias lm=&#39;ls -al&#39;</code>. 取消则用<code>unalias lm</code></li>
 <li>job control, foreground, background</li>
@@ -425,7 +425,7 @@
 <h3 id="切割文件"><a href="#切割文件" class="headerlink" title="切割文件"></a>切割文件</h3><p><code>split  [-bl] file PREFIX</code> 将大文件分区成为小文件<br>  -b  ：后面可接欲分区成的文件大小，可加单位，例如 b, k, m 等；<br>  -l  ：以行数来进行分区。<br>  PREFIX ：代表前导符的意思，可作为分区文件的前导文字。<br>  合并则用 <code>cat PREFIX* file</code></p>
 <h3 id="参数代换：-xargs"><a href="#参数代换：-xargs" class="headerlink" title="参数代换： xargs"></a>参数代换： xargs</h3><p><code>xargs [-0epn] command </code><br>-0  ：如果输入的 stdin 含有特殊字符，例如 `, , 空格键等等字符时，这个 -0 参数<br>      可以将他还原成一般字符。这个参数可以用于特殊状态喔！<br>-e  ：这个是 EOF (end of file) 的意思。后面可以接一个字符串，当 xargs 分析到这个字符串时，<br>      就会停止继续工作！ -e’sync’ 是连在一起的，中间没有空格键。<br>-p  ：在执行每个指令的 argument 时，都会询问使用者的意思；<br>-n  ：后面接次数，每次 command 指令执行时，要使用几个参数的意思。<br>当 xargs 后面没有接任何的指令时，默认是以 echo 来进行输出喔！</p>
 <hr>
-<p>下一篇：<a href="/2021/07/03/linuxA0703/">-</a><br>上一篇：<a href="/2021/07/03/linuxA0703/">文件与文件系统的压缩,打包与备份</a></p>
+<p>下一篇：<a href="/2021/07/08/linuxA0708/">-</a><br>上一篇：<a href="/2021/07/05/linuxA0705/">认识与学习 BASH</a></p>
 
   </article>
 
@@ -433,7 +433,7 @@
     
   <div class="nexmoe-post-copyright">
     <strong>本文作者：</strong>Ning Chenhui<br>
-    <strong>本文链接：</strong><a href="https://ningchenhui.github.io/2021/07/05/linuxA0705/" title="https:&#x2F;&#x2F;ningchenhui.github.io&#x2F;2021&#x2F;07&#x2F;05&#x2F;linuxA0705&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;ningchenhui.github.io&#x2F;2021&#x2F;07&#x2F;05&#x2F;linuxA0705&#x2F;</a><br>
+    <strong>本文链接：</strong><a href="https://ningchenhui.github.io/2021/07/08/linuxA0708/" title="https:&#x2F;&#x2F;ningchenhui.github.io&#x2F;2021&#x2F;07&#x2F;08&#x2F;linuxA0708&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;ningchenhui.github.io&#x2F;2021&#x2F;07&#x2F;08&#x2F;linuxA0708&#x2F;</a><br>
     
       <strong>版权声明：</strong>未经作者授权禁止转载
     
@@ -466,9 +466,9 @@
 var dsqjs = new DisqusJS({
     shortname: 'ningchenhui-github-io',
     siteName: 'ningchenhui.github.io',
-    identifier: 'https://ningchenhui.github.io/2021/07/05/linuxA0705/',
-    url: 'https://ningchenhui.github.io/2021/07/05/linuxA0705/',
-    title: 'Linux学习 笔记#08 bash',
+    identifier: 'https://ningchenhui.github.io/2021/07/08/linuxA0708/',
+    url: 'https://ningchenhui.github.io/2021/07/08/linuxA0708/',
+    title: 'Linux学习 笔记#09 正规表示法与文件格式化处理',
     api: 'https://disqus.skk.moe/disqus/',
     apikey: 'e6evOgi4KaQOW9DrrU1gkzYWj6dsm3Pl5ZMMS8kUw46BtSz8Ze355Igzqu11XhhI',
     admin: 'disqus_7i3NGTLGyS',
@@ -499,7 +499,7 @@ var dsqjs = new DisqusJS({
 
 
 
-<script src="/js/app.js?v=1625729952811"></script>
+<script src="/js/app.js?v=1625729952815"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js"></script>
 <script>
