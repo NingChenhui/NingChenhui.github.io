@@ -12,22 +12,22 @@
   
 
   <link rel="shortcut icon" href="/pictures/icon.jpg" type="image/png" />
-  <meta name="description" content="一直没搞懂的正则表达式！">
+  <meta name="description" content="像乱码一样的正则表达式！">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux学习 笔记#09 正规表示法与文件格式化处理">
 <meta property="og:url" content="https://ningchenhui.github.io/2021/07/08/linuxA0708/index.html">
 <meta property="og:site_name" content="一切都会好起来的哟">
-<meta property="og:description" content="一直没搞懂的正则表达式！">
+<meta property="og:description" content="像乱码一样的正则表达式！">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-07-08T07:20:36.000Z">
-<meta property="article:modified_time" content="2021-07-08T07:24:44.104Z">
+<meta property="article:modified_time" content="2021-07-08T13:47:45.839Z">
 <meta property="article:author" content="Ning Chenhui">
 <meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/theme-nexmoe/hexo-theme-nexmoe@latest/source/lib/mdui_043tiny/css/mdui.css,gh/theme-nexmoe/hexo-theme-nexmoe@latest/source/lib/iconfont/iconfont.css,gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css?v=233" crossorigin>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css">
   
-  <link rel="stylesheet" href="/css/style.css?v=1625729952812">
+  <link rel="stylesheet" href="/css/style.css?v=1625755388046">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
   <script src="/live2d-widget/autoload.js"></script>
 <meta name="generator" content="Hexo 5.2.0"></head>
@@ -220,8 +220,8 @@
   
   <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
     <a><i class="nexmoefont icon-calendar-fill"></i>2021年07月08日</a>
-    <a><i class="nexmoefont icon-areachart"></i>3.4k 字</a>
-    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 14 分钟</a>
+    <a><i class="nexmoefont icon-areachart"></i>2.7k 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 12 分钟</a>
     
 </div>
 
@@ -232,7 +232,7 @@
             <div class="nexmoe-toc">
                 
                 
-                  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Ch11-%E6%AD%A3%E8%A7%84%E8%A1%A8%E7%A4%BA%E6%B3%95%E4%B8%8E%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%A4%84%E7%90%86"><span class="toc-number">1.</span> <span class="toc-text">Ch11 正规表示法与文件格式化处理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Bash-shell-%E7%9A%84%E5%8A%9F%E8%83%BD"><span class="toc-number">1.1.</span> <span class="toc-text">Bash shell 的功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%87%E4%BB%A4%E7%9A%84%E4%B8%8B%E8%BE%BE%E4%B8%8E%E5%BF%AB%E9%80%9F%E7%BC%96%E8%BE%91%E6%8C%89%E9%92%AE"><span class="toc-number">1.2.</span> <span class="toc-text">指令的下达与快速编辑按钮</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%98%E9%87%8F"><span class="toc-number">1.3.</span> <span class="toc-text">变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="toc-number">1.4.</span> <span class="toc-text">环境变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#read-array-declare"><span class="toc-number">1.5.</span> <span class="toc-text">read, array, declare</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%98%E9%87%8F%E5%86%85%E5%AE%B9%E7%9A%84%E5%88%A0%E9%99%A4%E4%B8%8E%E5%8F%96%E4%BB%A3"><span class="toc-number">1.6.</span> <span class="toc-text">变量内容的删除与取代</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#bash-%E7%9A%84%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="toc-number">1.7.</span> <span class="toc-text">bash 的环境配置文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%9A%E9%85%8D%E7%AC%A6-wildcard-%E4%B8%8E%E7%89%B9%E6%AE%8A%E7%AC%A6%E5%8F%B7"><span class="toc-number">1.8.</span> <span class="toc-text">通配符 wildcard 与特殊符号</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E6%B5%81%E9%87%8D%E5%AF%BC%E5%90%91"><span class="toc-number">1.9.</span> <span class="toc-text">数据流重导向</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C%E7%9A%84%E5%88%A4%E6%96%AD%E4%BE%9D%E6%8D%AE%EF%BC%9A-amp-amp"><span class="toc-number">1.10.</span> <span class="toc-text">命令执行的判断依据： ; , &amp;&amp;, ||</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%A1%E7%BA%BF"><span class="toc-number">1.11.</span> <span class="toc-text">管线</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%92%E5%BA%8F"><span class="toc-number">1.12.</span> <span class="toc-text">排序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E8%BD%AC%E6%8D%A2%E5%91%BD%E4%BB%A4%EF%BC%9A-tr-col-join-paste-expand"><span class="toc-number">1.13.</span> <span class="toc-text">字符转换命令： tr, col, join, paste, expand</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%87%E5%89%B2%E6%96%87%E4%BB%B6"><span class="toc-number">1.14.</span> <span class="toc-text">切割文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%82%E6%95%B0%E4%BB%A3%E6%8D%A2%EF%BC%9A-xargs"><span class="toc-number">1.15.</span> <span class="toc-text">参数代换： xargs</span></a></li></ol></li></ol>
+                  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Ch11-%E6%AD%A3%E8%A7%84%E8%A1%A8%E7%A4%BA%E6%B3%95%E4%B8%8E%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%A4%84%E7%90%86"><span class="toc-number">1.</span> <span class="toc-text">Ch11 正规表示法与文件格式化处理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E6%AD%A3%E8%A7%84%E8%A1%A8%E7%A4%BA%E6%B3%95"><span class="toc-number">1.1.</span> <span class="toc-text">基础正规表示法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A9%E7%94%A8%E4%B8%AD%E6%8B%AC%E5%8F%B7-%E6%9D%A5%E6%90%9C%E5%AF%BB%E9%9B%86%E5%90%88%E5%AD%97%E7%AC%A6"><span class="toc-number">1.1.1.</span> <span class="toc-text">利用中括号 [] 来搜寻集合字符</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A1%8C%E9%A6%96%E4%B8%8E%E8%A1%8C%E5%B0%BE%E5%AD%97%E7%AC%A6"><span class="toc-number">1.1.2.</span> <span class="toc-text">行首与行尾字符 ^ $</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%BB%E6%84%8F%E4%B8%80%E4%B8%AA%E5%AD%97%E7%AC%A6-%E4%B8%8E%E9%87%8D%E5%A4%8D%E5%AD%97%E7%AC%A6"><span class="toc-number">1.1.3.</span> <span class="toc-text">任意一个字符 . 与重复字符 *</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%99%90%E5%AE%9A%E8%BF%9E%E7%BB%AD-RE-%E5%AD%97%E7%AC%A6%E8%8C%83%E5%9B%B4"><span class="toc-number">1.1.4.</span> <span class="toc-text">限定连续 RE 字符范围 {}</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sed-%E5%B7%A5%E5%85%B7"><span class="toc-number">1.2.</span> <span class="toc-text">sed 工具</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BB%B6%E4%BC%B8%E6%AD%A3%E8%A7%84%E8%A1%A8%E7%A4%BA%E6%B3%95"><span class="toc-number">1.3.</span> <span class="toc-text">延伸正规表示法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E7%9A%84%E6%A0%BC%E5%BC%8F%E5%8C%96%E4%B8%8E%E7%9B%B8%E5%85%B3%E5%A4%84%E7%90%86"><span class="toc-number">1.4.</span> <span class="toc-text">文件的格式化与相关处理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%BC%E5%BC%8F%E5%8C%96%E6%89%93%E5%8D%B0%EF%BC%9A-printf"><span class="toc-number">1.4.1.</span> <span class="toc-text">格式化打印： printf</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#awk%EF%BC%9A%E5%A5%BD%E7%94%A8%E7%9A%84%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E5%B7%A5%E5%85%B7"><span class="toc-number">1.4.2.</span> <span class="toc-text">awk：好用的数据处理工具</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E6%AF%94%E5%AF%B9%E5%B7%A5%E5%85%B7"><span class="toc-number">1.4.3.</span> <span class="toc-text">文件比对工具</span></a></li></ol></li></ol></li></ol>
                 
             </div>
         </div>
@@ -241,189 +241,196 @@
   </div>
 
   <article>
-    <p>一直没搞懂的正则表达式！ <a id="more"></a></p>
-<h2 id="Ch11-正规表示法与文件格式化处理"><a href="#Ch11-正规表示法与文件格式化处理" class="headerlink" title="Ch11 正规表示法与文件格式化处理"></a>Ch11 正规表示法与文件格式化处理</h2><h3 id="Bash-shell-的功能"><a href="#Bash-shell-的功能" class="headerlink" title="Bash shell 的功能"></a>Bash shell 的功能</h3><ol>
-<li>history ~/.bash_history 记录前一次登入以前所执行过的指令，可查询曾经做过的举动 <code>history n</code>查n条, <code>-c</code>清空, <code>-arw</code>与文件读取历史中有关。 <code>!</code>可以跟数字n表示执行第n条命令, 也可以跟部分指令s,由最近的指令向前搜寻『指令串开头为 s』的指令，并执行</li>
-<li>alias 命令别名设定功能 <code>alias lm=&#39;ls -al&#39;</code>. 取消则用<code>unalias lm</code></li>
-<li>job control, foreground, background</li>
-<li>shell scripts</li>
-</ol>
-<h3 id="指令的下达与快速编辑按钮"><a href="#指令的下达与快速编辑按钮" class="headerlink" title="指令的下达与快速编辑按钮"></a>指令的下达与快速编辑按钮</h3><ol>
-<li>\ 换行输入</li>
-<li>[ctrl]+u 从光标处向前删除指令串</li>
-<li>[ctrl]+c 终止目前命令</li>
-<li>[ctrl]+z 暂停目前命令</li>
-</ol>
-<h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><p>显示变量：<code>echo $var 或 echo $&#123;var&#125;</code> 量在被取用时，前面必须要加上$<br>定义修改：<code>var=sinki</code></p>
-<p>变量的设定规则:</p>
-<ol>
-<li>等号两边不能直接接空格符</li>
-<li>变量名称只能是英文字母与数字，但是开头字符不能是数字</li>
-<li>变量内容若有空格符可使用引号将变量内容结合起来，双引号内的特殊字符如 $ 等，可以保有原本的特性，单引号内的特殊字符则仅为一般字符 (纯文本)</li>
-<li>可用跳脱字符『 \ 』将特殊符号(如 [Enter], $, \, 空格符, ‘等)变成一般字符</li>
-<li>在一串指令的执行中，还需要藉由其他额外的指令所提供的信息时，可以使用反单引号`括住指令或 『$(指令)』</li>
-<li>若该变量为扩增变量内容时，则可用 <code>&quot;$变量名称&quot;</code> 或  <code>$&#123;变量&#125;</code> 累加内容： <code>PATH=&quot;$PATH&quot;:/home/bin</code>或<code>PATH=$&#123;PATH&#125;:/home/bin</code></li>
-<li>若该变量需要在其他子程序执行，则需要以 export 来使变量变成环境变量： <code>export PATH</code> 在目前这个 shell 的情况下，去启用另一个新的 shell ，新的 shell 就是子程序啦</li>
-<li>通常大写字符为系统默认变量，自行设定变量可以使用小写字符，方便判断</li>
-<li>取消变量的方法为使用 unset ：<code>unset var</code></li>
-</ol>
-<h3 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a>环境变量</h3><p>用 <code>env</code> 观察环境变量</p>
-<ul>
-<li>HOME 家目录</li>
-<li>SHELL 目前这个环境使用的 SHELL 是哪支程序</li>
-<li>PATH 就是执行文件搜寻的路径啦～目录与目录中间以冒号(:)分隔， 文件的搜寻是依序由 PATH 的变量内的目录来查询</li>
-<li>LANG 语系数据, 修复乱码</li>
-<li>RANDOM 随机随机数。 <code>declare -i number=$RANDOM*10/32768 ; echo $number</code></li>
-</ul>
-<p>用 <code>set</code> 观察所有变量 (含环境变量与自定义变量)</p>
-<ul>
-<li>PS1：(提示字符的设定)，就是命令行开始的东西。<code>man bash</code> 搜PS1可以看到详细替换变量。如<code>PS1=&#39;[\u@u@\h h \w w \A #A #\#]#]\$ &#39;</code></li>
-<li>$: 代表的是『目前这个 Shell 的线程代号』，亦即是所谓的 PID (Process ID) <code>echo $$</code></li>
-<li>?: 上一个执行的指令所返回的值</li>
-</ul>
-<p><code>locale</code> 显示结果的语系变量<br>在 Linux 当中，通常说明仅设定 LANG 或 LC_ALL 这两个变量。如果发生一些乱码的问题，那么设定系统里面保有的语系编码， 例如： en_US 或 en_US.utf8 等等的设定，应该就 OK 的啦！</p>
-<pre><code> LANG=en_US.utf8; locale
- export LC_ALL=en_US.utf8; locale</code></pre>
-<h3 id="read-array-declare"><a href="#read-array-declare" class="headerlink" title="read, array, declare"></a>read, array, declare</h3><p><code>read [-pt] variable</code> 读取用户输入变量<br>-p: 接提示字符<br>-t: 接等待秒数<br>read -p “Please keyin your name: “ -t 30 named</p>
-<p><code>declare [-aixr] variable</code> 声明变量类型<br>-a  ：数组 (array) 类型<br>-i  ：整数 (integer) 类型<br>-x  ：用法与 export 一样，就是将后面的 variable 变成环境变量；<br>-r  ：将变量设定成为 readonly 类型，该变量不可被更改内容，也不能 unset<br>declare -i sum=100+300+50<br>默认为字符串, 无浮点数.<br><code>+x</code>为取消动作. 但如果不小心将变量设定为『只读』，通常得要注销再登入才能复原该变量的类型了！ @_@</p>
-<p>数组类型: var[index]=content. 读取建议以<code>$&#123;var[1]&#125;</code>形式读取.</p>
-<h3 id="变量内容的删除与取代"><a href="#变量内容的删除与取代" class="headerlink" title="变量内容的删除与取代"></a>变量内容的删除与取代</h3><p><code>$&#123;variable#/*local/bin:&#125;</code> # 代表『从变量内容的最前面开始向右删除』，且仅删除最短的那个. * 为通配符<br><code>$&#123;path##/*:&#125;</code> ## 变成『删除掉最长的那个数据』.<br><code>$&#123;path%:*bin&#125;</code> % 代表『从变量内容的最后面开始向左删除』, 且仅删除最短的那个.<br><code>$&#123;path%%:*bin&#125;</code> %%  变成『删除掉最长的那个数据』.<br><code>$&#123;path/sbin/SBIN&#125;</code> /旧字符/新字符, 只取代最开始符合的子串<br><code>$&#123;path//sbin/SBIN&#125;</code> 取代所有子串<br><code>new_var=$&#123;old_var-content&#125;</code> old_var存在则返回old_var, 否则为content.<br><code>new_var=$&#123;old_var:-content&#125;</code> 加:把变量为空字符串视为变量不存在.<br><code>new_var=$&#123;old_var=content&#125;</code> old_var存在则返回old_var, 否则为content, old_var也赋值为content.<br><code>new_var=$&#123;old_var?content&#125;</code> old_var存在则返回old_var, 否则content输出至stderr.<br><code>new_var=$&#123;old_var+content&#125;</code> old_var存在则返回content, 否则为空字符串. </p>
-<h3 id="bash-的环境配置文件"><a href="#bash-的环境配置文件" class="headerlink" title="bash 的环境配置文件"></a>bash 的环境配置文件</h3><p>登入时系统会依次读取配置文件,首先是<code>/etc/profile</code>, 系统整体设定一般不修改; 然后是<code>~/.bash_profile 或 ~/.bash_login 或 ~/.profile</code>中的一个, 前一个不存在才会读后一个. 而这些文件又会读取<code>.bashrc</code>, 将自己的偏好设定写入该文件即可。</p>
-<p><code>source 配置文件档名</code> 或 <code>. ~/.bashrc</code> 可以不注销登入直接重新读取配置文件.</p>
-<p><code>/etc/man_db.conf</code> 规范了使用 man 的时候， man page 的路径到哪里去寻找. 如果以 tarball 的方式来安装数据, 这个时候就得以手动的方式将路径 <code>/usr/local/softpackage/man</code> 加到 <code>/etc/man_db.conf</code> 里头</p>
-<p><code>~/.bash_logout</code> 记录了『注销 bash 后，系统再帮我做完什么动作后才离开』</p>
-<h3 id="通配符-wildcard-与特殊符号"><a href="#通配符-wildcard-与特殊符号" class="headerlink" title="通配符 wildcard 与特殊符号"></a>通配符 wildcard 与特殊符号</h3><table>
-<thead>
-<tr>
-<th align="center">通配符</th>
-<th align="left">意义</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">*</td>
-<td align="left">代表『 0 个到无穷多个』任意字符</td>
-</tr>
-<tr>
-<td align="center">?</td>
-<td align="left">代表『一定有一个』任意字符</td>
-</tr>
-<tr>
-<td align="center">[ ]</td>
-<td align="left">同样代表『一定有一个在括号内』的字符(非任意字符)。例如 [abcd] 代表『一定有一个字符， 可能是 a, b, c, d 这四个任何一个』</td>
-</tr>
-<tr>
-<td align="center">[ - ]</td>
-<td align="left">若有减号在中括号内时，代表『在编码顺序内的所有字符』。例如 [0-9] 代表 0 到 9 之间的所有数字</td>
-</tr>
-<tr>
-<td align="center">[^ ]</td>
-<td align="left">若中括号内的第一个字符为 (^) ，那表示『反向选择』，例如 [^abc] 代表 一定有一个字符，只要是非 a, b, c 的其他字符就接受的意思。</td>
-</tr>
-</tbody></table>
-<hr>
+    <p>像乱码一样的正则表达式！ <a id="more"></a></p>
+<h2 id="Ch11-正规表示法与文件格式化处理"><a href="#Ch11-正规表示法与文件格式化处理" class="headerlink" title="Ch11 正规表示法与文件格式化处理"></a>Ch11 正规表示法与文件格式化处理</h2><h3 id="基础正规表示法"><a href="#基础正规表示法" class="headerlink" title="基础正规表示法"></a>基础正规表示法</h3><p><em>使用正规表示法时，需要特别留意当时环境的语系，练习使用 LANG=C</em></p>
+<p>为了避免编码所造成的英文与数字的撷取问题，有些特殊的符号得要了解一下, 粗体比较重要:</p>
 <table>
 <thead>
 <tr>
-<th align="center">特殊符</th>
+<th align="center">特殊字段</th>
 <th align="left">意义</th>
 </tr>
 </thead>
 <tbody><tr>
-<td align="center">#</td>
-<td align="left">注释符号：这个最常被使用在 script 当中，在后的数据均不执行</td>
+<td align="center"><strong>[:alnum:]</strong></td>
+<td align="left"><strong>代表英文大小写字符及数字，亦即 0-9, A-Z, a-z</strong></td>
 </tr>
 <tr>
-<td align="center">\</td>
-<td align="left">转义符号：将『特殊字符或通配符』还原成一般字符</td>
+<td align="center"><strong>[:alpha:]</strong></td>
+<td align="left"><strong>代表任何英文大小写字符，亦即 A-Z, a-z</strong></td>
+</tr>
+<tr>
+<td align="center">[:blank:]</td>
+<td align="left">代表空格键与 [Tab] 按键两者</td>
+</tr>
+<tr>
+<td align="center">[:cntrl:]</td>
+<td align="left">代表键盘上面的控制按键，亦即包括 CR, LF, Tab, Del.. 等等</td>
+</tr>
+<tr>
+<td align="center"><strong>[:digit:]</strong></td>
+<td align="left"><strong>代表数字而已，亦即 0-9</strong></td>
+</tr>
+<tr>
+<td align="center">[:graph:]</td>
+<td align="left">除了空格符 (空格键与 [Tab] 按键) 外的其他所有按键</td>
+</tr>
+<tr>
+<td align="center"><strong>[:lower:]</strong></td>
+<td align="left"><strong>代表小写字符，亦即 a-z</strong></td>
+</tr>
+<tr>
+<td align="center">[:print:]</td>
+<td align="left">代表任何可以被打印出来的字符</td>
+</tr>
+<tr>
+<td align="center">[:punct:]</td>
+<td align="left">代表标点符号 (punctuation symbol)，亦即：” ‘ ? ! ; : # $…</td>
+</tr>
+<tr>
+<td align="center"><strong>[:upper:]</strong></td>
+<td align="left"><strong>代表大写字符，亦即 A-Z</strong></td>
+</tr>
+<tr>
+<td align="center">[:space:]</td>
+<td align="left">任何会产生空白的字符，包括空格键, [Tab], CR 等等</td>
+</tr>
+<tr>
+<td align="center">[:xdigit:]</td>
+<td align="left">代表 16 进位的数字类型，因此包括： 0-9, A-F, a-f 的数字与字符</td>
+</tr>
+</tbody></table>
+<p><code>grep [-vin] [-A] [-B] [--color=auto] &#39;搜寻字符串&#39; filename </code><br>选项与参数：<br>-A ：后面可加数字，为 after 的意思，除了列出该行外，后续的 n 行也列出来；<br>-B ：后面可加数字，为 befer 的意思，除了列出该行外，前面的 n 行也列出来；<br>-n : 加行号<br>-v : 反向选择<br>-i : 忽略大小写<br>–color=auto 可将正确的那个撷取数据列出颜色</p>
+<p>grep 在数据中查寻一个字符串时，是以 “整行” 为单位来进行数据的撷取的.</p>
+<h4 id="利用中括号-来搜寻集合字符"><a href="#利用中括号-来搜寻集合字符" class="headerlink" title="利用中括号 [] 来搜寻集合字符"></a>利用中括号 [] 来搜寻集合字符</h4><ol>
+<li>[] 里面不论有几个字符，他都仅代表某『一个』字符, 如 ‘t[ae]st’ 可以匹配到 tast 和 test</li>
+<li>集合字符里的 ^ 表示反向选择, 如 ‘[^g]oo’ 就排除了 goo</li>
+<li>对于连续字符, 如 [a-z] [A-Z] [0-9] 分别代表小写字母, 大写字母, 数字. 同样[^a-z]表示排除小写字母</li>
+<li><del><em>A to Z！A to Z！天下を，A to Z！A to Z！取ります!</em></del></li>
+<li>[^[:lower:]] 等价于 [^a-z]</li>
+</ol>
+<h4 id="行首与行尾字符"><a href="#行首与行尾字符" class="headerlink" title="行首与行尾字符 ^ $"></a>行首与行尾字符 ^ $</h4><ol>
+<li>‘^the’ 表示只匹配行首为the的行. ‘^[^a-zA-Z]’ 则表示只匹配行首不是字母的行.</li>
+<li>行尾的话就可以 ‘\.$’. </li>
+<li>但要注意 win 下会有断行符 ^M$ </li>
+<li>空行的话就是 ‘^$’</li>
+</ol>
+<h4 id="任意一个字符-与重复字符"><a href="#任意一个字符-与重复字符" class="headerlink" title="任意一个字符 . 与重复字符 *"></a>任意一个字符 . 与重复字符 *</h4><ol>
+<li>. 代表『一定有一个任意字符』</li>
+<li>* 代表『重复前一个字符， 0 到无穷多次』的意思，为组合形态<br>因此 『o*』代表的是：『拥有空字符或一个 o 以上的字符』, ‘o*‘ 就是有没有字符都可以的意思<br>‘goo*g’ 就是 gog, goog, gooog…. 等等</li>
+<li>.* 就代表零个或多个任意字符</li>
+</ol>
+<h4 id="限定连续-RE-字符范围"><a href="#限定连续-RE-字符范围" class="headerlink" title="限定连续 RE 字符范围 {}"></a>限定连续 RE 字符范围 {}</h4><p>因为 { 与 } 的符号在 shell 是有特殊意义的，因此， 我们必须要使用跳脱字符 \ 来让他失去特殊意义才行</p>
+<ol>
+<li>‘o{2,}’ 代表2个及以上 o</li>
+<li>‘o{2,5}’ 代表2到5个 o</li>
+<li>‘o{2}’ 代表2个 o</li>
+</ol>
+<h3 id="sed-工具"><a href="#sed-工具" class="headerlink" title="sed 工具"></a>sed 工具</h3><p>sed 本身也是一个管线命令，可以分析 standard input 的啦！ 而且 sed 还可以将数据进行取代、删除、新增、撷取特定行等等的功能呢！</p>
+<p><code>sed [-nefr] [动作] </code><br>-n  ：使用安静(silent)模式。在一般 sed 的用法中，所有来自 STDIN 的数据一般都会被列出到屏幕上。 但如果加上 -n 参数后，则只有经过 sed 特殊处理的那一行(或者动作)才会被列出来。<br>-e  ：直接在指令行模式上进行 sed 的动作编辑；<br>-f  ：直接将 sed 的动作写在一个文件内， -f filename 则可以执行 filename 内的 sed 动作；<br>-r  ：sed 的动作支持的是延伸型正规表示法的语法。(预设是基础正规表示法语法)<br>-i  ：直接修改读取的文件内容，而不是由屏幕输出。 </p>
+<p>动作说明：  [n1[,n2]]function<br>n1, n2 ：不见得会存在，一般代表『选择进行动作的行数』，举例来说，如果我的动作是需要在 10 到 20 行之间进行的，则『 10,20[动作行为] 』 </p>
+<p>function 有底下这些咚咚：<br>a   ：新增， a 的后面可以接字符串，而这些字符串会在新的一行出现(目前的下一行)～<br>c   ：取代， c 的后面可以接字符串，这些字符串可以取代 n1,n2 之间的行！<br>d   ：删除，因为是删除啊，所以 d 后面通常不接任何咚咚；<br>i   ：插入， i 的后面可以接字符串，而这些字符串会在新的一行出现(目前的上一行)；<br>p   ：打印，亦即将某个选择的数据印出。通常 p 会与参数 sed -n 一起运作～<br>s   ：取代，可以直接进行取代的工作！通常这个 s 的动作可以搭配正规表示法！ 例如 1,20s/old/new/g 就是啦！</p>
+<p>举例:</p>
+<ol>
+<li><code>nl /etc/passwd | sed &#39;2,5d&#39; </code> 删除2到5行. 动作要用单引号括住</li>
+<li><code>nl /etc/passwd | sed &#39;2,$d&#39; </code> 删除2到最后一行. </li>
+<li><code>nl /etc/passwd | sed &#39;2a drink tea&#39;</code> 在第二行后面加一行 drink tea. 两行以上的话要用 \</li>
+<li><code>nl /etc/passwd | sed -n &#39;5,7p&#39;</code> 取出5到7行.</li>
+<li><code>/sbin/ifconfig eth0 | grep &#39;inet &#39; | sed &#39;s/^.*inet //g&#39; | sed &#39;s/ *netmask.*$//g&#39;</code> 删除ip的首尾</li>
+<li><code>cat /etc/man_db.conf | grep &#39;MAN&#39;| sed &#39;s/#.*$//g&#39; | sed &#39;/^$/d&#39;</code> 删除含有注释的和空白行</li>
+</ol>
+<p>sed 后面如果要接超过两个以上的动作时，每个动作前面得加 -e 才行</p>
+<h3 id="延伸正规表示法"><a href="#延伸正规表示法" class="headerlink" title="延伸正规表示法"></a>延伸正规表示法</h3><p><code>grep -E</code> 或 <code>egrep</code> 来支持延伸正规表示法!</p>
+<table>
+<thead>
+<tr>
+<th align="center">RE 字符</th>
+<th align="left">意义与范例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">+</td>
+<td align="left">意义：重复『一个或一个以上』的前一个 RE 字符 <br>范例：搜寻 (god) (good) (goood)… 等等的字符串。  <br><code>egrep -n &#39;go+d&#39; regular_express.txt </code></td>
+</tr>
+<tr>
+<td align="center">?</td>
+<td align="left">意义：『零个或一个』的前一个 RE 字符 <br>范例：搜寻 (gd) (god) 这两个字符串。 <br><code>egrep -n &#39;go?d&#39; regular_express.txt </code></td>
 </tr>
 <tr>
 <td align="center">丨</td>
-<td align="left">管线 (pipe)：分隔两个管线命令的界定(后两节介绍)；</td>
+<td align="left">意义：用或( or )的方式找出数个字符串 <br>范例：搜寻 gd 或 good 这两个字符串<br><code>egrep -n &#39;gd丨good&#39; regular_express.txt</code> <br>那如果还想要找出 dog 呢？ <br><code>egrep -n &#39;gd丨good丨dog&#39; regular_express.txt</code></td>
 </tr>
 <tr>
-<td align="center">;</td>
-<td align="left">连续指令下达分隔符：连续性命令的界定 (注意！与管线命令并不相同)</td>
+<td align="center">()</td>
+<td align="left">意义：找出『群组』字符串 <br>范例：搜寻 (glad) 或 (good) 这两个字符串<br><code>egrep -n &#39;g(la丨oo)d&#39; regular_express.txt</code></td>
 </tr>
 <tr>
-<td align="center">~</td>
-<td align="left">用户的家目录</td>
-</tr>
-<tr>
-<td align="center">$</td>
-<td align="left">取用变数前导符：亦即是变量之前需要加的变量取代值</td>
-</tr>
-<tr>
-<td align="center">&amp;</td>
-<td align="left">工作控制 (job control)：将指令变成背景下工作</td>
-</tr>
-<tr>
-<td align="center">!</td>
-<td align="left">逻辑运算意义上的『非』</td>
-</tr>
-<tr>
-<td align="center">/</td>
-<td align="left">目录符号：路径分隔的符号</td>
-</tr>
-<tr>
-<td align="center">&gt;, &gt;&gt;</td>
-<td align="left">数据流重导向：输出导向，分别是『取代』与『累加』</td>
-</tr>
-<tr>
-<td align="center">&lt;, &lt;&lt;</td>
-<td align="left">数据流重导向：输入导向</td>
-</tr>
-<tr>
-<td align="center">‘ ‘</td>
-<td align="left">单引号，不具有变量置换的功能 ($ 变为纯文本)</td>
-</tr>
-<tr>
-<td align="center">“ “</td>
-<td align="left">具有变量置换的功能！ ($ 可保留相关功能)</td>
-</tr>
-<tr>
-<td align="center">`</td>
-<td align="left">两个『 ` 』中间为可以先执行的指令，亦可使用 $( )</td>
-</tr>
-<tr>
-<td align="center">( )</td>
-<td align="left">在中间为子 shell 的起始与结束</td>
-</tr>
-<tr>
-<td align="center">{ }</td>
-<td align="left">在中间为命令区块的组合！</td>
+<td align="center">()+</td>
+<td align="left"><br>意义：多个重复群组的判别 <br>范例：将『AxyzxyzxyzxyzC』用 echo 叫出，然后再使用如下的方法搜寻一下！ <br><code>echo &#39;AxyzxyzxyzxyzC&#39; 丨 egrep &#39;A(xyz)+C&#39; </code><br>上面的例子意思是说，我要找开头是 A 结尾是 C ，中间有一个以上的 “xyz” 字符串～</td>
 </tr>
 </tbody></table>
-<h3 id="数据流重导向"><a href="#数据流重导向" class="headerlink" title="数据流重导向"></a>数据流重导向</h3><p>std output 和 std error output 默认都是输出到屏幕, 但可以通过<code>&gt;</code>和<code>2&gt;</code>分别引流到其他文件中,如<br><code>find /home -name .bashrc &gt; list_right 2&gt; list_error</code><br>若是<code>&gt;&gt;</code>则为追加输出.</p>
-<p>特殊的位置: <code>/dev/null</code> 引流到这里则消失</p>
-<p>用<code>&amp;&gt;</code>或<code>2&gt;&amp;1</code>可以向屏幕那样混合输出, 如<br><code>find /home -name .bashrc &gt; list 2&gt;&amp;1; find /home -name .bashrc &amp;&gt; list</code><br>这是把错误输出混合到标准输出, 同样可以<code>1&gt;&amp;2</code>把标准输出当作错误输出.</p>
-<p><code>&lt;</code>则是将原本需要由键盘输入的数据，改由文件内容来取代. 如<br><code>cat &gt; catfile &lt; ~/.bashrc</code><br><code>&lt;&lt;</code>代表的是『结束的输入字符』, 如<br><code>cat &gt; catfile &lt;&lt; &quot;eof&quot;</code> 则当键盘输入eof时结束,相当于[ctrl]+d.</p>
-<p>复制流:   <code>tee [-a] file</code>  -a  是以累加 (append) 的方式，将数据加入 file 当中<br>如: <code>ls -l / | tee -a ~/homefile | more</code> 可以同时存一份, 屏幕上输出一份</p>
-<h3 id="命令执行的判断依据：-amp-amp"><a href="#命令执行的判断依据：-amp-amp" class="headerlink" title="命令执行的判断依据： ; , &amp;&amp;, ||"></a>命令执行的判断依据： ; , &amp;&amp;, ||</h3><p>在指令与指令中间利用分号 (;) 来隔开，这样一来，分号前的指令执行完后就会立刻接着执行后面的指令了。</p>
-<p>cmd1 &amp;&amp; cmd2 : 若 cmd1 执行完毕且正确执行($?=0)，则开始执行 cmd2。否则不执行.</p>
-<p>cmd1 || cmd2 : 若 cmd1 执行完毕且正确执行($?=0)，则 cmd2 不执行。否则执行. 并不是或语句啊!</p>
-<p>例: 不清楚 /tmp/abc 是否存在，但就是要建立 /tmp/abc/hehe 文件<br><code>ls /tmp/abc || mkdir /tmp/abc &amp;&amp; touch /tmp/abc/hehe</code><br>Linux 底下的指令都是由左往右执行的，$? 也是顺序变化的.<br><code>ls /tmp/vbirding &amp;&amp; echo &quot;exist&quot; || echo &quot;not exist&quot;</code></p>
-<h3 id="管线"><a href="#管线" class="headerlink" title="管线"></a>管线</h3><p>管线命令『 | 』仅能处理经由前面一个指令的 standard output 的信息，对于 stdandard error 并没有直接处理的能力。<br>管线命令必须要能够接受来自前一个指令的数据成为 standard input 继续处理才行。<br>如<code>ls -al /etc | less</code></p>
+<h3 id="文件的格式化与相关处理"><a href="#文件的格式化与相关处理" class="headerlink" title="文件的格式化与相关处理"></a>文件的格式化与相关处理</h3><h4 id="格式化打印：-printf"><a href="#格式化打印：-printf" class="headerlink" title="格式化打印： printf"></a>格式化打印： printf</h4><p><code>printf &#39;打印格式&#39; &#39; 实际内容</code><br>关于格式方面的几个特殊样式：<br>\a    警告声音输出<br>\b    退格键(backspace)<br>\f    清除屏幕 (form feed)<br>\n    输出新的一行<br>\r    亦即 Enter 按键<br>\t    水平的 [tab] 按键<br>\v    垂直的 [tab] 按键<br>\xNN  NN 为两位数的数字，可以转换数字成为字符。<br>关于 C 程序语言内，常见的变数格式<br>%ns   那个 n 是数字， s 代表 string ，亦即多少个字符；<br>%ni   那个 n 是数字， i 代表 integer ，亦即多少整数字数；<br>%N.nf 那个 n 与 N 都是数字， f 代表 floating (浮点)，如果有小数字数，<br>      假设我共要十个位数，但小数点有两位，即为 %10.2f 啰！</p>
+<p>用例:<br><code>printf &#39;%s\t %s\t %s\t %st %s\t %st %s\t t \n&#39; $(cat printf.txt)</code></p>
+<pre><code>Name     Chinese         English         Math    Average 
+DmTsai   80      60      92      77.33 
+VBird    75      55      80      70.00 
+Ken      60      90      70      73.33</code></pre>
+<p><code>printf &#39;%10s %5i %5i %5i %8.2f \n&#39; $(cat printf.txt | grep -v Name) </code></p>
+<pre><code>DmTsai    80    60    92    77.33 
+ VBird    75    55    80    70.00 
+   Ken    60    90    70    73.33</code></pre>
+<p><code>printf &#39;\x45\n&#39;</code></p>
+<pre><code>E</code></pre>
+<h4 id="awk：好用的数据处理工具"><a href="#awk：好用的数据处理工具" class="headerlink" title="awk：好用的数据处理工具"></a>awk：好用的数据处理工具</h4><p><code>awk &#39;条件类型1&#123;动作1&#125; 条件类型2&#123;动作2&#125; ...&#39; filename</code><br>awk 主要是处理『每一行的字段内的数据』，而默认的『字段的分隔符为 “空格键” 或 “[tab]键” 』</p>
+<p>例:<code>last -n 5 | awk &#39;&#123;print $1 &quot;\t&quot; $3&#125;&#39;</code> 调出第一列和第三列<br>awk 后续的所有动作是以单引号『 ‘ 』括住的, 非变量的文字部分，包含上一小节 printf 提到的格式中，都需要使用双引号来定义出来喔！</p>
+<p>awk的内建变量:</p>
+<table>
+<thead>
+<tr>
+<th align="center">变量名称</th>
+<th align="left">代表意义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">NF</td>
+<td align="left">每一行 ($0) 拥有的字段总数</td>
+</tr>
+<tr>
+<td align="center">NR</td>
+<td align="left">目前 awk 所处理的是『第几行』数据</td>
+</tr>
+<tr>
+<td align="center">FS</td>
+<td align="left">目前的分隔字符，默认是空格键</td>
+</tr>
+</tbody></table>
+<p>例:<code>last -n 5| awk &#39;&#123;print $1 &quot;\t lines: &quot; NR &quot;\t columns: &quot; NF&#125;&#39;</code></p>
+<p>awk的条件支持C式的逻辑运算</p>
+<p>例:<code>cat /etc/passwd | awk &#39;&#123;FS=&quot;:&quot;&#125; $3 &lt; 10 &#123;print $1 &quot;\t &quot; $3&#125;&#39;</code> 以:为分隔符, 输出第三栏小于10的</p>
+<p>这个定义FS在第二行才生效, 因此要用BEGIN<br><code>cat /etc/passwd | awk &#39;BEGIN &#123;FS=&quot;:&quot;&#125; $3 &lt; 10 &#123;print $1 &quot;\t &quot; $3&#125;&#39;</code></p>
+<p>计算功能:</p>
+<pre><code>cat pay.txt | \ 
+awk &#39;NR==1&#123;printf &quot;%10s %10s %10s %10s %10s\n&quot;,$1,$2,$3,$4,&quot;Total&quot; &#125; 
+NR&gt;=2&#123;total = $2 + $3 + $4 
+printf &quot;%10s %10d %10d %10d %10.2f\n&quot;, $1, $2, $3, $4, total&#125;&#39; 
+
+  Name        1st        2nd        3th      Total 
+ VBird      23000      24000      25000   72000.00 
+DMTsai      21000      20000      23000   64000.00 
+ Bird2      43000      42000      41000  126000.00</code></pre>
+<p>说明:</p>
 <ol>
-<li>cut<br><code>cut -d &#39;分隔字符&#39; -f fields</code>, 用 -f 取出第几段的意思, 如 <code>echo $&#123;PATH&#125; | cut -d &#39;:&#39; -f 3,5</code><br><code>cut -c c 字符区间</code>, 如<code>export | cut -c 12-</code>.<br>cut 主要的用途在于将同一行里面的数据进行分解, 对多空格不友好</li>
-<li>grep<br>grep 是分析一行讯息， 若当中有我们所需要的信息，就将该行拿出来～<br>grep [-acinv] [–color=auto] ‘搜寻字符串’ filename<br>-a ：将 binary 文件以 text 文件的方式搜寻数据<br>-c ：计算找到 ‘搜寻字符串’ 的次数<br>-i ：忽略大小写的不同，所以大小写视为相同<br>-n ：顺便输出行号<br>-v ：反向选择，亦即显示出没有 ‘搜寻字符串’ 内容的那一行！ </li>
+<li>awk 的指令间隔：所有 awk 的动作，亦即在 {} 内的动作，如果有需要多个指令辅助时，可利用分号『;』间隔， 或者直接以 [Enter] 按键来隔开每个指令. </li>
+<li>格式化输出时，在 printf 的格式设定当中，务必加上 \n ，才能进行分行！ </li>
+<li>与 bash shell 的变量不同，在 awk 当中，变量可以直接使用，不需加上 $ 符号。</li>
 </ol>
-<h3 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h3><ol>
-<li>sort  [-fbMnrtuk] [file or stdin]<br>-f  ：忽略大小写的差异，例如 A 与 a 视为编码相同；<br>-b  ：忽略最前面的空格符部分；<br>-M  ：以月份的名字来排序，例如 JAN, DEC 等等的排序方法；<br>-n  ：使用『纯数字』进行排序(默认是以文字型态来排序的)；<br>-r  ：反向排序；<br>-u  ：就是 uniq ，相同的数据中，仅出现一行代表；<br>-t  ：分隔符，预设是用 [tab] 键来分隔；<br>-k  ：以那个区间 (field) 来进行排序的意思<br><code>/etc/passwd</code> 内容是以 : 来分隔的，以第三栏来排序则<code>cat /etc/passwd | sort -t &#39;:&#39; -k 3 -n</code></li>
-<li>uniq<br>-i  ：忽略大小写字符的不同；<br>-c  ：进行计数<br>如<code>last | cut -d &#39; &#39; -f1 | sort | uniq -c</code></li>
-<li>wc 统计信息(厕所?<br>-l  ：仅列出行；<br>-w  ：仅列出多少字(英文单字)；<br>-m  ：多少字符；</li>
-</ol>
-<h3 id="字符转换命令：-tr-col-join-paste-expand"><a href="#字符转换命令：-tr-col-join-paste-expand" class="headerlink" title="字符转换命令： tr, col, join, paste, expand"></a>字符转换命令： tr, col, join, paste, expand</h3><ol>
-<li><code>tr [-ds] SET1 ...</code><br>-d  ：删除讯息当中的 SET1 这个字符串；<br>-s  ：取代掉重复的字符！</li>
-<li><code>col [-xb]</code><br>-x  ：将 tab 键转换成对等的空格键</li>
-<li><code>join [-ti12] file1 file2</code>  两个文件当中，有 “相同key” 的那一行加在一起<br>-t ‘:’ ：join 默认以空格符分隔数据，并且比对『第一个字段』的数据， 如果两个文件相同，则将两笔数据联成一行，且第一个字段放在第一个！<br>-i  ：忽略大小写的差异；<br>-1 n ：这个是数字的 1 ，代表『第一个文件要用那个字段来分析』的意思；<br>-2 m ：代表『第二个文件要用那个字段来分析』的意思。<br>在使用 join 之前，你所需要处理的文件应该要事先经过排序 (sort) 处理！</li>
-<li><code>paste [-d] file1 file2</code> 将两行贴在一起，且中间以 [tab] 键隔开<br>-d  ：后面可以接分隔字符。预设是以 [tab] 来分隔的！ <ul>
-<li>  ：如果 file 部分写成 - ，表示来自 standard input 的资料的意思。’-‘ 可以替代 stdin 与 stdout </li>
-</ul>
-</li>
-<li><code>expand [-t] file</code> [tab] 按键转成空格键<br>-t  ：后面可以接数字。一般来说，一个 tab 按键可以用 8 个空格</li>
-</ol>
-<h3 id="切割文件"><a href="#切割文件" class="headerlink" title="切割文件"></a>切割文件</h3><p><code>split  [-bl] file PREFIX</code> 将大文件分区成为小文件<br>  -b  ：后面可接欲分区成的文件大小，可加单位，例如 b, k, m 等；<br>  -l  ：以行数来进行分区。<br>  PREFIX ：代表前导符的意思，可作为分区文件的前导文字。<br>  合并则用 <code>cat PREFIX* file</code></p>
-<h3 id="参数代换：-xargs"><a href="#参数代换：-xargs" class="headerlink" title="参数代换： xargs"></a>参数代换： xargs</h3><p><code>xargs [-0epn] command </code><br>-0  ：如果输入的 stdin 含有特殊字符，例如 `, , 空格键等等字符时，这个 -0 参数<br>      可以将他还原成一般字符。这个参数可以用于特殊状态喔！<br>-e  ：这个是 EOF (end of file) 的意思。后面可以接一个字符串，当 xargs 分析到这个字符串时，<br>      就会停止继续工作！ -e’sync’ 是连在一起的，中间没有空格键。<br>-p  ：在执行每个指令的 argument 时，都会询问使用者的意思；<br>-n  ：后面接次数，每次 command 指令执行时，要使用几个参数的意思。<br>当 xargs 后面没有接任何的指令时，默认是以 echo 来进行输出喔！</p>
+<h4 id="文件比对工具"><a href="#文件比对工具" class="headerlink" title="文件比对工具"></a>文件比对工具</h4><p>比对两个文件之间的差异的，并且是以行为单位来比对, 一般是用在 ASCII 纯文本档的比对上, 同一的文件(或软件)的新旧版本差异</p>
+<p><code>diff [-bBi] from-file to-file</code><br>from-file ：一个档名，作为原始比对文件的档名；<br>to-file   ：一个档名，作为目的比对文件的档名；<br>注意，from-file 或 to-file 可以 - 取代，那个 - 代表『Standard input』之意。 </p>
+<p>-b  ：忽略一行当中，仅有多个空白的差异(例如 “about me” 与 “about     me” 视为相同<br>-B  ：忽略空白行的差异。<br>-i  ：忽略大小写的不同。</p>
+<p>打印结果中 &lt; 代表左边from内容, &gt; 代表右边to内容.</p>
+<p><code>cmp [-l] file1 file2</code> 利用『字节』单位去比对两个文件<br>-l  ：将所有的不同点的字节处都列出来。因为 cmp 预设仅会输出第一个发现的不同点。</p>
+<p><code>patch</code> 用<code>diff -Naur</code>的结果更新或还原文件.</p>
+<p><code>pr</code>命令可以用来打印文本文档.</p>
 <hr>
 <p>下一篇：<a href="/2021/07/08/linuxA0708/">-</a><br>上一篇：<a href="/2021/07/05/linuxA0705/">认识与学习 BASH</a></p>
 
@@ -499,7 +506,7 @@ var dsqjs = new DisqusJS({
 
 
 
-<script src="/js/app.js?v=1625729952815"></script>
+<script src="/js/app.js?v=1625755388049"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js"></script>
 <script>
