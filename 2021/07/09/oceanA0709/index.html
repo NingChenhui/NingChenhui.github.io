@@ -4,7 +4,7 @@
 
 <head>
   
-  <title>Linux学习 笔记#04 文件权限与目录配置 - 一切都会好起来的哟</title>
+  <title>物理海洋学基础 笔记#05 - 一切都会好起来的哟</title>
   <meta charset="UTF-8">
   <meta name="description" content="Ning Chenhui">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
@@ -12,27 +12,24 @@
   
 
   <link rel="shortcut icon" href="/pictures/icon.jpg" type="image/png" />
-  <meta name="description" content="chmod 000 filename">
+  <meta name="description" content="波动与专题，本课结束。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linux学习 笔记#04 文件权限与目录配置">
-<meta property="og:url" content="https://ningchenhui.github.io/2020/12/24/linux1224/index.html">
+<meta property="og:title" content="物理海洋学基础 笔记#05">
+<meta property="og:url" content="https://ningchenhui.github.io/2021/07/09/oceanA0709/index.html">
 <meta property="og:site_name" content="一切都会好起来的哟">
-<meta property="og:description" content="chmod 000 filename">
+<meta property="og:description" content="波动与专题，本课结束。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://ningchenhui.github.io/2020/12/24/linux1224/1.png">
-<meta property="og:image" content="https://ningchenhui.github.io/2020/12/24/linux1224/2.png">
-<meta property="og:image" content="https://ningchenhui.github.io/2020/12/24/linux1224/3.png">
-<meta property="og:image" content="https://ningchenhui.github.io/2020/12/24/linux1224/4.png">
-<meta property="article:published_time" content="2020-12-24T07:07:18.000Z">
-<meta property="article:modified_time" content="2021-03-22T08:23:16.577Z">
+<meta property="og:image" content="https://ningchenhui.github.io/2021/07/09/oceanA0709/1.png">
+<meta property="article:published_time" content="2021-07-09T12:08:52.000Z">
+<meta property="article:modified_time" content="2021-07-09T12:22:54.961Z">
 <meta property="article:author" content="Ning Chenhui">
-<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="地球科学">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://ningchenhui.github.io/2020/12/24/linux1224/1.png">
+<meta name="twitter:image" content="https://ningchenhui.github.io/2021/07/09/oceanA0709/1.png">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/theme-nexmoe/hexo-theme-nexmoe@latest/source/lib/mdui_043tiny/css/mdui.css,gh/theme-nexmoe/hexo-theme-nexmoe@latest/source/lib/iconfont/iconfont.css,gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css?v=233" crossorigin>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css">
   
-  <link rel="stylesheet" href="/css/style.css?v=1625834285832">
+  <link rel="stylesheet" href="/css/style.css?v=1625834285650">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
   <script src="/live2d-widget/autoload.js"></script>
 <meta name="generator" content="Hexo 5.2.0"></head>
@@ -217,16 +214,16 @@
     <div class="nexmoe-primary">
         <div class="nexmoe-post">
   
-      <div class="nexmoe-post-cover" style="padding-bottom: 62.04217536071032%;"> 
-          <img data-src="/pictures/linux.jpg" data-sizes="auto" alt="Linux学习 笔记#04 文件权限与目录配置" class="lazyload">
-          <h1>Linux学习 笔记#04 文件权限与目录配置</h1>
+      <div class="nexmoe-post-cover" style="padding-bottom: 75.11244377811094%;"> 
+          <img data-src="/pictures/dream/ako-guru.png" data-sizes="auto" alt="物理海洋学基础 笔记#05" class="lazyload">
+          <h1>物理海洋学基础 笔记#05</h1>
       </div>
   
   
   <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
-    <a><i class="nexmoefont icon-calendar-fill"></i>2020年12月24日</a>
-    <a><i class="nexmoefont icon-areachart"></i>848 字</a>
-    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 3 分钟</a>
+    <a><i class="nexmoefont icon-calendar-fill"></i>2021年07月09日</a>
+    <a><i class="nexmoefont icon-areachart"></i>592 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 2 分钟</a>
     
 </div>
 
@@ -237,7 +234,7 @@
             <div class="nexmoe-toc">
                 
                 
-                  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Ch5-Linux%E7%9A%84%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90%E4%B8%8E%E7%9B%AE%E5%BD%95%E9%85%8D%E7%BD%AE"><span class="toc-number">1.</span> <span class="toc-text">Ch5 Linux的文件权限与目录配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E8%80%85%E4%B8%8E%E7%BE%A4%E7%BB%84"><span class="toc-number">1.1.</span> <span class="toc-text">使用者与群组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90"><span class="toc-number">1.2.</span> <span class="toc-text">文件权限</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E6%9D%83%E9%99%90"><span class="toc-number">1.3.</span> <span class="toc-text">修改权限</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BE%A4%E7%BB%84-chgrp"><span class="toc-number">1.3.1.</span> <span class="toc-text">群组 chgrp</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8B%A5%E6%9C%89%E8%80%85-chown"><span class="toc-number">1.3.2.</span> <span class="toc-text">拥有者 chown</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9D%83%E9%99%90-chmod"><span class="toc-number">1.3.3.</span> <span class="toc-text">权限 chmod</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E5%90%8D%E8%A7%84%E5%88%99"><span class="toc-number">1.4.</span> <span class="toc-text">文件名规则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%AE%E5%BD%95%E9%85%8D%E7%BD%AE"><span class="toc-number">1.5.</span> <span class="toc-text">目录配置</span></a></li></ol></li></ol>
+                  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%83%E7%AB%A0%EF%BC%9A%E6%B5%B7%E6%B4%8B%E6%B3%A2%E5%8A%A8"><span class="toc-number">1.</span> <span class="toc-text">第七章：海洋波动</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%B7%E6%B4%8B%E9%87%8D%E5%8A%9B%E6%B3%A2%EF%BC%88%E6%B0%B4%E6%B3%A2%EF%BC%89"><span class="toc-number">1.1.</span> <span class="toc-text">海洋重力波（水波）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%85%E6%B3%A2"><span class="toc-number">1.2.</span> <span class="toc-text">内波</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%93%E9%A2%98"><span class="toc-number">2.</span> <span class="toc-text">专题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A6%BB%E5%B2%B8%E6%B5%81"><span class="toc-number">2.1.</span> <span class="toc-text">离岸流</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B5%A4%E9%81%93%E4%BC%81%E9%B9%85"><span class="toc-number">2.2.</span> <span class="toc-text">赤道企鹅</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%B7%E6%B4%8B%E9%94%8B%E9%9D%A2"><span class="toc-number">2.3.</span> <span class="toc-text">海洋锋面</span></a></li></ol></li></ol>
                 
             </div>
         </div>
@@ -246,72 +243,29 @@
   </div>
 
   <article>
-    <p><code>chmod 000 filename</code> <a id="more"></a></p>
-<h2 id="Ch5-Linux的文件权限与目录配置"><a href="#Ch5-Linux的文件权限与目录配置" class="headerlink" title="Ch5 Linux的文件权限与目录配置"></a>Ch5 Linux的文件权限与目录配置</h2><h3 id="使用者与群组"><a href="#使用者与群组" class="headerlink" title="使用者与群组"></a>使用者与群组</h3><p>Linux 一般将文件可存取的身份分为三个类别，分别是 owner/group/others，且三种身份各有<br>read/write/execute 等权限。而 root 可以访问所有文件。</p>
-<h3 id="文件权限"><a href="#文件权限" class="headerlink" title="文件权限"></a>文件权限</h3><p><code>ls -al</code>：查看当前目录下文件（夹）的详细的权限与属性 （包含隐藏文件）</p>
-<img style="display: inline-block; width: 70%; max-width: 70%; height: auto;" src="1.png" />
+    <p>波动与专题，本课结束。</p>
+<a id="more"></a>
 
-<p>字段含义：</p>
-<img style="display: inline-block; width: 70%; max-width: 70%; height: auto;" src="2.png" />
+<h2 id="第七章：海洋波动"><a href="#第七章：海洋波动" class="headerlink" title="第七章：海洋波动"></a>第七章：海洋波动</h2><h3 id="海洋重力波（水波）"><a href="#海洋重力波（水波）" class="headerlink" title="海洋重力波（水波）"></a>海洋重力波（水波）</h3><p>海洋重力波一般在海洋表面，称为 <strong>自由面</strong> ——空气和海洋的界面 </p>
+<p>海洋内部盐度温度差异形成的 <strong>海洋内波</strong> ——温跃层、盐跃层、密度分层，etc。</p>
+<p>海洋重力波由两个力的作用生成，分别是驱动力和回复力。驱动力倾向于扰动，使界面远离平衡位置。回复力则倾向于平息扰动。<br>海洋表面波的回复力就是重力。</p>
+<img style="display: inline-block; width: 50%; max-width: 50%; height: auto;" src="1.png" />
 
-<img style="display: inline-block; width: 40%; max-width: 70%; height: auto;" src="3.png" />
-
-<p>档案类型为<code>d</code>时表示文件夹，<code>-</code>表示文件，<code>l</code>表示为连结档（link file），<code>b</code>表示装置文件里面的可供储存的接口设备（可随机存取装置），<code>c</code>表示装置文件里面的串行端口设备，例如键盘、鼠标（一次性读取装置）。</p>
-<p>对文件而言：</p>
-<ul>
-<li>可读(r)代表读取文件内容</li>
-<li>可执行(x)表示是否具有执行的能力</li>
-<li>可写(w)权限代表具有写入/编辑/新增/修改文件的内容的权限，但并不具备有删除该文件本身的权限</li>
-</ul>
-<p>对目录而言：</p>
-<ul>
-<li>可读(r)代表读取目录结构列表，可以<code>ls</code>查询该目录下的文件名数据</li>
-<li>可执行(x)表示用户能否进入该目录成为工作目录，即<code>cd</code>进入</li>
-<li>可写(w)权限代表具有异动该目录结构列表的权限，即<ul>
-<li>建立新的文件与目录</li>
-<li>删除已经存在的文件与目录(不论该文件的权限为何！) </li>
-<li>将已存在的文件或目录进行更名</li>
-<li>搬移该目录内的文件、目录位置<br>开放目录给任何人浏览时，应该至少也要给予 r 及 x 的权限，但 w 权限不可随便给！</li>
-</ul>
-</li>
-</ul>
-<p>案例：<br>假设两个档名，分别是<code>/dir1/file1</code>和<code>/dir2</code>。现在在系统使用 riolu 这个账号，那么这个账号针对 <code>/dir1</code>, <code>/dir1/file1</code>, <code>/dir2</code> 这三个档名来说，分别需要哪些最小的权限才能达成各项任务？ </p>
-<img style="display: inline-block; width: 90%; max-width: 90%; height: auto;" src="4.png" />
-
-<p>实际上没有 r 权限时，只要知道目录下的文件名就可以操作！只是，没有 r 的话，使用 <code>tab</code> 时，他就无法自动帮你补齐档名了！</p>
-<h3 id="修改权限"><a href="#修改权限" class="headerlink" title="修改权限"></a>修改权限</h3><h4 id="群组-chgrp"><a href="#群组-chgrp" class="headerlink" title="群组 chgrp"></a>群组 <code>chgrp</code></h4><p>记得使用 root 权限修改哦。<br>要被改变的组名必须要在/etc/group 文件内存在。<br>用法：<code>chgrp [-R] grpname dir/filename</code> 。grp 是 group 的缩写，<code>-R</code>表示目录下所有文件递归（recursive）修改。</p>
-<h4 id="拥有者-chown"><a href="#拥有者-chown" class="headerlink" title="拥有者 chown"></a>拥有者 <code>chown</code></h4><p>用法：<br><code>chown [-R] usrname dir/filename</code><br><code>chown [-R] usrname:grpname dir/filename</code><br><code>chown [-R] usrname.grpname dir/filename</code><br><code>chown [-R] .grpname dir/filename</code></p>
-<h4 id="权限-chmod"><a href="#权限-chmod" class="headerlink" title="权限 chmod"></a>权限 <code>chmod</code></h4><p>一种是用数字修改，但我觉得符号改比较人性化~</p>
-<p>用法：</p>
-<table>
-<thead>
-<tr>
-<th align="center">chmod</th>
-<th align="center">u g o a(all)</th>
-<th align="center">+(加入) -(除去) =(设定)</th>
-<th align="center">r w x</th>
-<th align="center">文件或目录</th>
-</tr>
-</thead>
-</table>
-<p>如：<code>chmod u=rwx,go+rx .bashrc</code></p>
-<h3 id="文件名规则"><a href="#文件名规则" class="headerlink" title="文件名规则"></a>文件名规则</h3><ol>
-<li>前面加<code>.</code>是隐藏文件</li>
-<li>权限组开头为<code>l</code>的是链接档，类似于快捷方式</li>
-<li>最好不要含<code>* ? &gt; &lt; ; &amp; ! [ ] | \ &#39; &quot;  \( \) \&#123; \&#125; -</code> `等符号</li>
+<p>关于波浪可参见<a href="/2020/11/11/es1111/">动荡的海洋</a></p>
+<p>风暴潮 - 台风登陆带来的灾害 飓风, 热带气旋 不同海洋地区产生<br>海啸 - 地震引发, 波高可达30米.</p>
+<p>潮汐也可参照上一页面.<br>海洋潮汐实际上指的是海水在月球和太阳水平引潮力作用下的一种潮波运动。</p>
+<h3 id="内波"><a href="#内波" class="headerlink" title="内波"></a>内波</h3><ol>
+<li>内波的最大振幅出现在海洋内部，其波动频率介于惯性频率和浮性频率之间。</li>
+<li>内波的恢复力在频率较高时主要是约化重力(重力和浮力的差)，在频率较低时主要是科氏力，所以内波也称为内重力波或内惯性重力波。</li>
 </ol>
-<h3 id="目录配置"><a href="#目录配置" class="headerlink" title="目录配置"></a>目录配置</h3><p>一般 Linux 下有这样的目录约定：</p>
-<ol>
-<li><code>/</code>  根目录</li>
-<li><code>/usr(unix software resource)</code> 软件放置处</li>
-<li><code>/var(variable)</code> 与系统运作过程有关</li>
-<li><code>/opt</code> 第三方软件，以前也在<code>/usr/local</code>下</li>
-<li><code>/etc</code> 配置文件</li>
-<li><code>lost+found</code> 并不是回收处，而是当文件系统发生错误时，将一些遗失的片段放置到这个目录下。</li>
-</ol>
-<p>更多的可以去搜 Filesystem Hierarchy Standard (FHS)。</p>
+<p>约化重力比重力小两个量级. 扰动源包括潮汐, 导致内潮, 内孤立波<br>约化重力可视为重力减去浮力.</p>
+<p>界面内波, 可简化为两层密度不同均匀水体间的波动, 与界面波类似, 介于表面波和内波.</p>
+<h2 id="专题"><a href="#专题" class="headerlink" title="专题"></a>专题</h2><h3 id="离岸流"><a href="#离岸流" class="headerlink" title="离岸流"></a>离岸流</h3><p>由于离岸流是较深层的水流，所以大部分颜色比较深。而且有一些离岸流表面上看起来几乎没什么浪，同周边的白浪和浪涌相比、它们较安静，这很容易骗过游泳者。</p>
+<h3 id="赤道企鹅"><a href="#赤道企鹅" class="headerlink" title="赤道企鹅"></a>赤道企鹅</h3><p>栖息地在上升流区域旁边, 东边界流, 南赤道流, 赤道逆流等冷流, 提供舒适水温和丰富的食物.<br>但厄尔尼诺年时气温较高, 而南极的严寒正越来越冷.</p>
+<h3 id="海洋锋面"><a href="#海洋锋面" class="headerlink" title="海洋锋面"></a>海洋锋面</h3><p>老师放的视频是海洋奇缘主题曲！ 爱了</p>
+<p>海洋锋:一般是指特性明显不同的两种或几种水体之间的狭窄过渡带。</p>
 <hr>
-<p>下一篇：<a href="/2021/03/22/linuxA0322/">文件与目录管理</a><br>上一篇：<a href="/2020/11/12/linux1112/">登入系统</a></p>
+<p>上一篇：<a href="/2021/07/03/oceanA0703/">海洋环流</a></p>
 
   </article>
 
@@ -319,7 +273,7 @@
     
   <div class="nexmoe-post-copyright">
     <strong>本文作者：</strong>Ning Chenhui<br>
-    <strong>本文链接：</strong><a href="https://ningchenhui.github.io/2020/12/24/linux1224/" title="https:&#x2F;&#x2F;ningchenhui.github.io&#x2F;2020&#x2F;12&#x2F;24&#x2F;linux1224&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;ningchenhui.github.io&#x2F;2020&#x2F;12&#x2F;24&#x2F;linux1224&#x2F;</a><br>
+    <strong>本文链接：</strong><a href="https://ningchenhui.github.io/2021/07/09/oceanA0709/" title="https:&#x2F;&#x2F;ningchenhui.github.io&#x2F;2021&#x2F;07&#x2F;09&#x2F;oceanA0709&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;ningchenhui.github.io&#x2F;2021&#x2F;07&#x2F;09&#x2F;oceanA0709&#x2F;</a><br>
     
       <strong>版权声明：</strong>未经作者授权禁止转载
     
@@ -338,7 +292,7 @@
         <a class="nexmoefont icon-appstore-fill -link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
     
     
-        <a class="nexmoefont icon-tag-fill -none-link" href="/tags/Linux/" rel="tag">Linux</a>
+        <a class="nexmoefont icon-tag-fill -none-link" href="/tags/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/" rel="tag">地球科学</a>
     
 </div>
 
@@ -352,9 +306,9 @@
 var dsqjs = new DisqusJS({
     shortname: 'ningchenhui-github-io',
     siteName: 'ningchenhui.github.io',
-    identifier: 'https://ningchenhui.github.io/2020/12/24/linux1224/',
-    url: 'https://ningchenhui.github.io/2020/12/24/linux1224/',
-    title: 'Linux学习 笔记#04 文件权限与目录配置',
+    identifier: 'https://ningchenhui.github.io/2021/07/09/oceanA0709/',
+    url: 'https://ningchenhui.github.io/2021/07/09/oceanA0709/',
+    title: '物理海洋学基础 笔记#05',
     api: 'https://disqus.skk.moe/disqus/',
     apikey: 'e6evOgi4KaQOW9DrrU1gkzYWj6dsm3Pl5ZMMS8kUw46BtSz8Ze355Igzqu11XhhI',
     admin: 'disqus_7i3NGTLGyS',
@@ -385,7 +339,7 @@ var dsqjs = new DisqusJS({
 
 
 
-<script src="/js/app.js?v=1625834285835"></script>
+<script src="/js/app.js?v=1625834285654"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js"></script>
 <script>
