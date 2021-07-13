@@ -4,7 +4,7 @@
 
 <head>
   
-  <title>迎新晚会上最尬的节目 - 一切都会好起来的哟</title>
+  <title>Linux学习 笔记#10 Shell Scripts - 一切都会好起来的哟</title>
   <meta charset="UTF-8">
   <meta name="description" content="Ning Chenhui">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
@@ -12,25 +12,22 @@
   
 
   <link rel="shortcut icon" href="/pictures/icon.jpg" type="image/png" />
-  <meta name="description" content="咱是受(被)邀(迫)接受采访的。">
+  <meta name="description" content="使用脚本！">
 <meta property="og:type" content="article">
-<meta property="og:title" content="迎新晚会上最尬的节目">
-<meta property="og:url" content="https://ningchenhui.github.io/2020/12/30/note201230/index.html">
+<meta property="og:title" content="Linux学习 笔记#10 Shell Scripts">
+<meta property="og:url" content="https://ningchenhui.github.io/2021/07/13/linuxA0713/index.html">
 <meta property="og:site_name" content="一切都会好起来的哟">
-<meta property="og:description" content="咱是受(被)邀(迫)接受采访的。">
+<meta property="og:description" content="使用脚本！">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://ningchenhui.github.io/2020/12/30/note201230/1.png">
-<meta property="og:image" content="https://ningchenhui.github.io/2020/12/30/note201230/2.jpg">
-<meta property="article:published_time" content="2020-12-30T15:30:57.000Z">
-<meta property="article:modified_time" content="2020-12-30T17:16:43.157Z">
+<meta property="article:published_time" content="2021-07-13T07:20:36.000Z">
+<meta property="article:modified_time" content="2021-07-13T09:58:53.210Z">
 <meta property="article:author" content="Ning Chenhui">
-<meta property="article:tag" content="生活">
+<meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://ningchenhui.github.io/2020/12/30/note201230/1.png">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/theme-nexmoe/hexo-theme-nexmoe@latest/source/lib/mdui_043tiny/css/mdui.css,gh/theme-nexmoe/hexo-theme-nexmoe@latest/source/lib/iconfont/iconfont.css,gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css?v=233" crossorigin>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css">
   
-  <link rel="stylesheet" href="/css/style.css?v=1626170356350">
+  <link rel="stylesheet" href="/css/style.css?v=1626170356180">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
   <script src="/live2d-widget/autoload.js"></script>
 <meta name="generator" content="Hexo 5.2.0"></head>
@@ -216,15 +213,15 @@
         <div class="nexmoe-post">
   
       <div class="nexmoe-post-cover" style="padding-bottom: 75.11244377811094%;"> 
-          <img data-src="/pictures/dream/toe.jpg" data-sizes="auto" alt="迎新晚会上最尬的节目" class="lazyload">
-          <h1>迎新晚会上最尬的节目</h1>
+          <img data-src="/pictures/dream/tomoe-festa.png" data-sizes="auto" alt="Linux学习 笔记#10 Shell Scripts" class="lazyload">
+          <h1>Linux学习 笔记#10 Shell Scripts</h1>
       </div>
   
   
   <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
-    <a><i class="nexmoefont icon-calendar-fill"></i>2020年12月30日</a>
-    <a><i class="nexmoefont icon-areachart"></i>925 字</a>
-    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 3 分钟</a>
+    <a><i class="nexmoefont icon-calendar-fill"></i>2021年07月13日</a>
+    <a><i class="nexmoefont icon-areachart"></i>1.3k 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 6 分钟</a>
     
 </div>
 
@@ -235,7 +232,7 @@
             <div class="nexmoe-toc">
                 
                 
-                  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%8E%E6%96%B0%E6%99%9A%E4%BC%9A%E5%AD%A6%E5%AD%90%E8%AE%BF%E8%B0%88%EF%BC%88%E8%8A%82%E9%80%89%EF%BC%89"><span class="toc-number">1.</span> <span class="toc-text">迎新晚会学子访谈（节选）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%B9%E5%B8%A6%E7%A7%81%E8%B4%A7"><span class="toc-number">2.</span> <span class="toc-text">夹带私货</span></a></li></ol>
+                  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Ch12-%E5%AD%A6%E4%B9%A0-Shell-Scripts"><span class="toc-number">1.</span> <span class="toc-text">Ch12 学习 Shell Scripts</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%84%9A%E6%9C%AC%E6%A0%B7%E4%BE%8B"><span class="toc-number">1.1.</span> <span class="toc-text">脚本样例</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Hello-World%EF%BC%81"><span class="toc-number">1.1.1.</span> <span class="toc-text">Hello World！</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Show-name"><span class="toc-number">1.1.2.</span> <span class="toc-text">Show name</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Create-files"><span class="toc-number">1.1.3.</span> <span class="toc-text">Create files</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B4%E6%95%B0%E8%BF%90%E7%AE%97-%E8%AE%A1%E7%AE%97%E5%BC%8F"><span class="toc-number">1.1.4.</span> <span class="toc-text">整数运算 $((计算式))</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B5%AE%E7%82%B9%E8%BF%90%E7%AE%97-bc"><span class="toc-number">1.1.5.</span> <span class="toc-text">浮点运算 bc</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%87%E4%BB%A4%E6%89%A7%E8%A1%8C"><span class="toc-number">1.2.</span> <span class="toc-text">指令执行</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A4%E6%96%AD%E5%BC%8F"><span class="toc-number">1.3.</span> <span class="toc-text">判断式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#test"><span class="toc-number">1.3.1.</span> <span class="toc-text">test</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">1.3.2.</span> <span class="toc-text">[ ]</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%82%E6%95%B0-num"><span class="toc-number">1.4.</span> <span class="toc-text">参数 $num</span></a></li></ol></li></ol>
                 
             </div>
         </div>
@@ -244,25 +241,86 @@
   </div>
 
   <article>
-    <p>咱是受(被)邀(迫)接受采访的。<a id="more"></a><br>昨天看到有人说因为省里的通知所有晚会都要取消，还有点开心不用上台丢人了，结果改成录播，该丢人还是得丢人。<br>啊这是昨天院里迎新晚会的一个访谈节目。迎新晚会放访谈？这又不是冯巩的那个访谈小品哦，因为是录播所以建议直接跳过，看看舞蹈听听歌不比这强。<br>不过咱还是把咱自己的部分贴在这啦。<del>估计也没人看</del></p>
-<h2 id="迎新晚会学子访谈（节选）"><a href="#迎新晚会学子访谈（节选）" class="headerlink" title="迎新晚会学子访谈（节选）"></a>迎新晚会学子访谈（节选）</h2><p><strong><em>你的竞赛成绩那么优秀，能不能给在座的学弟学妹们一些建议呢？</em></strong><br> <br>    竞赛有几个大的类型，编程类的像ACM门槛比较高，需要算法和编程能力。<br>    然后有些竞赛比如网络安全竞赛需要花时间学很多新的知识，如果感兴趣的话可以尝试。<br>    数模类的咱们院的学生基本都可以参加。<br>    总之选自己喜欢的、擅长的参加就行了。<br>    <del>实际上保研政策改了之后像我这样参加这么多竞赛根本没用，顶多算课余活动了。只取一项加分，十几个团体奖不如一个高数竞赛省一的分加的多，啧。</del><br>    <del>而且数模只能算是玄学语文竞赛吧，或者是我太菜了所以才参加六次最后撞到一个H奖。所以如果有个人竞赛省一的话建议不要参加数模。</del>
-     </p>
-<hr>
-<p><strong><em>你是如何安排自己时间的呢？</em></strong><br> <br>    时间安排的话，我会把当前阶段的任务列一个清单，然后每天从清单中选择几件当天要做的事情，尽量完成。<br>    先确定一个方向，把想做的事优先做、专心做。<br>    <del>实际上并不能保证天天这样做和按时完成。我还写了个<a href="/2020/11/28/mirror-info/">Mirror系统</a>想要监督自己，也是心血来潮时会更一波。</del>
-      </p>
-<hr>
-<p><strong><em>对于如何找到自己的研究方向呢，学长有什么样的建议？</em></strong><br>     <br>    首先要找到自己感兴趣的东西，咱们数学的很多方向都可以考虑。<br>    大家如果想尝试科研的话建议认真做做SRTP项目，跟老师多交流。体验一下科研是什么样的。这对以后科研方向的选择应该会有帮助。<br>    <del>我自己的科研方向都是撞大运一拍脑袋就决定了，何德何能给建议哦……</del><br>    <del>而且像我这样的辣鸡本科生是不可能有科研成果的。</del><br>    <del>咱当初想要转机器学习/人工智能，或者不行的话就接着做计算数学，谁能想到现在去了地学系嘛。（好了别骂了别骂了我就是馋人家牌子</del>
-     
-     </p>
-<h2 id="夹带私货"><a href="#夹带私货" class="headerlink" title="夹带私货"></a>夹带私货</h2><p>邦邦国服这期活动的挑战歌曲居然有六兆年！<br>我全火鸟还没全连呢又要来一首29嘛？<br>于是唯唯诺诺租组了有奶卡的队伍打了一把，没想到这个SP谱面好简单，顶多算28吧，我还以为有多恐怖……（指FC难度<br>然后今天打了几遍就全连了！还是无判20gr的梦幻成绩！（啊~ 哈卡耐<br><del>可你全火鸟还不是miss2。</del></p>
-<img style="display: inline-block; width: 80%; max-width: 80%; height: auto;" src="1.png" />
+    <p>使用脚本！ <a id="more"></a></p>
+<h2 id="Ch12-学习-Shell-Scripts"><a href="#Ch12-学习-Shell-Scripts" class="headerlink" title="Ch12 学习 Shell Scripts"></a>Ch12 学习 Shell Scripts</h2><p>tips:</p>
+<ol>
+<li>指令、选项与参数间的多个空白都会被忽略掉；</li>
+<li>可以使用『 \[Enter] 』来延伸至下一行；</li>
+<li>『 # 』可做为批注！</li>
+</ol>
+<h3 id="脚本样例"><a href="#脚本样例" class="headerlink" title="脚本样例"></a>脚本样例</h3><h4 id="Hello-World！"><a href="#Hello-World！" class="headerlink" title="Hello World！"></a>Hello World！</h4><pre><code>#!/bin/bash
+# Program: 
+#       This program shows &quot;Hello World!&quot; in your screen. 
+# History: 
+# 2021/07/13 Sinki First release
+echo &quot;Hello World! \a \n&quot; 
+exit 0</code></pre>
+<h4 id="Show-name"><a href="#Show-name" class="headerlink" title="Show name"></a>Show name</h4><pre><code>#!/bin/bash 
+# Program: 
+# User inputs his first name and last name.  Program shows his full name. 
+# History: 
+# 2021/07/13 Sinki First release
 
-<p>最后，六兆年EX永远的神，国服全曲FC遥遥无期。</p>
-<img style="display: inline-block; width: 60%; max-width: 60%; height: auto;" src="2.jpg" />
+read -p &quot;Please input your first name: &quot; firstname      # 提示使用者输入 
 
-<p>啊对了，昨天的风好大啊，雪也挺大的，积起来的限定场景还挺好看的。<del>但并没有人可以陪着堆雪人。</del></p>
+read -p &quot;Please input your last name:  &quot; lastname       # 提示使用者输入 
+echo &quot;\nYour full name is: $&#123;firstname&#125; $&#123;lastname&#125;&quot; # 结果由屏幕输出</code></pre>
+<h4 id="Create-files"><a href="#Create-files" class="headerlink" title="Create files"></a>Create files</h4><pre><code>#!/bin/bash 
+# Program: 
+# Program creates three files, which named by user&#39;s input and date command. 
+# History: 
+# 2021/07/13 Sinki First release
+
+# 1. 让使用者输入文件名，并取得 fileuser 这个变量； 
+echo &quot;I will use &#39;touch&#39; command to create 3 files.&quot; # 纯粹显示信息 
+read -p &quot;Please input your filename: &quot; fileuser         # 提示使用者输入 
+
+# 2. 为了避免使用者随意按 Enter ，利用变量功能分析档名是否有设定？ 
+filename=$&#123;fileuser:-&quot;filename&quot;&#125;           # 开始判断有否配置文件名 
+
+# 3. 开始利用 date 指令来取得所需要的档名了； 
+date1=$(date --date=&#39;2 days ago&#39; +%Y%m%d)  # 前两天的日期 
+date2=$(date --date=&#39;1 days ago&#39; +%Y%m%d)  # 前一天的日期 
+date3=$(date +%Y%m%d)                      # 今天的日期 
+file1=$&#123;filename&#125;$&#123;date1&#125;                  # 底下三行在配置文件名 
+file2=$&#123;filename&#125;$&#123;date2&#125; 
+file3=$&#123;filename&#125;$&#123;date3&#125; 
+
+# 4. 将档名建立吧！ 
+touch &quot;$&#123;file1&#125;&quot;                           # 底下三行在建立文件 
+touch &quot;$&#123;file2&#125;&quot; 
+touch &quot;$&#123;file3&#125;&quot;</code></pre>
+<h4 id="整数运算-计算式"><a href="#整数运算-计算式" class="headerlink" title="整数运算 $((计算式))"></a>整数运算 $((计算式))</h4><pre><code>total=$(($&#123;firstnu&#125;*$&#123;secnu&#125;))</code></pre>
+<h4 id="浮点运算-bc"><a href="#浮点运算-bc" class="headerlink" title="浮点运算 bc"></a>浮点运算 bc</h4><pre><code>time echo &quot;scale=$&#123;num&#125;; 4*a(1)&quot; | bc -lq</code></pre>
+<h3 id="指令执行"><a href="#指令执行" class="headerlink" title="指令执行"></a>指令执行</h3><ol>
+<li>直接指令下达： shell.sh 文件必须要具备 (rx) 权限, 使用绝对路径, 相对路径或在 PATH 中.</li>
+<li>以 bash 程序来执行：透过『 bash shell.sh 』或『 sh shell.sh 』来执行</li>
+<li>source shell.sh</li>
+</ol>
+<p>前两种是子shell, 变量不保留. 而source是在当前的环境中执行.</p>
+<h3 id="判断式"><a href="#判断式" class="headerlink" title="判断式"></a>判断式</h3><h4 id="test"><a href="#test" class="headerlink" title="test"></a>test</h4><ol>
+<li>关于某个档名的『文件类型』判断，如 <code>test -e filename</code> 表示存在否<br>-e 该『档名』是否存在？(常用)<br>-f 该『档名』是否存在且为文件(file)？(常用)<br>-d 该『文件名』是否存在且为目录(directory)？(常用) </li>
+<li>关于文件的权限侦测，如 <code>test -r filename</code> 表示可读否 (但 root 权限常有例外)<br>-r 侦测该档名是否存在且具有『可读』的权限？<br>-w 侦测该档名是否存在且具有『可写』的权限？<br>-x 侦测该档名是否存在且具有『可执行』的权限？ </li>
+<li>两个文件之间的比较，如： <code>test file1 -nt file2 </code><br>-nt (newer than)判断 file1 是否比 file2 新<br>-ot (older than)判断 file1 是否比 file2 旧<br>-ef 判断 file1 与 file2 是否为同一文件，可用在判断 hard link 的判定上。 主要意义在判定，两个文件是否均指向同一个 inode 哩！ </li>
+<li>关于两个整数之间的判定，例如 <code>test n1 -eq n2 </code><br>-eq 两数值相等 (equal)<br>-ne 两数值不等 (not equal)<br>-gt n1 大于 n2 (greater than)<br>-lt n1 小于 n2 (less than)<br>-ge n1 大于等于 n2 (greater than or equal)<br>-le n1 小于等于 n2 (less than or equal) </li>
+<li>判定字符串的数据<br><code>test -z string</code> 判定字符串是否为 0 ？若 string 为空字符串，则为 true<br><code>test -n string</code> 判定字符串是否非为 0 ？若 string 为空字符串，则为 false。 注： -n 亦可省略<br><code>test str1 == str2</code> 判定 str1 是否等于 str2 ，若相等，则回传 true<br><code>test str1 != str2</code> 判定 str1 是否不等于 str2 ，若相等，则回传 false </li>
+<li>多重条件判定，例如： <code>test -r filename -a -x filename </code><br>-a (and)两状况同时成立！例如 test -r file -a -x file，则 file 同时具有 r 与 x 权限时，才回传 true。<br>-o (or)两状况任何一个成立！例如 test -r file -o -x file，则 file 具有 r 或 x 权限时，就可回传 true。<br>! 反相状态，如 <code>test ! -x file</code> ，当 file 不具有 x 时，回传 true</li>
+</ol>
+<h4 id=""><a href="#" class="headerlink" title="[ ]"></a>[ ]</h4><p>tips:</p>
+<ol>
+<li>在中括号 [] 内的每个组件都需要有空格键来分隔； </li>
+<li>在中括号内的变数，最好都以双引号括号起来； </li>
+<li>在中括号内的常数，最好都以单或双引号括号起来。</li>
+</ol>
+<p>参数与 test 一致. 例如<code>[ $&#123;name&#125; == &quot;Sinki&quot; ]</code></p>
+<p><em>这就是为啥sh脚本判断句里奇怪字母的原因吗, 为啥不用大于小于号啊喂. ncl里也是这种反人类语法啊</em></p>
+<h3 id="参数-num"><a href="#参数-num" class="headerlink" title="参数 $num"></a>参数 $num</h3><p>script 针对参数已经有设定好一些变量名称了！</p>
+<pre><code>/path/to/scriptname  opt1  opt2  opt3  opt4  
+      $0             $1    $2    $3    $4</code></pre>
+<p><code>$#</code> ：代表后接的参数『个数』，以上表为例这里显示为『 4 』；<br><code>$@</code> ：代表 <code>&quot;$1&quot; &quot;$2&quot; &quot;$3&quot; &quot;$4&quot;</code>，每个变量是独立的(用双引号括起来)；<br><code>$*</code> ：代表 <code>&quot;$1c$2c$3c$4&quot;</code> ，其中 c 为分隔字符，默认为空格键， 所以本例中代表 <code>&quot;$1 $2 $3 $4&quot;</code>。一般用<code>$@</code></p>
+<p>shift：造成参数变量号码偏移<br>对于<code>sh shift_paras.sh one two three four five six</code><br>执行<code>shift</code>后<code>$@</code>变成 <del>one</del> two three four five six, 再执行<code>shift 3</code>后就是<del>one two three four</del> five six</p>
 <hr>
-<p><em>注：以上所有内容仅代表小灰02012号的观点。</em></p>
+<p>下一篇：<a href="/2021/07/14/linuxA0714/">判断, 循环语句</a><br>上一篇：<a href="/2021/07/08/linuxA0708/">正规表示法与文件格式化处理</a></p>
 
   </article>
 
@@ -270,7 +328,7 @@
     
   <div class="nexmoe-post-copyright">
     <strong>本文作者：</strong>Ning Chenhui<br>
-    <strong>本文链接：</strong><a href="https://ningchenhui.github.io/2020/12/30/note201230/" title="https:&#x2F;&#x2F;ningchenhui.github.io&#x2F;2020&#x2F;12&#x2F;30&#x2F;note201230&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;ningchenhui.github.io&#x2F;2020&#x2F;12&#x2F;30&#x2F;note201230&#x2F;</a><br>
+    <strong>本文链接：</strong><a href="https://ningchenhui.github.io/2021/07/13/linuxA0713/" title="https:&#x2F;&#x2F;ningchenhui.github.io&#x2F;2021&#x2F;07&#x2F;13&#x2F;linuxA0713&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;ningchenhui.github.io&#x2F;2021&#x2F;07&#x2F;13&#x2F;linuxA0713&#x2F;</a><br>
     
       <strong>版权声明：</strong>未经作者授权禁止转载
     
@@ -286,10 +344,10 @@
   
   <div class="nexmoe-post-meta nexmoe-rainbow">
     
-        <a class="nexmoefont icon-appstore-fill -link" href="/categories/%E5%B0%8F%E8%AE%B0/">小记</a>
+        <a class="nexmoefont icon-appstore-fill -link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
     
     
-        <a class="nexmoefont icon-tag-fill -none-link" href="/tags/%E7%94%9F%E6%B4%BB/" rel="tag">生活</a>
+        <a class="nexmoefont icon-tag-fill -none-link" href="/tags/Linux/" rel="tag">Linux</a>
     
 </div>
 
@@ -303,9 +361,9 @@
 var dsqjs = new DisqusJS({
     shortname: 'ningchenhui-github-io',
     siteName: 'ningchenhui.github.io',
-    identifier: 'https://ningchenhui.github.io/2020/12/30/note201230/',
-    url: 'https://ningchenhui.github.io/2020/12/30/note201230/',
-    title: '迎新晚会上最尬的节目',
+    identifier: 'https://ningchenhui.github.io/2021/07/13/linuxA0713/',
+    url: 'https://ningchenhui.github.io/2021/07/13/linuxA0713/',
+    title: 'Linux学习 笔记#10 Shell Scripts',
     api: 'https://disqus.skk.moe/disqus/',
     apikey: 'e6evOgi4KaQOW9DrrU1gkzYWj6dsm3Pl5ZMMS8kUw46BtSz8Ze355Igzqu11XhhI',
     admin: 'disqus_7i3NGTLGyS',
@@ -336,7 +394,7 @@ var dsqjs = new DisqusJS({
 
 
 
-<script src="/js/app.js?v=1626170356353"></script>
+<script src="/js/app.js?v=1626170356185"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js"></script>
 <script>
