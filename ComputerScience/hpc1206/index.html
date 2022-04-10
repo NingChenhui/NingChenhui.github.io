@@ -1,0 +1,778 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="一切都会好起来的哟" href="https://ningchenhui.github.io/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="一切都会好起来的哟" href="https://ningchenhui.github.io/atom.xml" />
+<link rel="alternate" type="application/json" title="一切都会好起来的哟" href="https://ningchenhui.github.io/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+  <meta name="keywords" content="Linux" />
+
+
+<link rel="canonical" href="https://ningchenhui.github.io/ComputerScience/hpc1206/">
+
+
+
+  <title>
+高性能计算#04 HPL测试GPU - 学习 |
+Ning Chenhui = 一切都会好起来的哟</title>
+<meta name="generator" content="Hexo 5.4.2"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">高性能计算#04 HPL测试GPU
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2020-12-06 16:44:18">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2020-12-06T16:44:18+08:00">2020-12-06</time>
+  </span>
+  <span class="item" title="本文字数">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span class="text">本文字数</span>
+    <span>8.1k</span>
+    <span class="text">字</span>
+  </span>
+  <span class="item" title="阅读时长">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span class="text">阅读时长</span>
+    <span>7 分钟</span>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">Ning Chenhui</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+        <ul>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclfdu6exj20zk0m87hw.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipexbei4hj20zk0m8npd.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gicli3sbvtj20zk0m8x6p.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gicitht3xtj20zk0m8k5v.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giciryrr3rj20zk0m8nhk.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipeu7txpzj20zk0m81kx.jpg"></li>
+        </ul>
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">首页</a></span><i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/%E5%AD%A6%E4%B9%A0/" itemprop="item" rel="index" title="分类于 学习"><span itemprop="name">学习</span></a>
+<meta itemprop="position" content="1" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="https://ningchenhui.github.io/ComputerScience/hpc1206/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/avatar.jpg">
+    <meta itemprop="name" content="Ning Chenhui">
+    <meta itemprop="description" content=", 正在建设中...">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="一切都会好起来的哟">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <p>- HPL 测试 MKL+MPICH - <span id="more"></span></p>
+<h2 id="环境搭建"><a class="markdownIt-Anchor" href="#环境搭建">#</a> 环境搭建</h2>
+<ol>
+<li><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2xpdV9mZW5nX3ppXy9hcnRpY2xlL2RldGFpbHMvMTA3MjMyMjUy">GPU 驱动</span></li>
+<li><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2xpdV9mZW5nX3ppXy9hcnRpY2xlL2RldGFpbHMvMTA3MjM0Mjcx">CUDA</span><br>
+~3. <a href="/2020/12/04/hpc1204/#%E5%AE%89%E8%A3%85OpenBLAS">OpenBLAS</a>~<br>
+~4. <a href="/2020/12/04/hpc1204/#%E5%AE%89%E8%A3%85openMPI">OpenMPI</a>~</li>
+<li>编译器：系统自带的 GNU 编译器</li>
+</ol>
+<p><em>可惜集群上的 CUDA 是 9.0 的，不支持 MPI-3.0，想着下一个 Intel mpi，结果这玩意不能单独下，要下一个 OneAPI，压缩包和 CUDA 11.0 一样大的要死，浪费我一晚上，几个 T 的盘不给用属实可恶。</em></p>
+<h4 id="mpich2"><a class="markdownIt-Anchor" href="#mpich2">#</a> MPICH2</h4>
+<ol start="2">
+<li>官方下载：<span class="exturl" data-url="aHR0cDovL3d3dy5tcGljaC5vcmcvc3RhdGljL2Rvd25sb2Fkcy8zLjIuMS9tcGljaC0zLjIuMS50YXIuZ3o=">mpich-3.2.1.tar.gz</span>，可以用 <code>wget</code> 。</li>
+<li>解压，新建文件夹 <code>mpich</code>  作为安装文件夹<br>
+ cd mpich-3.2.1/<br>
+./configure --prefix=/home/riolu/HPL/mpich CFLAGS=&quot;-fPIC&quot; CXXFLAGS=&quot;-fPIC&quot; --enable-shared --enable-sharedlibs=gcc --with-cuda=/usr/local/cuda-10.0/ --with-cuda-include=/usr/local/cuda-10.0/include --with-cuda-libpath=/usr/local/cuda-10.0/lib64<br>
+ 如果不加这些参数会报错：<br>
+libmpich.a(allreduce.o): relocation R_X86_64_32 against `.rodata.str1.8’ can not be used when making a shared object; recompile with -fPIC</li>
+<li>接下来<br>
+ make clean<br>
+make<br>
+make install<br>
+gedit ~/.bashrc<br>
+ 在后面加上<br>
+ export PATH=/home/riolu/HPL/mpich/bin:<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mi>A</mi><mi>T</mi><mi>H</mi><mi>e</mi><mi>x</mi><mi>p</mi><mi>o</mi><mi>r</mi><mi>t</mi><mi>M</mi><mi>A</mi><mi>N</mi><mi>P</mi><mi>A</mi><mi>T</mi><mi>H</mi><mo>=</mo><mi mathvariant="normal">/</mi><mi>h</mi><mi>o</mi><mi>m</mi><mi>e</mi><mi mathvariant="normal">/</mi><mi>r</mi><mi>i</mi><mi>o</mi><mi>l</mi><mi>u</mi><mi mathvariant="normal">/</mi><mi>H</mi><mi>P</mi><mi>L</mi><mi mathvariant="normal">/</mi><mi>m</mi><mi>p</mi><mi>i</mi><mi>c</mi><mi>h</mi><mi mathvariant="normal">/</mi><mi>m</mi><mi>a</mi><mi>n</mi><mo>:</mo></mrow><annotation encoding="application/x-tex">PATH
+     export MANPATH=/home/riolu/HPL/mpich/man:</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mord mathnormal">A</span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="mord mathnormal" style="margin-right:0.08125em;">H</span><span class="mord mathnormal">e</span><span class="mord mathnormal">x</span><span class="mord mathnormal">p</span><span class="mord mathnormal">o</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord mathnormal">t</span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="mord mathnormal">A</span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mord mathnormal">A</span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="mord mathnormal" style="margin-right:0.08125em;">H</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">/</span><span class="mord mathnormal">h</span><span class="mord mathnormal">o</span><span class="mord mathnormal">m</span><span class="mord mathnormal">e</span><span class="mord">/</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord mathnormal">i</span><span class="mord mathnormal">o</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">u</span><span class="mord">/</span><span class="mord mathnormal" style="margin-right:0.08125em;">H</span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mord mathnormal">L</span><span class="mord">/</span><span class="mord mathnormal">m</span><span class="mord mathnormal">p</span><span class="mord mathnormal">i</span><span class="mord mathnormal">c</span><span class="mord mathnormal">h</span><span class="mord">/</span><span class="mord mathnormal">m</span><span class="mord mathnormal">a</span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">:</span></span></span></span>MANPATH<br>
+export LD_LIBRARY_PATH=/home/riolu/HPL/mpich/lib:$LD_LIBRARY_PATH // 不知要不要<br>
+保存后<br>
+ source ~/.bashrc</li>
+</ol>
+<h4 id="intel-mkl"><a class="markdownIt-Anchor" href="#intel-mkl">#</a> Intel MKL</h4>
+<ol>
+<li>下载单独安装包：<span class="exturl" data-url="aHR0cDovL3JlZ2lzdHJhdGlvbmNlbnRlci1kb3dubG9hZC5pbnRlbC5jb20vYWtkbG0vaXJjX25hcy90ZWMvMTU4MTYvbF9ta2xfMjAxOS41LjI4MS50Z3o=">l_mkl_2019.5.281.tgz</span></li>
+<li>解压后进入，执行 <code>sh install.sh</code> ，按提示进行。</li>
+<li>配置 <code>.bashrc</code> ，添加<br>
+# added for intel<br>
+export LD_LIBRARY_PATH=/home/riolu/intel/mkl/lib/intel64:$LD_LIBRARY_PATH<br>
+ 执行 <code>source ~/.bashrc</code> 。<br>
+如果报错找不到共享库的话可能是因为没有加这个路径。</li>
+</ol>
+<h2 id="hpl"><a class="markdownIt-Anchor" href="#hpl">#</a> HPL</h2>
+<ol>
+<li>
+<p>官方下载网站下载：<span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIubnZpZGlhLmNvbS9jb21wdXRld29ya3MtZGV2ZWxvcGVyLWV4Y2x1c2l2ZS1kb3dubG9hZHM=">hpl-2.0_FERMI_v15.tgz</span><br>
+ 需要注册一下。</p>
+</li>
+<li>
+<p>进入解压后的文件夹，修改 Make.CUDA 的参数<br>
+ TOPdir = $(HOME)/HPL/hpl-2.0_FERMI_v15 #hpl 所在的路径目录<br>
+…<br>
+MPdir  = <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mi>H</mi><mi>O</mi><mi>M</mi><mi>E</mi><mo stretchy="false">)</mo><mi mathvariant="normal">/</mi><mi>H</mi><mi>P</mi><mi>L</mi><mi mathvariant="normal">/</mi><mi>m</mi><mi>p</mi><mi>i</mi><mi>c</mi><mi>h</mi><mi>M</mi><mi>P</mi><mi>i</mi><mi>n</mi><mi>c</mi><mo>=</mo><mo>−</mo><mi>I</mi></mrow><annotation encoding="application/x-tex">(HOME)/HPL/mpich
+     MPinc = -I</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.08125em;">H</span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="mord mathnormal" style="margin-right:0.05764em;">E</span><span class="mclose">)</span><span class="mord">/</span><span class="mord mathnormal" style="margin-right:0.08125em;">H</span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mord mathnormal">L</span><span class="mord">/</span><span class="mord mathnormal">m</span><span class="mord mathnormal">p</span><span class="mord mathnormal">i</span><span class="mord mathnormal">c</span><span class="mord mathnormal">h</span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mord mathnormal">i</span><span class="mord mathnormal">n</span><span class="mord mathnormal">c</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord">−</span><span class="mord mathnormal" style="margin-right:0.07847em;">I</span></span></span></span>(MPdir)/include<br>
+MPlib = -L<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mi>M</mi><mi>P</mi><mi>d</mi><mi>i</mi><mi>r</mi><mo stretchy="false">)</mo><mi mathvariant="normal">/</mi><mi>l</mi><mi>i</mi><mi>b</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi>L</mi><mi>A</mi><mi>d</mi><mi>i</mi><mi>r</mi><mo>=</mo></mrow><annotation encoding="application/x-tex">(MPdir)/lib
+     ..............................................................    
+     LAdir   =</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mord mathnormal">d</span><span class="mord mathnormal">i</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mclose">)</span><span class="mord">/</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">i</span><span class="mord mathnormal">b</span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mord mathnormal">L</span><span class="mord mathnormal">A</span><span class="mord mathnormal">d</span><span class="mord mathnormal">i</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span></span></span></span>(HOME)/intel/mkl/lib/intel64<br>
+LAMP5dir    = <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mi>H</mi><mi>O</mi><mi>M</mi><mi>E</mi><mo stretchy="false">)</mo><mi mathvariant="normal">/</mi><mi>i</mi><mi>n</mi><mi>t</mi><mi>e</mi><mi>l</mi><mi mathvariant="normal">/</mi><mi>c</mi><mi>o</mi><mi>m</mi><mi>p</mi><mi>i</mi><mi>l</mi><mi>e</mi><mi>r</mi><msub><mi>s</mi><mi>a</mi></msub><mi>n</mi><msub><mi>d</mi><mi>l</mi></msub><mi>i</mi><mi>b</mi><mi>r</mi><mi>a</mi><mi>r</mi><mi>i</mi><mi>e</mi><mi>s</mi><mi mathvariant="normal">/</mi><mi>l</mi><mi>i</mi><mi>n</mi><mi>u</mi><mi>x</mi><mi mathvariant="normal">/</mi><mi>l</mi><mi>i</mi><mi>b</mi><mi mathvariant="normal">/</mi><mi>i</mi><mi>n</mi><mi>t</mi><mi>e</mi><mi>l</mi><mn>64</mn><mi>L</mi><mi>A</mi><mi>i</mi><mi>n</mi><mi>c</mi><mo>=</mo><mo>−</mo><mi>I</mi></mrow><annotation encoding="application/x-tex">(HOME)/intel/compilers_and_libraries/linux/lib/intel64
+ 	LAinc        = -I</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.08125em;">H</span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="mord mathnormal" style="margin-right:0.05764em;">E</span><span class="mclose">)</span><span class="mord">/</span><span class="mord mathnormal">i</span><span class="mord mathnormal">n</span><span class="mord mathnormal">t</span><span class="mord mathnormal">e</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord">/</span><span class="mord mathnormal">c</span><span class="mord mathnormal">o</span><span class="mord mathnormal">m</span><span class="mord mathnormal">p</span><span class="mord mathnormal">i</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">e</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord"><span class="mord mathnormal">s</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">a</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord mathnormal">n</span><span class="mord"><span class="mord mathnormal">d</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.01968em;">l</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord mathnormal">i</span><span class="mord mathnormal">b</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord mathnormal">a</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord mathnormal">i</span><span class="mord mathnormal">e</span><span class="mord mathnormal">s</span><span class="mord">/</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">i</span><span class="mord mathnormal">n</span><span class="mord mathnormal">u</span><span class="mord mathnormal">x</span><span class="mord">/</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">i</span><span class="mord mathnormal">b</span><span class="mord">/</span><span class="mord mathnormal">i</span><span class="mord mathnormal">n</span><span class="mord mathnormal">t</span><span class="mord mathnormal">e</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord">6</span><span class="mord">4</span><span class="mord mathnormal">L</span><span class="mord mathnormal">A</span><span class="mord mathnormal">i</span><span class="mord mathnormal">n</span><span class="mord mathnormal">c</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord">−</span><span class="mord mathnormal" style="margin-right:0.07847em;">I</span></span></span></span>(HOME)/intel/mkl/include<br>
+LAlib        = -L <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mi>T</mi><mi>O</mi><mi>P</mi><mi>d</mi><mi>i</mi><mi>r</mi><mo stretchy="false">)</mo><mi mathvariant="normal">/</mi><mi>s</mi><mi>r</mi><mi>c</mi><mi mathvariant="normal">/</mi><mi>c</mi><mi>u</mi><mi>d</mi><mi>a</mi><mo>−</mo><mi>l</mi><mi>d</mi><mi>g</mi><mi>e</mi><mi>m</mi><mi>m</mi><mo>−</mo><mi>L</mi><mi mathvariant="normal">/</mi><mi>u</mi><mi>s</mi><mi>r</mi><mi mathvariant="normal">/</mi><mi>l</mi><mi>o</mi><mi>c</mi><mi>a</mi><mi>l</mi><mi mathvariant="normal">/</mi><mi>c</mi><mi>u</mi><mi>d</mi><mi>a</mi><mo>−</mo><mn>10.0</mn><mi mathvariant="normal">/</mi><mi>l</mi><mi>i</mi><mi>b</mi><mn>64</mn><mo>−</mo><mi>l</mi><mi>c</mi><mi>u</mi><mi>d</mi><mi>a</mi><mo>−</mo><mi>l</mi><mi>c</mi><mi>u</mi><mi>d</mi><mi>a</mi><mi>r</mi><mi>t</mi><mo>−</mo><mi>l</mi><mi>c</mi><mi>u</mi><mi>b</mi><mi>l</mi><mi>a</mi><mi>s</mi><mo>−</mo><mi>L</mi></mrow><annotation encoding="application/x-tex">(TOPdir)/src/cuda  -ldgemm -L/usr/local/cuda-10.0/lib64 -lcuda -lcudart -lcublas -L</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mord mathnormal">d</span><span class="mord mathnormal">i</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mclose">)</span><span class="mord">/</span><span class="mord mathnormal">s</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord mathnormal">c</span><span class="mord">/</span><span class="mord mathnormal">c</span><span class="mord mathnormal">u</span><span class="mord mathnormal">d</span><span class="mord mathnormal">a</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">d</span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mord mathnormal">e</span><span class="mord mathnormal">m</span><span class="mord mathnormal">m</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">L</span><span class="mord">/</span><span class="mord mathnormal">u</span><span class="mord mathnormal">s</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord">/</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">o</span><span class="mord mathnormal">c</span><span class="mord mathnormal">a</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord">/</span><span class="mord mathnormal">c</span><span class="mord mathnormal">u</span><span class="mord mathnormal">d</span><span class="mord mathnormal">a</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">.</span><span class="mord">0</span><span class="mord">/</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">i</span><span class="mord mathnormal">b</span><span class="mord">6</span><span class="mord">4</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.77777em;vertical-align:-0.08333em;"></span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">c</span><span class="mord mathnormal">u</span><span class="mord mathnormal">d</span><span class="mord mathnormal">a</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.77777em;vertical-align:-0.08333em;"></span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">c</span><span class="mord mathnormal">u</span><span class="mord mathnormal">d</span><span class="mord mathnormal">a</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord mathnormal">t</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.77777em;vertical-align:-0.08333em;"></span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">c</span><span class="mord mathnormal">u</span><span class="mord mathnormal">b</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">a</span><span class="mord mathnormal">s</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal">L</span></span></span></span>(LAdir) -lmkl_intel_lp64 -lmkl_intel_thread -lmkl_core -liomp5</p>
+<pre><code> HPL_INCLUDES = -I$(INCdir) -I$(INCdir)/$(ARCH) $(LAinc) $(MPinc) -I/usr/local/cuda-10.0/include
+ ..............................................................
+ CC   =$(MPdir)/bin/mpicc
+
+ ..............................................................
+</code></pre>
+</li>
+<li>
+<p>修改 <code>src/cuda/Makefile</code>  为里的 <code>cuda</code>  路径为 <code>cuda-10.0</code></p>
+</li>
+<li>
+<p>编译<br>
+ make arch=CUDA clean_arch_all<br>
+make arch=CUDA<br>
+ 若报错 <code>/usr/bin/ld: 找不到 -liomp5</code>  则可以做一个软链接，执行<br>
+ ln -s /home/intel/lib/intel64/libiomp5.so/home/intel/mkl/lib/intel64/libiomp5.so</p>
+</li>
+<li>
+<p><code>/bin/CUDA</code>  目录下生成两个文件：HPL.dat 和 xhpl。在该目录新建一个 <code>test.sh</code>  文件，内容为<br>
+ export HPL_DIR=/home/riolu/HPL/hpl-2.0_FERMI_v15<br>
+export MKL_NUM_THREADS=6<br>
+export OMP_NUM_THREADS=2<br>
+export MKL_DYNAMIC=FALSE<br>
+export CUDA_DGEMM_SPLIT=0.954<br>
+export CUDA_DTRSM_SPLIT=0.946<br>
+export LD_LIBRARY_PATH=<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi><mi>P</mi><msub><mi>L</mi><mi>D</mi></msub><mi>I</mi><mi>R</mi><mi mathvariant="normal">/</mi><mi>s</mi><mi>r</mi><mi>c</mi><mi mathvariant="normal">/</mi><mi>c</mi><mi>u</mi><mi>d</mi><mi>a</mi><mo>:</mo></mrow><annotation encoding="application/x-tex">HPL_DIR/src/cuda:</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.08125em;">H</span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mord"><span class="mord mathnormal">L</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.02778em;">D</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord mathnormal" style="margin-right:0.07847em;">I</span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="mord">/</span><span class="mord mathnormal">s</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord mathnormal">c</span><span class="mord">/</span><span class="mord mathnormal">c</span><span class="mord mathnormal">u</span><span class="mord mathnormal">d</span><span class="mord mathnormal">a</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">:</span></span></span></span>LD_LIBRARY_PATH<br>
+$HPL_DIR/bin/CUDA/xhpl<br>
+ 其中</p>
+<ul>
+<li>MKL_NUM_THREADS：每个进程使用的 CPU 核的数量</li>
+<li>OMP_NUM_THREADS：每个 GPU 使用的 CPU 核的数量<br>
+例如：2 个 GPU 和 8 个 CPU，则 OMP_NUM_THREADS=4</li>
+<li>CUDA_DGEMM_SPLIT：发送给 GPU 的 DGEMM 占总的百分比，大致等于 (GPU GFLOPS)/(GPU GFLOPS + CPU GFLOPS)，或者 350  / ( 350 + 每个 GPU 的 CPU 数量 * 4 * CPU 基本频率 )</li>
+<li>CUDA_DTRSM_SPLIT：发送给 GPU 的 DTRSM 占总的百分比，通常比 DGEMM 低 0.05-0.10</li>
+<li>HPL_DIR：文件的路径</li>
+</ul>
+</li>
+<li>
+<p>单节点执行： <code>./run_linpack.sh</code> <br>
+ 多节点执行（没有测试过，仅供参考）： <code>mpiexec.hydra -np 7 ./test.sh</code></p>
+</li>
+</ol>
+<h2 id="初步结果"><a class="markdownIt-Anchor" href="#初步结果">#</a> 初步结果</h2>
+<pre><code>================================================================================
+HPLinpack 2.0  --  High-Performance Linpack benchmark  --   September 10, 2008
+Written by A. Petitet and R. Clint Whaley,  Innovative Computing Laboratory, UTK
+Modified by Piotr Luszczek, Innovative Computing Laboratory, UTK
+Modified by Julien Langou, University of Colorado Denver
+================================================================================
+
+An explanation of the input/output parameters follows:
+T/V    : Wall time / encoded variant.
+N      : The order of the coefficient matrix A.
+NB     : The partitioning blocking factor.
+P      : The number of process rows.
+Q      : The number of process columns.
+Time   : Time in seconds to solve the linear system.
+Gflops : Rate of execution for solving the linear system.
+
+The following parameter values will be used:
+
+N      :   25000
+NB     :     768
+PMAP   : Row-major process mapping
+P      :       1
+Q      :       1
+PFACT  :    Left
+NBMIN  :       2
+NDIV   :       2
+RFACT  :    Left
+BCAST  :   1ring
+DEPTH  :       1
+SWAP   : Spread-roll (long)
+L1     : no-transposed form
+U      : no-transposed form
+EQUIL  : yes
+ALIGN  : 8 double precision words
+
+--------------------------------------------------------------------------------
+
+- The matrix A is randomly generated for each test.
+- The following scaled residual check will be computed:
+	  ||Ax-b||_oo / ( eps * ( || x ||_oo * || A ||_oo + || b ||_oo ) * N )
+- The relative machine precision (eps) is taken to be               1.110223e-16
+- Computational tests pass if scaled residuals are less than                16.0
+
+================================================================================
+T/V                N    NB     P     Q               Time                 Gflops
+--------------------------------------------------------------------------------
+WR10L2L2       25000   768     1     1              10.58              9.843e+02
+--------------------------------------------------------------------------------
+||Ax-b||_oo/(eps*(||A||_oo*||x||_oo+||b||_oo)*N)=        0.0044272 ...... PASSED
+================================================================================
+
+Finished      1 tests with the following results:
+			  1 tests completed and passed residual checks,
+			  0 tests completed and failed residual checks,
+			  0 tests skipped because of illegal input values.
+--------------------------------------------------------------------------------
+
+End of Tests.
+================================================================================
+</code></pre>
+<p>速度是 CPU 的 3 倍……</p>
+<h3 id="gpu信息获取"><a class="markdownIt-Anchor" href="#gpu信息获取">#</a> GPU 信息获取</h3>
+<ol>
+<li>
+<p>查看 nvidia GPU 型号<br>
+ <code>lspci | grep -i nvidia</code></p>
+</li>
+<li>
+<p>查看 Nvidia 显卡信息及使用情况<br>
+ <code>nvidia-smi</code> <br>
+Wed Dec  9 02:23:00 2020<br>
+±----------------------------------------------------------------------------+<br>
+| NVIDIA-SMI 410.129      Driver Version: 410.129      CUDA Version: 10.0     |<br>
+|-------------------------------±---------------------±---------------------+<br>
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |<br>
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |<br>
+|=<mark><mark><mark><mark><mark><mark><mark><mark><mark><mark><mark><mark><mark><mark><mark>+</mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark>+</mark></mark></mark></mark>==============|<br>
+|   0  Tesla P100-PCIE…  Off  | 00000000:05:00.0 Off |                    0 |<br>
+| N/A   34C    P0    36W / 250W |   2391MiB / 16280MiB |      0%      Default |<br>
+±------------------------------±---------------------±---------------------+<br>
+|   1  Tesla P100-PCIE…  Off  | 00000000:08:00.0 Off |                    0 |<br>
+| N/A   40C    P0    40W / 250W |   2391MiB / 16280MiB |      0%      Default |<br>
+±------------------------------±---------------------±---------------------+<br>
+|   2  Tesla P100-PCIE…  Off  | 00000000:09:00.0 Off |                    0 |<br>
+| N/A   46C    P0   194W / 250W |   2391MiB / 16280MiB |    100%      Default |<br>
+±------------------------------±---------------------±---------------------+<br>
+|   3  Tesla P100-PCIE…  Off  | 00000000:84:00.0 Off |                    0 |<br>
+| N/A   40C    P0    39W / 250W |   2391MiB / 16280MiB |      0%      Default |<br>
+±------------------------------±---------------------±---------------------+<br>
+|   4  Tesla P100-PCIE…  Off  | 00000000:88:00.0 Off |                    0 |<br>
+| N/A   36C    P0    36W / 250W |   2391MiB / 16280MiB |    100%      Default |<br>
+±------------------------------±---------------------±---------------------+<br>
+|   5  Tesla P100-PCIE…  Off  | 00000000:89:00.0 Off |                    0 |<br>
+| N/A   42C    P0   185W / 250W |   2391MiB / 16280MiB |    100%      Default |<br>
+±------------------------------±---------------------±---------------------+</p>
+<pre><code> +-----------------------------------------------------------------------------+
+ | Processes:                                                       GPU Memory |
+ |  GPU       PID   Type   Process name                             Usage      |
+ |=============================================================================|
+ |    0      3451      C   ...wei/HPL/hpl-2.0_FERMI_v15/bin/CUDA/xhpl  2363MiB |
+ |    1      3455      C   ...wei/HPL/hpl-2.0_FERMI_v15/bin/CUDA/xhpl  2363MiB |
+ |    2      3452      C   ...wei/HPL/hpl-2.0_FERMI_v15/bin/CUDA/xhpl  2363MiB |
+ |    3      3456      C   ...wei/HPL/hpl-2.0_FERMI_v15/bin/CUDA/xhpl  2363MiB |
+ |    4      3453      C   ...wei/HPL/hpl-2.0_FERMI_v15/bin/CUDA/xhpl  2363MiB |
+ |    5      3457      C   ...wei/HPL/hpl-2.0_FERMI_v15/bin/CUDA/xhpl  2363MiB |
+ +-----------------------------------------------------------------------------+
+</code></pre>
+</li>
+</ol>
+<p>表头释义：<br>
++ Fan：显示风扇转速，数值在 0 到 100% 之间，是计算机的期望转速，如果不是通过风扇冷却或者风扇坏了，显示出来就是 N/A；<br>
++ Temp：显卡内部的温度，单位是摄氏度；<br>
++ Perf：表征性能状态，从 P0 到 P12，P0 表示最大性能，P12 表示状态最小性能；<br>
++ Pwr：能耗表示；<br>
++ Bus-Id：涉及 GPU 总线的相关信息；<br>
++ Disp.A：是 Display Active 的意思，表示 GPU 的显示是否初始化；<br>
++ Memory Usage：显存的使用率；<br>
++ Volatile GPU-Util：浮动的 GPU 利用率；<br>
++ Compute M：计算模式；<br>
++ Processes 显示每块 GPU 上每个进程所使用的显存情况。<br>
+3. 周期性输出显卡的使用情况<br>
+ <code>watch -n 10 nvidia-smi</code> <br>
+ 命令行参数 - n 后边跟的是执行命令的周期，以 s 为单位。<br>
+3. 查看 GPU 名称<br>
+ <code>nvidia-smi -L</code> <br>
+GPU 0: Tesla P100-PCIE-16GB (UUID: GPU-1f613914-b422-06ad-cd7d-d2649435f480)<br>
+GPU 1: Tesla P100-PCIE-16GB (UUID: GPU-d8f026e7-9714-39f6-af4a-f8328cbdb3c9)<br>
+GPU 2: Tesla P100-PCIE-16GB (UUID: GPU-fb22db8b-9de3-691e-53da-d34aec4b6abb)<br>
+GPU 3: Tesla P100-PCIE-16GB (UUID: GPU-ddf0cbc8-3c92-0b3d-5496-b65361fe18a0)<br>
+GPU 4: Tesla P100-PCIE-16GB (UUID: GPU-7a94ce44-3e66-d05d-3d58-d625930a2aad)<br>
+GPU 5: Tesla P100-PCIE-16GB (UUID: GPU-16423caf-0037-6742-2977-ba03f4937b9b)<br>
+（可惜院里这么好的 GPU 资源没人用</p>
+<hr>
+<p><em>修改日期：2020 年 12 月 7 日</em></p>
+
+      <div class="tags">
+          <a href="/tags/Linux/" rel="tag"><i class="ic i-tag"></i> Linux</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2022-04-10 20:45:23" itemprop="dateModified" datetime="2022-04-10T20:45:23+08:00">2022-04-10</time>
+  </span>
+  <span id="ComputerScience/hpc1206/" class="item leancloud_visitors" data-flag-title="高性能计算#04 HPL测试GPU" title="阅读次数">
+      <span class="icon">
+        <i class="ic i-eye"></i>
+      </span>
+      <span class="text">阅读次数</span>
+      <span class="leancloud-visitors-count"></span>
+      <span class="text">次</span>
+  </span>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>Ning Chenhui <i class="ic i-at"><em>@</em></i>一切都会好起来的哟
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="https://ningchenhui.github.io/ComputerScience/hpc1206/" title="高性能计算#04 HPL测试GPU">https://ningchenhui.github.io/ComputerScience/hpc1206/</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/ComputerScience/linux1206/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giclfw2t96j20zk0m8x6p.jpg" title="Linux学习 笔记#03 指令集">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> 学习</span>
+  <h3>Linux学习 笔记#03 指令集</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+      
+
+  <a href="/EarthScience/Ocean/ocean1124/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giclfw2t96j20zk0m8x6p.jpg" title="物理海洋学基础 笔记#03">
+  <span class="type">下一篇</span>
+  <span class="category"><i class="ic i-flag"></i> 物理海洋学</span>
+  <h3>物理海洋学基础 笔记#03</h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA"><span class="toc-number">1.</span> <span class="toc-text"> 环境搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#mpich2"><span class="toc-number">1.0.1.</span> <span class="toc-text"> MPICH2</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#intel-mkl"><span class="toc-number">1.0.2.</span> <span class="toc-text"> Intel MKL</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hpl"><span class="toc-number">2.</span> <span class="toc-text"> HPL</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9D%E6%AD%A5%E7%BB%93%E6%9E%9C"><span class="toc-number">3.</span> <span class="toc-text"> 初步结果</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#gpu%E4%BF%A1%E6%81%AF%E8%8E%B7%E5%8F%96"><span class="toc-number">3.1.</span> <span class="toc-text"> GPU 信息获取</span></a></li></ol></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+        <ul>
+          <li><a href="/ComputerScience/linux1111/" rel="bookmark" title="Linux学习 笔记#01">Linux学习 笔记#01</a></li><li><a href="/ComputerScience/linux1112/" rel="bookmark" title="Linux学习 笔记#02">Linux学习 笔记#02</a></li><li><a href="/ComputerScience/hpc1202/" rel="bookmark" title="高性能计算#01 HPL搭建">高性能计算#01 HPL搭建</a></li><li><a href="/ComputerScience/hpc1204/" rel="bookmark" title="高性能计算#02 HPL再次搭建">高性能计算#02 HPL再次搭建</a></li><li><a href="/ComputerScience/hpc1205/" rel="bookmark" title="高性能计算#03 HPCG搭建">高性能计算#03 HPCG搭建</a></li><li><a href="/ComputerScience/linux1206/" rel="bookmark" title="Linux学习 笔记#03 指令集">Linux学习 笔记#03 指令集</a></li><li class="active"><a href="/ComputerScience/hpc1206/" rel="bookmark" title="高性能计算#04 HPL测试GPU">高性能计算#04 HPL测试GPU</a></li><li><a href="/ComputerScience/linux1224/" rel="bookmark" title="Linux学习 笔记#04 文件权限与目录配置">Linux学习 笔记#04 文件权限与目录配置</a></li><li><a href="/ComputerScience/sunway01/" rel="bookmark" title="超算远程访问">超算远程访问</a></li><li><a href="/ComputerScience/model01/" rel="bookmark" title="初识NetCDF">初识NetCDF</a></li><li><a href="/ComputerScience/model02/" rel="bookmark" title="安装NCL">安装NCL</a></li><li><a href="/ComputerScience/linuxA0322/" rel="bookmark" title="Linux学习 笔记#05 文件与目录管理">Linux学习 笔记#05 文件与目录管理</a></li><li><a href="/ComputerScience/sunway02/" rel="bookmark" title="超算 - 使用指南">超算 - 使用指南</a></li><li><a href="/ComputerScience/linuxA0525/" rel="bookmark" title="Linux学习 笔记#06 磁盘与文件系统管理">Linux学习 笔记#06 磁盘与文件系统管理</a></li><li><a href="/ComputerScience/linuxA0703/" rel="bookmark" title="Linux学习 笔记#07 压缩，备份与Vim">Linux学习 笔记#07 压缩，备份与Vim</a></li><li><a href="/ComputerScience/linuxA0705/" rel="bookmark" title="Linux学习 笔记#08 bash">Linux学习 笔记#08 bash</a></li><li><a href="/ComputerScience/linuxA0708/" rel="bookmark" title="Linux学习 笔记#09 正规表示法与文件格式化处理">Linux学习 笔记#09 正规表示法与文件格式化处理</a></li><li><a href="/ComputerScience/linuxA0713/" rel="bookmark" title="Linux学习 笔记#10 Shell Scripts">Linux学习 笔记#10 Shell Scripts</a></li><li><a href="/omare220205/" rel="bookmark" title="オマレ入门（一）">オマレ入门（一）</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="Ning Chenhui"
+      data-src="/images/avatar.jpg">
+  <p class="name" itemprop="name">Ning Chenhui</p>
+  <div class="description" itemprop="description">正在建设中...</div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">35</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/categories/">
+        <span class="count">5</span>
+        <span class="name">分类</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">4</span>
+        <span class="name">标签</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL05pbmdDaGVuaHVp" title="https:&#x2F;&#x2F;github.com&#x2F;NingChenhui"><i class="ic i-github"></i></span>
+      <span class="exturl item twitter" data-url="aHR0cHM6Ly90d2l0dGVyLmNvbS9Ib3NpenVraV9USFU=" title="https:&#x2F;&#x2F;twitter.com&#x2F;Hosizuki_THU"><i class="ic i-twitter"></i></span>
+      <span class="exturl item email" data-url="bWFpbHRvOnNpbmtpaG9zaXp1a2lAZ21haWwuY29t" title="mailto:sinkihosizuki@gmail.com"><i class="ic i-envelope"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/about/" rel="section"><i class="ic i-user"></i>关于</a>
+  </li>
+
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/archives/" rel="section"><i class="ic i-list-alt"></i>归档</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+  </ul>
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+        <a href="/ComputerScience/linux1206/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+        <a href="/EarthScience/Ocean/ocean1124/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E8%B5%84%E6%96%99/" title="分类于 资料">资料</a>
+</div>
+
+    <span><a href="/seufile/" title="课程资料分享">课程资料分享</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E5%AD%A6%E4%B9%A0/" title="分类于 学习">学习</a>
+</div>
+
+    <span><a href="/ComputerScience/linuxA0705/" title="Linux学习 笔记#08 bash">Linux学习 笔记#08 bash</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/EarthScience/" title="分类于 地球科学">地球科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/EarthScience/%E5%9C%B0%E7%90%83%E7%B3%BB%E7%BB%9F%E7%A7%91%E5%AD%A6/" title="分类于 地球系统科学">地球系统科学</a>
+</div>
+
+    <span><a href="/EarthScience/ESS/es1023/" title="地球科学导论 笔记#02">地球科学导论 笔记#02</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/EarthScience/" title="分类于 地球科学">地球科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/EarthScience/Ocean/" title="分类于 物理海洋学">物理海洋学</a>
+</div>
+
+    <span><a href="/EarthScience/Ocean/oceanA0709/" title="物理海洋学基础 笔记#05">物理海洋学基础 笔记#05</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E5%AD%A6%E4%B9%A0/" title="分类于 学习">学习</a>
+</div>
+
+    <span><a href="/ComputerScience/linuxA0322/" title="Linux学习 笔记#05 文件与目录管理">Linux学习 笔记#05 文件与目录管理</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E5%AD%A6%E4%B9%A0/" title="分类于 学习">学习</a>
+</div>
+
+    <span><a href="/ComputerScience/linuxA0703/" title="Linux学习 笔记#07 压缩，备份与Vim">Linux学习 笔记#07 压缩，备份与Vim</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E5%AD%A6%E4%B9%A0/" title="分类于 学习">学习</a>
+</div>
+
+    <span><a href="/ComputerScience/linux1111/" title="Linux学习 笔记#01">Linux学习 笔记#01</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E5%AD%A6%E4%B9%A0/" title="分类于 学习">学习</a>
+</div>
+
+    <span><a href="/ComputerScience/hpc1204/" title="高性能计算#02 HPL再次搭建">高性能计算#02 HPL再次搭建</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E5%AD%A6%E4%B9%A0/" title="分类于 学习">学习</a>
+</div>
+
+    <span><a href="/ComputerScience/hpc1206/" title="高性能计算#04 HPL测试GPU">高性能计算#04 HPL测试GPU</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/EarthScience/" title="分类于 地球科学">地球科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/EarthScience/%E5%9C%B0%E7%90%83%E7%B3%BB%E7%BB%9F%E7%A7%91%E5%AD%A6/" title="分类于 地球系统科学">地球系统科学</a>
+</div>
+
+    <span><a href="/EarthScience/ESS/es1116/" title="地球科学导论 笔记#05">地球科学导论 笔记#05</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2020 – 
+    <span itemprop="copyrightYear">2022</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Ning Chenhui @ Ning Chenhui</span>
+  </div>
+  <div class="count">
+    <span class="post-meta-item-icon">
+      <i class="ic i-chart-area"></i>
+    </span>
+    <span title="站点总字数">83k 字</span>
+
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="ic i-coffee"></i>
+    </span>
+    <span title="站点阅读时长">1:15</span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: 'ComputerScience/hpc1206/',
+    favicon: {
+      show: "（●´3｀●）やれやれだぜ",
+      hide: "(´Д｀)大変だ！"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,fancybox: true,
+    copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>

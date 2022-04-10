@@ -1,0 +1,778 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="一切都会好起来的哟" href="https://ningchenhui.github.io/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="一切都会好起来的哟" href="https://ningchenhui.github.io/atom.xml" />
+<link rel="alternate" type="application/json" title="一切都会好起来的哟" href="https://ningchenhui.github.io/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+  <meta name="keywords" content="Linux" />
+
+
+<link rel="canonical" href="https://ningchenhui.github.io/ComputerScience/linuxA0713/">
+
+
+
+  <title>
+Linux学习 笔记#10 Shell Scripts - 学习 |
+Ning Chenhui = 一切都会好起来的哟</title>
+<meta name="generator" content="Hexo 5.4.2"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">Linux学习 笔记#10 Shell Scripts
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2021-07-13 15:20:36">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2021-07-13T15:20:36+08:00">2021-07-13</time>
+  </span>
+  <span class="item" title="本文字数">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span class="text">本文字数</span>
+    <span>5k</span>
+    <span class="text">字</span>
+  </span>
+  <span class="item" title="阅读时长">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span class="text">阅读时长</span>
+    <span>5 分钟</span>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">Ning Chenhui</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+        <ul>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclfb3vzhj20zk0m8wny.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gicm0fdw5cj20zk0m8hdt.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giciukx8a7j20zk0m8aio.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gicis3attqj20zk0m8k7l.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclxxcb6rj20zk0m8b29.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipew8gmvyj20zk0m87wh.jpg"></li>
+        </ul>
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">首页</a></span><i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/%E5%AD%A6%E4%B9%A0/" itemprop="item" rel="index" title="分类于 学习"><span itemprop="name">学习</span></a>
+<meta itemprop="position" content="1" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="https://ningchenhui.github.io/ComputerScience/linuxA0713/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/avatar.jpg">
+    <meta itemprop="name" content="Ning Chenhui">
+    <meta itemprop="description" content=", 正在建设中...">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="一切都会好起来的哟">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <p>使用脚本！ <span id="more"></span></p>
+<h2 id="ch12-学习-shell-scripts"><a class="markdownIt-Anchor" href="#ch12-学习-shell-scripts">#</a> Ch12 学习 Shell Scripts</h2>
+<p>tips:</p>
+<ol>
+<li>指令、选项与参数间的多个空白都会被忽略掉；</li>
+<li>可以使用『 \[Enter] 』来延伸至下一行；</li>
+<li>『 # 』可做为批注！</li>
+</ol>
+<h3 id="脚本样例"><a class="markdownIt-Anchor" href="#脚本样例">#</a> 脚本样例</h3>
+<h4 id="hello-world"><a class="markdownIt-Anchor" href="#hello-world">#</a> Hello World！</h4>
+<pre><code>#!/bin/bash
+# Program:
+#       This program shows &quot;Hello World!&quot; in your screen.
+# History:
+# 2021/07/13 Sinki First release
+echo &quot;Hello World! \a \n&quot;
+exit 0
+</code></pre>
+<h4 id="show-name"><a class="markdownIt-Anchor" href="#show-name">#</a> Show name</h4>
+<pre><code>#!/bin/bash
+# Program:
+# User inputs his first name and last name.  Program shows his full name.
+# History:
+# 2021/07/13 Sinki First release
+
+read -p &quot;Please input your first name: &quot; firstname      # 提示使用者输入
+
+read -p &quot;Please input your last name:  &quot; lastname       # 提示使用者输入
+echo &quot;\nYour full name is: $&#123;firstname&#125; $&#123;lastname&#125;&quot; # 结果由屏幕输出
+</code></pre>
+<h4 id="create-files"><a class="markdownIt-Anchor" href="#create-files">#</a> Create files</h4>
+<pre><code>#!/bin/bash
+# Program:
+# Program creates three files, which named by user's input and date command.
+# History:
+# 2021/07/13 Sinki First release
+
+# 1. 让使用者输入文件名，并取得 fileuser 这个变量；
+echo &quot;I will use 'touch' command to create 3 files.&quot; # 纯粹显示信息
+read -p &quot;Please input your filename: &quot; fileuser         # 提示使用者输入
+
+# 2. 为了避免使用者随意按 Enter ，利用变量功能分析档名是否有设定？
+filename=$&#123;fileuser:-&quot;filename&quot;&#125;           # 开始判断有否配置文件名
+
+# 3. 开始利用 date 指令来取得所需要的档名了；
+date1=$(date --date='2 days ago' +%Y%m%d)  # 前两天的日期
+date2=$(date --date='1 days ago' +%Y%m%d)  # 前一天的日期
+date3=$(date +%Y%m%d)                      # 今天的日期
+file1=$&#123;filename&#125;$&#123;date1&#125;                  # 底下三行在配置文件名
+file2=$&#123;filename&#125;$&#123;date2&#125;
+file3=$&#123;filename&#125;$&#123;date3&#125;
+
+# 4. 将档名建立吧！
+touch &quot;$&#123;file1&#125;&quot;                           # 底下三行在建立文件
+touch &quot;$&#123;file2&#125;&quot;
+touch &quot;$&#123;file3&#125;&quot;
+</code></pre>
+<h4 id="整数运算-计算式"><a class="markdownIt-Anchor" href="#整数运算-计算式">#</a> 整数运算 $((计算式))</h4>
+<pre><code>total=$(($&#123;firstnu&#125;*$&#123;secnu&#125;))
+</code></pre>
+<h4 id="浮点运算-bc"><a class="markdownIt-Anchor" href="#浮点运算-bc">#</a> 浮点运算 bc</h4>
+<pre><code>time echo &quot;scale=$&#123;num&#125;; 4*a(1)&quot; | bc -lq
+</code></pre>
+<h3 id="指令执行"><a class="markdownIt-Anchor" href="#指令执行">#</a> 指令执行</h3>
+<ol>
+<li>直接指令下达： <span class="exturl" data-url="aHR0cDovL3NoZWxsLnNo">shell.sh</span> 文件必须要具备 (rx) 权限，使用绝对路径，相对路径或在 PATH 中.</li>
+<li>以 bash 程序来执行：透过『 bash <span class="exturl" data-url="aHR0cDovL3NoZWxsLnNo">shell.sh</span> 』或『 sh <span class="exturl" data-url="aHR0cDovL3NoZWxsLnNo">shell.sh</span> 』来执行</li>
+<li>source <span class="exturl" data-url="aHR0cDovL3NoZWxsLnNo">shell.sh</span></li>
+</ol>
+<p>前两种是子 shell, 变量不保留。而 source 是在当前的环境中执行.</p>
+<h3 id="判断式"><a class="markdownIt-Anchor" href="#判断式">#</a> 判断式</h3>
+<h4 id="test"><a class="markdownIt-Anchor" href="#test">#</a> test</h4>
+<ol>
+<li>关于某个档名的『文件类型』判断，如  <code>test -e filename</code>  表示存在否<br>
+ - e 该『档名』是否存在？(常用)<br>
+-f 该『档名』是否存在且为文件 (file)？(常用)<br>
+-d 该『文件名』是否存在且为目录 (directory)？(常用)</li>
+<li>关于文件的权限侦测，如  <code>test -r filename</code>  表示可读否 (但 root 权限常有例外)<br>
+-r 侦测该档名是否存在且具有『可读』的权限？<br>
+-w 侦测该档名是否存在且具有『可写』的权限？<br>
+-x 侦测该档名是否存在且具有『可执行』的权限？</li>
+<li>两个文件之间的比较，如：  <code>test file1 -nt file2 </code> <br>
+-nt (newer than) 判断 file1 是否比 file2 新<br>
+ - ot (older than) 判断 file1 是否比 file2 旧<br>
+ - ef 判断 file1 与 file2 是否为同一文件，可用在判断 hard link 的判定上。 主要意义在判定，两个文件是否均指向同一个 inode 哩！</li>
+<li>关于两个整数之间的判定，例如  <code>test n1 -eq n2 </code> <br>
+-eq 两数值相等 (equal)<br>
+-ne 两数值不等 (not equal)<br>
+-gt n1 大于 n2 (greater than)<br>
+-lt n1 小于 n2 (less than)<br>
+-ge n1 大于等于 n2 (greater than or equal)<br>
+-le n1 小于等于 n2 (less than or equal)</li>
+<li>判定字符串的数据<br>
+ <code>test -z string</code>  判定字符串是否为 0 ？若 string 为空字符串，则为 true<br>
+ <code>test -n string</code>  判定字符串是否非为 0 ？若 string 为空字符串，则为 false。 注： -n 亦可省略<br>
+ <code>test str1 == str2</code>  判定 str1 是否等于 str2 ，若相等，则回传 true<br>
+ <code>test str1 != str2</code>  判定 str1 是否不等于 str2 ，若相等，则回传 false</li>
+<li>多重条件判定，例如：  <code>test -r filename -a -x filename </code> <br>
+-a (and) 两状况同时成立！例如 test -r file -a -x file，则 file 同时具有 r 与 x 权限时，才回传 true。<br>
+-o (or) 两状况任何一个成立！例如 test -r file -o -x file，则 file 具有 r 或 x 权限时，就可回传 true。<br>
+! 反相状态，如  <code>test ! -x file</code>  ，当 file 不具有 x 时，回传 true</li>
+</ol>
+<h4 id=""><a class="markdownIt-Anchor" href="#">#</a> [ ]</h4>
+<p>tips:</p>
+<ol>
+<li>在中括号 [] 内的每个组件都需要有空格键来分隔；</li>
+<li>在中括号内的变数，最好都以双引号括号起来；</li>
+<li>在中括号内的常数，最好都以单或双引号括号起来。</li>
+</ol>
+<p>参数与 test 一致。例如 <code>[ $&#123;name&#125; == &quot;Sinki&quot; ]</code></p>
+<p><em>这就是为啥 sh 脚本判断句里奇怪字母的原因吗，为啥不用大于小于号啊喂. ncl 里也是这种反人类语法啊</em></p>
+<h3 id="参数-num"><a class="markdownIt-Anchor" href="#参数-num">#</a> 参数 $num</h3>
+<p>script 针对参数已经有设定好一些变量名称了！</p>
+<pre><code>/path/to/scriptname  opt1  opt2  opt3  opt4  
+      $0             $1    $2    $3    $4
+</code></pre>
+<p><code>$#</code>  ：代表后接的参数『个数』，以上表为例这里显示为『 4 』；<br>
+ <code>$@</code>  ：代表  <code>&quot;$1&quot; &quot;$2&quot; &quot;$3&quot; &quot;$4&quot;</code> ，每个变量是独立的 (用双引号括起来)；<br>
+ <code>$*</code>  ：代表  <code>&quot;$1c$2c$3c$4&quot;</code>  ，其中 c 为分隔字符，默认为空格键， 所以本例中代表  <code>&quot;$1 $2 $3 $4&quot;</code> 。一般用 <code>$@</code></p>
+<p>shift：造成参数变量号码偏移<br>
+对于 <code>sh shift_paras.sh one two three four five six</code> <br>
+ 执行 <code>shift</code>  后 <code>$@</code> 变成 <sub>one</sub> two three four five six, 再执行 <code>shift 3</code>  后就是～one two three four~ five six</p>
+<h3 id="语句"><a class="markdownIt-Anchor" href="#语句">#</a> 语句</h3>
+<h4 id="if-then"><a class="markdownIt-Anchor" href="#if-then">#</a> if then</h4>
+<ul>
+<li>
+<p>单层、简单条件判断式</p>
+<pre><code>if [ 条件判断式 ]; then
+  当条件判断式成立时，可以进行的指令工作内容；
+fi
+</code></pre>
+</li>
+</ul>
+<p>条件判断式中的 -a 和 -o 可以拆了，比如把</p>
+<p><code>[ &quot;$&#123;yn&#125;&quot; == &quot;Y&quot; -o &quot;$&#123;yn&#125;&quot; == &quot;y&quot; ]</code></p>
+<p>改成</p>
+<p><code>[ &quot;$&#123;yn&#125;&quot; == &quot;Y&quot; ] || [ &quot;$&#123;yn&#125;&quot; == &quot;y&quot; ]</code></p>
+<p>另外 &amp;&amp; 是且。</p>
+<ul>
+<li>
+<p>多重、复杂条件判断式</p>
+<pre><code>if [ 条件判断式 ]; then
+  当条件判断式成立时，可以进行的指令工作内容；
+else
+  当条件判断式不成立时，可以进行的指令工作内容；
+fi
+
+if [ 条件判断式一 ]; then
+  当条件判断式一成立时，可以进行的指令工作内容；
+elif [ 条件判断式二 ]; then
+  当条件判断式二成立时，可以进行的指令工作内容；
+else
+  当条件判断式一与二均不成立时，可以进行的指令工作内容；
+fi
+</code></pre>
+</li>
+</ul>
+<h4 id="case-esac"><a class="markdownIt-Anchor" href="#case-esac">#</a> case esac</h4>
+<pre><code>case  $变量名称 in   &lt;==关键词为 case ，还有变数前有钱字号
+  &quot;第一个变量内容&quot;)   &lt;==每个变量内容建议用双引号括起来，关键词则为小括号 )
+    程序段
+    ;;           &lt;==每个类别结尾使用两个连续的分号来处理！
+  &quot;第二个变量内容&quot;)
+    程序段
+    ;;
+  *)                  &lt;==最后一个变量内容都会用 * 来代表所有其他值
+    不包含第一个变量内容与第二个变量内容的其他程序执行段
+    exit 1
+    ;;
+esac
+</code></pre>
+<h4 id="function"><a class="markdownIt-Anchor" href="#function">#</a> function</h4>
+<p>在 shell script 当中的 function 的设定一定要在程序的最前面，这样才能够在执行时被找到可用的程序段</p>
+<pre><code>function printit()&#123;
+  echo -n &quot;Your choice is &quot;     # 加上 -n 可以不断行继续在同一行显示
+&#125;
+printit; echo $&#123;1&#125; | tr 'a-z' 'A-Z'  # 将参数做大小写转换！
+</code></pre>
+<p>function 也是拥有内建变量的～他的内建变量与 shell script 很类似， 函数名称代表示 $0 ，而后续接的变量也是以 $1, $2… 来取代的～</p>
+<pre><code>function printit()&#123;
+  echo &quot;Your choice is $&#123;1&#125;&quot;   # 这个 $1 必须要参考底下指令的下达
+&#125;
+printit 1  # 请注意， printit 指令后面还有接参数！
+</code></pre>
+<h4 id="while-do-done-until-do-done-不定循环"><a class="markdownIt-Anchor" href="#while-do-done-until-do-done-不定循环">#</a> while do done, until do done (不定循环)</h4>
+<pre><code>while [ condition ]    &lt;==中括号内的状态就是判断式
+do            &lt;==do 是循环的开始！
+  程序段落
+done          &lt;==done 是循环的结束
+</code></pre>
+<p>另一种</p>
+<pre><code>until [ condition ]    &lt;==中括号内的状态就是判断式
+do            &lt;==do 是循环的开始！
+  程序段落
+done          &lt;==done 是循环的结束
+</code></pre>
+<p>与 while 相反，真的好懂.</p>
+<h4 id="fordodone-固定循环"><a class="markdownIt-Anchor" href="#fordodone-固定循环">#</a> for…do…done (固定循环)</h4>
+<pre><code>for var in con1 con2 con3 ...
+do
+  程序段
+done
+</code></pre>
+<p>这个 $var 的变量内容在循环工作时：</p>
+<ol>
+<li>第一次循环时， $var 的内容为 con1 ；</li>
+<li>第二次循环时， $var 的内容为 con2 ；</li>
+<li>第三次循环时， $var 的内容为 con3 ；</li>
+<li>…</li>
+</ol>
+<p>for 后面还可以跟这些:</p>
+<pre><code>users=$(cut -d ':' -f1 /etc/passwd)    # 撷取账号名称
+for username in $&#123;users&#125;
+...
+for sitenu in $(seq 1 100)       # seq 为 sequence(连续) 的缩写之意
+...
+for sitenu in &#123;1..100&#125;
+...
+for a in &#123;a..z&#125;
+</code></pre>
+<h4 id="fordodone-的数值处理"><a class="markdownIt-Anchor" href="#fordodone-的数值处理">#</a> for…do…done 的数值处理</h4>
+<pre><code>for (( 初始值; 限制值; 执行步阶 ))
+do
+  程序段
+done
+</code></pre>
+<p>如  <code>for (( i=1; i&lt;=$&#123;nu&#125;; i=i+1 ))</code></p>
+<h3 id="shell-script-的追踪与-debug"><a class="markdownIt-Anchor" href="#shell-script-的追踪与-debug">#</a> shell script 的追踪与 debug</h3>
+<p><code>sh [-nvx] scripts.sh </code> <br>
+-n  ：不要执行 script，仅查询语法的问题；<br>
+-v  ：再执行 sccript 前，先将 scripts 的内容输出到屏幕上；<br>
+-x  ：将使用到的 script 内容显示到屏幕上，这是很有用的参数！</p>
+<p>在输出的讯息中，在加号后面的数据其实都是指令串，由于 sh -x 的方式来将指令执行过程也显示出来， 如此用户可以判断程序代码执行到哪一段时会出现相关的信息！</p>
+<hr>
+<p>下一篇：<a href="/2021/07/14/linuxA0714/">-</a><br>
+ 上一篇：<a href="/2021/07/08/linuxA0708/">正规表示法与文件格式化处理</a></p>
+
+      <div class="tags">
+          <a href="/tags/Linux/" rel="tag"><i class="ic i-tag"></i> Linux</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2022-04-10 20:47:44" itemprop="dateModified" datetime="2022-04-10T20:47:44+08:00">2022-04-10</time>
+  </span>
+  <span id="ComputerScience/linuxA0713/" class="item leancloud_visitors" data-flag-title="Linux学习 笔记#10 Shell Scripts" title="阅读次数">
+      <span class="icon">
+        <i class="ic i-eye"></i>
+      </span>
+      <span class="text">阅读次数</span>
+      <span class="leancloud-visitors-count"></span>
+      <span class="text">次</span>
+  </span>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>Ning Chenhui <i class="ic i-at"><em>@</em></i>一切都会好起来的哟
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="https://ningchenhui.github.io/ComputerScience/linuxA0713/" title="Linux学习 笔记#10 Shell Scripts">https://ningchenhui.github.io/ComputerScience/linuxA0713/</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/EarthScience/Ocean/oceanA0709/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipewkhf1zj20zk0m81kx.jpg" title="物理海洋学基础 笔记#05">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> 物理海洋学</span>
+  <h3>物理海洋学基础 笔记#05</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+      
+
+  <a href="/omare220205/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipevuctzzj20zk0m84qp.jpg" title="オマレ入门（一）">
+  <span class="type">下一篇</span>
+  <span class="category"><i class="ic i-flag"></i> 学习</span>
+  <h3>オマレ入门（一）</h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#ch12-%E5%AD%A6%E4%B9%A0-shell-scripts"><span class="toc-number">1.</span> <span class="toc-text"> Ch12 学习 Shell Scripts</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%84%9A%E6%9C%AC%E6%A0%B7%E4%BE%8B"><span class="toc-number">1.1.</span> <span class="toc-text"> 脚本样例</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#hello-world"><span class="toc-number">1.1.1.</span> <span class="toc-text"> Hello World！</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#show-name"><span class="toc-number">1.1.2.</span> <span class="toc-text"> Show name</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#create-files"><span class="toc-number">1.1.3.</span> <span class="toc-text"> Create files</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B4%E6%95%B0%E8%BF%90%E7%AE%97-%E8%AE%A1%E7%AE%97%E5%BC%8F"><span class="toc-number">1.1.4.</span> <span class="toc-text"> 整数运算 $((计算式))</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B5%AE%E7%82%B9%E8%BF%90%E7%AE%97-bc"><span class="toc-number">1.1.5.</span> <span class="toc-text"> 浮点运算 bc</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%87%E4%BB%A4%E6%89%A7%E8%A1%8C"><span class="toc-number">1.2.</span> <span class="toc-text"> 指令执行</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A4%E6%96%AD%E5%BC%8F"><span class="toc-number">1.3.</span> <span class="toc-text"> 判断式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#test"><span class="toc-number">1.3.1.</span> <span class="toc-text"> test</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">1.3.2.</span> <span class="toc-text"> [ ]</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%82%E6%95%B0-num"><span class="toc-number">1.4.</span> <span class="toc-text"> 参数 $num</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%AD%E5%8F%A5"><span class="toc-number">1.5.</span> <span class="toc-text"> 语句</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#if-then"><span class="toc-number">1.5.1.</span> <span class="toc-text"> if then</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#case-esac"><span class="toc-number">1.5.2.</span> <span class="toc-text"> case esac</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#function"><span class="toc-number">1.5.3.</span> <span class="toc-text"> function</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#while-do-done-until-do-done-%E4%B8%8D%E5%AE%9A%E5%BE%AA%E7%8E%AF"><span class="toc-number">1.5.4.</span> <span class="toc-text"> while do done, until do done (不定循环)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#fordodone-%E5%9B%BA%E5%AE%9A%E5%BE%AA%E7%8E%AF"><span class="toc-number">1.5.5.</span> <span class="toc-text"> for…do…done (固定循环)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#fordodone-%E7%9A%84%E6%95%B0%E5%80%BC%E5%A4%84%E7%90%86"><span class="toc-number">1.5.6.</span> <span class="toc-text"> for…do…done 的数值处理</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#shell-script-%E7%9A%84%E8%BF%BD%E8%B8%AA%E4%B8%8E-debug"><span class="toc-number">1.6.</span> <span class="toc-text"> shell script 的追踪与 debug</span></a></li></ol></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+        <ul>
+          <li><a href="/ComputerScience/linux1111/" rel="bookmark" title="Linux学习 笔记#01">Linux学习 笔记#01</a></li><li><a href="/ComputerScience/linux1112/" rel="bookmark" title="Linux学习 笔记#02">Linux学习 笔记#02</a></li><li><a href="/ComputerScience/hpc1202/" rel="bookmark" title="高性能计算#01 HPL搭建">高性能计算#01 HPL搭建</a></li><li><a href="/ComputerScience/hpc1204/" rel="bookmark" title="高性能计算#02 HPL再次搭建">高性能计算#02 HPL再次搭建</a></li><li><a href="/ComputerScience/hpc1205/" rel="bookmark" title="高性能计算#03 HPCG搭建">高性能计算#03 HPCG搭建</a></li><li><a href="/ComputerScience/linux1206/" rel="bookmark" title="Linux学习 笔记#03 指令集">Linux学习 笔记#03 指令集</a></li><li><a href="/ComputerScience/hpc1206/" rel="bookmark" title="高性能计算#04 HPL测试GPU">高性能计算#04 HPL测试GPU</a></li><li><a href="/ComputerScience/linux1224/" rel="bookmark" title="Linux学习 笔记#04 文件权限与目录配置">Linux学习 笔记#04 文件权限与目录配置</a></li><li><a href="/ComputerScience/sunway01/" rel="bookmark" title="超算远程访问">超算远程访问</a></li><li><a href="/ComputerScience/model01/" rel="bookmark" title="初识NetCDF">初识NetCDF</a></li><li><a href="/ComputerScience/model02/" rel="bookmark" title="安装NCL">安装NCL</a></li><li><a href="/ComputerScience/linuxA0322/" rel="bookmark" title="Linux学习 笔记#05 文件与目录管理">Linux学习 笔记#05 文件与目录管理</a></li><li><a href="/ComputerScience/sunway02/" rel="bookmark" title="超算 - 使用指南">超算 - 使用指南</a></li><li><a href="/ComputerScience/linuxA0525/" rel="bookmark" title="Linux学习 笔记#06 磁盘与文件系统管理">Linux学习 笔记#06 磁盘与文件系统管理</a></li><li><a href="/ComputerScience/linuxA0703/" rel="bookmark" title="Linux学习 笔记#07 压缩，备份与Vim">Linux学习 笔记#07 压缩，备份与Vim</a></li><li><a href="/ComputerScience/linuxA0705/" rel="bookmark" title="Linux学习 笔记#08 bash">Linux学习 笔记#08 bash</a></li><li><a href="/ComputerScience/linuxA0708/" rel="bookmark" title="Linux学习 笔记#09 正规表示法与文件格式化处理">Linux学习 笔记#09 正规表示法与文件格式化处理</a></li><li class="active"><a href="/ComputerScience/linuxA0713/" rel="bookmark" title="Linux学习 笔记#10 Shell Scripts">Linux学习 笔记#10 Shell Scripts</a></li><li><a href="/omare220205/" rel="bookmark" title="オマレ入门（一）">オマレ入门（一）</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="Ning Chenhui"
+      data-src="/images/avatar.jpg">
+  <p class="name" itemprop="name">Ning Chenhui</p>
+  <div class="description" itemprop="description">正在建设中...</div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">35</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/categories/">
+        <span class="count">5</span>
+        <span class="name">分类</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">4</span>
+        <span class="name">标签</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL05pbmdDaGVuaHVp" title="https:&#x2F;&#x2F;github.com&#x2F;NingChenhui"><i class="ic i-github"></i></span>
+      <span class="exturl item twitter" data-url="aHR0cHM6Ly90d2l0dGVyLmNvbS9Ib3NpenVraV9USFU=" title="https:&#x2F;&#x2F;twitter.com&#x2F;Hosizuki_THU"><i class="ic i-twitter"></i></span>
+      <span class="exturl item email" data-url="bWFpbHRvOnNpbmtpaG9zaXp1a2lAZ21haWwuY29t" title="mailto:sinkihosizuki@gmail.com"><i class="ic i-envelope"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/about/" rel="section"><i class="ic i-user"></i>关于</a>
+  </li>
+
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/archives/" rel="section"><i class="ic i-list-alt"></i>归档</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+  </ul>
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+        <a href="/EarthScience/Ocean/oceanA0709/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+        <a href="/omare220205/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E5%AD%A6%E4%B9%A0/" title="分类于 学习">学习</a>
+</div>
+
+    <span><a href="/ComputerScience/sunway02/" title="超算 - 使用指南">超算 - 使用指南</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/EarthScience/" title="分类于 地球科学">地球科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/EarthScience/%E5%9C%B0%E7%90%83%E7%B3%BB%E7%BB%9F%E7%A7%91%E5%AD%A6/" title="分类于 地球系统科学">地球系统科学</a>
+</div>
+
+    <span><a href="/EarthScience/ESS/es1029/" title="地球科学导论 笔记#03">地球科学导论 笔记#03</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E5%AD%A6%E4%B9%A0/" title="分类于 学习">学习</a>
+</div>
+
+    <span><a href="/ComputerScience/hpc1202/" title="高性能计算#01 HPL搭建">高性能计算#01 HPL搭建</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E5%AD%A6%E4%B9%A0/" title="分类于 学习">学习</a>
+</div>
+
+    <span><a href="/ComputerScience/linux1111/" title="Linux学习 笔记#01">Linux学习 笔记#01</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/EarthScience/" title="分类于 地球科学">地球科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/EarthScience/Ocean/" title="分类于 物理海洋学">物理海洋学</a>
+</div>
+
+    <span><a href="/EarthScience/Ocean/ocean1120/" title="物理海洋学基础 笔记#02">物理海洋学基础 笔记#02</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/EarthScience/" title="分类于 地球科学">地球科学</a>
+</div>
+
+    <span><a href="/EarthScience/esA0324/" title="一些新的和遗忘的知识点">一些新的和遗忘的知识点</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/EarthScience/" title="分类于 地球科学">地球科学</a>
+</div>
+
+    <span><a href="/EarthScience/esA0412/" title="北极 SIE&#x2F;SIV 计算">北极 SIE/SIV 计算</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/EarthScience/" title="分类于 地球科学">地球科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/EarthScience/%E5%9C%B0%E7%90%83%E7%B3%BB%E7%BB%9F%E7%A7%91%E5%AD%A6/" title="分类于 地球系统科学">地球系统科学</a>
+</div>
+
+    <span><a href="/EarthScience/ESS/es1009/" title="地球科学导论 笔记#01">地球科学导论 笔记#01</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/home/" title="帝春的小窝">帝春的小窝</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E5%AD%A6%E4%B9%A0/" title="分类于 学习">学习</a>
+</div>
+
+    <span><a href="/ComputerScience/linuxA0322/" title="Linux学习 笔记#05 文件与目录管理">Linux学习 笔记#05 文件与目录管理</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2020 – 
+    <span itemprop="copyrightYear">2022</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Ning Chenhui @ Ning Chenhui</span>
+  </div>
+  <div class="count">
+    <span class="post-meta-item-icon">
+      <i class="ic i-chart-area"></i>
+    </span>
+    <span title="站点总字数">83k 字</span>
+
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="ic i-coffee"></i>
+    </span>
+    <span title="站点阅读时长">1:15</span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: 'ComputerScience/linuxA0713/',
+    favicon: {
+      show: "（●´3｀●）やれやれだぜ",
+      hide: "(´Д｀)大変だ！"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,fancybox: true,
+    copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>
