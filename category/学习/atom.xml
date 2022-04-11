@@ -1880,6 +1880,9 @@ GPU 5: Tesla P100-PCIE-16GB (UUID: GPU-16423caf-0037-6742-2977-ba03f4937b9b)&lt;
         <title>Linux学习 笔记#03 指令集</title>
         <link rel="alternate" href="https://ningchenhui.github.io/ComputerScience/linux1206/"/>
         <content type="html">&lt;p&gt;单开一篇整理常用指令。 &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;h2 id=&#34;查找&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#查找&#34;&gt;#&lt;/a&gt; 查找&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;grep -rl &amp;quot;string&amp;quot; /path&lt;/code&gt; &lt;br&gt;
+ &lt;code&gt;-r&lt;/code&gt;  为递归查找， &lt;code&gt;-l&lt;/code&gt;  为只显示文件名加快速度。&lt;/p&gt;
 &lt;h2 id=&#34;文件操作&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#文件操作&#34;&gt;#&lt;/a&gt; 文件操作&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;

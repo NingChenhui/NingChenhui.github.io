@@ -1235,9 +1235,12 @@ const themeColorListener = function () {
   });
 }
 
+
 const visibilityListener = function () {
   document.addEventListener('visibilitychange', function() {
+    /* change by hosizuki
     switch(document.visibilityState) {
+
       case 'hidden':
         $('[rel="icon"]').attr('href', statics + CONFIG.favicon.hidden);
         document.title = LOCAL.favicon.hide;
@@ -1254,7 +1257,9 @@ const visibilityListener = function () {
           document.title = originTitle;
         }, 2000);
       break;
+
     }
+    */
   });
 }
 
@@ -1394,7 +1399,6 @@ const clipBoard = function(str, callback) {
   }
   BODY.removeChild(ta);
 }
-
 const sideBarToggleHandle = function (event, force) {
   if(sideBar.hasClass('on')) {
     sideBar.removeClass('on');
