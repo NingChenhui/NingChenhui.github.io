@@ -7,10 +7,10 @@
         <language>zh-CN</language>
         <pubDate>Tue, 13 Jul 2021 15:20:36 +0800</pubDate>
         <lastBuildDate>Tue, 13 Jul 2021 15:20:36 +0800</lastBuildDate>
-        <category>模式</category>
         <category>课程资料</category>
-        <category>Linux</category>
+        <category>模式</category>
         <category>地球科学</category>
+        <category>Linux</category>
         <item>
             <guid isPermalink="true">https://ningchenhui.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/linuxA0713/</guid>
             <title>Linux学习 笔记#10 Shell Scripts</title>
