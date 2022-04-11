@@ -1,0 +1,742 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="一切都会好起来的哟" href="https://ningchenhui.github.io/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="一切都会好起来的哟" href="https://ningchenhui.github.io/atom.xml" />
+<link rel="alternate" type="application/json" title="一切都会好起来的哟" href="https://ningchenhui.github.io/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+  <meta name="keywords" content="Linux" />
+
+
+<link rel="canonical" href="https://ningchenhui.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/hpc1205/">
+
+
+
+  <title>
+高性能计算#03 HPCG搭建 - 学习 |
+Ning Chenhui = 一切都会好起来的哟</title>
+<meta name="generator" content="Hexo 5.4.2"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">高性能计算#03 HPCG搭建
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2020-12-05 16:13:18">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2020-12-05T16:13:18+08:00">2020-12-05</time>
+  </span>
+  <span class="item" title="本文字数">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span class="text">本文字数</span>
+    <span>5.5k</span>
+    <span class="text">字</span>
+  </span>
+  <span class="item" title="阅读时长">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span class="text">阅读时长</span>
+    <span>5 分钟</span>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">Ning Chenhui</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+        <ul>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipeuv80yoj20zk0m8kjl.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gicm07ih54j20zk0m84qp.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gicitzannuj20zk0m8b29.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giclxfdlttj20zk0m8npd.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipevgoki5j20zk0m84qp.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipesng5oej20zk0m87d4.jpg"></li>
+        </ul>
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">首页</a></span><i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/%E5%AD%A6%E4%B9%A0/" itemprop="item" rel="index" title="分类于 学习"><span itemprop="name">学习</span></a>
+<meta itemprop="position" content="1" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="https://ningchenhui.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/hpc1205/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/avatar.jpg">
+    <meta itemprop="name" content="Ning Chenhui">
+    <meta itemprop="description" content=", 正在建设中...">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="一切都会好起来的哟">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <p>- HPCG 测试 OPENBLAS+OPENMPI - <span id="more"></span></p>
+<h2 id="环境搭建"><a class="markdownIt-Anchor" href="#环境搭建">#</a> 环境搭建</h2>
+<p>前几篇中已经配置好了<a href="/2020/12/02/hpc1202/#%E5%AE%89%E8%A3%85MPICH"> c++ 编译器</a>，以及<a href="/2020/12/04/hpc1204/#%E5%AE%89%E8%A3%85openMPI"> openmpi 并行环境</a>。</p>
+<p>#TODO 若是在 Intel 处理器上建议用 Intel 自家的编译器、mpi、hpcg 执行文件……</p>
+<h2 id="hpcg安装与编译"><a class="markdownIt-Anchor" href="#hpcg安装与编译">#</a> HPCG 安装与编译</h2>
+<ol>
+<li>
+<p>官方下载网站下载：<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2hwY2ctYmVuY2htYXJrL2hwY2c=">hpcg-master</span></p>
+</li>
+<li>
+<p>进入 <code>setup</code>  文件夹下，修改 <code>Make.Linux_MPI</code> ，另存为 <code>Make.Linux</code> 。<br>
+MPdir        = <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mi>H</mi><mi>O</mi><mi>M</mi><mi>E</mi><mo stretchy="false">)</mo><mi mathvariant="normal">/</mi><mi>H</mi><mi>P</mi><mi>L</mi><mi mathvariant="normal">/</mi><mi>o</mi><mi>p</mi><mi>e</mi><mi>n</mi><mi>m</mi><mi>p</mi><mi>i</mi><mi>M</mi><mi>P</mi><mi>i</mi><mi>n</mi><mi>c</mi><mo>=</mo><mo>−</mo><mi>I</mi></mrow><annotation encoding="application/x-tex">(HOME)/HPL/openmpi
+     MPinc        = -I</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.08125em;">H</span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="mord mathnormal" style="margin-right:0.05764em;">E</span><span class="mclose">)</span><span class="mord">/</span><span class="mord mathnormal" style="margin-right:0.08125em;">H</span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mord mathnormal">L</span><span class="mord">/</span><span class="mord mathnormal">o</span><span class="mord mathnormal">p</span><span class="mord mathnormal">e</span><span class="mord mathnormal">n</span><span class="mord mathnormal">m</span><span class="mord mathnormal">p</span><span class="mord mathnormal">i</span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mord mathnormal">i</span><span class="mord mathnormal">n</span><span class="mord mathnormal">c</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord">−</span><span class="mord mathnormal" style="margin-right:0.07847em;">I</span></span></span></span>(MPdir)/include<br>
+MPlib        = -L$(MPdir)/lib</p>
+<pre><code> CXX          = $(MPdir)/bin/mpicxx
+</code></pre>
+</li>
+<li>
+<p>设置安装环境：到安装目录下， <code>mkdir hpcg</code> ,  <code>cd hpcg</code> ,  <code>~/HPL/hpcg-master/configure Linux</code></p>
+</li>
+<li>
+<p>安装测试： <code>make</code> ， <code>cd bin</code> ， <code>mpirun -np 16 ./xhpcg</code> 。<br>
+ <code>hpcg.dat</code>  很简单，第三行是执行的问题的规模，第四行是执行的时间（秒）。<br>
+HPCG 测试很快（整机仅需几分钟），测试时需要不断调节 n 值，以获得一个较好的测试结果。<br>
+n 值不能设置太小，否则测试完全在缓存中进行，测试需要保证内存占用 &gt; 25%。<br>
+官方规定运行时间必须要 1800s 才能得到一个正式的结果。但 t 较小时得到的结果相差不大。</p>
+</li>
+<li>
+<p>测试结束后在 bin 文件夹中得到一个 HPCG-Benchmark 文件，这个文件详细记录了运行结果，运行的问题规模占用内存的量，以及各个主要的函数所占运行时间。</p>
+<p>Ns = 256 256 128<br>
+t = 1800</p>
+<p>Benchmark Time Summary::Total=1890.2<br>
+Final Summary=<br>
+Final Summary::HPCG result is VALID with a GFLOP/s rating of=8.03429<br>
+Final Summary::HPCG 2.4 rating for historical reasons is=8.61255<br>
+Final Summary::Reference version of ComputeDotProduct used=Performance results are most likely suboptimal<br>
+Final Summary::Reference version of ComputeSPMV used=Performance results are most likely suboptimal<br>
+Final Summary::Reference version of ComputeMG used=Performance results are most likely suboptimal<br>
+Final Summary::Reference version of ComputeWAXPBY used=Performance results are most likely suboptimal<br>
+Final Summary::Please upload results from the YAML file contents to=http://hpcg-benchmark.org</p>
+</li>
+</ol>
+<hr>
+<pre><code>Ns = 256 256 128
+t = 60
+
+Benchmark Time Summary::Total=144.725
+Final Summary=
+Final Summary::HPCG result is VALID with a GFLOP/s rating of=8.01359
+Final Summary::HPCG 2.4 rating for historical reasons is=8.65271
+Final Summary::Reference version of ComputeDotProduct used=Performance results are most likely suboptimal
+Final Summary::Reference version of ComputeSPMV used=Performance results are most likely suboptimal
+Final Summary::Reference version of ComputeMG used=Performance results are most likely suboptimal
+Final Summary::Reference version of ComputeWAXPBY used=Performance results are most likely suboptimal
+Final Summary::Results are valid but execution time (sec) is=144.725
+Final Summary::Official results execution time (sec) must be at least=1800
+</code></pre>
+<h2 id="系统信息获取"><a class="markdownIt-Anchor" href="#系统信息获取">#</a> 系统信息获取</h2>
+<h3 id="cpu"><a class="markdownIt-Anchor" href="#cpu">#</a> CPU</h3>
+<ol>
+<li>逻辑 CPU 个数与 CPU 型号<br>
+ <code>cat /proc/cpuinfo | grep name | cut -f2 -d: | uniq -c</code> <br>
+32  Intel® Xeon® CPU E5-2620 v4 @ 2.10GHz<br>
+ 网上查到 TDP 为 85W，睿频 3.0 GHz。</li>
+<li>物理 CPU 个数<br>
+ <code>grep &quot;physical id&quot; /proc/cpuinfo|sort -u</code> <br>
+physical id     : 0<br>
+physical id     : 1</li>
+<li>每个物理 CPU 内核个数<br>
+ <code>grep &quot;cpu cores&quot; /proc/cpuinfo|uniq</code> <br>
+cpu cores       : 8</li>
+<li>每个物理 CPU 上逻辑 CPU 个数<br>
+ <code>grep &quot;siblings&quot; /proc/cpuinfo|uniq</code> <br>
+siblings        : 16<br>
+ 逻辑 CPU 个数是物理个数的两倍，说明开启了超线程。</li>
+<li>每个逻辑 CPU 对应的物理位置<br>
+ <code>cat /proc/cpuinfo | grep -E &quot;physical id|processor&quot;</code></li>
+</ol>
+<h3 id="linux"><a class="markdownIt-Anchor" href="#linux">#</a> Linux</h3>
+<ol>
+<li>
+<p>操作系统信息<br>
+ <code>uname -a</code> <br>
+Linux amax 4.2.0-42-generic #49~14.04.1-Ubuntu SMP Wed Jun 29 20:22:11 UTC 2016 x86_64 x86_64 x86_64 GNU/Linux</p>
+</li>
+<li>
+<p>操作系统发行版信息<br>
+ <code>cat /etc/issue</code> <br>
+Ubuntu 14.04.6 LTS</p>
+</li>
+<li>
+<p>内存<br>
+ <code>cat /proc/meminfo</code> <br>
+ 或<br>
+ <code>free -h</code> <br>
+ 集群共有 251.8G 内存，猜测是 64G×4。</p>
+</li>
+<li>
+<p>内存设备<br>
+ <code>dmidecode |grep -A16 &quot;Memory Device$&quot;</code> <br>
+ 或<br>
+ <code>dmidecode -t memory</code> <br>
+ 无权限……</p>
+</li>
+<li>
+<p>硬盘空间<br>
+ <code>df -hl</code> <br>
+Filesystem      Size  Used Avail Use% Mounted on<br>
+udev            126G   12K  126G   1% /dev<br>
+tmpfs            26G  2.1M   26G   1% /run<br>
+/dev/sda6       188G   37G  142G  21% /<br>
+none            4.0K     0  4.0K   0% /sys/fs/cgroup<br>
+none            5.0M     0  5.0M   0% /run/lock<br>
+none            126G  1.3M  126G   1% /run/shm<br>
+none            100M  188K  100M   1% /run/user<br>
+/dev/sda1       453M   73M  353M  17% /boot<br>
+/dev/sda7       274G  258G  1.8G 100% /home<br>
+/dev/sdc1       1.8T  167G  1.6T  10% /data1<br>
+/dev/sdb1       1.8T   33G  1.7T   2% /data0</p>
+</li>
+<li>
+<p>硬盘设备<br>
+ <code>fdisk -l</code> <br>
+ 无信息？需要管理员？</p>
+</li>
+<li>
+<p>网卡信息<br>
+ <code>dmesg | grep -i eth</code></p>
+</li>
+<li>
+<p>设备接口信息<br>
+ <code>lspci</code> <br>
+ <code>-v</code>     ：显示更多的 PCI 接口装置的详细信息<br>
+ <code>-vv</code>     ：比 -v 还要更详细的信息<br>
+ <code>-n</code>      ：直接观察 PCI 的 ID 而不是厂商名称<br>
+ <code>-s 00:01.0</code>  ：查看地址 00:01.0 的信息</p>
+</li>
+<li>
+<p>查看节点 / 主机名称<br>
+ <code>cat /etc/hosts</code> <br>
+127.0.0.1       localhost<br>
+127.0.1.1       amax</p>
+<pre><code> # The following lines are desirable for IPv6 capable hosts
+ ::1     ip6-localhost ip6-loopback
+ fe00::0 ip6-localnet
+ ff00::0 ip6-mcastprefix
+ ff02::1 ip6-allnodes
+ ff02::2 ip6-allrouters
+</code></pre>
+</li>
+</ol>
+<p>经测试集群应该是在 amax 节点下布置了两块 Intel Xeon CPU，localhost 指向 amax。<br>
+即单节点双路 8 核？<br>
+@amax:~/HPL<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mi>p</mi><mi>i</mi><mi>r</mi><mi>u</mi><mi>n</mi><mo>−</mo><mi>n</mi><mi>p</mi><mn>16.</mn><mi mathvariant="normal">/</mi><mi>c</mi><mi>p</mi><mi>i</mi><mi>P</mi><mi>r</mi><mi>o</mi><mi>c</mi><mi>e</mi><mi>s</mi><mi>s</mi><mn>5</mn><mi>o</mi><mi>f</mi><mn>16</mn><mi>i</mi><mi>s</mi><mi>o</mi><mi>n</mi><mi>a</mi><mi>m</mi><mi>a</mi><mi>x</mi><mi>P</mi><mi>r</mi><mi>o</mi><mi>c</mi><mi>e</mi><mi>s</mi><mi>s</mi><mn>7</mn><mi>o</mi><mi>f</mi><mn>16</mn><mi>i</mi><mi>s</mi><mi>o</mi><mi>n</mi><mi>a</mi><mi>m</mi><mi>a</mi><mi>x</mi><mi>P</mi><mi>r</mi><mi>o</mi><mi>c</mi><mi>e</mi><mi>s</mi><mi>s</mi><mn>8</mn><mi>o</mi><mi>f</mi><mn>16</mn><mi>i</mi><mi>s</mi><mi>o</mi><mi>n</mi><mi>a</mi><mi>m</mi><mi>a</mi><mi>x</mi><mi>P</mi><mi>r</mi><mi>o</mi><mi>c</mi><mi>e</mi><mi>s</mi><mi>s</mi><mn>9</mn><mi>o</mi><mi>f</mi><mn>16</mn><mi>i</mi><mi>s</mi><mi>o</mi><mi>n</mi><mi>a</mi><mi>m</mi><mi>a</mi><mi>x</mi><mi>P</mi><mi>r</mi><mi>o</mi><mi>c</mi><mi>e</mi><mi>s</mi><mi>s</mi><mn>10</mn><mi>o</mi><mi>f</mi><mn>16</mn><mi>i</mi><mi>s</mi><mi>o</mi><mi>n</mi><mi>a</mi><mi>m</mi><mi>a</mi><mi>x</mi><mi>P</mi><mi>r</mi><mi>o</mi><mi>c</mi><mi>e</mi><mi>s</mi><mi>s</mi><mn>12</mn><mi>o</mi><mi>f</mi><mn>16</mn><mi>i</mi><mi>s</mi><mi>o</mi><mi>n</mi><mi>a</mi><mi>m</mi><mi>a</mi><mi>x</mi><mi>P</mi><mi>r</mi><mi>o</mi><mi>c</mi><mi>e</mi><mi>s</mi><mi>s</mi><mn>14</mn><mi>o</mi><mi>f</mi><mn>16</mn><mi>i</mi><mi>s</mi><mi>o</mi><mi>n</mi><mi>a</mi><mi>m</mi><mi>a</mi><mi>x</mi><mi>P</mi><mi>r</mi><mi>o</mi><mi>c</mi><mi>e</mi><mi>s</mi><mi>s</mi><mn>0</mn><mi>o</mi><mi>f</mi><mn>16</mn><mi>i</mi><mi>s</mi><mi>o</mi><mi>n</mi><mi>a</mi><mi>m</mi><mi>a</mi><mi>x</mi><mi>P</mi><mi>r</mi><mi>o</mi><mi>c</mi><mi>e</mi><mi>s</mi><mi>s</mi><mn>1</mn><mi>o</mi><mi>f</mi><mn>16</mn><mi>i</mi><mi>s</mi><mi>o</mi><mi>n</mi><mi>a</mi><mi>m</mi><mi>a</mi><mi>x</mi><mi>P</mi><mi>r</mi><mi>o</mi><mi>c</mi><mi>e</mi><mi>s</mi><mi>s</mi><mn>2</mn><mi>o</mi><mi>f</mi><mn>16</mn><mi>i</mi><mi>s</mi><mi>o</mi><mi>n</mi><mi>a</mi><mi>m</mi><mi>a</mi><mi>x</mi><mi>P</mi><mi>r</mi><mi>o</mi><mi>c</mi><mi>e</mi><mi>s</mi><mi>s</mi><mn>3</mn><mi>o</mi><mi>f</mi><mn>16</mn><mi>i</mi><mi>s</mi><mi>o</mi><mi>n</mi><mi>a</mi><mi>m</mi><mi>a</mi><mi>x</mi><mi>P</mi><mi>r</mi><mi>o</mi><mi>c</mi><mi>e</mi><mi>s</mi><mi>s</mi><mn>4</mn><mi>o</mi><mi>f</mi><mn>16</mn><mi>i</mi><mi>s</mi><mi>o</mi><mi>n</mi><mi>a</mi><mi>m</mi><mi>a</mi><mi>x</mi><mi>P</mi><mi>r</mi><mi>o</mi><mi>c</mi><mi>e</mi><mi>s</mi><mi>s</mi><mn>11</mn><mi>o</mi><mi>f</mi><mn>16</mn><mi>i</mi><mi>s</mi><mi>o</mi><mi>n</mi><mi>a</mi><mi>m</mi><mi>a</mi><mi>x</mi><mi>P</mi><mi>r</mi><mi>o</mi><mi>c</mi><mi>e</mi><mi>s</mi><mi>s</mi><mn>13</mn><mi>o</mi><mi>f</mi><mn>16</mn><mi>i</mi><mi>s</mi><mi>o</mi><mi>n</mi><mi>a</mi><mi>m</mi><mi>a</mi><mi>x</mi><mi>P</mi><mi>r</mi><mi>o</mi><mi>c</mi><mi>e</mi><mi>s</mi><mi>s</mi><mn>15</mn><mi>o</mi><mi>f</mi><mn>16</mn><mi>i</mi><mi>s</mi><mi>o</mi><mi>n</mi><mi>a</mi><mi>m</mi><mi>a</mi><mi>x</mi><mi>P</mi><mi>r</mi><mi>o</mi><mi>c</mi><mi>e</mi><mi>s</mi><mi>s</mi><mn>6</mn><mi>o</mi><mi>f</mi><mn>16</mn><mi>i</mi><mi>s</mi><mi>o</mi><mi>n</mi><mi>a</mi><mi>m</mi><mi>a</mi><mi>x</mi><mi>p</mi><mi>i</mi><mi>i</mi><mi>s</mi><mi>a</mi><mi>p</mi><mi>p</mi><mi>r</mi><mi>o</mi><mi>x</mi><mi>i</mi><mi>m</mi><mi>a</mi><mi>t</mi><mi>e</mi><mi>l</mi><mi>y</mi><mn>3.1415926544231274</mn><mo separator="true">,</mo><mi>E</mi><mi>r</mi><mi>r</mi><mi>o</mi><mi>r</mi><mi>i</mi><mi>s</mi><mn>0.0000000008333343</mn><mi>w</mi><mi>a</mi><mi>l</mi><mi>l</mi><mi>c</mi><mi>l</mi><mi>o</mi><mi>c</mi><mi>k</mi><mi>t</mi><mi>i</mi><mi>m</mi><mi>e</mi><mo>=</mo><mn>0.004565</mn><mi mathvariant="normal">@</mi><mi>a</mi><mi>m</mi><mi>a</mi><mi>x</mi><mo>:</mo><mtext> </mtext><mi mathvariant="normal">/</mi><mi>H</mi><mi>P</mi><mi>L</mi></mrow><annotation encoding="application/x-tex">mpirun -np 16 ./cpi
+        Process 5 of 16 is on amax
+        Process 7 of 16 is on amax
+        Process 8 of 16 is on amax
+        Process 9 of 16 is on amax
+        Process 10 of 16 is on amax
+        Process 12 of 16 is on amax
+        Process 14 of 16 is on amax
+        Process 0 of 16 is on amax
+        Process 1 of 16 is on amax
+        Process 2 of 16 is on amax
+        Process 3 of 16 is on amax
+        Process 4 of 16 is on amax
+        Process 11 of 16 is on amax
+        Process 13 of 16 is on amax
+        Process 15 of 16 is on amax
+        Process 6 of 16 is on amax
+        pi is approximately 3.1415926544231274, Error is 0.0000000008333343
+        wall clock time = 0.004565
+        @amax:~/HPL</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.85396em;vertical-align:-0.19444em;"></span><span class="mord mathnormal">m</span><span class="mord mathnormal">p</span><span class="mord mathnormal">i</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord mathnormal">u</span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">n</span><span class="mord mathnormal">p</span><span class="mord">1</span><span class="mord">6</span><span class="mord">.</span><span class="mord">/</span><span class="mord mathnormal">c</span><span class="mord mathnormal">p</span><span class="mord mathnormal">i</span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord mathnormal">o</span><span class="mord mathnormal">c</span><span class="mord mathnormal">e</span><span class="mord mathnormal">s</span><span class="mord mathnormal">s</span><span class="mord">5</span><span class="mord mathnormal">o</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord">1</span><span class="mord">6</span><span class="mord mathnormal">i</span><span class="mord mathnormal">s</span><span class="mord mathnormal">o</span><span class="mord mathnormal">n</span><span class="mord mathnormal">a</span><span class="mord mathnormal">m</span><span class="mord mathnormal">a</span><span class="mord mathnormal">x</span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord mathnormal">o</span><span class="mord mathnormal">c</span><span class="mord mathnormal">e</span><span class="mord mathnormal">s</span><span class="mord mathnormal">s</span><span class="mord">7</span><span class="mord mathnormal">o</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord">1</span><span class="mord">6</span><span class="mord mathnormal">i</span><span class="mord mathnormal">s</span><span class="mord mathnormal">o</span><span class="mord mathnormal">n</span><span class="mord mathnormal">a</span><span class="mord mathnormal">m</span><span class="mord mathnormal">a</span><span class="mord mathnormal">x</span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord mathnormal">o</span><span class="mord mathnormal">c</span><span class="mord mathnormal">e</span><span class="mord mathnormal">s</span><span class="mord mathnormal">s</span><span class="mord">8</span><span class="mord mathnormal">o</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord">1</span><span class="mord">6</span><span class="mord mathnormal">i</span><span class="mord mathnormal">s</span><span class="mord mathnormal">o</span><span class="mord mathnormal">n</span><span class="mord mathnormal">a</span><span class="mord mathnormal">m</span><span class="mord mathnormal">a</span><span class="mord mathnormal">x</span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord mathnormal">o</span><span class="mord mathnormal">c</span><span class="mord mathnormal">e</span><span class="mord mathnormal">s</span><span class="mord mathnormal">s</span><span class="mord">9</span><span class="mord mathnormal">o</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord">1</span><span class="mord">6</span><span class="mord mathnormal">i</span><span class="mord mathnormal">s</span><span class="mord mathnormal">o</span><span class="mord mathnormal">n</span><span class="mord mathnormal">a</span><span class="mord mathnormal">m</span><span class="mord mathnormal">a</span><span class="mord mathnormal">x</span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord mathnormal">o</span><span class="mord mathnormal">c</span><span class="mord mathnormal">e</span><span class="mord mathnormal">s</span><span class="mord mathnormal">s</span><span class="mord">1</span><span class="mord">0</span><span class="mord mathnormal">o</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord">1</span><span class="mord">6</span><span class="mord mathnormal">i</span><span class="mord mathnormal">s</span><span class="mord mathnormal">o</span><span class="mord mathnormal">n</span><span class="mord mathnormal">a</span><span class="mord mathnormal">m</span><span class="mord mathnormal">a</span><span class="mord mathnormal">x</span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord mathnormal">o</span><span class="mord mathnormal">c</span><span class="mord mathnormal">e</span><span class="mord mathnormal">s</span><span class="mord mathnormal">s</span><span class="mord">1</span><span class="mord">2</span><span class="mord mathnormal">o</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord">1</span><span class="mord">6</span><span class="mord mathnormal">i</span><span class="mord mathnormal">s</span><span class="mord mathnormal">o</span><span class="mord mathnormal">n</span><span class="mord mathnormal">a</span><span class="mord mathnormal">m</span><span class="mord mathnormal">a</span><span class="mord mathnormal">x</span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord mathnormal">o</span><span class="mord mathnormal">c</span><span class="mord mathnormal">e</span><span class="mord mathnormal">s</span><span class="mord mathnormal">s</span><span class="mord">1</span><span class="mord">4</span><span class="mord mathnormal">o</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord">1</span><span class="mord">6</span><span class="mord mathnormal">i</span><span class="mord mathnormal">s</span><span class="mord mathnormal">o</span><span class="mord mathnormal">n</span><span class="mord mathnormal">a</span><span class="mord mathnormal">m</span><span class="mord mathnormal">a</span><span class="mord mathnormal">x</span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord mathnormal">o</span><span class="mord mathnormal">c</span><span class="mord mathnormal">e</span><span class="mord mathnormal">s</span><span class="mord mathnormal">s</span><span class="mord">0</span><span class="mord mathnormal">o</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord">1</span><span class="mord">6</span><span class="mord mathnormal">i</span><span class="mord mathnormal">s</span><span class="mord mathnormal">o</span><span class="mord mathnormal">n</span><span class="mord mathnormal">a</span><span class="mord mathnormal">m</span><span class="mord mathnormal">a</span><span class="mord mathnormal">x</span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord mathnormal">o</span><span class="mord mathnormal">c</span><span class="mord mathnormal">e</span><span class="mord mathnormal">s</span><span class="mord mathnormal">s</span><span class="mord">1</span><span class="mord mathnormal">o</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord">1</span><span class="mord">6</span><span class="mord mathnormal">i</span><span class="mord mathnormal">s</span><span class="mord mathnormal">o</span><span class="mord mathnormal">n</span><span class="mord mathnormal">a</span><span class="mord mathnormal">m</span><span class="mord mathnormal">a</span><span class="mord mathnormal">x</span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord mathnormal">o</span><span class="mord mathnormal">c</span><span class="mord mathnormal">e</span><span class="mord mathnormal">s</span><span class="mord mathnormal">s</span><span class="mord">2</span><span class="mord mathnormal">o</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord">1</span><span class="mord">6</span><span class="mord mathnormal">i</span><span class="mord mathnormal">s</span><span class="mord mathnormal">o</span><span class="mord mathnormal">n</span><span class="mord mathnormal">a</span><span class="mord mathnormal">m</span><span class="mord mathnormal">a</span><span class="mord mathnormal">x</span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord mathnormal">o</span><span class="mord mathnormal">c</span><span class="mord mathnormal">e</span><span class="mord mathnormal">s</span><span class="mord mathnormal">s</span><span class="mord">3</span><span class="mord mathnormal">o</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord">1</span><span class="mord">6</span><span class="mord mathnormal">i</span><span class="mord mathnormal">s</span><span class="mord mathnormal">o</span><span class="mord mathnormal">n</span><span class="mord mathnormal">a</span><span class="mord mathnormal">m</span><span class="mord mathnormal">a</span><span class="mord mathnormal">x</span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord mathnormal">o</span><span class="mord mathnormal">c</span><span class="mord mathnormal">e</span><span class="mord mathnormal">s</span><span class="mord mathnormal">s</span><span class="mord">4</span><span class="mord mathnormal">o</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord">1</span><span class="mord">6</span><span class="mord mathnormal">i</span><span class="mord mathnormal">s</span><span class="mord mathnormal">o</span><span class="mord mathnormal">n</span><span class="mord mathnormal">a</span><span class="mord mathnormal">m</span><span class="mord mathnormal">a</span><span class="mord mathnormal">x</span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord mathnormal">o</span><span class="mord mathnormal">c</span><span class="mord mathnormal">e</span><span class="mord mathnormal">s</span><span class="mord mathnormal">s</span><span class="mord">1</span><span class="mord">1</span><span class="mord mathnormal">o</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord">1</span><span class="mord">6</span><span class="mord mathnormal">i</span><span class="mord mathnormal">s</span><span class="mord mathnormal">o</span><span class="mord mathnormal">n</span><span class="mord mathnormal">a</span><span class="mord mathnormal">m</span><span class="mord mathnormal">a</span><span class="mord mathnormal">x</span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord mathnormal">o</span><span class="mord mathnormal">c</span><span class="mord mathnormal">e</span><span class="mord mathnormal">s</span><span class="mord mathnormal">s</span><span class="mord">1</span><span class="mord">3</span><span class="mord mathnormal">o</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord">1</span><span class="mord">6</span><span class="mord mathnormal">i</span><span class="mord mathnormal">s</span><span class="mord mathnormal">o</span><span class="mord mathnormal">n</span><span class="mord mathnormal">a</span><span class="mord mathnormal">m</span><span class="mord mathnormal">a</span><span class="mord mathnormal">x</span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord mathnormal">o</span><span class="mord mathnormal">c</span><span class="mord mathnormal">e</span><span class="mord mathnormal">s</span><span class="mord mathnormal">s</span><span class="mord">1</span><span class="mord">5</span><span class="mord mathnormal">o</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord">1</span><span class="mord">6</span><span class="mord mathnormal">i</span><span class="mord mathnormal">s</span><span class="mord mathnormal">o</span><span class="mord mathnormal">n</span><span class="mord mathnormal">a</span><span class="mord mathnormal">m</span><span class="mord mathnormal">a</span><span class="mord mathnormal">x</span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord mathnormal">o</span><span class="mord mathnormal">c</span><span class="mord mathnormal">e</span><span class="mord mathnormal">s</span><span class="mord mathnormal">s</span><span class="mord">6</span><span class="mord mathnormal">o</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord">1</span><span class="mord">6</span><span class="mord mathnormal">i</span><span class="mord mathnormal">s</span><span class="mord mathnormal">o</span><span class="mord mathnormal">n</span><span class="mord mathnormal">a</span><span class="mord mathnormal">m</span><span class="mord mathnormal">a</span><span class="mord mathnormal">x</span><span class="mord mathnormal">p</span><span class="mord mathnormal">i</span><span class="mord mathnormal">i</span><span class="mord mathnormal">s</span><span class="mord mathnormal">a</span><span class="mord mathnormal">p</span><span class="mord mathnormal">p</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord mathnormal">o</span><span class="mord mathnormal">x</span><span class="mord mathnormal">i</span><span class="mord mathnormal">m</span><span class="mord mathnormal">a</span><span class="mord mathnormal">t</span><span class="mord mathnormal">e</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mord">3</span><span class="mord">.</span><span class="mord">1</span><span class="mord">4</span><span class="mord">1</span><span class="mord">5</span><span class="mord">9</span><span class="mord">2</span><span class="mord">6</span><span class="mord">5</span><span class="mord">4</span><span class="mord">4</span><span class="mord">2</span><span class="mord">3</span><span class="mord">1</span><span class="mord">2</span><span class="mord">7</span><span class="mord">4</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">E</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord mathnormal">o</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord mathnormal">i</span><span class="mord mathnormal">s</span><span class="mord">0</span><span class="mord">.</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord">8</span><span class="mord">3</span><span class="mord">3</span><span class="mord">3</span><span class="mord">3</span><span class="mord">4</span><span class="mord">3</span><span class="mord mathnormal" style="margin-right:0.02691em;">w</span><span class="mord mathnormal">a</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">c</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">o</span><span class="mord mathnormal">c</span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mord mathnormal">t</span><span class="mord mathnormal">i</span><span class="mord mathnormal">m</span><span class="mord mathnormal">e</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">0</span><span class="mord">.</span><span class="mord">0</span><span class="mord">0</span><span class="mord">4</span><span class="mord">5</span><span class="mord">6</span><span class="mord">5</span><span class="mord">@</span><span class="mord mathnormal">a</span><span class="mord mathnormal">m</span><span class="mord mathnormal">a</span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">:</span><span class="mspace nobreak"> </span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord">/</span><span class="mord mathnormal" style="margin-right:0.08125em;">H</span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mord mathnormal">L</span></span></span></span> mpirun -np 16 -nolocal ./cpi<br>
+--------------------------------------------------------------------------<br>
+All nodes which are allocated for this job are already filled.<br>
+--------------------------------------------------------------------------</p>
+<ol start="8">
+<li>
+<p>查看当前进程<br>
+ <code>top</code> <br>
+top - 15:32:47 up 148 days,  5:36,  6 users,  load average: 107.26, 100.88, 63.62<br>
+Tasks: 933 total,  17 running, 916 sleeping,   0 stopped,   0 zombie<br>
+%Cpu(s): 81.9 us, 13.4 sy,  0.0 ni,  4.8 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st<br>
+KiB Mem:  26404217+total, 17041590+used, 93626272 free,  3731332 buffers<br>
+KiB Swap:  7999484 total,  1274312 used,  6725172 free. 88929968 cached Mem</p>
+<pre><code>   PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND                                               P
+  5173 riolu     20   0 5448340 2.788g   8492 R 429.5  1.1  24:00.06 xhpl                                                 30 1
+  5033 riolu     20   0 5450740 2.788g   8404 R 428.5  1.1  23:58.68 xhpl                                                 13 1
+</code></pre>
+</li>
+</ol>
+<p><code>1</code> ： 查看各逻辑 cpu 情况。<br>
+ <code>F</code> - <code>方向键选择P=Last Used Cpu</code> - <code>空格</code> ：显示进程在哪个 CPU 上运行。<br>
+ <code>q</code> ： 退出。<br>
+参考：<span class="exturl" data-url="aHR0cHM6Ly93d3cuY25ibG9ncy5jb20vbWVuZ2NodW5jaGVuL3AvOTY2OTcwNC5odG1s">Linux 查看 CPU 和内存使用情况</span></p>
+
+      <div class="tags">
+          <a href="/tags/Linux/" rel="tag"><i class="ic i-tag"></i> Linux</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2022-04-10 20:45:19" itemprop="dateModified" datetime="2022-04-10T20:45:19+08:00">2022-04-10</time>
+  </span>
+  <span id="计算机科学/hpc1205/" class="item leancloud_visitors" data-flag-title="高性能计算#03 HPCG搭建" title="阅读次数">
+      <span class="icon">
+        <i class="ic i-eye"></i>
+      </span>
+      <span class="text">阅读次数</span>
+      <span class="leancloud-visitors-count"></span>
+      <span class="text">次</span>
+  </span>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>Ning Chenhui <i class="ic i-at"><em>@</em></i>一切都会好起来的哟
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="https://ningchenhui.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/hpc1205/" title="高性能计算#03 HPCG搭建">https://ningchenhui.github.io/计算机科学/hpc1205/</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/hpc1204/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva4.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giclwrdwyaj20zk0m8are.jpg" title="高性能计算#02 HPL再次搭建">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> 学习</span>
+  <h3>高性能计算#02 HPL再次搭建</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+      
+
+  <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/linux1206/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva4.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipey84bjtj20zk0m8hdt.jpg" title="Linux学习 笔记#03 指令集">
+  <span class="type">下一篇</span>
+  <span class="category"><i class="ic i-flag"></i> 学习</span>
+  <h3>Linux学习 笔记#03 指令集</h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA"><span class="toc-number">1.</span> <span class="toc-text"> 环境搭建</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hpcg%E5%AE%89%E8%A3%85%E4%B8%8E%E7%BC%96%E8%AF%91"><span class="toc-number">2.</span> <span class="toc-text"> HPCG 安装与编译</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F%E4%BF%A1%E6%81%AF%E8%8E%B7%E5%8F%96"><span class="toc-number">3.</span> <span class="toc-text"> 系统信息获取</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#cpu"><span class="toc-number">3.1.</span> <span class="toc-text"> CPU</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#linux"><span class="toc-number">3.2.</span> <span class="toc-text"> Linux</span></a></li></ol></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+        <ul>
+          <li><a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/linux1111/" rel="bookmark" title="Linux学习 笔记#01">Linux学习 笔记#01</a></li><li><a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/linux1112/" rel="bookmark" title="Linux学习 笔记#02">Linux学习 笔记#02</a></li><li><a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/hpc1202/" rel="bookmark" title="高性能计算#01 HPL搭建">高性能计算#01 HPL搭建</a></li><li><a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/hpc1204/" rel="bookmark" title="高性能计算#02 HPL再次搭建">高性能计算#02 HPL再次搭建</a></li><li class="active"><a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/hpc1205/" rel="bookmark" title="高性能计算#03 HPCG搭建">高性能计算#03 HPCG搭建</a></li><li><a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/linux1206/" rel="bookmark" title="Linux学习 笔记#03 指令集">Linux学习 笔记#03 指令集</a></li><li><a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/hpc1206/" rel="bookmark" title="高性能计算#04 HPL测试GPU">高性能计算#04 HPL测试GPU</a></li><li><a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/linux1224/" rel="bookmark" title="Linux学习 笔记#04 文件权限与目录配置">Linux学习 笔记#04 文件权限与目录配置</a></li><li><a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/sunway01/" rel="bookmark" title="超算远程访问">超算远程访问</a></li><li><a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/model01/" rel="bookmark" title="初识NetCDF">初识NetCDF</a></li><li><a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/model02/" rel="bookmark" title="安装NCL">安装NCL</a></li><li><a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/linuxA0322/" rel="bookmark" title="Linux学习 笔记#05 文件与目录管理">Linux学习 笔记#05 文件与目录管理</a></li><li><a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/sunway02/" rel="bookmark" title="超算 - 使用指南">超算 - 使用指南</a></li><li><a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/linuxA0525/" rel="bookmark" title="Linux学习 笔记#06 磁盘与文件系统管理">Linux学习 笔记#06 磁盘与文件系统管理</a></li><li><a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/linuxA0703/" rel="bookmark" title="Linux学习 笔记#07 压缩，备份与Vim">Linux学习 笔记#07 压缩，备份与Vim</a></li><li><a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/linuxA0705/" rel="bookmark" title="Linux学习 笔记#08 bash">Linux学习 笔记#08 bash</a></li><li><a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/linuxA0708/" rel="bookmark" title="Linux学习 笔记#09 正规表示法与文件格式化处理">Linux学习 笔记#09 正规表示法与文件格式化处理</a></li><li><a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/linuxA0713/" rel="bookmark" title="Linux学习 笔记#10 Shell Scripts">Linux学习 笔记#10 Shell Scripts</a></li><li><a href="/omare220205/" rel="bookmark" title="オマレ入门（一）">オマレ入门（一）</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="Ning Chenhui"
+      data-src="/images/avatar.jpg">
+  <p class="name" itemprop="name">Ning Chenhui</p>
+  <div class="description" itemprop="description">正在建设中...</div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">35</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/categories/">
+        <span class="count">5</span>
+        <span class="name">分类</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">4</span>
+        <span class="name">标签</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL05pbmdDaGVuaHVp" title="https:&#x2F;&#x2F;github.com&#x2F;NingChenhui"><i class="ic i-github"></i></span>
+      <span class="exturl item twitter" data-url="aHR0cHM6Ly90d2l0dGVyLmNvbS9Ib3NpenVraV9USFU=" title="https:&#x2F;&#x2F;twitter.com&#x2F;Hosizuki_THU"><i class="ic i-twitter"></i></span>
+      <span class="exturl item email" data-url="bWFpbHRvOnNpbmtpaG9zaXp1a2lAZ21haWwuY29t" title="mailto:sinkihosizuki@gmail.com"><i class="ic i-envelope"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/about/" rel="section"><i class="ic i-user"></i>关于</a>
+  </li>
+
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/archives/" rel="section"><i class="ic i-list-alt"></i>归档</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+  </ul>
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+        <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/hpc1204/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+        <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/linux1206/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E5%AD%A6%E4%B9%A0/" title="分类于 学习">学习</a>
+</div>
+
+    <span><a href="/omare220205/" title="オマレ入门（一）">オマレ入门（一）</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E5%AD%A6%E4%B9%A0/" title="分类于 学习">学习</a>
+</div>
+
+    <span><a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/linuxA0708/" title="Linux学习 笔记#09 正规表示法与文件格式化处理">Linux学习 笔记#09 正规表示法与文件格式化处理</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/" title="分类于 地球科学">地球科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/%E5%9C%B0%E7%90%83%E7%B3%BB%E7%BB%9F%E7%A7%91%E5%AD%A6/" title="分类于 地球系统科学">地球系统科学</a>
+</div>
+
+    <span><a href="/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/%E5%9C%B0%E7%90%83%E7%B3%BB%E7%BB%9F%E7%A7%91%E5%AD%A6/es1029/" title="地球科学导论 笔记#03">地球科学导论 笔记#03</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E5%AD%A6%E4%B9%A0/" title="分类于 学习">学习</a>
+</div>
+
+    <span><a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/model02/" title="安装NCL">安装NCL</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/" title="分类于 地球科学">地球科学</a>
+</div>
+
+    <span><a href="/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/esA0324/" title="一些新的和遗忘的知识点">一些新的和遗忘的知识点</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E5%AD%A6%E4%B9%A0/" title="分类于 学习">学习</a>
+</div>
+
+    <span><a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/linuxA0703/" title="Linux学习 笔记#07 压缩，备份与Vim">Linux学习 笔记#07 压缩，备份与Vim</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E5%AD%A6%E4%B9%A0/" title="分类于 学习">学习</a>
+</div>
+
+    <span><a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/linux1111/" title="Linux学习 笔记#01">Linux学习 笔记#01</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E5%AD%A6%E4%B9%A0/" title="分类于 学习">学习</a>
+</div>
+
+    <span><a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/hpc1206/" title="高性能计算#04 HPL测试GPU">高性能计算#04 HPL测试GPU</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/" title="分类于 地球科学">地球科学</a>
+</div>
+
+    <span><a href="/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/esA0412/" title="北极 SIE&#x2F;SIV 计算">北极 SIE/SIV 计算</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E5%AD%A6%E4%B9%A0/" title="分类于 学习">学习</a>
+</div>
+
+    <span><a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/linuxA0705/" title="Linux学习 笔记#08 bash">Linux学习 笔记#08 bash</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2020 – 
+    <span itemprop="copyrightYear">2022</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Ning Chenhui <!--change by hosizuki@ Ning Chenhui--></span>
+  </div>
+  <div class="count">
+    <span class="post-meta-item-icon">
+      <i class="ic i-chart-area"></i>
+    </span>
+    <span title="站点总字数">83k 字</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="ic i-eye"></i>
+    </span>
+    <!-- 不蒜子计数 -->
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span id="busuanzi_container_site_uv" > <span id="busuanzi_value_site_uv"></span>  </span>
+    <!-- 不蒜子计数 -->
+
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="ic i-coffee"></i>
+    </span>
+    <span title="站点阅读时长">1:16</span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '计算机科学/hpc1205/',
+    favicon: {
+      show: "（●´3｀●）やれやれだぜ",
+      hide: "(´Д｀)大変だ！"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,fancybox: true,
+    copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>

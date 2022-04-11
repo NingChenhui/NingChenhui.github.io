@@ -9,9 +9,9 @@
     <category term="Linux" />
     <category term="地球科学" />
     <entry>
-        <id>https://ningchenhui.github.io/ComputerScience/linuxA0713/</id>
+        <id>https://ningchenhui.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/linuxA0713/</id>
         <title>Linux学习 笔记#10 Shell Scripts</title>
-        <link rel="alternate" href="https://ningchenhui.github.io/ComputerScience/linuxA0713/"/>
+        <link rel="alternate" href="https://ningchenhui.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/linuxA0713/"/>
         <content type="html">&lt;p&gt;使用脚本！ &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;h2 id=&#34;ch12-学习-shell-scripts&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ch12-学习-shell-scripts&#34;&gt;#&lt;/a&gt; Ch12 学习 Shell Scripts&lt;/h2&gt;
 &lt;p&gt;tips:&lt;/p&gt;
@@ -253,9 +253,9 @@ done
         <updated>2021-07-13T07:20:36.000Z</updated>
     </entry>
     <entry>
-        <id>https://ningchenhui.github.io/ComputerScience/linuxA0708/</id>
+        <id>https://ningchenhui.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/linuxA0708/</id>
         <title>Linux学习 笔记#09 正规表示法与文件格式化处理</title>
-        <link rel="alternate" href="https://ningchenhui.github.io/ComputerScience/linuxA0708/"/>
+        <link rel="alternate" href="https://ningchenhui.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/linuxA0708/"/>
         <content type="html">&lt;p&gt;像乱码一样的正则表达式！ &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;h2 id=&#34;ch11-正规表示法与文件格式化处理&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ch11-正规表示法与文件格式化处理&#34;&gt;#&lt;/a&gt; Ch11 正规表示法与文件格式化处理&lt;/h2&gt;
 &lt;h3 id=&#34;基础正规表示法&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#基础正规表示法&#34;&gt;#&lt;/a&gt; 基础正规表示法&lt;/h3&gt;
@@ -528,9 +528,9 @@ to-file   ：一个档名，作为目的比对文件的档名；&lt;br&gt;
         <updated>2021-07-08T07:20:36.000Z</updated>
     </entry>
     <entry>
-        <id>https://ningchenhui.github.io/ComputerScience/linuxA0705/</id>
+        <id>https://ningchenhui.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/linuxA0705/</id>
         <title>Linux学习 笔记#08 bash</title>
-        <link rel="alternate" href="https://ningchenhui.github.io/ComputerScience/linuxA0705/"/>
+        <link rel="alternate" href="https://ningchenhui.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/linuxA0705/"/>
         <content type="html">&lt;p&gt;这章是重点，圈起来 - - &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;h2 id=&#34;ch10-认识与学习-bash&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ch10-认识与学习-bash&#34;&gt;#&lt;/a&gt; Ch10 认识与学习 BASH&lt;/h2&gt;
 &lt;h3 id=&#34;bash-shell-的功能&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#bash-shell-的功能&#34;&gt;#&lt;/a&gt; Bash shell 的功能&lt;/h3&gt;
@@ -825,9 +825,9 @@ PREFIX ：代表前导符的意思，可作为分区文件的前导文字。&lt;
         <updated>2021-07-05T13:51:36.000Z</updated>
     </entry>
     <entry>
-        <id>https://ningchenhui.github.io/ComputerScience/linuxA0703/</id>
+        <id>https://ningchenhui.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/linuxA0703/</id>
         <title>Linux学习 笔记#07 压缩，备份与Vim</title>
-        <link rel="alternate" href="https://ningchenhui.github.io/ComputerScience/linuxA0703/"/>
+        <link rel="alternate" href="https://ningchenhui.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/linuxA0703/"/>
         <content type="html">&lt;p&gt;在家逐渐颓废_〆(´Д｀) &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;h2 id=&#34;ch8-文件与文件系统的压缩打包与备份&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ch8-文件与文件系统的压缩打包与备份&#34;&gt;#&lt;/a&gt; Ch8 文件与文件系统的压缩，打包与备份&lt;/h2&gt;
 &lt;h3 id=&#34;linux-系统常见的压缩指令&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#linux-系统常见的压缩指令&#34;&gt;#&lt;/a&gt; Linux 系统常见的压缩指令&lt;/h3&gt;
@@ -1137,9 +1137,9 @@ tar -cvf - /etc | tar -xvf xvf -
         <updated>2021-07-03T06:22:36.000Z</updated>
     </entry>
     <entry>
-        <id>https://ningchenhui.github.io/ComputerScience/linuxA0525/</id>
+        <id>https://ningchenhui.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/linuxA0525/</id>
         <title>Linux学习 笔记#06 磁盘与文件系统管理</title>
-        <link rel="alternate" href="https://ningchenhui.github.io/ComputerScience/linuxA0525/"/>
+        <link rel="alternate" href="https://ningchenhui.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/linuxA0525/"/>
         <content type="html">&lt;p&gt;摸了好久🐟 &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;h2 id=&#34;ch7-linux-磁盘与文件系统管理&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ch7-linux-磁盘与文件系统管理&#34;&gt;#&lt;/a&gt; Ch7 Linux 磁盘与文件系统管理&lt;/h2&gt;
 &lt;p&gt;该篇主要讲 Linux 的文件系统 ext，然而用的 WSL 貌似不是 ext 系统，不能用 &lt;code&gt;blkid&lt;/code&gt;  和 &lt;code&gt;dumpe2fs&lt;/code&gt;  查到相关信息。&lt;br&gt;
@@ -1190,9 +1190,9 @@ rootfs         wslfs 104857596 75166740  29690856  72% /
         <updated>2021-05-25T06:17:42.000Z</updated>
     </entry>
     <entry>
-        <id>https://ningchenhui.github.io/ComputerScience/sunway02/</id>
+        <id>https://ningchenhui.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/sunway02/</id>
         <title>超算 - 使用指南</title>
-        <link rel="alternate" href="https://ningchenhui.github.io/ComputerScience/sunway02/"/>
+        <link rel="alternate" href="https://ningchenhui.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/sunway02/"/>
         <content type="html">&lt;h2 id=&#34;参考资料&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#参考资料&#34;&gt;#&lt;/a&gt; 参考资料&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3d3dy5uc2Njd3guY246MTMzNy91cGxvYWRzL2YwZjRiYWY0YjNiYjRiYmQ4OTI3MDBlNDIxZjc2Njc5LnBkZg==&#34;&gt;神威・太湖之光 并行程序设计与优化&lt;/span&gt;&lt;/li&gt;
@@ -1224,9 +1224,9 @@ rootfs         wslfs 104857596 75166740  29690856  72% /
         <updated>2021-03-29T08:13:44.000Z</updated>
     </entry>
     <entry>
-        <id>https://ningchenhui.github.io/ComputerScience/linuxA0322/</id>
+        <id>https://ningchenhui.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/linuxA0322/</id>
         <title>Linux学习 笔记#05 文件与目录管理</title>
-        <link rel="alternate" href="https://ningchenhui.github.io/ComputerScience/linuxA0322/"/>
+        <link rel="alternate" href="https://ningchenhui.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/linuxA0322/"/>
         <content type="html">&lt;p&gt;继续学习。 &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;br&gt;
 装了 VScode 和 WSL Ubuntu 18.04 LTS 继续学习 Linux ！之前的虚拟机就不用了。&lt;/p&gt;
 &lt;h3 id=&#34;插曲win-10-wsl-换源&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#插曲win-10-wsl-换源&#34;&gt;#&lt;/a&gt; 插曲：Win 10 WSL 换源&lt;/h3&gt;
@@ -1353,9 +1353,9 @@ deb-src &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL21pcnJvcnMuYWxpeX
         <updated>2021-03-22T07:26:07.000Z</updated>
     </entry>
     <entry>
-        <id>https://ningchenhui.github.io/ComputerScience/sunway01/</id>
+        <id>https://ningchenhui.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/sunway01/</id>
         <title>超算远程访问</title>
-        <link rel="alternate" href="https://ningchenhui.github.io/ComputerScience/sunway01/"/>
+        <link rel="alternate" href="https://ningchenhui.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/sunway01/"/>
         <content type="html">&lt;p&gt;#登录账号成功&lt;br&gt;
  #正在建立远程安全连接…&lt;br&gt;
 # 连接成功&lt;br&gt;
@@ -1390,9 +1390,9 @@ deb-src &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL21pcnJvcnMuYWxpeX
         <updated>2021-03-16T03:01:16.000Z</updated>
     </entry>
     <entry>
-        <id>https://ningchenhui.github.io/ComputerScience/linux1224/</id>
+        <id>https://ningchenhui.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/linux1224/</id>
         <title>Linux学习 笔记#04 文件权限与目录配置</title>
-        <link rel="alternate" href="https://ningchenhui.github.io/ComputerScience/linux1224/"/>
+        <link rel="alternate" href="https://ningchenhui.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/linux1224/"/>
         <content type="html">&lt;p&gt;&lt;code&gt;chmod 000 filename&lt;/code&gt;  &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;h2 id=&#34;ch5-linux的文件权限与目录配置&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ch5-linux的文件权限与目录配置&#34;&gt;#&lt;/a&gt; Ch5 Linux 的文件权限与目录配置&lt;/h2&gt;
 &lt;h3 id=&#34;使用者与群组&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#使用者与群组&#34;&gt;#&lt;/a&gt; 使用者与群组&lt;/h3&gt;
@@ -1480,9 +1480,9 @@ deb-src &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL21pcnJvcnMuYWxpeX
         <updated>2020-12-24T07:07:18.000Z</updated>
     </entry>
     <entry>
-        <id>https://ningchenhui.github.io/ComputerScience/hpc1206/</id>
+        <id>https://ningchenhui.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/hpc1206/</id>
         <title>高性能计算#04 HPL测试GPU</title>
-        <link rel="alternate" href="https://ningchenhui.github.io/ComputerScience/hpc1206/"/>
+        <link rel="alternate" href="https://ningchenhui.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/hpc1206/"/>
         <content type="html">&lt;p&gt;- HPL 测试 MKL+MPICH - &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;h2 id=&#34;环境搭建&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#环境搭建&#34;&gt;#&lt;/a&gt; 环境搭建&lt;/h2&gt;
 &lt;ol&gt;
@@ -1723,9 +1723,9 @@ GPU 5: Tesla P100-PCIE-16GB (UUID: GPU-16423caf-0037-6742-2977-ba03f4937b9b)&lt;
         <updated>2020-12-06T08:44:18.000Z</updated>
     </entry>
     <entry>
-        <id>https://ningchenhui.github.io/ComputerScience/linux1206/</id>
+        <id>https://ningchenhui.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/linux1206/</id>
         <title>Linux学习 笔记#03 指令集</title>
-        <link rel="alternate" href="https://ningchenhui.github.io/ComputerScience/linux1206/"/>
+        <link rel="alternate" href="https://ningchenhui.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/linux1206/"/>
         <content type="html">&lt;p&gt;单开一篇整理常用指令。 &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;h2 id=&#34;查找&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#查找&#34;&gt;#&lt;/a&gt; 查找&lt;/h2&gt;
 &lt;p&gt;&lt;code&gt;grep -rl &amp;quot;string&amp;quot; /path&lt;/code&gt; &lt;br&gt;
@@ -1852,9 +1852,9 @@ node1 slots=2 max_slots=20
         <updated>2020-12-06T06:27:18.000Z</updated>
     </entry>
     <entry>
-        <id>https://ningchenhui.github.io/ComputerScience/hpc1205/</id>
+        <id>https://ningchenhui.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/hpc1205/</id>
         <title>高性能计算#03 HPCG搭建</title>
-        <link rel="alternate" href="https://ningchenhui.github.io/ComputerScience/hpc1205/"/>
+        <link rel="alternate" href="https://ningchenhui.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/hpc1205/"/>
         <content type="html">&lt;p&gt;- HPCG 测试 OPENBLAS+OPENMPI - &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;h2 id=&#34;环境搭建&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#环境搭建&#34;&gt;#&lt;/a&gt; 环境搭建&lt;/h2&gt;
 &lt;p&gt;前几篇中已经配置好了&lt;a href=&#34;/2020/12/02/hpc1202/#%E5%AE%89%E8%A3%85MPICH&#34;&gt; c++ 编译器&lt;/a&gt;，以及&lt;a href=&#34;/2020/12/04/hpc1204/#%E5%AE%89%E8%A3%85openMPI&#34;&gt; openmpi 并行环境&lt;/a&gt;。&lt;/p&gt;
@@ -2055,9 +2055,9 @@ KiB Swap:  7999484 total,  1274312 used,  6725172 free. 88929968 cached Mem&lt;/
         <updated>2020-12-05T08:13:18.000Z</updated>
     </entry>
     <entry>
-        <id>https://ningchenhui.github.io/ComputerScience/hpc1204/</id>
+        <id>https://ningchenhui.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/hpc1204/</id>
         <title>高性能计算#02 HPL再次搭建</title>
-        <link rel="alternate" href="https://ningchenhui.github.io/ComputerScience/hpc1204/"/>
+        <link rel="alternate" href="https://ningchenhui.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/hpc1204/"/>
         <content type="html">&lt;p&gt;- Linpack 测试 OPENBLAS+OPENMPI+HPL -&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;h2 id=&#34;环境搭建&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#环境搭建&#34;&gt;#&lt;/a&gt; 环境搭建&lt;/h2&gt;
 &lt;h3 id=&#34;安装openblas&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#安装openblas&#34;&gt;#&lt;/a&gt; 安装 OpenBLAS&lt;/h3&gt;
@@ -2284,9 +2284,9 @@ End of Tests.
         <updated>2020-12-04T10:57:06.000Z</updated>
     </entry>
     <entry>
-        <id>https://ningchenhui.github.io/ComputerScience/hpc1202/</id>
+        <id>https://ningchenhui.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/hpc1202/</id>
         <title>高性能计算#01 HPL搭建</title>
-        <link rel="alternate" href="https://ningchenhui.github.io/ComputerScience/hpc1202/"/>
+        <link rel="alternate" href="https://ningchenhui.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/hpc1202/"/>
         <content type="html">&lt;p&gt;- Linpack 测试 GOTOBLAS+MPICH+HPL -&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;h2 id=&#34;环境搭建&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#环境搭建&#34;&gt;#&lt;/a&gt; 环境搭建&lt;/h2&gt;
 &lt;h3 id=&#34;安装goto库&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#安装goto库&#34;&gt;#&lt;/a&gt; 安装 GOTO 库&lt;/h3&gt;
@@ -2409,9 +2409,9 @@ LINKFLAGS = $(CCFLAGS)&lt;br&gt;
         <updated>2020-12-02T08:50:40.000Z</updated>
     </entry>
     <entry>
-        <id>https://ningchenhui.github.io/ComputerScience/linux1112/</id>
+        <id>https://ningchenhui.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/linux1112/</id>
         <title>Linux学习 笔记#02</title>
-        <link rel="alternate" href="https://ningchenhui.github.io/ComputerScience/linux1112/"/>
+        <link rel="alternate" href="https://ningchenhui.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/linux1112/"/>
         <content type="html">&lt;p&gt;- 登入系统 - &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;接下来就用 Ubuntu14 进行实验啦，先设置一下桌面配置，建个普通用户，密码 wodemima！&lt;/p&gt;
 &lt;p&gt;关闭桌面动画：&lt;/p&gt;
@@ -2616,9 +2616,9 @@ $ bc                    //计算器 scale=num设置小数点位数，quit退出
         <updated>2020-11-12T12:31:58.000Z</updated>
     </entry>
     <entry>
-        <id>https://ningchenhui.github.io/ComputerScience/linux1111/</id>
+        <id>https://ningchenhui.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/linux1111/</id>
         <title>Linux学习 笔记#01</title>
-        <link rel="alternate" href="https://ningchenhui.github.io/ComputerScience/linux1111/"/>
+        <link rel="alternate" href="https://ningchenhui.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/linux1111/"/>
         <content type="html">&lt;p&gt;- 反复入门 Linux- &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;高中打比赛时简单用过 Ubuntu 系统，到现在都忘得一干二净，于是再次入门一遍。首先当然是要安装 Linux Ubuntu。&lt;/p&gt;
 &lt;h2 id=&#34;安装&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#安装&#34;&gt;#&lt;/a&gt; 安装&lt;/h2&gt;

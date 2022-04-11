@@ -1,0 +1,660 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="一切都会好起来的哟" href="https://ningchenhui.github.io/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="一切都会好起来的哟" href="https://ningchenhui.github.io/atom.xml" />
+<link rel="alternate" type="application/json" title="一切都会好起来的哟" href="https://ningchenhui.github.io/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+  <meta name="keywords" content="地球科学" />
+
+
+<link rel="canonical" href="https://ningchenhui.github.io/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/%E7%89%A9%E7%90%86%E6%B5%B7%E6%B4%8B%E5%AD%A6/oceanA0703/">
+
+
+
+  <title>
+物理海洋学基础 笔记#04 - 物理海洋学 - 地球科学 |
+Ning Chenhui = 一切都会好起来的哟</title>
+<meta name="generator" content="Hexo 5.4.2"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">物理海洋学基础 笔记#04
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2021-07-03 20:08:52">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2021-07-03T20:08:52+08:00">2021-07-03</time>
+  </span>
+  <span class="item" title="本文字数">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span class="text">本文字数</span>
+    <span>2.1k</span>
+    <span class="text">字</span>
+  </span>
+  <span class="item" title="阅读时长">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span class="text">阅读时长</span>
+    <span>2 分钟</span>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">Ning Chenhui</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+        <ul>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giclx6phq6j20zk0m8e36.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giclimtf7dj20zk0m8qav.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gicm0n457cj20zk0m8e81.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipexoj0moj20zk0m8kgu.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giciuja1j1j20zk0m8kjl.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipeu1usa7j20zk0m8b29.jpg"></li>
+        </ul>
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">首页</a></span><i class="ic i-angle-right"></i>
+<span  itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/" itemprop="item" rel="index" title="分类于 地球科学"><span itemprop="name">地球科学</span></a>
+<meta itemprop="position" content="1" /></span>
+<i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/%E7%89%A9%E7%90%86%E6%B5%B7%E6%B4%8B%E5%AD%A6/" itemprop="item" rel="index" title="分类于 物理海洋学"><span itemprop="name">物理海洋学</span></a>
+<meta itemprop="position" content="2" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="https://ningchenhui.github.io/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/%E7%89%A9%E7%90%86%E6%B5%B7%E6%B4%8B%E5%AD%A6/oceanA0703/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/avatar.jpg">
+    <meta itemprop="name" content="Ning Chenhui">
+    <meta itemprop="description" content=", 正在建设中...">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="一切都会好起来的哟">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <p>海洋环流，简化物理海洋基本控制方程后得到的理论结果。</p>
+<span id="more"></span>
+<h2 id="第六章海洋环流"><a class="markdownIt-Anchor" href="#第六章海洋环流">#</a> 第六章：海洋环流</h2>
+<p>物理海洋基本控制方程：</p>
+<img style="display: inline-block; width: 50%; max-width: 50%; height: auto;" data-src="1.png" />
+<p>常见量纲特征尺度：</p>
+<img style="display: inline-block; width: 60%; max-width: 60%; height: auto;" data-src="2.png" />
+<p>通过写出所有项的量纲，变换出无量纲数，略去后简化方程。</p>
+<img style="display: inline-block; width: 80%; max-width: 80%; height: auto;" data-src="3.png" />
+<h3 id="地转流"><a class="markdownIt-Anchor" href="#地转流">#</a> 地转流</h3>
+<p>不考虑摩擦，尺度比较大，剩余左边的科氏力和右边的压强梯度力，得到解析解：</p>
+<img style="display: inline-block; width: 60%; max-width: 60%; height: auto;" data-src="4.png" />
+<p>海表高度异常的特征</p>
+<img style="display: inline-block; width: 60%; max-width: 60%; height: auto;" data-src="5.png" />
+<img style="display: inline-block; width: 60%; max-width: 60%; height: auto;" data-src="6.png" />
+<p>解析解表明速度和压强梯度力成正比。</p>
+<img style="display: inline-block; width: 80%; max-width: 80%; height: auto;" data-src="7.png" />
+<h3 id="位涡pv-位势涡度"><a class="markdownIt-Anchor" href="#位涡pv-位势涡度">#</a> 位涡 PV 位势涡度</h3>
+<p>对于点 O 的涡旋，或涡度的定义如下<br>
+<img style="display: inline-block; width: 60%; max-width: 60%; height: auto;" data-src="8.png" /></p>
+<p>方向：右手法则，拇指为正则 cyclone。<br>
+<img style="display: inline-block; width: 50%; max-width: 50%; height: auto;" data-src="9.png" /></p>
+<p>前面的涡度认为是相对涡度，加上科氏力 / 地转引起的涡度（行星涡度）为绝对涡度，除以水深则为位势涡度。<br>
+<img style="display: inline-block; width: 50%; max-width: 50%; height: auto;" data-src="10.png" /><br>
+不受外力的情况下 PV 守恒。</p>
+<p>冷涡（涡度为正）传到近岸消失。</p>
+<h3 id="ekman-理论"><a class="markdownIt-Anchor" href="#ekman-理论">#</a> Ekman 理论</h3>
+<p>地转和摩擦力平衡，风生 Ekman 流。在北半球，洋流运输方向为风向偏右。<br>
+<img style="display: inline-block; width: 60%; max-width: 60%; height: auto;" data-src="11.png" /><br>
+可计算出风能够影响洋流的深度大概在几十米左右。</p>
+<img style="display: inline-block; width: 60%; max-width: 60%; height: auto;" data-src="12.png" />
+<h3 id="sverdrup-输运"><a class="markdownIt-Anchor" href="#sverdrup-输运">#</a> Sverdrup 输运</h3>
+<p>风如何间接影响海里的输运？</p>
+<p>由于 Ekman pumping 导致深处海洋的水深下降，相对涡度为 0，根据位势涡度守恒，行星涡度也要减小，于是洋流向低纬度地区流动。</p>
+<h3 id="大洋环流"><a class="markdownIt-Anchor" href="#大洋环流">#</a> 大洋环流</h3>
+<h4 id="热盐环流概述"><a class="markdownIt-Anchor" href="#热盐环流概述">#</a> 热盐环流概述</h4>
+<p>热盐环流：在海洋中，以太阳辐射能作为驱动力的环流。海洋内部的温度和盐度随着空间变化时，海洋的密度也会相应的发生变化，由这种密度变化产生的海水运动。</p>
+<p>上表层水密度增加造成的热盐环流。</p>
+<ul>
+<li>其密度增加，可以直接由冷引起，也可以间接因水结冰时盐析导致的未结冰水密度增加。</li>
+<li>特殊的同密度不同温盐性质的 cableing 混合造成。</li>
+<li>冰晶之间有盐，盐冰不是纯的冰，含盐量会小于原来海水的含盐量。剩下的海水，含盐量比结冰前就会高。密度就会大，进而下沉。</li>
+</ul>
+<p>由于可下沉到中层深度甚至是底层的<strong>垂直流动</strong>可以引起海水的<strong>水平流动</strong>，形成热盐环流。</p>
+<p>一般认内，垂直流发生在整个海洋盆中，是一个渐进的、均匀的上升流，在表面温度较高的低纬度地区，上升流可能略大一些。穿过崎岖的海底地形的深水是产生上升流的一个主要因素，上升流使深水回流到海面。</p>
+<p>海水密度的增加可能是由温度下降或盐度增加引起的；温度对密度的影响更大；盐度引起的密度变化只有在高纬度地区才重要。大多数深海洋流 (热盐环流) 的水都来自于表面的高纬度地区。</p>
+<img style="display: inline-block; width: 80%; max-width: 80%; height: auto;" data-src="13.png" />
+<p>一圈环流上千年哦！</p>
+<h4 id="风生环流概述"><a class="markdownIt-Anchor" href="#风生环流概述">#</a> 风生环流概述</h4>
+<p>风生环流：由密度变化和风应力引起的环流。</p>
+<img style="display: inline-block; width: 80%; max-width: 80%; height: auto;" data-src="14.png" />
+<p>如果没有大陆，海洋的表面环流格局将与世界主要的风带密切匹配。风生环流主要为水平环流 (不同于热盐环流)</p>
+<p>世界海洋的主要风力推动的表面洋流形成五个主要的亚热带气旋:</p>
+<ol>
+<li>北太平洋 (龟) 环流，</li>
+<li>南太平洋（海尔达尔）环流，</li>
+<li>北大西洋 (哥伦布) Gyre,</li>
+<li>南大西洋 (Navigator) Gyre,</li>
+<li>印度洋 (Majid) Gyre。</li>
+</ol>
+<ul>
+<li>
+<p>赤道洋流：南半球和北半球的东北信风，使热带之间的水团运动起来，沿赤道向西运动。</p>
+</li>
+<li>
+<p>西边界流：当赤道洋流到达海洋盆地的西部时，科利奥利效应使这些洋流偏离赤道，成为由副热带环流的部边界组成的西部边界洋流。均沿各自海洋盆地的西部边界流动。我国的 “黑潮”，高温高盐看起来黑。</p>
+</li>
+<li>
+<p>边缘流：南纬 30 度至 60 度之间，南半球的盛行的西风引导海洋表层水向东穿过海洋盆地。大西洋洋流和南极绕极洋流 (西风漂流) 进来。在北半球，这些洋流由副热带环流的北部组成，称为北缘洋流；在南半球，它们由副热带环流的南部组成，称为南缘洋流。</p>
+</li>
+<li>
+<p>东边界流：当洋流流经海洋盆地时，科氏力和大陆屏障使它们向赤道移动，形成沿海洋盆地东部边界的副热带环流的东部边界层。</p>
+</li>
+<li>
+<p>赤道逆流：由于南北赤道洋流的作用，大量的水被向西推进。水沿着海洋盆地的西部边缘堆积，导致盆地西部的平均海亚面高达 2 米 (6.6 英 R) 比东部高。在重力的影响下，西缘的水向下流动，形成狭窄的赤道逆流，这些逆流向东流动，与相邻的赤道逆流相反，并在赤道逆流之间流动。在太平洋中特别明显，因为志道附近的水形成一个圆顶，被困在澳大利亚和亚洲之间布满岛屿的海湾里。赤道洋流的不断涌入形成了圆顶，并形成了向东的逆流，横跨太平洋向南美洲延伸。</p>
+</li>
+<li>
+<p>副极地环流：盛行西风带而向东流动的北或南边界洋流最终进入亚极地纬度 (约北纬 60 度或南纬 60 度)。它们受极地东风的驱动，向西风方向移动，产生与邻近的副热带环流相反的亚极地环流。亚极环流比副热带环流小且少。</p>
+</li>
+</ul>
+<h4 id="环流与水团"><a class="markdownIt-Anchor" href="#环流与水团">#</a> 环流与水团</h4>
+<p><em>上层和下层的边界？</em><br>
+温度剖面垂向梯度变化不大的深度。大概是 300~1000 米。在海表层也有一段温度梯度几乎为零的混合层。风浪不停的搅拌，均匀的混合层。一般不超过 200 米。这两层的差的部分，有很强的层化现象，温跃层，都相对稳定。<br>
+温跃层下边就是深层水，稳定性不强。<br>
+和底边界接触的地方，如果于深层水性质发生明显变化，又被称为底层水。</p>
+<p>大洋环流特征：</p>
+<ol>
+<li>反气旋是中低纬度海域共有主要特征。</li>
+<li>在西边界流的地方，流较窄流速大且更深，“西向强化”。</li>
+<li>赤道区有三个大洋有相似的流系。往西流的南北赤道流。它们中间向东赤道逆流。赤道往深 100 米处有赤道潜流，向东流。均受到埃克曼旋流和埃克曼输移、地转流和副热带环流向西加强等影响。</li>
+</ol>
+<h4 id="各大洋描述性特征"><a class="markdownIt-Anchor" href="#各大洋描述性特征">#</a> 各大洋描述性特征</h4>
+<p>洋流的模式因海洋盆地的几何形状、主要风带的模式、季节因素和其他<strong>周期性变化</strong>而不同。</p>
+<p>南大洋：南极绕极洋流是唯一一股完全环绕地球的洋流。南极底层水是绕极水和陆架水的混合产物。</p>
+<p>大西洋海洋环流：<br>
+<img style="display: inline-block; width: 30%; max-width: 30%; height: auto;" data-src="15.png" /></p>
+<p>印度洋流：唯一一个逆风的大洋<br>
+<img style="display: inline-block; width: 60%; max-width: 60%; height: auto;" data-src="16.png" /></p>
+<p>太平洋环流：<br>
+<img style="display: inline-block; width: 30%; max-width: 30%; height: auto;" data-src="17.png" /></p>
+<p>厄尔尼诺南方涛动与拉尼娜：<br>
+<img style="display: inline-block; width: 60%; max-width: 60%; height: auto;" data-src="18.png" /><br>
+<img style="display: inline-block; width: 60%; max-width: 60%; height: auto;" data-src="19.png" /><br>
+<img style="display: inline-block; width: 60%; max-width: 60%; height: auto;" data-src="20.png" /><br>
+ENSO 的影响：<br>
+<img style="display: inline-block; width: 60%; max-width: 60%; height: auto;" data-src="21.png" /></p>
+
+      <div class="tags">
+          <a href="/tags/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/" rel="tag"><i class="ic i-tag"></i> 地球科学</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2022-04-10 21:51:35" itemprop="dateModified" datetime="2022-04-10T21:51:35+08:00">2022-04-10</time>
+  </span>
+  <span id="地球科学/物理海洋学/oceanA0703/" class="item leancloud_visitors" data-flag-title="物理海洋学基础 笔记#04" title="阅读次数">
+      <span class="icon">
+        <i class="ic i-eye"></i>
+      </span>
+      <span class="text">阅读次数</span>
+      <span class="leancloud-visitors-count"></span>
+      <span class="text">次</span>
+  </span>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>Ning Chenhui <i class="ic i-at"><em>@</em></i>一切都会好起来的哟
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="https://ningchenhui.github.io/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/%E7%89%A9%E7%90%86%E6%B5%B7%E6%B4%8B%E5%AD%A6/oceanA0703/" title="物理海洋学基础 笔记#04">https://ningchenhui.github.io/地球科学/物理海洋学/oceanA0703/</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/linuxA0703/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva4.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gicljgocqbj20zk0m8e81.jpg" title="Linux学习 笔记#07 压缩，备份与Vim">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> 学习</span>
+  <h3>Linux学习 笔记#07 压缩，备份与Vim</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+      
+
+  <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/linuxA0705/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva4.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gicli3sbvtj20zk0m8x6p.jpg" title="Linux学习 笔记#08 bash">
+  <span class="type">下一篇</span>
+  <span class="category"><i class="ic i-flag"></i> 学习</span>
+  <h3>Linux学习 笔记#08 bash</h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E5%85%AD%E7%AB%A0%E6%B5%B7%E6%B4%8B%E7%8E%AF%E6%B5%81"><span class="toc-number">1.</span> <span class="toc-text"> 第六章：海洋环流</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%B0%E8%BD%AC%E6%B5%81"><span class="toc-number">1.1.</span> <span class="toc-text"> 地转流</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%8D%E6%B6%A1pv-%E4%BD%8D%E5%8A%BF%E6%B6%A1%E5%BA%A6"><span class="toc-number">1.2.</span> <span class="toc-text"> 位涡 PV 位势涡度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ekman-%E7%90%86%E8%AE%BA"><span class="toc-number">1.3.</span> <span class="toc-text"> Ekman 理论</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sverdrup-%E8%BE%93%E8%BF%90"><span class="toc-number">1.4.</span> <span class="toc-text"> Sverdrup 输运</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%A7%E6%B4%8B%E7%8E%AF%E6%B5%81"><span class="toc-number">1.5.</span> <span class="toc-text"> 大洋环流</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%83%AD%E7%9B%90%E7%8E%AF%E6%B5%81%E6%A6%82%E8%BF%B0"><span class="toc-number">1.5.1.</span> <span class="toc-text"> 热盐环流概述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A3%8E%E7%94%9F%E7%8E%AF%E6%B5%81%E6%A6%82%E8%BF%B0"><span class="toc-number">1.5.2.</span> <span class="toc-text"> 风生环流概述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%8E%AF%E6%B5%81%E4%B8%8E%E6%B0%B4%E5%9B%A2"><span class="toc-number">1.5.3.</span> <span class="toc-text"> 环流与水团</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%90%84%E5%A4%A7%E6%B4%8B%E6%8F%8F%E8%BF%B0%E6%80%A7%E7%89%B9%E5%BE%81"><span class="toc-number">1.5.4.</span> <span class="toc-text"> 各大洋描述性特征</span></a></li></ol></li></ol></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+        <ul>
+          <li><a href="/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/%E7%89%A9%E7%90%86%E6%B5%B7%E6%B4%8B%E5%AD%A6/ocean1110/" rel="bookmark" title="物理海洋学基础 笔记#01">物理海洋学基础 笔记#01</a></li><li><a href="/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/%E7%89%A9%E7%90%86%E6%B5%B7%E6%B4%8B%E5%AD%A6/ocean1120/" rel="bookmark" title="物理海洋学基础 笔记#02">物理海洋学基础 笔记#02</a></li><li><a href="/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/%E7%89%A9%E7%90%86%E6%B5%B7%E6%B4%8B%E5%AD%A6/ocean1124/" rel="bookmark" title="物理海洋学基础 笔记#03">物理海洋学基础 笔记#03</a></li><li class="active"><a href="/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/%E7%89%A9%E7%90%86%E6%B5%B7%E6%B4%8B%E5%AD%A6/oceanA0703/" rel="bookmark" title="物理海洋学基础 笔记#04">物理海洋学基础 笔记#04</a></li><li><a href="/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/%E7%89%A9%E7%90%86%E6%B5%B7%E6%B4%8B%E5%AD%A6/oceanA0709/" rel="bookmark" title="物理海洋学基础 笔记#05">物理海洋学基础 笔记#05</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="Ning Chenhui"
+      data-src="/images/avatar.jpg">
+  <p class="name" itemprop="name">Ning Chenhui</p>
+  <div class="description" itemprop="description">正在建设中...</div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">35</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/categories/">
+        <span class="count">5</span>
+        <span class="name">分类</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">4</span>
+        <span class="name">标签</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL05pbmdDaGVuaHVp" title="https:&#x2F;&#x2F;github.com&#x2F;NingChenhui"><i class="ic i-github"></i></span>
+      <span class="exturl item twitter" data-url="aHR0cHM6Ly90d2l0dGVyLmNvbS9Ib3NpenVraV9USFU=" title="https:&#x2F;&#x2F;twitter.com&#x2F;Hosizuki_THU"><i class="ic i-twitter"></i></span>
+      <span class="exturl item email" data-url="bWFpbHRvOnNpbmtpaG9zaXp1a2lAZ21haWwuY29t" title="mailto:sinkihosizuki@gmail.com"><i class="ic i-envelope"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/about/" rel="section"><i class="ic i-user"></i>关于</a>
+  </li>
+
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/archives/" rel="section"><i class="ic i-list-alt"></i>归档</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+  </ul>
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+        <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/linuxA0703/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+        <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/linuxA0705/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/" title="分类于 地球科学">地球科学</a>
+</div>
+
+    <span><a href="/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/esA0408/" title="粗化网格的变形速率计算">粗化网格的变形速率计算</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/" title="分类于 地球科学">地球科学</a>
+</div>
+
+    <span><a href="/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/esA0410/" title="北极涛动">北极涛动</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E5%AD%A6%E4%B9%A0/" title="分类于 学习">学习</a>
+</div>
+
+    <span><a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/hpc1202/" title="高性能计算#01 HPL搭建">高性能计算#01 HPL搭建</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E5%AD%A6%E4%B9%A0/" title="分类于 学习">学习</a>
+</div>
+
+    <span><a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/linuxA0322/" title="Linux学习 笔记#05 文件与目录管理">Linux学习 笔记#05 文件与目录管理</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E5%AD%A6%E4%B9%A0/" title="分类于 学习">学习</a>
+</div>
+
+    <span><a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/linux1112/" title="Linux学习 笔记#02">Linux学习 笔记#02</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/" title="分类于 地球科学">地球科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/%E7%89%A9%E7%90%86%E6%B5%B7%E6%B4%8B%E5%AD%A6/" title="分类于 物理海洋学">物理海洋学</a>
+</div>
+
+    <span><a href="/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/%E7%89%A9%E7%90%86%E6%B5%B7%E6%B4%8B%E5%AD%A6/ocean1110/" title="物理海洋学基础 笔记#01">物理海洋学基础 笔记#01</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/" title="分类于 地球科学">地球科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/%E5%9C%B0%E7%90%83%E7%B3%BB%E7%BB%9F%E7%A7%91%E5%AD%A6/" title="分类于 地球系统科学">地球系统科学</a>
+</div>
+
+    <span><a href="/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/%E5%9C%B0%E7%90%83%E7%B3%BB%E7%BB%9F%E7%A7%91%E5%AD%A6/es1029/" title="地球科学导论 笔记#03">地球科学导论 笔记#03</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/" title="分类于 地球科学">地球科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/%E5%9C%B0%E7%90%83%E7%B3%BB%E7%BB%9F%E7%A7%91%E5%AD%A6/" title="分类于 地球系统科学">地球系统科学</a>
+</div>
+
+    <span><a href="/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/%E5%9C%B0%E7%90%83%E7%B3%BB%E7%BB%9F%E7%A7%91%E5%AD%A6/es1111/" title="地球科学导论 笔记#04">地球科学导论 笔记#04</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E5%AD%A6%E4%B9%A0/" title="分类于 学习">学习</a>
+</div>
+
+    <span><a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/linux1111/" title="Linux学习 笔记#01">Linux学习 笔记#01</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E5%AD%A6%E4%B9%A0/" title="分类于 学习">学习</a>
+</div>
+
+    <span><a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/sunway01/" title="超算远程访问">超算远程访问</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2020 – 
+    <span itemprop="copyrightYear">2022</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Ning Chenhui <!--change by hosizuki@ Ning Chenhui--></span>
+  </div>
+  <div class="count">
+    <span class="post-meta-item-icon">
+      <i class="ic i-chart-area"></i>
+    </span>
+    <span title="站点总字数">83k 字</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="ic i-eye"></i>
+    </span>
+    <!-- 不蒜子计数 -->
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span id="busuanzi_container_site_uv" > <span id="busuanzi_value_site_uv"></span>  </span>
+    <!-- 不蒜子计数 -->
+
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="ic i-coffee"></i>
+    </span>
+    <span title="站点阅读时长">1:16</span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '地球科学/物理海洋学/oceanA0703/',
+    favicon: {
+      show: "（●´3｀●）やれやれだぜ",
+      hide: "(´Д｀)大変だ！"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,fancybox: true,
+    copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>

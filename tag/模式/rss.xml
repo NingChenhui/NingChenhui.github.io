@@ -37,9 +37,9 @@ step 4 - 执行 make (make -j 50 多线程？)&lt;br&gt;
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://ningchenhui.github.io/EarthScience/esA0412/</guid>
+            <guid isPermalink="true">https://ningchenhui.github.io/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/esA0412/</guid>
             <title>北极 SIE/SIV 计算</title>
-            <link>https://ningchenhui.github.io/EarthScience/esA0412/</link>
+            <link>https://ningchenhui.github.io/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/esA0412/</link>
             <category>模式</category>
             <category>地球科学</category>
             <pubDate>Mon, 12 Apr 2021 10:43:05 +0800</pubDate>
@@ -88,9 +88,9 @@ end
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://ningchenhui.github.io/EarthScience/esA0408/</guid>
+            <guid isPermalink="true">https://ningchenhui.github.io/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/esA0408/</guid>
             <title>粗化网格的变形速率计算</title>
-            <link>https://ningchenhui.github.io/EarthScience/esA0408/</link>
+            <link>https://ningchenhui.github.io/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/esA0408/</link>
             <category>模式</category>
             <category>地球科学</category>
             <pubDate>Thu, 08 Apr 2021 18:12:04 +0800</pubDate>
@@ -206,9 +206,9 @@ tot = sqrt(shr.^2+div.^2);
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://ningchenhui.github.io/ComputerScience/model02/</guid>
+            <guid isPermalink="true">https://ningchenhui.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/model02/</guid>
             <title>安装NCL</title>
-            <link>https://ningchenhui.github.io/ComputerScience/model02/</link>
+            <link>https://ningchenhui.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/model02/</link>
             <category>模式</category>
             <category>地球科学</category>
             <pubDate>Sun, 21 Mar 2021 23:57:20 +0800</pubDate>
@@ -284,9 +284,9 @@ conda clean -t
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://ningchenhui.github.io/ComputerScience/model01/</guid>
+            <guid isPermalink="true">https://ningchenhui.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/model01/</guid>
             <title>初识NetCDF</title>
-            <link>https://ningchenhui.github.io/ComputerScience/model01/</link>
+            <link>https://ningchenhui.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/model01/</link>
             <category>模式</category>
             <category>地球科学</category>
             <pubDate>Thu, 18 Mar 2021 17:08:20 +0800</pubDate>

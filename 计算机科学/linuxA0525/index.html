@@ -1,0 +1,592 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="一切都会好起来的哟" href="https://ningchenhui.github.io/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="一切都会好起来的哟" href="https://ningchenhui.github.io/atom.xml" />
+<link rel="alternate" type="application/json" title="一切都会好起来的哟" href="https://ningchenhui.github.io/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+  <meta name="keywords" content="Linux" />
+
+
+<link rel="canonical" href="https://ningchenhui.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/linuxA0525/">
+
+
+
+  <title>
+Linux学习 笔记#06 磁盘与文件系统管理 - 学习 |
+Ning Chenhui = 一切都会好起来的哟</title>
+<meta name="generator" content="Hexo 5.4.2"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">Linux学习 笔记#06 磁盘与文件系统管理
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2021-05-25 14:17:42">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2021-05-25T14:17:42+08:00">2021-05-25</time>
+  </span>
+  <span class="item" title="本文字数">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span class="text">本文字数</span>
+    <span>1.1k</span>
+    <span class="text">字</span>
+  </span>
+  <span class="item" title="阅读时长">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span class="text">阅读时长</span>
+    <span>1 分钟</span>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">Ning Chenhui</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+        <ul>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giclize41wj20zk0m87gk.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gicliwyw55j20zk0m8hdt.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giciuja1j1j20zk0m8kjl.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giclhpw3lwj20zk0m8gvw.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipeyvx1d4j20zk0m8hdt.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giclgrvbd6j20zk0m8qv5.jpg"></li>
+        </ul>
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">首页</a></span><i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/%E5%AD%A6%E4%B9%A0/" itemprop="item" rel="index" title="分类于 学习"><span itemprop="name">学习</span></a>
+<meta itemprop="position" content="1" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="https://ningchenhui.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/linuxA0525/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/avatar.jpg">
+    <meta itemprop="name" content="Ning Chenhui">
+    <meta itemprop="description" content=", 正在建设中...">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="一切都会好起来的哟">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <p>摸了好久🐟 <span id="more"></span></p>
+<h2 id="ch7-linux-磁盘与文件系统管理"><a class="markdownIt-Anchor" href="#ch7-linux-磁盘与文件系统管理">#</a> Ch7 Linux 磁盘与文件系统管理</h2>
+<p>该篇主要讲 Linux 的文件系统 ext，然而用的 WSL 貌似不是 ext 系统，不能用 <code>blkid</code>  和 <code>dumpe2fs</code>  查到相关信息。<br>
+WSL2 可以挂载 Linux 文件系统物理磁盘。<br>
+看完后大概知道为什么不同文件系统支持的文件大小不一样啦，比如之前往 U 盘拷东西时文件超过几个 G 就提示文件太大，还得压缩成分卷。</p>
+<p>使用命令 <code>df -T /</code>  查看文件系统的 superblock 纪录</p>
+<pre><code>Filesystem     Type  1K-blocks     Used Available Use% Mounted on
+rootfs         wslfs 104857596 75166740  29690856  72% /
+</code></pre>
+<p>哦，原来是自己单独搞了个系统格式啊。</p>
+<h3 id="文件系统的简单操作"><a class="markdownIt-Anchor" href="#文件系统的简单操作">#</a> 文件系统的简单操作</h3>
+<p><code>df [-ahikHTm] [目录或文件名] </code></p>
+<ul>
+<li>-a  ：列出所有的文件系统，包括系统特有的 /proc 等文件系统；</li>
+<li>-k  ：以 KBytes 的容量显示各文件系统；</li>
+<li>-m  ：以 MBytes 的容量显示各文件系统；</li>
+<li>-h  ：以人们较易阅读的 GBytes, MBytes, KBytes 等格式自行显示；</li>
+<li>-H  ：以 M=1000K 取代 M=1024K 的进位方式；</li>
+<li>-T  ：连同该 partition 的 filesystem 名称 (例如 xfs) 也列出；</li>
+<li>-i  ：不用磁盘容量，而以 inode 的数量来显示</li>
+</ul>
+<p>在 df 后面加上目录或者是文件时， df 会自动的分析该目录或文件所在的 partition ，并将该 partition 的容量显示出来，<br>
+这样就可以知道某个目录底下还有多少容量可以使用了！</p>
+<p><code>du [-ahskm] 文件或目录名称 </code></p>
+<ul>
+<li>-a  ：列出所有的文件与目录容量，因为默认仅统计目录底下的文件量而已。</li>
+<li>-h  ：以人们较易读的容量格式 (G/M) 显示；</li>
+<li>-s  ：列出总量而已，而不列出每个各别的目录占用容量；</li>
+<li>-S  ：不包括子目录下的总计，与 -s 有点差别。</li>
+<li>-k  ：以 KBytes 列出容量显示；</li>
+<li>-m  ：以 MBytes 列出容量显示；</li>
+</ul>
+<p>检查根目录底下每个目录所占用的容量:  <code>du -sm /*</code> <br>
+ 当前文件夹下各个文件大小（屏蔽报错信息） <code>du -h --max-depth=1 2&gt;/dev/null</code></p>
+<p><code>ln [-sf] 来源文件 目标文件文件 </code></p>
+<ul>
+<li>-s  ：如果不加任何参数就进行连结，那就是 hard link，至于 -s 就是 symbolic link</li>
+<li>-f  ：如果 目标文件 存在时，就主动的将目标文件直接移除后再建立！</li>
+</ul>
+<p>简单说，硬链接就是新指向文件内存的指针，软链接是快捷方式到目录……</p>
+<p>磁盘分配和格式化就先跳过啦，偶尔需要的话查一下就行了。</p>
+<p>还有文件系统的挂载，还有建立空文件格式化为系统当磁盘挂载的骚操作啊！</p>
+<hr>
+<p>下一篇：<a href="/2021/07/03/linuxA0703/">压缩，备份与 Vim</a><br>
+ 上一篇：<a href="/2021/03/22/linuxA0322/">文件与目录管理</a></p>
+
+      <div class="tags">
+          <a href="/tags/Linux/" rel="tag"><i class="ic i-tag"></i> Linux</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2022-04-10 20:47:09" itemprop="dateModified" datetime="2022-04-10T20:47:09+08:00">2022-04-10</time>
+  </span>
+  <span id="计算机科学/linuxA0525/" class="item leancloud_visitors" data-flag-title="Linux学习 笔记#06 磁盘与文件系统管理" title="阅读次数">
+      <span class="icon">
+        <i class="ic i-eye"></i>
+      </span>
+      <span class="text">阅读次数</span>
+      <span class="leancloud-visitors-count"></span>
+      <span class="text">次</span>
+  </span>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>Ning Chenhui <i class="ic i-at"><em>@</em></i>一切都会好起来的哟
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="https://ningchenhui.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/linuxA0525/" title="Linux学习 笔记#06 磁盘与文件系统管理">https://ningchenhui.github.io/计算机科学/linuxA0525/</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/esA0412/" itemprop="url" rel="prev" data-background-image="&#x2F;%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6&#x2F;esA0412&#x2F;bering_strait_sea_ice.jpg" title="北极 SIE&#x2F;SIV 计算">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> 地球科学</span>
+  <h3>北极 SIE/SIV 计算</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+      
+
+  <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/linuxA0703/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva4.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giclxxcb6rj20zk0m8b29.jpg" title="Linux学习 笔记#07 压缩，备份与Vim">
+  <span class="type">下一篇</span>
+  <span class="category"><i class="ic i-flag"></i> 学习</span>
+  <h3>Linux学习 笔记#07 压缩，备份与Vim</h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#ch7-linux-%E7%A3%81%E7%9B%98%E4%B8%8E%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86"><span class="toc-number">1.</span> <span class="toc-text"> Ch7 Linux 磁盘与文件系统管理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%AE%80%E5%8D%95%E6%93%8D%E4%BD%9C"><span class="toc-number">1.1.</span> <span class="toc-text"> 文件系统的简单操作</span></a></li></ol></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+        <ul>
+          <li><a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/linux1111/" rel="bookmark" title="Linux学习 笔记#01">Linux学习 笔记#01</a></li><li><a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/linux1112/" rel="bookmark" title="Linux学习 笔记#02">Linux学习 笔记#02</a></li><li><a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/hpc1202/" rel="bookmark" title="高性能计算#01 HPL搭建">高性能计算#01 HPL搭建</a></li><li><a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/hpc1204/" rel="bookmark" title="高性能计算#02 HPL再次搭建">高性能计算#02 HPL再次搭建</a></li><li><a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/hpc1205/" rel="bookmark" title="高性能计算#03 HPCG搭建">高性能计算#03 HPCG搭建</a></li><li><a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/linux1206/" rel="bookmark" title="Linux学习 笔记#03 指令集">Linux学习 笔记#03 指令集</a></li><li><a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/hpc1206/" rel="bookmark" title="高性能计算#04 HPL测试GPU">高性能计算#04 HPL测试GPU</a></li><li><a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/linux1224/" rel="bookmark" title="Linux学习 笔记#04 文件权限与目录配置">Linux学习 笔记#04 文件权限与目录配置</a></li><li><a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/sunway01/" rel="bookmark" title="超算远程访问">超算远程访问</a></li><li><a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/model01/" rel="bookmark" title="初识NetCDF">初识NetCDF</a></li><li><a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/model02/" rel="bookmark" title="安装NCL">安装NCL</a></li><li><a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/linuxA0322/" rel="bookmark" title="Linux学习 笔记#05 文件与目录管理">Linux学习 笔记#05 文件与目录管理</a></li><li><a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/sunway02/" rel="bookmark" title="超算 - 使用指南">超算 - 使用指南</a></li><li class="active"><a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/linuxA0525/" rel="bookmark" title="Linux学习 笔记#06 磁盘与文件系统管理">Linux学习 笔记#06 磁盘与文件系统管理</a></li><li><a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/linuxA0703/" rel="bookmark" title="Linux学习 笔记#07 压缩，备份与Vim">Linux学习 笔记#07 压缩，备份与Vim</a></li><li><a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/linuxA0705/" rel="bookmark" title="Linux学习 笔记#08 bash">Linux学习 笔记#08 bash</a></li><li><a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/linuxA0708/" rel="bookmark" title="Linux学习 笔记#09 正规表示法与文件格式化处理">Linux学习 笔记#09 正规表示法与文件格式化处理</a></li><li><a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/linuxA0713/" rel="bookmark" title="Linux学习 笔记#10 Shell Scripts">Linux学习 笔记#10 Shell Scripts</a></li><li><a href="/omare220205/" rel="bookmark" title="オマレ入门（一）">オマレ入门（一）</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="Ning Chenhui"
+      data-src="/images/avatar.jpg">
+  <p class="name" itemprop="name">Ning Chenhui</p>
+  <div class="description" itemprop="description">正在建设中...</div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">35</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/categories/">
+        <span class="count">5</span>
+        <span class="name">分类</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">4</span>
+        <span class="name">标签</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL05pbmdDaGVuaHVp" title="https:&#x2F;&#x2F;github.com&#x2F;NingChenhui"><i class="ic i-github"></i></span>
+      <span class="exturl item twitter" data-url="aHR0cHM6Ly90d2l0dGVyLmNvbS9Ib3NpenVraV9USFU=" title="https:&#x2F;&#x2F;twitter.com&#x2F;Hosizuki_THU"><i class="ic i-twitter"></i></span>
+      <span class="exturl item email" data-url="bWFpbHRvOnNpbmtpaG9zaXp1a2lAZ21haWwuY29t" title="mailto:sinkihosizuki@gmail.com"><i class="ic i-envelope"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/about/" rel="section"><i class="ic i-user"></i>关于</a>
+  </li>
+
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/archives/" rel="section"><i class="ic i-list-alt"></i>归档</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+  </ul>
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+        <a href="/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/esA0412/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+        <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/linuxA0703/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E8%B5%84%E6%96%99/" title="分类于 资料">资料</a>
+</div>
+
+    <span><a href="/seufile/" title="课程资料分享">课程资料分享</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E5%AD%A6%E4%B9%A0/" title="分类于 学习">学习</a>
+</div>
+
+    <span><a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/linuxA0525/" title="Linux学习 笔记#06 磁盘与文件系统管理">Linux学习 笔记#06 磁盘与文件系统管理</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E5%AD%A6%E4%B9%A0/" title="分类于 学习">学习</a>
+</div>
+
+    <span><a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/linuxA0713/" title="Linux学习 笔记#10 Shell Scripts">Linux学习 笔记#10 Shell Scripts</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E5%AD%A6%E4%B9%A0/" title="分类于 学习">学习</a>
+</div>
+
+    <span><a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/sunway02/" title="超算 - 使用指南">超算 - 使用指南</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E5%AD%A6%E4%B9%A0/" title="分类于 学习">学习</a>
+</div>
+
+    <span><a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/linuxA0708/" title="Linux学习 笔记#09 正规表示法与文件格式化处理">Linux学习 笔记#09 正规表示法与文件格式化处理</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E5%AD%A6%E4%B9%A0/" title="分类于 学习">学习</a>
+</div>
+
+    <span><a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/linux1224/" title="Linux学习 笔记#04 文件权限与目录配置">Linux学习 笔记#04 文件权限与目录配置</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/" title="分类于 地球科学">地球科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/%E5%9C%B0%E7%90%83%E7%B3%BB%E7%BB%9F%E7%A7%91%E5%AD%A6/" title="分类于 地球系统科学">地球系统科学</a>
+</div>
+
+    <span><a href="/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/%E5%9C%B0%E7%90%83%E7%B3%BB%E7%BB%9F%E7%A7%91%E5%AD%A6/es1111/" title="地球科学导论 笔记#04">地球科学导论 笔记#04</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E5%AD%A6%E4%B9%A0/" title="分类于 学习">学习</a>
+</div>
+
+    <span><a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/linuxA0322/" title="Linux学习 笔记#05 文件与目录管理">Linux学习 笔记#05 文件与目录管理</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E5%AD%A6%E4%B9%A0/" title="分类于 学习">学习</a>
+</div>
+
+    <span><a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/linux1206/" title="Linux学习 笔记#03 指令集">Linux学习 笔记#03 指令集</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/" title="分类于 地球科学">地球科学</a>
+</div>
+
+    <span><a href="/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/esA0324/" title="一些新的和遗忘的知识点">一些新的和遗忘的知识点</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2020 – 
+    <span itemprop="copyrightYear">2022</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Ning Chenhui <!--change by hosizuki@ Ning Chenhui--></span>
+  </div>
+  <div class="count">
+    <span class="post-meta-item-icon">
+      <i class="ic i-chart-area"></i>
+    </span>
+    <span title="站点总字数">83k 字</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="ic i-eye"></i>
+    </span>
+    <!-- 不蒜子计数 -->
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span id="busuanzi_container_site_uv" > <span id="busuanzi_value_site_uv"></span>  </span>
+    <!-- 不蒜子计数 -->
+
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="ic i-coffee"></i>
+    </span>
+    <span title="站点阅读时长">1:16</span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '计算机科学/linuxA0525/',
+    favicon: {
+      show: "（●´3｀●）やれやれだぜ",
+      hide: "(´Д｀)大変だ！"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,fancybox: true,
+    copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>

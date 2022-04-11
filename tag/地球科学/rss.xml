@@ -12,9 +12,9 @@
         <category>Linux</category>
         <category>地球科学</category>
         <item>
-            <guid isPermalink="true">https://ningchenhui.github.io/EarthScience/Ocean/oceanA0709/</guid>
+            <guid isPermalink="true">https://ningchenhui.github.io/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/%E7%89%A9%E7%90%86%E6%B5%B7%E6%B4%8B%E5%AD%A6/oceanA0709/</guid>
             <title>物理海洋学基础 笔记#05</title>
-            <link>https://ningchenhui.github.io/EarthScience/Ocean/oceanA0709/</link>
+            <link>https://ningchenhui.github.io/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/%E7%89%A9%E7%90%86%E6%B5%B7%E6%B4%8B%E5%AD%A6/oceanA0709/</link>
             <category>地球科学</category>
             <pubDate>Fri, 09 Jul 2021 20:08:52 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;波动与专题，本课结束。&lt;/p&gt;
@@ -51,9 +51,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://ningchenhui.github.io/EarthScience/Ocean/oceanA0703/</guid>
+            <guid isPermalink="true">https://ningchenhui.github.io/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/%E7%89%A9%E7%90%86%E6%B5%B7%E6%B4%8B%E5%AD%A6/oceanA0703/</guid>
             <title>物理海洋学基础 笔记#04</title>
-            <link>https://ningchenhui.github.io/EarthScience/Ocean/oceanA0703/</link>
+            <link>https://ningchenhui.github.io/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/%E7%89%A9%E7%90%86%E6%B5%B7%E6%B4%8B%E5%AD%A6/oceanA0703/</link>
             <category>地球科学</category>
             <pubDate>Sat, 03 Jul 2021 20:08:52 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;海洋环流，简化物理海洋基本控制方程后得到的理论结果。&lt;/p&gt;
@@ -165,9 +165,9 @@ ENSO 的影响：&lt;br&gt;
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://ningchenhui.github.io/EarthScience/esA0412/</guid>
+            <guid isPermalink="true">https://ningchenhui.github.io/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/esA0412/</guid>
             <title>北极 SIE/SIV 计算</title>
-            <link>https://ningchenhui.github.io/EarthScience/esA0412/</link>
+            <link>https://ningchenhui.github.io/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/esA0412/</link>
             <category>模式</category>
             <category>地球科学</category>
             <pubDate>Mon, 12 Apr 2021 10:43:05 +0800</pubDate>
@@ -216,9 +216,9 @@ end
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://ningchenhui.github.io/EarthScience/esA0410/</guid>
+            <guid isPermalink="true">https://ningchenhui.github.io/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/esA0410/</guid>
             <title>北极涛动</title>
-            <link>https://ningchenhui.github.io/EarthScience/esA0410/</link>
+            <link>https://ningchenhui.github.io/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/esA0410/</link>
             <category>地球科学</category>
             <pubDate>Sat, 10 Apr 2021 12:12:03 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;Arctic Oscillation (AO) &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;/p&gt;
@@ -268,9 +268,9 @@ a_{N,1} &amp;amp; a_{N,2} &amp;amp; \cdots &amp;amp;a_{N,M}
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://ningchenhui.github.io/EarthScience/esA0408/</guid>
+            <guid isPermalink="true">https://ningchenhui.github.io/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/esA0408/</guid>
             <title>粗化网格的变形速率计算</title>
-            <link>https://ningchenhui.github.io/EarthScience/esA0408/</link>
+            <link>https://ningchenhui.github.io/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/esA0408/</link>
             <category>模式</category>
             <category>地球科学</category>
             <pubDate>Thu, 08 Apr 2021 18:12:04 +0800</pubDate>
@@ -386,9 +386,9 @@ tot = sqrt(shr.^2+div.^2);
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://ningchenhui.github.io/EarthScience/esA0324/</guid>
+            <guid isPermalink="true">https://ningchenhui.github.io/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/esA0324/</guid>
             <title>一些新的和遗忘的知识点</title>
-            <link>https://ningchenhui.github.io/EarthScience/esA0324/</link>
+            <link>https://ningchenhui.github.io/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/esA0324/</link>
             <category>地球科学</category>
             <pubDate>Thu, 25 Mar 2021 14:22:04 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;剪切速率，概率分布？&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;/p&gt;
@@ -460,9 +460,9 @@ M1001 80h400000v40h-400000z&#39;/&gt;&lt;/svg&gt;&lt;/span&gt;&lt;/span&gt;&lt;/
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://ningchenhui.github.io/ComputerScience/model02/</guid>
+            <guid isPermalink="true">https://ningchenhui.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/model02/</guid>
             <title>安装NCL</title>
-            <link>https://ningchenhui.github.io/ComputerScience/model02/</link>
+            <link>https://ningchenhui.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/model02/</link>
             <category>模式</category>
             <category>地球科学</category>
             <pubDate>Sun, 21 Mar 2021 23:57:20 +0800</pubDate>
@@ -538,9 +538,9 @@ conda clean -t
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://ningchenhui.github.io/ComputerScience/model01/</guid>
+            <guid isPermalink="true">https://ningchenhui.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/model01/</guid>
             <title>初识NetCDF</title>
-            <link>https://ningchenhui.github.io/ComputerScience/model01/</link>
+            <link>https://ningchenhui.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/model01/</link>
             <category>模式</category>
             <category>地球科学</category>
             <pubDate>Thu, 18 Mar 2021 17:08:20 +0800</pubDate>
@@ -588,9 +588,9 @@ ncdisp(FileName)&lt;br&gt;
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://ningchenhui.github.io/EarthScience/Ocean/ocean1124/</guid>
+            <guid isPermalink="true">https://ningchenhui.github.io/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/%E7%89%A9%E7%90%86%E6%B5%B7%E6%B4%8B%E5%AD%A6/ocean1124/</guid>
             <title>物理海洋学基础 笔记#03</title>
-            <link>https://ningchenhui.github.io/EarthScience/Ocean/ocean1124/</link>
+            <link>https://ningchenhui.github.io/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/%E7%89%A9%E7%90%86%E6%B5%B7%E6%B4%8B%E5%AD%A6/ocean1124/</link>
             <category>地球科学</category>
             <pubDate>Tue, 22 Dec 2020 22:35:37 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;海洋观测数据，观测方法，基本方程。&lt;/p&gt;
@@ -728,9 +728,9 @@ ncdisp(FileName)&lt;br&gt;
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://ningchenhui.github.io/EarthScience/Ocean/ocean1120/</guid>
+            <guid isPermalink="true">https://ningchenhui.github.io/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/%E7%89%A9%E7%90%86%E6%B5%B7%E6%B4%8B%E5%AD%A6/ocean1120/</guid>
             <title>物理海洋学基础 笔记#02</title>
-            <link>https://ningchenhui.github.io/EarthScience/Ocean/ocean1120/</link>
+            <link>https://ningchenhui.github.io/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/%E7%89%A9%E7%90%86%E6%B5%B7%E6%B4%8B%E5%AD%A6/ocean1120/</link>
             <category>地球科学</category>
             <pubDate>Fri, 20 Nov 2020 14:32:21 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;海水部分性质与海洋通量。&lt;/p&gt;
@@ -792,9 +792,9 @@ QA 为水平方向上的海洋热平流。&lt;br&gt;
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://ningchenhui.github.io/EarthScience/ESS/es1116/</guid>
+            <guid isPermalink="true">https://ningchenhui.github.io/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/%E5%9C%B0%E7%90%83%E7%B3%BB%E7%BB%9F%E7%A7%91%E5%AD%A6/es1116/</guid>
             <title>地球科学导论 笔记#05</title>
-            <link>https://ningchenhui.github.io/EarthScience/ESS/es1116/</link>
+            <link>https://ningchenhui.github.io/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/%E5%9C%B0%E7%90%83%E7%B3%BB%E7%BB%9F%E7%A7%91%E5%AD%A6/es1116/</link>
             <category>地球科学</category>
             <pubDate>Mon, 16 Nov 2020 10:08:33 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;地球科学导论–冰川&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;/p&gt;
@@ -830,9 +830,9 @@ QA 为水平方向上的海洋热平流。&lt;br&gt;
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://ningchenhui.github.io/EarthScience/ESS/es1111/</guid>
+            <guid isPermalink="true">https://ningchenhui.github.io/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/%E5%9C%B0%E7%90%83%E7%B3%BB%E7%BB%9F%E7%A7%91%E5%AD%A6/es1111/</guid>
             <title>地球科学导论 笔记#04</title>
-            <link>https://ningchenhui.github.io/EarthScience/ESS/es1111/</link>
+            <link>https://ningchenhui.github.io/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/%E5%9C%B0%E7%90%83%E7%B3%BB%E7%BB%9F%E7%A7%91%E5%AD%A6/es1111/</link>
             <category>地球科学</category>
             <pubDate>Wed, 11 Nov 2020 21:06:26 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;地球科学导论–动荡的海洋 续&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;/p&gt;
@@ -916,9 +916,9 @@ QA 为水平方向上的海洋热平流。&lt;br&gt;
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://ningchenhui.github.io/EarthScience/Ocean/ocean1110/</guid>
+            <guid isPermalink="true">https://ningchenhui.github.io/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/%E7%89%A9%E7%90%86%E6%B5%B7%E6%B4%8B%E5%AD%A6/ocean1110/</guid>
             <title>物理海洋学基础 笔记#01</title>
-            <link>https://ningchenhui.github.io/EarthScience/Ocean/ocean1110/</link>
+            <link>https://ningchenhui.github.io/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/%E7%89%A9%E7%90%86%E6%B5%B7%E6%B4%8B%E5%AD%A6/ocean1110/</link>
             <category>地球科学</category>
             <pubDate>Tue, 10 Nov 2020 15:26:13 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;走进物理海洋学。&lt;/p&gt;
@@ -983,9 +983,9 @@ QA 为水平方向上的海洋热平流。&lt;br&gt;
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://ningchenhui.github.io/EarthScience/ESS/es1029/</guid>
+            <guid isPermalink="true">https://ningchenhui.github.io/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/%E5%9C%B0%E7%90%83%E7%B3%BB%E7%BB%9F%E7%A7%91%E5%AD%A6/es1029/</guid>
             <title>地球科学导论 笔记#03</title>
-            <link>https://ningchenhui.github.io/EarthScience/ESS/es1029/</link>
+            <link>https://ningchenhui.github.io/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/%E5%9C%B0%E7%90%83%E7%B3%BB%E7%BB%9F%E7%A7%91%E5%AD%A6/es1029/</link>
             <category>地球科学</category>
             <pubDate>Thu, 29 Oct 2020 10:45:09 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;地球科学导论–动荡的海洋&lt;/p&gt;
@@ -1036,9 +1036,9 @@ QA 为水平方向上的海洋热平流。&lt;br&gt;
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://ningchenhui.github.io/EarthScience/ESS/es1023/</guid>
+            <guid isPermalink="true">https://ningchenhui.github.io/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/%E5%9C%B0%E7%90%83%E7%B3%BB%E7%BB%9F%E7%A7%91%E5%AD%A6/es1023/</guid>
             <title>地球科学导论 笔记#02</title>
-            <link>https://ningchenhui.github.io/EarthScience/ESS/es1023/</link>
+            <link>https://ningchenhui.github.io/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/%E5%9C%B0%E7%90%83%E7%B3%BB%E7%BB%9F%E7%A7%91%E5%AD%A6/es1023/</link>
             <category>地球科学</category>
             <pubDate>Fri, 23 Oct 2020 19:07:40 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;地球科学导论–海洋：净土&lt;/p&gt;
@@ -1126,9 +1126,9 @@ QA 为水平方向上的海洋热平流。&lt;br&gt;
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://ningchenhui.github.io/EarthScience/ESS/es1009/</guid>
+            <guid isPermalink="true">https://ningchenhui.github.io/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/%E5%9C%B0%E7%90%83%E7%B3%BB%E7%BB%9F%E7%A7%91%E5%AD%A6/es1009/</guid>
             <title>地球科学导论 笔记#01</title>
-            <link>https://ningchenhui.github.io/EarthScience/ESS/es1009/</link>
+            <link>https://ningchenhui.github.io/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/%E5%9C%B0%E7%90%83%E7%B3%BB%E7%BB%9F%E7%A7%91%E5%AD%A6/es1009/</link>
             <category>地球科学</category>
             <pubDate>Fri, 09 Oct 2020 14:34:31 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;地球科学导论–开始&lt;/p&gt;

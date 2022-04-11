@@ -77,9 +77,9 @@ step 4 - 执行 make (make -j 50 多线程？)&lt;br&gt;
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://ningchenhui.github.io/ComputerScience/linuxA0713/</guid>
+            <guid isPermalink="true">https://ningchenhui.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/linuxA0713/</guid>
             <title>Linux学习 笔记#10 Shell Scripts</title>
-            <link>https://ningchenhui.github.io/ComputerScience/linuxA0713/</link>
+            <link>https://ningchenhui.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/linuxA0713/</link>
             <category>Linux</category>
             <pubDate>Tue, 13 Jul 2021 15:20:36 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;使用脚本！ &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;/p&gt;
@@ -321,9 +321,9 @@ done
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://ningchenhui.github.io/EarthScience/Ocean/oceanA0709/</guid>
+            <guid isPermalink="true">https://ningchenhui.github.io/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/%E7%89%A9%E7%90%86%E6%B5%B7%E6%B4%8B%E5%AD%A6/oceanA0709/</guid>
             <title>物理海洋学基础 笔记#05</title>
-            <link>https://ningchenhui.github.io/EarthScience/Ocean/oceanA0709/</link>
+            <link>https://ningchenhui.github.io/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/%E7%89%A9%E7%90%86%E6%B5%B7%E6%B4%8B%E5%AD%A6/oceanA0709/</link>
             <category>地球科学</category>
             <pubDate>Fri, 09 Jul 2021 20:08:52 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;波动与专题，本课结束。&lt;/p&gt;
@@ -360,9 +360,9 @@ done
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://ningchenhui.github.io/ComputerScience/linuxA0708/</guid>
+            <guid isPermalink="true">https://ningchenhui.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/linuxA0708/</guid>
             <title>Linux学习 笔记#09 正规表示法与文件格式化处理</title>
-            <link>https://ningchenhui.github.io/ComputerScience/linuxA0708/</link>
+            <link>https://ningchenhui.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/linuxA0708/</link>
             <category>Linux</category>
             <pubDate>Thu, 08 Jul 2021 15:20:36 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;像乱码一样的正则表达式！ &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;/p&gt;
@@ -635,9 +635,9 @@ to-file   ：一个档名，作为目的比对文件的档名；&lt;br&gt;
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://ningchenhui.github.io/ComputerScience/linuxA0705/</guid>
+            <guid isPermalink="true">https://ningchenhui.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/linuxA0705/</guid>
             <title>Linux学习 笔记#08 bash</title>
-            <link>https://ningchenhui.github.io/ComputerScience/linuxA0705/</link>
+            <link>https://ningchenhui.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/linuxA0705/</link>
             <category>Linux</category>
             <pubDate>Mon, 05 Jul 2021 21:51:36 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;这章是重点，圈起来 - - &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;/p&gt;
@@ -932,9 +932,9 @@ PREFIX ：代表前导符的意思，可作为分区文件的前导文字。&lt;
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://ningchenhui.github.io/EarthScience/Ocean/oceanA0703/</guid>
+            <guid isPermalink="true">https://ningchenhui.github.io/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/%E7%89%A9%E7%90%86%E6%B5%B7%E6%B4%8B%E5%AD%A6/oceanA0703/</guid>
             <title>物理海洋学基础 笔记#04</title>
-            <link>https://ningchenhui.github.io/EarthScience/Ocean/oceanA0703/</link>
+            <link>https://ningchenhui.github.io/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/%E7%89%A9%E7%90%86%E6%B5%B7%E6%B4%8B%E5%AD%A6/oceanA0703/</link>
             <category>地球科学</category>
             <pubDate>Sat, 03 Jul 2021 20:08:52 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;海洋环流，简化物理海洋基本控制方程后得到的理论结果。&lt;/p&gt;
@@ -1046,9 +1046,9 @@ ENSO 的影响：&lt;br&gt;
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://ningchenhui.github.io/ComputerScience/linuxA0703/</guid>
+            <guid isPermalink="true">https://ningchenhui.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/linuxA0703/</guid>
             <title>Linux学习 笔记#07 压缩，备份与Vim</title>
-            <link>https://ningchenhui.github.io/ComputerScience/linuxA0703/</link>
+            <link>https://ningchenhui.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/linuxA0703/</link>
             <category>Linux</category>
             <pubDate>Sat, 03 Jul 2021 14:22:36 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;在家逐渐颓废_〆(´Д｀) &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;/p&gt;
@@ -1358,9 +1358,9 @@ tar -cvf - /etc | tar -xvf xvf -
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://ningchenhui.github.io/ComputerScience/linuxA0525/</guid>
+            <guid isPermalink="true">https://ningchenhui.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/linuxA0525/</guid>
             <title>Linux学习 笔记#06 磁盘与文件系统管理</title>
-            <link>https://ningchenhui.github.io/ComputerScience/linuxA0525/</link>
+            <link>https://ningchenhui.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/linuxA0525/</link>
             <category>Linux</category>
             <pubDate>Tue, 25 May 2021 14:17:42 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;摸了好久🐟 &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;/p&gt;
@@ -1411,9 +1411,9 @@ rootfs         wslfs 104857596 75166740  29690856  72% /
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://ningchenhui.github.io/EarthScience/esA0412/</guid>
+            <guid isPermalink="true">https://ningchenhui.github.io/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/esA0412/</guid>
             <title>北极 SIE/SIV 计算</title>
-            <link>https://ningchenhui.github.io/EarthScience/esA0412/</link>
+            <link>https://ningchenhui.github.io/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/esA0412/</link>
             <category>模式</category>
             <category>地球科学</category>
             <pubDate>Mon, 12 Apr 2021 10:43:05 +0800</pubDate>
@@ -1462,9 +1462,9 @@ end
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://ningchenhui.github.io/EarthScience/esA0410/</guid>
+            <guid isPermalink="true">https://ningchenhui.github.io/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/esA0410/</guid>
             <title>北极涛动</title>
-            <link>https://ningchenhui.github.io/EarthScience/esA0410/</link>
+            <link>https://ningchenhui.github.io/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/esA0410/</link>
             <category>地球科学</category>
             <pubDate>Sat, 10 Apr 2021 12:12:03 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;Arctic Oscillation (AO) &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;/p&gt;
@@ -1514,9 +1514,9 @@ a_{N,1} &amp;amp; a_{N,2} &amp;amp; \cdots &amp;amp;a_{N,M}
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://ningchenhui.github.io/EarthScience/esA0408/</guid>
+            <guid isPermalink="true">https://ningchenhui.github.io/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/esA0408/</guid>
             <title>粗化网格的变形速率计算</title>
-            <link>https://ningchenhui.github.io/EarthScience/esA0408/</link>
+            <link>https://ningchenhui.github.io/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/esA0408/</link>
             <category>模式</category>
             <category>地球科学</category>
             <pubDate>Thu, 08 Apr 2021 18:12:04 +0800</pubDate>
@@ -1632,9 +1632,9 @@ tot = sqrt(shr.^2+div.^2);
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://ningchenhui.github.io/ComputerScience/sunway02/</guid>
+            <guid isPermalink="true">https://ningchenhui.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/sunway02/</guid>
             <title>超算 - 使用指南</title>
-            <link>https://ningchenhui.github.io/ComputerScience/sunway02/</link>
+            <link>https://ningchenhui.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/sunway02/</link>
             <category>Linux</category>
             <pubDate>Mon, 29 Mar 2021 16:13:44 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;参考资料&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#参考资料&#34;&gt;#&lt;/a&gt; 参考资料&lt;/h2&gt;
@@ -1666,9 +1666,9 @@ tot = sqrt(shr.^2+div.^2);
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://ningchenhui.github.io/EarthScience/esA0324/</guid>
+            <guid isPermalink="true">https://ningchenhui.github.io/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/esA0324/</guid>
             <title>一些新的和遗忘的知识点</title>
-            <link>https://ningchenhui.github.io/EarthScience/esA0324/</link>
+            <link>https://ningchenhui.github.io/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/esA0324/</link>
             <category>地球科学</category>
             <pubDate>Thu, 25 Mar 2021 14:22:04 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;剪切速率，概率分布？&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;/p&gt;
@@ -1740,9 +1740,9 @@ M1001 80h400000v40h-400000z&#39;/&gt;&lt;/svg&gt;&lt;/span&gt;&lt;/span&gt;&lt;/
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://ningchenhui.github.io/ComputerScience/linuxA0322/</guid>
+            <guid isPermalink="true">https://ningchenhui.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/linuxA0322/</guid>
             <title>Linux学习 笔记#05 文件与目录管理</title>
-            <link>https://ningchenhui.github.io/ComputerScience/linuxA0322/</link>
+            <link>https://ningchenhui.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/linuxA0322/</link>
             <category>Linux</category>
             <pubDate>Mon, 22 Mar 2021 15:26:07 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;继续学习。 &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;br&gt;
@@ -1869,9 +1869,9 @@ deb-src &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL21pcnJvcnMuYWxpeX
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://ningchenhui.github.io/ComputerScience/model02/</guid>
+            <guid isPermalink="true">https://ningchenhui.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/model02/</guid>
             <title>安装NCL</title>
-            <link>https://ningchenhui.github.io/ComputerScience/model02/</link>
+            <link>https://ningchenhui.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/model02/</link>
             <category>模式</category>
             <category>地球科学</category>
             <pubDate>Sun, 21 Mar 2021 23:57:20 +0800</pubDate>
@@ -1947,9 +1947,9 @@ conda clean -t
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://ningchenhui.github.io/ComputerScience/model01/</guid>
+            <guid isPermalink="true">https://ningchenhui.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/model01/</guid>
             <title>初识NetCDF</title>
-            <link>https://ningchenhui.github.io/ComputerScience/model01/</link>
+            <link>https://ningchenhui.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/model01/</link>
             <category>模式</category>
             <category>地球科学</category>
             <pubDate>Thu, 18 Mar 2021 17:08:20 +0800</pubDate>
@@ -1997,9 +1997,9 @@ ncdisp(FileName)&lt;br&gt;
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://ningchenhui.github.io/ComputerScience/sunway01/</guid>
+            <guid isPermalink="true">https://ningchenhui.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/sunway01/</guid>
             <title>超算远程访问</title>
-            <link>https://ningchenhui.github.io/ComputerScience/sunway01/</link>
+            <link>https://ningchenhui.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/sunway01/</link>
             <category>Linux</category>
             <pubDate>Tue, 16 Mar 2021 11:01:16 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;#登录账号成功&lt;br&gt;
@@ -2034,9 +2034,9 @@ ncdisp(FileName)&lt;br&gt;
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://ningchenhui.github.io/ComputerScience/linux1224/</guid>
+            <guid isPermalink="true">https://ningchenhui.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/linux1224/</guid>
             <title>Linux学习 笔记#04 文件权限与目录配置</title>
-            <link>https://ningchenhui.github.io/ComputerScience/linux1224/</link>
+            <link>https://ningchenhui.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/linux1224/</link>
             <category>Linux</category>
             <pubDate>Thu, 24 Dec 2020 15:07:18 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;&lt;code&gt;chmod 000 filename&lt;/code&gt;  &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;/p&gt;
@@ -2124,9 +2124,9 @@ ncdisp(FileName)&lt;br&gt;
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://ningchenhui.github.io/EarthScience/Ocean/ocean1124/</guid>
+            <guid isPermalink="true">https://ningchenhui.github.io/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/%E7%89%A9%E7%90%86%E6%B5%B7%E6%B4%8B%E5%AD%A6/ocean1124/</guid>
             <title>物理海洋学基础 笔记#03</title>
-            <link>https://ningchenhui.github.io/EarthScience/Ocean/ocean1124/</link>
+            <link>https://ningchenhui.github.io/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/%E7%89%A9%E7%90%86%E6%B5%B7%E6%B4%8B%E5%AD%A6/ocean1124/</link>
             <category>地球科学</category>
             <pubDate>Tue, 22 Dec 2020 22:35:37 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;海洋观测数据，观测方法，基本方程。&lt;/p&gt;
@@ -2264,9 +2264,9 @@ ncdisp(FileName)&lt;br&gt;
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://ningchenhui.github.io/ComputerScience/hpc1206/</guid>
+            <guid isPermalink="true">https://ningchenhui.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/hpc1206/</guid>
             <title>高性能计算#04 HPL测试GPU</title>
-            <link>https://ningchenhui.github.io/ComputerScience/hpc1206/</link>
+            <link>https://ningchenhui.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/hpc1206/</link>
             <category>Linux</category>
             <pubDate>Sun, 06 Dec 2020 16:44:18 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;- HPL 测试 MKL+MPICH - &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;/p&gt;
@@ -2507,9 +2507,9 @@ GPU 5: Tesla P100-PCIE-16GB (UUID: GPU-16423caf-0037-6742-2977-ba03f4937b9b)&lt;
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://ningchenhui.github.io/ComputerScience/linux1206/</guid>
+            <guid isPermalink="true">https://ningchenhui.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/linux1206/</guid>
             <title>Linux学习 笔记#03 指令集</title>
-            <link>https://ningchenhui.github.io/ComputerScience/linux1206/</link>
+            <link>https://ningchenhui.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/linux1206/</link>
             <category>Linux</category>
             <pubDate>Sun, 06 Dec 2020 14:27:18 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;单开一篇整理常用指令。 &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;/p&gt;
@@ -2636,9 +2636,9 @@ node1 slots=2 max_slots=20
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://ningchenhui.github.io/ComputerScience/hpc1205/</guid>
+            <guid isPermalink="true">https://ningchenhui.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/hpc1205/</guid>
             <title>高性能计算#03 HPCG搭建</title>
-            <link>https://ningchenhui.github.io/ComputerScience/hpc1205/</link>
+            <link>https://ningchenhui.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/hpc1205/</link>
             <category>Linux</category>
             <pubDate>Sat, 05 Dec 2020 16:13:18 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;- HPCG 测试 OPENBLAS+OPENMPI - &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;/p&gt;
@@ -2839,9 +2839,9 @@ KiB Swap:  7999484 total,  1274312 used,  6725172 free. 88929968 cached Mem&lt;/
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://ningchenhui.github.io/ComputerScience/hpc1204/</guid>
+            <guid isPermalink="true">https://ningchenhui.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/hpc1204/</guid>
             <title>高性能计算#02 HPL再次搭建</title>
-            <link>https://ningchenhui.github.io/ComputerScience/hpc1204/</link>
+            <link>https://ningchenhui.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/hpc1204/</link>
             <category>Linux</category>
             <pubDate>Fri, 04 Dec 2020 18:57:06 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;- Linpack 测试 OPENBLAS+OPENMPI+HPL -&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;/p&gt;
@@ -3068,9 +3068,9 @@ End of Tests.
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://ningchenhui.github.io/ComputerScience/hpc1202/</guid>
+            <guid isPermalink="true">https://ningchenhui.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/hpc1202/</guid>
             <title>高性能计算#01 HPL搭建</title>
-            <link>https://ningchenhui.github.io/ComputerScience/hpc1202/</link>
+            <link>https://ningchenhui.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/hpc1202/</link>
             <category>Linux</category>
             <pubDate>Wed, 02 Dec 2020 16:50:40 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;- Linpack 测试 GOTOBLAS+MPICH+HPL -&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;/p&gt;
@@ -3193,9 +3193,9 @@ LINKFLAGS = $(CCFLAGS)&lt;br&gt;
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://ningchenhui.github.io/EarthScience/Ocean/ocean1120/</guid>
+            <guid isPermalink="true">https://ningchenhui.github.io/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/%E7%89%A9%E7%90%86%E6%B5%B7%E6%B4%8B%E5%AD%A6/ocean1120/</guid>
             <title>物理海洋学基础 笔记#02</title>
-            <link>https://ningchenhui.github.io/EarthScience/Ocean/ocean1120/</link>
+            <link>https://ningchenhui.github.io/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/%E7%89%A9%E7%90%86%E6%B5%B7%E6%B4%8B%E5%AD%A6/ocean1120/</link>
             <category>地球科学</category>
             <pubDate>Fri, 20 Nov 2020 14:32:21 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;海水部分性质与海洋通量。&lt;/p&gt;
@@ -3257,9 +3257,9 @@ QA 为水平方向上的海洋热平流。&lt;br&gt;
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://ningchenhui.github.io/EarthScience/ESS/es1116/</guid>
+            <guid isPermalink="true">https://ningchenhui.github.io/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/%E5%9C%B0%E7%90%83%E7%B3%BB%E7%BB%9F%E7%A7%91%E5%AD%A6/es1116/</guid>
             <title>地球科学导论 笔记#05</title>
-            <link>https://ningchenhui.github.io/EarthScience/ESS/es1116/</link>
+            <link>https://ningchenhui.github.io/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/%E5%9C%B0%E7%90%83%E7%B3%BB%E7%BB%9F%E7%A7%91%E5%AD%A6/es1116/</link>
             <category>地球科学</category>
             <pubDate>Mon, 16 Nov 2020 10:08:33 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;地球科学导论–冰川&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;/p&gt;
@@ -3295,9 +3295,9 @@ QA 为水平方向上的海洋热平流。&lt;br&gt;
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://ningchenhui.github.io/ComputerScience/linux1112/</guid>
+            <guid isPermalink="true">https://ningchenhui.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/linux1112/</guid>
             <title>Linux学习 笔记#02</title>
-            <link>https://ningchenhui.github.io/ComputerScience/linux1112/</link>
+            <link>https://ningchenhui.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/linux1112/</link>
             <category>Linux</category>
             <pubDate>Thu, 12 Nov 2020 20:31:58 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;- 登入系统 - &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;/p&gt;
@@ -3502,9 +3502,9 @@ $ bc                    //计算器 scale=num设置小数点位数，quit退出
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://ningchenhui.github.io/EarthScience/ESS/es1111/</guid>
+            <guid isPermalink="true">https://ningchenhui.github.io/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/%E5%9C%B0%E7%90%83%E7%B3%BB%E7%BB%9F%E7%A7%91%E5%AD%A6/es1111/</guid>
             <title>地球科学导论 笔记#04</title>
-            <link>https://ningchenhui.github.io/EarthScience/ESS/es1111/</link>
+            <link>https://ningchenhui.github.io/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/%E5%9C%B0%E7%90%83%E7%B3%BB%E7%BB%9F%E7%A7%91%E5%AD%A6/es1111/</link>
             <category>地球科学</category>
             <pubDate>Wed, 11 Nov 2020 21:06:26 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;地球科学导论–动荡的海洋 续&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;/p&gt;
@@ -3588,9 +3588,9 @@ $ bc                    //计算器 scale=num设置小数点位数，quit退出
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://ningchenhui.github.io/ComputerScience/linux1111/</guid>
+            <guid isPermalink="true">https://ningchenhui.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/linux1111/</guid>
             <title>Linux学习 笔记#01</title>
-            <link>https://ningchenhui.github.io/ComputerScience/linux1111/</link>
+            <link>https://ningchenhui.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/linux1111/</link>
             <category>Linux</category>
             <pubDate>Wed, 11 Nov 2020 11:17:58 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;- 反复入门 Linux- &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;/p&gt;
@@ -3649,9 +3649,9 @@ VM 创建空磁盘，挂载 CD 为 Ubuntu14 镜像，进入到系统安装界面
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://ningchenhui.github.io/EarthScience/Ocean/ocean1110/</guid>
+            <guid isPermalink="true">https://ningchenhui.github.io/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/%E7%89%A9%E7%90%86%E6%B5%B7%E6%B4%8B%E5%AD%A6/ocean1110/</guid>
             <title>物理海洋学基础 笔记#01</title>
-            <link>https://ningchenhui.github.io/EarthScience/Ocean/ocean1110/</link>
+            <link>https://ningchenhui.github.io/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/%E7%89%A9%E7%90%86%E6%B5%B7%E6%B4%8B%E5%AD%A6/ocean1110/</link>
             <category>地球科学</category>
             <pubDate>Tue, 10 Nov 2020 15:26:13 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;走进物理海洋学。&lt;/p&gt;
@@ -3716,9 +3716,9 @@ VM 创建空磁盘，挂载 CD 为 Ubuntu14 镜像，进入到系统安装界面
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://ningchenhui.github.io/EarthScience/ESS/es1029/</guid>
+            <guid isPermalink="true">https://ningchenhui.github.io/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/%E5%9C%B0%E7%90%83%E7%B3%BB%E7%BB%9F%E7%A7%91%E5%AD%A6/es1029/</guid>
             <title>地球科学导论 笔记#03</title>
-            <link>https://ningchenhui.github.io/EarthScience/ESS/es1029/</link>
+            <link>https://ningchenhui.github.io/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/%E5%9C%B0%E7%90%83%E7%B3%BB%E7%BB%9F%E7%A7%91%E5%AD%A6/es1029/</link>
             <category>地球科学</category>
             <pubDate>Thu, 29 Oct 2020 10:45:09 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;地球科学导论–动荡的海洋&lt;/p&gt;
@@ -3769,9 +3769,9 @@ VM 创建空磁盘，挂载 CD 为 Ubuntu14 镜像，进入到系统安装界面
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://ningchenhui.github.io/EarthScience/ESS/es1023/</guid>
+            <guid isPermalink="true">https://ningchenhui.github.io/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/%E5%9C%B0%E7%90%83%E7%B3%BB%E7%BB%9F%E7%A7%91%E5%AD%A6/es1023/</guid>
             <title>地球科学导论 笔记#02</title>
-            <link>https://ningchenhui.github.io/EarthScience/ESS/es1023/</link>
+            <link>https://ningchenhui.github.io/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/%E5%9C%B0%E7%90%83%E7%B3%BB%E7%BB%9F%E7%A7%91%E5%AD%A6/es1023/</link>
             <category>地球科学</category>
             <pubDate>Fri, 23 Oct 2020 19:07:40 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;地球科学导论–海洋：净土&lt;/p&gt;
@@ -3859,9 +3859,9 @@ VM 创建空磁盘，挂载 CD 为 Ubuntu14 镜像，进入到系统安装界面
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://ningchenhui.github.io/EarthScience/ESS/es1009/</guid>
+            <guid isPermalink="true">https://ningchenhui.github.io/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/%E5%9C%B0%E7%90%83%E7%B3%BB%E7%BB%9F%E7%A7%91%E5%AD%A6/es1009/</guid>
             <title>地球科学导论 笔记#01</title>
-            <link>https://ningchenhui.github.io/EarthScience/ESS/es1009/</link>
+            <link>https://ningchenhui.github.io/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/%E5%9C%B0%E7%90%83%E7%B3%BB%E7%BB%9F%E7%A7%91%E5%AD%A6/es1009/</link>
             <category>地球科学</category>
             <pubDate>Fri, 09 Oct 2020 14:34:31 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;地球科学导论–开始&lt;/p&gt;

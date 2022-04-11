@@ -34,9 +34,9 @@ step 4 - 执行 make (make -j 50 多线程？)&lt;br&gt;
         <updated>2022-02-05T11:19:13.000Z</updated>
     </entry>
     <entry>
-        <id>https://ningchenhui.github.io/EarthScience/esA0412/</id>
+        <id>https://ningchenhui.github.io/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/esA0412/</id>
         <title>北极 SIE/SIV 计算</title>
-        <link rel="alternate" href="https://ningchenhui.github.io/EarthScience/esA0412/"/>
+        <link rel="alternate" href="https://ningchenhui.github.io/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/esA0412/"/>
         <content type="html">&lt;p&gt;Arctic sea ice extent and volume (SIE and SIV).&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;h2 id=&#34;定义&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#定义&#34;&gt;#&lt;/a&gt; 定义&lt;/h2&gt;
 &lt;p&gt;Sea ice concentration is the percentage of each pixel that is covered by ice.&lt;br&gt;
@@ -85,9 +85,9 @@ end
         <updated>2021-04-12T02:43:05.000Z</updated>
     </entry>
     <entry>
-        <id>https://ningchenhui.github.io/EarthScience/esA0408/</id>
+        <id>https://ningchenhui.github.io/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/esA0408/</id>
         <title>粗化网格的变形速率计算</title>
-        <link rel="alternate" href="https://ningchenhui.github.io/EarthScience/esA0408/"/>
+        <link rel="alternate" href="https://ningchenhui.github.io/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/esA0408/"/>
         <content type="html">&lt;p&gt;应该没推错。&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;h2 id=&#34;网格&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#网格&#34;&gt;#&lt;/a&gt; 网格&lt;/h2&gt;
 &lt;h3 id=&#34;b-grid&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#b-grid&#34;&gt;#&lt;/a&gt; B-grid&lt;/h3&gt;
@@ -203,9 +203,9 @@ tot = sqrt(shr.^2+div.^2);
         <updated>2021-04-08T10:12:04.000Z</updated>
     </entry>
     <entry>
-        <id>https://ningchenhui.github.io/ComputerScience/model02/</id>
+        <id>https://ningchenhui.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/model02/</id>
         <title>安装NCL</title>
-        <link rel="alternate" href="https://ningchenhui.github.io/ComputerScience/model02/"/>
+        <link rel="alternate" href="https://ningchenhui.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/model02/"/>
         <content type="html">&lt;p&gt;NCAR command language (NCL)&lt;/p&gt;
 &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
 &lt;h2 id=&#34;关于&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#关于&#34;&gt;#&lt;/a&gt; 关于&lt;/h2&gt;
@@ -281,9 +281,9 @@ conda clean -t
         <updated>2021-03-21T15:57:20.000Z</updated>
     </entry>
     <entry>
-        <id>https://ningchenhui.github.io/ComputerScience/model01/</id>
+        <id>https://ningchenhui.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/model01/</id>
         <title>初识NetCDF</title>
-        <link rel="alternate" href="https://ningchenhui.github.io/ComputerScience/model01/"/>
+        <link rel="alternate" href="https://ningchenhui.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/model01/"/>
         <content type="html">&lt;p&gt;Network Common Data Form (NetCDF)&lt;/p&gt;
 &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
 &lt;!--ncl--&gt;
