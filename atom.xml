@@ -1,18 +1,18 @@
 <?xml version="1.0"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://ningchenhui.github.io</id>
-    <title>一切都会好起来的哟</title>
+    <title>欢迎</title>
     <link href="https://ningchenhui.github.io" />
-    <updated>2022-03-01T03:50:13.000Z</updated>
-    <category term="课程资料" />
+    <updated>2022-04-13T03:50:13.000Z</updated>
     <category term="模式" />
+    <category term="课程资料" />
     <category term="地球科学" />
     <category term="Linux" />
     <entry>
         <id>https://ningchenhui.github.io/home/</id>
         <title>帝春的小窝</title>
         <link rel="alternate" href="https://ningchenhui.github.io/home/"/>
-        <content type="html">&lt;p&gt;好像有一堆事但又什么都来不及做 —    &lt;/p&gt;
+        <content type="html">&lt;p&gt;有一堆事但又什么都来不及做 —    &lt;/p&gt;
 &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
 &lt;!--### $\textit{It is hard to stay mad when there is so much beauty in the world.}$--&gt;
 &lt;h2 id=&#34;动态&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#动态&#34;&gt;#&lt;/a&gt; 📅 动态&lt;/h2&gt;
@@ -37,16 +37,19 @@
 ## 🔖 友人帐
 
  --&gt;
-&lt;h2 id=&#34;天气&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#天气&#34;&gt;#&lt;/a&gt; 🌈 天气&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3d3dy53ZWF0aGVyLmNvbS5jbi93ZWF0aGVyLzEwMTAxMDEwMC5zaHRtbA==&#34;&gt;北京天气&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3d3dy53ZWF0aGVyLmNvbS5jbi9odG1sL3dlYXRoZXIvMTAxMjIwNzAxLnNodG1s&#34;&gt;宿州天气&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3d3dy53ZWF0aGVyLmNvbS5jbi93ZWF0aGVyLzEwMTE5MDEwMS5zaHRtbA==&#34;&gt;南京天气&lt;/span&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;起飞&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#起飞&#34;&gt;#&lt;/a&gt; 🚀 起飞&lt;/h2&gt;
-&lt;p&gt;&lt;a href=/donate.html&gt;赞助单移到这了–&lt;/a&gt;&lt;/p&gt;
+ &lt;!--
+## 🌈 天气
+
+1. &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3d3dy53ZWF0aGVyLmNvbS5jbi93ZWF0aGVyLzEwMTAxMDEwMC5zaHRtbA==&#34;&gt;北京天气&lt;/span&gt;
+1. &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3d3dy53ZWF0aGVyLmNvbS5jbi9odG1sL3dlYXRoZXIvMTAxMjIwNzAxLnNodG1s&#34;&gt;宿州天气&lt;/span&gt;  
+2. &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3d3dy53ZWF0aGVyLmNvbS5jbi93ZWF0aGVyLzEwMTE5MDEwMS5zaHRtbA==&#34;&gt;南京天气&lt;/span&gt;
+
+## 🚀 起飞
+
+&lt;a href=/donate.html&gt;赞助单移到这了--&lt;/a&gt;
+ --&gt;
 </content>
-        <updated>2022-03-01T03:50:13.000Z</updated>
+        <updated>2022-04-13T03:50:13.000Z</updated>
     </entry>
     <entry>
         <id>https://ningchenhui.github.io/omare220205/</id>
@@ -2269,87 +2272,80 @@ ncdisp(FileName)&lt;br&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2xpdV9mZW5nX3ppXy9hcnRpY2xlL2RldGFpbHMvMTA3MjMyMjUy&#34;&gt;GPU 驱动&lt;/span&gt;&lt;/li&gt;
 &lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2xpdV9mZW5nX3ppXy9hcnRpY2xlL2RldGFpbHMvMTA3MjM0Mjcx&#34;&gt;CUDA&lt;/span&gt;&lt;br&gt;
-~3. &lt;a href=&#34;/2020/12/04/hpc1204/#%E5%AE%89%E8%A3%85OpenBLAS&#34;&gt;OpenBLAS&lt;/a&gt;~&lt;br&gt;
-~4. &lt;a href=&#34;/2020/12/04/hpc1204/#%E5%AE%89%E8%A3%85openMPI&#34;&gt;OpenMPI&lt;/a&gt;~&lt;/li&gt;
+&lt;s&gt;3. &lt;a href=&#34;/2020/12/04/hpc1204/#%E5%AE%89%E8%A3%85OpenBLAS&#34;&gt;OpenBLAS&lt;/a&gt;&lt;/s&gt;&lt;br&gt;
+&lt;s&gt;4. &lt;a href=&#34;/2020/12/04/hpc1204/#%E5%AE%89%E8%A3%85openMPI&#34;&gt;OpenMPI&lt;/a&gt;&lt;/s&gt;&lt;/li&gt;
 &lt;li&gt;编译器：系统自带的 GNU 编译器&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;em&gt;可惜集群上的 CUDA 是 9.0 的，不支持 MPI-3.0，想着下一个 Intel mpi，结果这玩意不能单独下，要下一个 OneAPI，压缩包和 CUDA 11.0 一样大的要死，浪费我一晚上，几个 T 的盘不给用属实可恶。&lt;/em&gt;&lt;/p&gt;
-&lt;h4 id=&#34;mpich2&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#mpich2&#34;&gt;#&lt;/a&gt; MPICH2&lt;/h4&gt;
-&lt;ol start=&#34;2&#34;&gt;
+&lt;p&gt;&lt;em&gt;可惜集群上的 CUDA 是 9.0 的，不支持 MPI-3.0，想着下一个 Intel mpi，结果这玩意不能单独下，要下一个 OneAPI，压缩包和 CUDA 11.0 一样超大。&lt;/em&gt;&lt;/p&gt;
+&lt;h3 id=&#34;mpich2&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#mpich2&#34;&gt;#&lt;/a&gt; MPICH2&lt;/h3&gt;
+&lt;ol&gt;
 &lt;li&gt;官方下载：&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3d3dy5tcGljaC5vcmcvc3RhdGljL2Rvd25sb2Fkcy8zLjIuMS9tcGljaC0zLjIuMS50YXIuZ3o=&#34;&gt;mpich-3.2.1.tar.gz&lt;/span&gt;，可以用 &lt;code&gt;wget&lt;/code&gt; 。&lt;/li&gt;
-&lt;li&gt;解压，新建文件夹 &lt;code&gt;mpich&lt;/code&gt;  作为安装文件夹&lt;br&gt;
- cd mpich-3.2.1/&lt;br&gt;
-./configure --prefix=/home/riolu/HPL/mpich CFLAGS=&amp;quot;-fPIC&amp;quot; CXXFLAGS=&amp;quot;-fPIC&amp;quot; --enable-shared --enable-sharedlibs=gcc --with-cuda=/usr/local/cuda-10.0/ --with-cuda-include=/usr/local/cuda-10.0/include --with-cuda-libpath=/usr/local/cuda-10.0/lib64&lt;br&gt;
- 如果不加这些参数会报错：&lt;br&gt;
-libmpich.a(allreduce.o): relocation R_X86_64_32 against `.rodata.str1.8’ can not be used when making a shared object; recompile with -fPIC&lt;/li&gt;
-&lt;li&gt;接下来&lt;br&gt;
- make clean&lt;br&gt;
-make&lt;br&gt;
-make install&lt;br&gt;
-gedit ~/.bashrc&lt;br&gt;
- 在后面加上&lt;br&gt;
- export PATH=/home/riolu/HPL/mpich/bin:&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;P&lt;/mi&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mi&gt;T&lt;/mi&gt;&lt;mi&gt;H&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mi&gt;M&lt;/mi&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mi&gt;N&lt;/mi&gt;&lt;mi&gt;P&lt;/mi&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mi&gt;T&lt;/mi&gt;&lt;mi&gt;H&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;/&lt;/mi&gt;&lt;mi&gt;h&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;/&lt;/mi&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;/&lt;/mi&gt;&lt;mi&gt;H&lt;/mi&gt;&lt;mi&gt;P&lt;/mi&gt;&lt;mi&gt;L&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;/&lt;/mi&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mi&gt;h&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;/&lt;/mi&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mo&gt;:&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;PATH
-     export MANPATH=/home/riolu/HPL/mpich/man:&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.8777699999999999em;vertical-align:-0.19444em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.13889em;&#34;&gt;P&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;A&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.13889em;&#34;&gt;T&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.08125em;&#34;&gt;H&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;p&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;o&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.02778em;&#34;&gt;r&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;t&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.10903em;&#34;&gt;M&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;A&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.10903em;&#34;&gt;N&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.13889em;&#34;&gt;P&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;A&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.13889em;&#34;&gt;T&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.08125em;&#34;&gt;H&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;h&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;o&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;m&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.02778em;&#34;&gt;r&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;o&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.01968em;&#34;&gt;l&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;u&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.08125em;&#34;&gt;H&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.13889em;&#34;&gt;P&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;L&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;m&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;p&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;h&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;m&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;:&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;MANPATH&lt;br&gt;
-export LD_LIBRARY_PATH=/home/riolu/HPL/mpich/lib:$LD_LIBRARY_PATH // 不知要不要&lt;br&gt;
-保存后&lt;br&gt;
- source ~/.bashrc&lt;/li&gt;
+&lt;li&gt;解压，新建文件夹 &lt;code&gt;mpich&lt;/code&gt;  作为安装文件夹&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h4 id=&#34;intel-mkl&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#intel-mkl&#34;&gt;#&lt;/a&gt; Intel MKL&lt;/h4&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token builtin class-name&#34;&gt;cd&lt;/span&gt; mpich-3.2.1/&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;./configure --prefix&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;/home/riolu/HPL/mpich &lt;span class=&#34;token assign-left variable&#34;&gt;CFLAGS&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;-fPIC&#34;&lt;/span&gt; &lt;span class=&#34;token assign-left variable&#34;&gt;CXXFLAGS&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;-fPIC&#34;&lt;/span&gt; --enable-shared --enable-sharedlibs&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;gcc --with-cuda&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;/usr/local/cuda-10.0/ --with-cuda-include&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;/usr/local/cuda-10.0/include --with-cuda-libpath&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;/usr/local/cuda-10.0/lib64&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;如果不加这些参数会报错：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;libmpich.a(allreduce.o): relocation R_X86_64_32 against `.rodata.str1.8&#39; can not be used when making a shared object; recompile with -fPIC
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;接下来&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;make&lt;/span&gt; clean&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;make&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;make&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;install&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;gedit ~/.bashrc&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;在后面加上&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;export PATH=/home/riolu/HPL/mpich/bin:$PATH
+export MANPATH=/home/riolu/HPL/mpich/man:$MANPATH
+export LD_LIBRARY_PATH=/home/riolu/HPL/mpich/lib:$LD_LIBRARY_PATH //不知要不要
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;保存后&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token builtin class-name&#34;&gt;source&lt;/span&gt; ~/.bashrc&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h3 id=&#34;intel-mkl&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#intel-mkl&#34;&gt;#&lt;/a&gt; Intel MKL&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;下载单独安装包：&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3JlZ2lzdHJhdGlvbmNlbnRlci1kb3dubG9hZC5pbnRlbC5jb20vYWtkbG0vaXJjX25hcy90ZWMvMTU4MTYvbF9ta2xfMjAxOS41LjI4MS50Z3o=&#34;&gt;l_mkl_2019.5.281.tgz&lt;/span&gt;&lt;/li&gt;
 &lt;li&gt;解压后进入，执行 &lt;code&gt;sh install.sh&lt;/code&gt; ，按提示进行。&lt;/li&gt;
-&lt;li&gt;配置 &lt;code&gt;.bashrc&lt;/code&gt; ，添加&lt;br&gt;
-# added for intel&lt;br&gt;
-export LD_LIBRARY_PATH=/home/riolu/intel/mkl/lib/intel64:$LD_LIBRARY_PATH&lt;br&gt;
- 执行 &lt;code&gt;source ~/.bashrc&lt;/code&gt; 。&lt;br&gt;
-如果报错找不到共享库的话可能是因为没有加这个路径。&lt;/li&gt;
+&lt;li&gt;配置 &lt;code&gt;.bashrc&lt;/code&gt; ，添加&lt;/li&gt;
 &lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;# added for intel
+export LD_LIBRARY_PATH=/home/riolu/intel/mkl/lib/intel64:$LD_LIBRARY_PATH
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;执行 &lt;code&gt;source ~/.bashrc&lt;/code&gt; 。&lt;br&gt;
+如果报错找不到共享库的话可能是因为没有加这个路径。&lt;/p&gt;
 &lt;h2 id=&#34;hpl&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#hpl&#34;&gt;#&lt;/a&gt; HPL&lt;/h2&gt;
 &lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;官方下载网站下载：&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9kZXZlbG9wZXIubnZpZGlhLmNvbS9jb21wdXRld29ya3MtZGV2ZWxvcGVyLWV4Y2x1c2l2ZS1kb3dubG9hZHM=&#34;&gt;hpl-2.0_FERMI_v15.tgz&lt;/span&gt;&lt;br&gt;
- 需要注册一下。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;进入解压后的文件夹，修改 Make.CUDA 的参数&lt;br&gt;
- TOPdir = $(HOME)/HPL/hpl-2.0_FERMI_v15 #hpl 所在的路径目录&lt;br&gt;
-…&lt;br&gt;
-MPdir  = &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mo stretchy=&#34;false&#34;&gt;(&lt;/mo&gt;&lt;mi&gt;H&lt;/mi&gt;&lt;mi&gt;O&lt;/mi&gt;&lt;mi&gt;M&lt;/mi&gt;&lt;mi&gt;E&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;)&lt;/mo&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;/&lt;/mi&gt;&lt;mi&gt;H&lt;/mi&gt;&lt;mi&gt;P&lt;/mi&gt;&lt;mi&gt;L&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;/&lt;/mi&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mi&gt;h&lt;/mi&gt;&lt;mi&gt;M&lt;/mi&gt;&lt;mi&gt;P&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mi&gt;I&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;(HOME)/HPL/mpich
-     MPinc = -I&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.08125em;&#34;&gt;H&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.02778em;&#34;&gt;O&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.10903em;&#34;&gt;M&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.05764em;&#34;&gt;E&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.08125em;&#34;&gt;H&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.13889em;&#34;&gt;P&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;L&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;m&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;p&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;h&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.10903em;&#34;&gt;M&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.13889em;&#34;&gt;P&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.76666em;vertical-align:-0.08333em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;−&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.07847em;&#34;&gt;I&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;(MPdir)/include&lt;br&gt;
-MPlib = -L&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mo stretchy=&#34;false&#34;&gt;(&lt;/mo&gt;&lt;mi&gt;M&lt;/mi&gt;&lt;mi&gt;P&lt;/mi&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;)&lt;/mo&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;/&lt;/mi&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;.&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;.&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;.&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;.&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;.&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;.&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;.&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;.&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;.&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;.&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;.&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;.&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;.&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;.&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;.&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;.&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;.&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;.&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;.&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;.&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;.&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;.&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;.&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;.&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;.&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;.&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;.&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;.&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;.&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;.&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;.&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;.&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;.&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;.&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;.&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;.&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;.&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;.&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;.&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;.&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;.&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;.&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;.&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;.&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;.&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;.&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;.&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;.&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;.&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;.&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;.&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;.&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;.&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;.&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;.&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;.&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;.&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;.&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;.&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;.&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;.&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;.&lt;/mi&gt;&lt;mi&gt;L&lt;/mi&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;(MPdir)/lib
-     ..............................................................    
-     LAdir   =&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.10903em;&#34;&gt;M&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.13889em;&#34;&gt;P&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;d&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.02778em;&#34;&gt;r&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.01968em;&#34;&gt;l&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;L&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;A&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;d&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.02778em;&#34;&gt;r&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;=&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;(HOME)/intel/mkl/lib/intel64&lt;br&gt;
-LAMP5dir    = &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mo stretchy=&#34;false&#34;&gt;(&lt;/mo&gt;&lt;mi&gt;H&lt;/mi&gt;&lt;mi&gt;O&lt;/mi&gt;&lt;mi&gt;M&lt;/mi&gt;&lt;mi&gt;E&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;)&lt;/mo&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;/&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;/&lt;/mi&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;msub&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;/msub&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;msub&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;/msub&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;/&lt;/mi&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;/&lt;/mi&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;/&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;mn&gt;64&lt;/mn&gt;&lt;mi&gt;L&lt;/mi&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mi&gt;I&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;(HOME)/intel/compilers_and_libraries/linux/lib/intel64
- 	LAinc        = -I&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.08125em;&#34;&gt;H&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.02778em;&#34;&gt;O&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.10903em;&#34;&gt;M&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.05764em;&#34;&gt;E&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;t&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.01968em;&#34;&gt;l&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;o&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;m&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;p&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.01968em;&#34;&gt;l&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.02778em;&#34;&gt;r&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.151392em;&#34;&gt;&lt;span style=&#34;top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mathnormal mtight&#34;&gt;a&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.15em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;d&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.33610799999999996em;&#34;&gt;&lt;span style=&#34;top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mathnormal mtight&#34; style=&#34;margin-right:0.01968em;&#34;&gt;l&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.15em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.02778em;&#34;&gt;r&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.02778em;&#34;&gt;r&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.01968em;&#34;&gt;l&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;u&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.01968em;&#34;&gt;l&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;t&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.01968em;&#34;&gt;l&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;L&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;A&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.76666em;vertical-align:-0.08333em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;−&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.07847em;&#34;&gt;I&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;(HOME)/intel/mkl/include&lt;br&gt;
-LAlib        = -L &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mo stretchy=&#34;false&#34;&gt;(&lt;/mo&gt;&lt;mi&gt;T&lt;/mi&gt;&lt;mi&gt;O&lt;/mi&gt;&lt;mi&gt;P&lt;/mi&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;)&lt;/mo&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;/&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;/&lt;/mi&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;mi&gt;g&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mi&gt;L&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;/&lt;/mi&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;/&lt;/mi&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;/&lt;/mi&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mn&gt;10.0&lt;/mn&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;/&lt;/mi&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mn&gt;64&lt;/mn&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mi&gt;L&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;(TOPdir)/src/cuda  -ldgemm -L/usr/local/cuda-10.0/lib64 -lcuda -lcudart -lcublas -L&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.13889em;&#34;&gt;T&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.02778em;&#34;&gt;O&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.13889em;&#34;&gt;P&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;d&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.02778em;&#34;&gt;r&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.02778em;&#34;&gt;r&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;u&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;d&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;−&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.8888799999999999em;vertical-align:-0.19444em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.01968em;&#34;&gt;l&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;d&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.03588em;&#34;&gt;g&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;m&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;m&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;−&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;L&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;u&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.02778em;&#34;&gt;r&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.01968em;&#34;&gt;l&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;o&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.01968em;&#34;&gt;l&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;u&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;d&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;−&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.01968em;&#34;&gt;l&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;−&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.77777em;vertical-align:-0.08333em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.01968em;&#34;&gt;l&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;u&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;d&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;−&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.77777em;vertical-align:-0.08333em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.01968em;&#34;&gt;l&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;u&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;d&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.02778em;&#34;&gt;r&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;t&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;−&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.77777em;vertical-align:-0.08333em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.01968em;&#34;&gt;l&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;u&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.01968em;&#34;&gt;l&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;−&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.68333em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;L&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;(LAdir) -lmkl_intel_lp64 -lmkl_intel_thread -lmkl_core -liomp5&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt; HPL_INCLUDES = -I$(INCdir) -I$(INCdir)/$(ARCH) $(LAinc) $(MPinc) -I/usr/local/cuda-10.0/include
- ..............................................................
- CC   =$(MPdir)/bin/mpicc
+&lt;li&gt;官方下载网站下载：&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9kZXZlbG9wZXIubnZpZGlhLmNvbS9jb21wdXRld29ya3MtZGV2ZWxvcGVyLWV4Y2x1c2l2ZS1kb3dubG9hZHM=&#34;&gt;hpl-2.0_FERMI_v15.tgz&lt;/span&gt;&lt;br&gt;
+ 需要注册一下。&lt;/li&gt;
+&lt;li&gt;进入解压后的文件夹，修改 Make.CUDA 的参数&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;TOPdir = $(HOME)/HPL/hpl-2.0_FERMI_v15 #hpl所在的路径目录
+..............................................................
+MPdir  = $(HOME)/HPL/mpich
+MPinc = -I$(MPdir)/include          
+MPlib = -L$(MPdir)/lib
+..............................................................    
+LAdir   =$(HOME)/intel/mkl/lib/intel64
+LAMP5dir    = $(HOME)/intel/compilers_and_libraries/linux/lib/intel64
+LAinc        = -I$(HOME)/intel/mkl/include
+LAlib        = -L $(TOPdir)/src/cuda  -ldgemm -L/usr/local/cuda-10.0/lib64 -lcuda -lcudart -lcublas -L$(LAdir) -lmkl_intel_lp64 -lmkl_intel_thread -lmkl_core -liomp5
 
- ..............................................................
+HPL_INCLUDES = -I$(INCdir) -I$(INCdir)/$(ARCH) $(LAinc) $(MPinc) -I/usr/local/cuda-10.0/include
+..............................................................
+CC   =$(MPdir)/bin/mpicc
+
+..............................................................
 &lt;/code&gt;&lt;/pre&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;修改 &lt;code&gt;src/cuda/Makefile&lt;/code&gt;  为里的 &lt;code&gt;cuda&lt;/code&gt;  路径为 &lt;code&gt;cuda-10.0&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;编译&lt;br&gt;
- make arch=CUDA clean_arch_all&lt;br&gt;
-make arch=CUDA&lt;br&gt;
- 若报错 &lt;code&gt;/usr/bin/ld: 找不到 -liomp5&lt;/code&gt;  则可以做一个软链接，执行&lt;br&gt;
- ln -s /home/intel/lib/intel64/libiomp5.so/home/intel/mkl/lib/intel64/libiomp5.so&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code&gt;/bin/CUDA&lt;/code&gt;  目录下生成两个文件：HPL.dat 和 xhpl。在该目录新建一个 &lt;code&gt;test.sh&lt;/code&gt;  文件，内容为&lt;br&gt;
- export HPL_DIR=/home/riolu/HPL/hpl-2.0_FERMI_v15&lt;br&gt;
-export MKL_NUM_THREADS=6&lt;br&gt;
-export OMP_NUM_THREADS=2&lt;br&gt;
-export MKL_DYNAMIC=FALSE&lt;br&gt;
-export CUDA_DGEMM_SPLIT=0.954&lt;br&gt;
-export CUDA_DTRSM_SPLIT=0.946&lt;br&gt;
-export LD_LIBRARY_PATH=&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;H&lt;/mi&gt;&lt;mi&gt;P&lt;/mi&gt;&lt;msub&gt;&lt;mi&gt;L&lt;/mi&gt;&lt;mi&gt;D&lt;/mi&gt;&lt;/msub&gt;&lt;mi&gt;I&lt;/mi&gt;&lt;mi&gt;R&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;/&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;/&lt;/mi&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;:&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;HPL_DIR/src/cuda:&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.08125em;&#34;&gt;H&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.13889em;&#34;&gt;P&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;L&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.32833099999999993em;&#34;&gt;&lt;span style=&#34;top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mathnormal mtight&#34; style=&#34;margin-right:0.02778em;&#34;&gt;D&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.15em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.07847em;&#34;&gt;I&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.00773em;&#34;&gt;R&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.02778em;&#34;&gt;r&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;u&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;d&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;:&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;LD_LIBRARY_PATH&lt;br&gt;
-$HPL_DIR/bin/CUDA/xhpl&lt;br&gt;
- 其中&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;修改 &lt;code&gt;src/cuda/Makefile&lt;/code&gt;  为里的 &lt;code&gt;cuda&lt;/code&gt;  路径为 &lt;code&gt;cuda-10.0&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;编译&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;make&lt;/span&gt; &lt;span class=&#34;token assign-left variable&#34;&gt;arch&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;CUDA clean_arch_all&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;make&lt;/span&gt; &lt;span class=&#34;token assign-left variable&#34;&gt;arch&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;CUDA&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;若报错 &lt;code&gt;/usr/bin/ld: 找不到 -liomp5&lt;/code&gt;  则可以做一个软链接，执行&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;ln&lt;/span&gt; -s /home/intel/lib/intel64/libiomp5.so /home/intel/mkl/lib/intel64/libiomp5.so&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;&lt;code&gt;/bin/CUDA&lt;/code&gt;  目录下生成两个文件：HPL.dat 和 xhpl。在该目录新建一个 &lt;code&gt;test.sh&lt;/code&gt;  文件，内容为&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;export HPL_DIR=/home/riolu/HPL/hpl-2.0_FERMI_v15
+export MKL_NUM_THREADS=6
+export OMP_NUM_THREADS=2
+export MKL_DYNAMIC=FALSE
+export CUDA_DGEMM_SPLIT=0.954
+export CUDA_DTRSM_SPLIT=0.946
+export LD_LIBRARY_PATH=$HPL_DIR/src/cuda:$LD_LIBRARY_PATH
+$HPL_DIR/bin/CUDA/xhpl
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;其中&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;MKL_NUM_THREADS：每个进程使用的 CPU 核的数量&lt;/li&gt;
 &lt;li&gt;OMP_NUM_THREADS：每个 GPU 使用的 CPU 核的数量&lt;br&gt;
@@ -2358,122 +2354,117 @@ $HPL_DIR/bin/CUDA/xhpl&lt;br&gt;
 &lt;li&gt;CUDA_DTRSM_SPLIT：发送给 GPU 的 DTRSM 占总的百分比，通常比 DGEMM 低 0.05-0.10&lt;/li&gt;
 &lt;li&gt;HPL_DIR：文件的路径&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;单节点执行： &lt;code&gt;./run_linpack.sh&lt;/code&gt; &lt;br&gt;
- 多节点执行（没有测试过，仅供参考）： &lt;code&gt;mpiexec.hydra -np 7 ./test.sh&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
+&lt;ol start=&#34;6&#34;&gt;
+&lt;li&gt;单节点执行： &lt;code&gt;./run_linpack.sh&lt;/code&gt; &lt;br&gt;
+ 多节点执行（没有测试过，仅供参考）： &lt;code&gt;mpiexec.hydra -np 7 ./test.sh&lt;/code&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;初步结果&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#初步结果&#34;&gt;#&lt;/a&gt; 初步结果&lt;/h2&gt;
-&lt;pre&gt;&lt;code&gt;================================================================================
-HPLinpack 2.0  --  High-Performance Linpack benchmark  --   September 10, 2008
-Written by A. Petitet and R. Clint Whaley,  Innovative Computing Laboratory, UTK
-Modified by Piotr Luszczek, Innovative Computing Laboratory, UTK
-Modified by Julien Langou, University of Colorado Denver
-================================================================================
+&lt;pre&gt;&lt;code&gt;	================================================================================
+	HPLinpack 2.0  --  High-Performance Linpack benchmark  --   September 10, 2008
+	Written by A. Petitet and R. Clint Whaley,  Innovative Computing Laboratory, UTK
+	Modified by Piotr Luszczek, Innovative Computing Laboratory, UTK
+	Modified by Julien Langou, University of Colorado Denver
+	================================================================================
 
-An explanation of the input/output parameters follows:
-T/V    : Wall time / encoded variant.
-N      : The order of the coefficient matrix A.
-NB     : The partitioning blocking factor.
-P      : The number of process rows.
-Q      : The number of process columns.
-Time   : Time in seconds to solve the linear system.
-Gflops : Rate of execution for solving the linear system.
+	An explanation of the input/output parameters follows:
+	T/V    : Wall time / encoded variant.
+	N      : The order of the coefficient matrix A.
+	NB     : The partitioning blocking factor.
+	P      : The number of process rows.
+	Q      : The number of process columns.
+	Time   : Time in seconds to solve the linear system.
+	Gflops : Rate of execution for solving the linear system.
 
-The following parameter values will be used:
+	The following parameter values will be used:
 
-N      :   25000
-NB     :     768
-PMAP   : Row-major process mapping
-P      :       1
-Q      :       1
-PFACT  :    Left
-NBMIN  :       2
-NDIV   :       2
-RFACT  :    Left
-BCAST  :   1ring
-DEPTH  :       1
-SWAP   : Spread-roll (long)
-L1     : no-transposed form
-U      : no-transposed form
-EQUIL  : yes
-ALIGN  : 8 double precision words
+	N      :   25000
+	NB     :     768
+	PMAP   : Row-major process mapping
+	P      :       1
+	Q      :       1
+	PFACT  :    Left
+	NBMIN  :       2
+	NDIV   :       2
+	RFACT  :    Left
+	BCAST  :   1ring
+	DEPTH  :       1
+	SWAP   : Spread-roll (long)
+	L1     : no-transposed form
+	U      : no-transposed form
+	EQUIL  : yes
+	ALIGN  : 8 double precision words
 
---------------------------------------------------------------------------------
+	--------------------------------------------------------------------------------
 
-- The matrix A is randomly generated for each test.
-- The following scaled residual check will be computed:
-	  ||Ax-b||_oo / ( eps * ( || x ||_oo * || A ||_oo + || b ||_oo ) * N )
-- The relative machine precision (eps) is taken to be               1.110223e-16
-- Computational tests pass if scaled residuals are less than                16.0
+	- The matrix A is randomly generated for each test.
+	- The following scaled residual check will be computed:
+		  ||Ax-b||_oo / ( eps * ( || x ||_oo * || A ||_oo + || b ||_oo ) * N )
+	- The relative machine precision (eps) is taken to be               1.110223e-16
+	- Computational tests pass if scaled residuals are less than                16.0
 
-================================================================================
-T/V                N    NB     P     Q               Time                 Gflops
---------------------------------------------------------------------------------
-WR10L2L2       25000   768     1     1              10.58              9.843e+02
---------------------------------------------------------------------------------
-||Ax-b||_oo/(eps*(||A||_oo*||x||_oo+||b||_oo)*N)=        0.0044272 ...... PASSED
-================================================================================
+	================================================================================
+	T/V                N    NB     P     Q               Time                 Gflops
+	--------------------------------------------------------------------------------
+	WR10L2L2       25000   768     1     1              10.58              9.843e+02
+	--------------------------------------------------------------------------------
+	||Ax-b||_oo/(eps*(||A||_oo*||x||_oo+||b||_oo)*N)=        0.0044272 ...... PASSED
+	================================================================================
 
-Finished      1 tests with the following results:
-			  1 tests completed and passed residual checks,
-			  0 tests completed and failed residual checks,
-			  0 tests skipped because of illegal input values.
---------------------------------------------------------------------------------
+	Finished      1 tests with the following results:
+				  1 tests completed and passed residual checks,
+				  0 tests completed and failed residual checks,
+				  0 tests skipped because of illegal input values.
+	--------------------------------------------------------------------------------
 
-End of Tests.
-================================================================================
+	End of Tests.
+	================================================================================
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;速度是 CPU 的 3 倍……&lt;/p&gt;
 &lt;h3 id=&#34;gpu信息获取&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#gpu信息获取&#34;&gt;#&lt;/a&gt; GPU 信息获取&lt;/h3&gt;
 &lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;查看 nvidia GPU 型号&lt;br&gt;
- &lt;code&gt;lspci | grep -i nvidia&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;查看 Nvidia 显卡信息及使用情况&lt;br&gt;
- &lt;code&gt;nvidia-smi&lt;/code&gt; &lt;br&gt;
-Wed Dec  9 02:23:00 2020&lt;br&gt;
-±----------------------------------------------------------------------------+&lt;br&gt;
-| NVIDIA-SMI 410.129      Driver Version: 410.129      CUDA Version: 10.0     |&lt;br&gt;
-|-------------------------------±---------------------±---------------------+&lt;br&gt;
-| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |&lt;br&gt;
-| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |&lt;br&gt;
-|=&lt;mark&gt;&lt;mark&gt;&lt;mark&gt;&lt;mark&gt;&lt;mark&gt;&lt;mark&gt;&lt;mark&gt;&lt;mark&gt;&lt;mark&gt;&lt;mark&gt;&lt;mark&gt;&lt;mark&gt;&lt;mark&gt;&lt;mark&gt;&lt;mark&gt;+&lt;/mark&gt;&lt;/mark&gt;&lt;/mark&gt;&lt;/mark&gt;&lt;/mark&gt;&lt;/mark&gt;&lt;/mark&gt;&lt;/mark&gt;&lt;/mark&gt;&lt;/mark&gt;&lt;/mark&gt;+&lt;/mark&gt;&lt;/mark&gt;&lt;/mark&gt;&lt;/mark&gt;==============|&lt;br&gt;
-|   0  Tesla P100-PCIE…  Off  | 00000000:05:00.0 Off |                    0 |&lt;br&gt;
-| N/A   34C    P0    36W / 250W |   2391MiB / 16280MiB |      0%      Default |&lt;br&gt;
-±------------------------------±---------------------±---------------------+&lt;br&gt;
-|   1  Tesla P100-PCIE…  Off  | 00000000:08:00.0 Off |                    0 |&lt;br&gt;
-| N/A   40C    P0    40W / 250W |   2391MiB / 16280MiB |      0%      Default |&lt;br&gt;
-±------------------------------±---------------------±---------------------+&lt;br&gt;
-|   2  Tesla P100-PCIE…  Off  | 00000000:09:00.0 Off |                    0 |&lt;br&gt;
-| N/A   46C    P0   194W / 250W |   2391MiB / 16280MiB |    100%      Default |&lt;br&gt;
-±------------------------------±---------------------±---------------------+&lt;br&gt;
-|   3  Tesla P100-PCIE…  Off  | 00000000:84:00.0 Off |                    0 |&lt;br&gt;
-| N/A   40C    P0    39W / 250W |   2391MiB / 16280MiB |      0%      Default |&lt;br&gt;
-±------------------------------±---------------------±---------------------+&lt;br&gt;
-|   4  Tesla P100-PCIE…  Off  | 00000000:88:00.0 Off |                    0 |&lt;br&gt;
-| N/A   36C    P0    36W / 250W |   2391MiB / 16280MiB |    100%      Default |&lt;br&gt;
-±------------------------------±---------------------±---------------------+&lt;br&gt;
-|   5  Tesla P100-PCIE…  Off  | 00000000:89:00.0 Off |                    0 |&lt;br&gt;
-| N/A   42C    P0   185W / 250W |   2391MiB / 16280MiB |    100%      Default |&lt;br&gt;
-±------------------------------±---------------------±---------------------+&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt; +-----------------------------------------------------------------------------+
- | Processes:                                                       GPU Memory |
- |  GPU       PID   Type   Process name                             Usage      |
- |=============================================================================|
- |    0      3451      C   ...wei/HPL/hpl-2.0_FERMI_v15/bin/CUDA/xhpl  2363MiB |
- |    1      3455      C   ...wei/HPL/hpl-2.0_FERMI_v15/bin/CUDA/xhpl  2363MiB |
- |    2      3452      C   ...wei/HPL/hpl-2.0_FERMI_v15/bin/CUDA/xhpl  2363MiB |
- |    3      3456      C   ...wei/HPL/hpl-2.0_FERMI_v15/bin/CUDA/xhpl  2363MiB |
- |    4      3453      C   ...wei/HPL/hpl-2.0_FERMI_v15/bin/CUDA/xhpl  2363MiB |
- |    5      3457      C   ...wei/HPL/hpl-2.0_FERMI_v15/bin/CUDA/xhpl  2363MiB |
- +-----------------------------------------------------------------------------+
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/li&gt;
+&lt;li&gt;查看 nvidia GPU 型号&lt;br&gt;
+ &lt;code&gt;lspci | grep -i nvidia&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;查看 Nvidia 显卡信息及使用情况&lt;br&gt;
+ &lt;code&gt;nvidia-smi&lt;/code&gt;&lt;/li&gt;
 &lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;Wed Dec  9 02:23:00 2020
+		+-----------------------------------------------------------------------------+
+		| NVIDIA-SMI 410.129      Driver Version: 410.129      CUDA Version: 10.0     |
+		|-------------------------------+----------------------+----------------------+
+		| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+		| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+		|===============================+======================+======================|
+		|   0  Tesla P100-PCIE...  Off  | 00000000:05:00.0 Off |                    0 |
+		| N/A   34C    P0    36W / 250W |   2391MiB / 16280MiB |      0%      Default |
+		+-------------------------------+----------------------+----------------------+
+		|   1  Tesla P100-PCIE...  Off  | 00000000:08:00.0 Off |                    0 |
+		| N/A   40C    P0    40W / 250W |   2391MiB / 16280MiB |      0%      Default |
+		+-------------------------------+----------------------+----------------------+
+		|   2  Tesla P100-PCIE...  Off  | 00000000:09:00.0 Off |                    0 |
+		| N/A   46C    P0   194W / 250W |   2391MiB / 16280MiB |    100%      Default |
+		+-------------------------------+----------------------+----------------------+
+		|   3  Tesla P100-PCIE...  Off  | 00000000:84:00.0 Off |                    0 |
+		| N/A   40C    P0    39W / 250W |   2391MiB / 16280MiB |      0%      Default |
+		+-------------------------------+----------------------+----------------------+
+		|   4  Tesla P100-PCIE...  Off  | 00000000:88:00.0 Off |                    0 |
+		| N/A   36C    P0    36W / 250W |   2391MiB / 16280MiB |    100%      Default |
+		+-------------------------------+----------------------+----------------------+
+		|   5  Tesla P100-PCIE...  Off  | 00000000:89:00.0 Off |                    0 |
+		| N/A   42C    P0   185W / 250W |   2391MiB / 16280MiB |    100%      Default |
+		+-------------------------------+----------------------+----------------------+
+
+		+-----------------------------------------------------------------------------+
+		| Processes:                                                       GPU Memory |
+		|  GPU       PID   Type   Process name                             Usage      |
+		|=============================================================================|
+		|    0      3451      C   ...wei/HPL/hpl-2.0_FERMI_v15/bin/CUDA/xhpl  2363MiB |
+		|    1      3455      C   ...wei/HPL/hpl-2.0_FERMI_v15/bin/CUDA/xhpl  2363MiB |
+		|    2      3452      C   ...wei/HPL/hpl-2.0_FERMI_v15/bin/CUDA/xhpl  2363MiB |
+		|    3      3456      C   ...wei/HPL/hpl-2.0_FERMI_v15/bin/CUDA/xhpl  2363MiB |
+		|    4      3453      C   ...wei/HPL/hpl-2.0_FERMI_v15/bin/CUDA/xhpl  2363MiB |
+		|    5      3457      C   ...wei/HPL/hpl-2.0_FERMI_v15/bin/CUDA/xhpl  2363MiB |
+		+-----------------------------------------------------------------------------+
+&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;表头释义：&lt;br&gt;
 + Fan：显示风扇转速，数值在 0 到 100% 之间，是计算机的期望转速，如果不是通过风扇冷却或者风扇坏了，显示出来就是 N/A；&lt;br&gt;
 + Temp：显卡内部的温度，单位是摄氏度；&lt;br&gt;
@@ -2489,14 +2480,14 @@ Wed Dec  9 02:23:00 2020&lt;br&gt;
  &lt;code&gt;watch -n 10 nvidia-smi&lt;/code&gt; &lt;br&gt;
  命令行参数 - n 后边跟的是执行命令的周期，以 s 为单位。&lt;br&gt;
 3. 查看 GPU 名称&lt;br&gt;
- &lt;code&gt;nvidia-smi -L&lt;/code&gt; &lt;br&gt;
-GPU 0: Tesla P100-PCIE-16GB (UUID: GPU-1f613914-b422-06ad-cd7d-d2649435f480)&lt;br&gt;
-GPU 1: Tesla P100-PCIE-16GB (UUID: GPU-d8f026e7-9714-39f6-af4a-f8328cbdb3c9)&lt;br&gt;
-GPU 2: Tesla P100-PCIE-16GB (UUID: GPU-fb22db8b-9de3-691e-53da-d34aec4b6abb)&lt;br&gt;
-GPU 3: Tesla P100-PCIE-16GB (UUID: GPU-ddf0cbc8-3c92-0b3d-5496-b65361fe18a0)&lt;br&gt;
-GPU 4: Tesla P100-PCIE-16GB (UUID: GPU-7a94ce44-3e66-d05d-3d58-d625930a2aad)&lt;br&gt;
-GPU 5: Tesla P100-PCIE-16GB (UUID: GPU-16423caf-0037-6742-2977-ba03f4937b9b)&lt;br&gt;
-（可惜院里这么好的 GPU 资源没人用&lt;/p&gt;
+ &lt;code&gt;nvidia-smi -L&lt;/code&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;GPU 0: Tesla P100-PCIE-16GB (UUID: GPU-1f613914-b422-06ad-cd7d-d2649435f480)
+GPU 1: Tesla P100-PCIE-16GB (UUID: GPU-d8f026e7-9714-39f6-af4a-f8328cbdb3c9)
+GPU 2: Tesla P100-PCIE-16GB (UUID: GPU-fb22db8b-9de3-691e-53da-d34aec4b6abb)
+GPU 3: Tesla P100-PCIE-16GB (UUID: GPU-ddf0cbc8-3c92-0b3d-5496-b65361fe18a0)
+GPU 4: Tesla P100-PCIE-16GB (UUID: GPU-7a94ce44-3e66-d05d-3d58-d625930a2aad)
+GPU 5: Tesla P100-PCIE-16GB (UUID: GPU-16423caf-0037-6742-2977-ba03f4937b9b)
+&lt;/code&gt;&lt;/pre&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;em&gt;修改日期：2020 年 12 月 7 日&lt;/em&gt;&lt;/p&gt;
 </content>
@@ -3072,118 +3063,76 @@ End of Tests.
 &lt;h2 id=&#34;环境搭建&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#环境搭建&#34;&gt;#&lt;/a&gt; 环境搭建&lt;/h2&gt;
 &lt;h3 id=&#34;安装goto库&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#安装goto库&#34;&gt;#&lt;/a&gt; 安装 GOTO 库&lt;/h3&gt;
 &lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;官方下载网站下载：&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cudGFjYy51dGV4YXMuZWR1L3Jlc2VhcmNoLWRldmVsb3BtZW50L3RhY2Mtc29mdHdhcmUvZ290b2JsYXMy&#34;&gt;GotoBLAS2-1.13.tar.gz&lt;/span&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;在 Linux 中解压，执行 &lt;code&gt;make CC=gcc BINARY=64 TARGET=NEHALEM&lt;/code&gt;  失败&lt;br&gt;
-…/libgoto2_nehalem-r1.13.a (ssymv_U.o): error adding symbols: 错误的值&lt;br&gt;
- collect2: error: ld returned 1 exit status&lt;br&gt;
- 继续执行&lt;br&gt;
- gedit  f_check&lt;br&gt;
-# 298 行改为如下：&lt;br&gt;
-# print MAKEFILE “FEXTRALIB=$linker_L -lgfortran -lm -lquadmath -lm $linker_a\n”;&lt;br&gt;
-make clean&lt;br&gt;
-make CC=gcc BINARY=64 TARGET=NEHALEM USE_OPENMP=1 INTERFACE64=1&lt;br&gt;
- 成功！&lt;br&gt;
-GotoBLAS build complete.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;   OS               ... Linux             
-   Architecture     ... x86_64               
-   BINARY           ... 64bit                 
-   C compiler       ... GCC  (command line : gcc)
-   Fortran compiler ... G77  (command line : g77)
-   Library Name     ... libgoto2_nehalem-r1.13.a (Single threaded)  
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/li&gt;
+&lt;li&gt;官方下载网站下载：&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cudGFjYy51dGV4YXMuZWR1L3Jlc2VhcmNoLWRldmVsb3BtZW50L3RhY2Mtc29mdHdhcmUvZ290b2JsYXMy&#34;&gt;GotoBLAS2-1.13.tar.gz&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;在 Linux 中解压，执行 &lt;code&gt;make CC=gcc BINARY=64 TARGET=NEHALEM&lt;/code&gt;  失败&lt;/li&gt;
 &lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;../libgoto2_nehalem-r1.13.a(ssymv_U.o): error adding symbols: 错误的值
+collect2: error: ld returned 1 exit status
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;继续执行&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;gedit  f_check&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# 298 行改为如下：&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# print MAKEFILE &#34;FEXTRALIB=$linker_L -lgfortran -lm -lquadmath -lm $linker_a\n&#34;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;make&lt;/span&gt; clean&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;make&lt;/span&gt; &lt;span class=&#34;token assign-left variable&#34;&gt;CC&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;gcc &lt;span class=&#34;token assign-left variable&#34;&gt;BINARY&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;64&lt;/span&gt; &lt;span class=&#34;token assign-left variable&#34;&gt;TARGET&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;NEHALEM &lt;span class=&#34;token assign-left variable&#34;&gt;USE_OPENMP&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt; &lt;span class=&#34;token assign-left variable&#34;&gt;INTERFACE64&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;成功！&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;  GotoBLAS build complete.
+
+    OS               ... Linux             
+    Architecture     ... x86_64               
+    BINARY           ... 64bit                 
+    C compiler       ... GCC  (command line : gcc)
+    Fortran compiler ... G77  (command line : g77)
+    Library Name     ... libgoto2_nehalem-r1.13.a (Single threaded)  
+&lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;安装mpich&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#安装mpich&#34;&gt;#&lt;/a&gt; 安装 MPICH&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;官方下载网站下载：&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cubXBpY2gub3JnL2Rvd25sb2Fkcy8=&#34;&gt;mpich-3.3.2.tar.gz&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;解压，新建文件夹 &lt;code&gt;mpich&lt;/code&gt;  作为安装文件夹&lt;br&gt;
- cd mpich-3.3.2/&lt;br&gt;
-./configure --prefix=/home/riolu/HPL/mpich&lt;br&gt;
- 提示无 Fortran 77 compiler，切换至管理员安装&lt;br&gt;
- sudo apt-get install gfortran&lt;br&gt;
-（虽然但是，我也不会 Fortran 啊……&lt;br&gt;
- 提示无 C++ compiler，再切换至管理员安装……&lt;br&gt;
-sudo apt-get install g++&lt;/li&gt;
-&lt;li&gt;好了，接下来&lt;br&gt;
- make&lt;br&gt;
-make install&lt;br&gt;
-gedit ~/.bashrc&lt;br&gt;
- 在后面加上&lt;br&gt;
- export PATH=/home/riolu/HPL/mpich/bin:&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;P&lt;/mi&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mi&gt;T&lt;/mi&gt;&lt;mi&gt;H&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mi&gt;M&lt;/mi&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mi&gt;N&lt;/mi&gt;&lt;mi&gt;P&lt;/mi&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mi&gt;T&lt;/mi&gt;&lt;mi&gt;H&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;/&lt;/mi&gt;&lt;mi&gt;h&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;/&lt;/mi&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;/&lt;/mi&gt;&lt;mi&gt;H&lt;/mi&gt;&lt;mi&gt;P&lt;/mi&gt;&lt;mi&gt;L&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;/&lt;/mi&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mi&gt;h&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;/&lt;/mi&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mo&gt;:&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;PATH
-     export MANPATH=/home/riolu/HPL/mpich/man:&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.8777699999999999em;vertical-align:-0.19444em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.13889em;&#34;&gt;P&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;A&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.13889em;&#34;&gt;T&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.08125em;&#34;&gt;H&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;p&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;o&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.02778em;&#34;&gt;r&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;t&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.10903em;&#34;&gt;M&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;A&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.10903em;&#34;&gt;N&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.13889em;&#34;&gt;P&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;A&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.13889em;&#34;&gt;T&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.08125em;&#34;&gt;H&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;h&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;o&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;m&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.02778em;&#34;&gt;r&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;o&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.01968em;&#34;&gt;l&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;u&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.08125em;&#34;&gt;H&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.13889em;&#34;&gt;P&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;L&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;m&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;p&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;h&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;m&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;:&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;MANPATH&lt;br&gt;
-export LD_LIBRARY_PATH=/home/riolu/HPL/mpich/lib:&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;L&lt;/mi&gt;&lt;msub&gt;&lt;mi&gt;D&lt;/mi&gt;&lt;mi&gt;L&lt;/mi&gt;&lt;/msub&gt;&lt;mi&gt;I&lt;/mi&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;mi&gt;R&lt;/mi&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mi&gt;R&lt;/mi&gt;&lt;msub&gt;&lt;mi&gt;Y&lt;/mi&gt;&lt;mi&gt;P&lt;/mi&gt;&lt;/msub&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mi&gt;T&lt;/mi&gt;&lt;mi&gt;H&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;/&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;/&lt;/mi&gt;&lt;mtext&gt;不知要不要保存后&lt;/mtext&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mtext&gt; &lt;/mtext&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;/&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;.&lt;/mi&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mi&gt;h&lt;/mi&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mtext&gt;看下&lt;/mtext&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;LD_LIBRARY_PATH //不知要不要
-保存后
-     source ~/.bashrc
-看下&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;L&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.02778em;&#34;&gt;D&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.32833099999999993em;&#34;&gt;&lt;span style=&#34;top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mathnormal mtight&#34;&gt;L&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.15em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.07847em;&#34;&gt;I&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.05017em;&#34;&gt;B&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.00773em;&#34;&gt;R&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;A&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.00773em;&#34;&gt;R&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.22222em;&#34;&gt;Y&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.32833099999999993em;&#34;&gt;&lt;span style=&#34;top:-2.5500000000000003em;margin-left:-0.22222em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mathnormal mtight&#34; style=&#34;margin-right:0.13889em;&#34;&gt;P&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.15em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;A&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.13889em;&#34;&gt;T&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.08125em;&#34;&gt;H&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;不&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;知&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;要&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;不&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;要&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;保&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;存&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;后&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;o&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;u&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.02778em;&#34;&gt;r&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;mspace nobreak&#34;&gt; &lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;h&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.02778em;&#34;&gt;r&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;看&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;下&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; PATH&lt;br&gt;
-$ echo $PATH&lt;br&gt;
-/home/riolu/HPL/mpich/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games&lt;/li&gt;
-&lt;li&gt;测试&lt;br&gt;
- riolu@sinki-virtual-machine:~/HPL/mpich-3.3.2$ mpirun -np 10 ./examples/cpi&lt;br&gt;
-Process 4 of 10 is on sinki-virtual-machine&lt;br&gt;
-Process 1 of 10 is on sinki-virtual-machine&lt;br&gt;
-Process 8 of 10 is on sinki-virtual-machine&lt;br&gt;
-Process 2 of 10 is on sinki-virtual-machine&lt;br&gt;
-Process 3 of 10 is on sinki-virtual-machine&lt;br&gt;
-Process 0 of 10 is on sinki-virtual-machine&lt;br&gt;
-Process 5 of 10 is on sinki-virtual-machine&lt;br&gt;
-Process 7 of 10 is on sinki-virtual-machine&lt;br&gt;
-Process 6 of 10 is on sinki-virtual-machine&lt;br&gt;
-Process 9 of 10 is on sinki-virtual-machine&lt;br&gt;
-pi is approximately 3.1415926544231256, Error is 0.0000000008333325&lt;br&gt;
-wall clock time = 0.134519&lt;br&gt;
- 成功！&lt;/li&gt;
+&lt;li&gt;解压，新建文件夹 &lt;code&gt;mpich&lt;/code&gt;  作为安装文件夹&lt;/li&gt;
 &lt;/ol&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token builtin class-name&#34;&gt;cd&lt;/span&gt; mpich-3.3.2/&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;./configure --prefix&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;/home/riolu/HPL/mpich&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;提示无 Fortran 77 compiler，切换至管理员安装&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;apt-get&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;install&lt;/span&gt; gfortran&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;提示无 C++ compiler，再切换至管理员安装……&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;apt-get&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;install&lt;/span&gt; g++&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;好了，接下来&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;make&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;make&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;install&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;gedit ~/.bashrc&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;在后面加上&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;export PATH=/home/riolu/HPL/mpich/bin:$PATH
+export MANPATH=/home/riolu/HPL/mpich/man:$MANPATH
+export LD_LIBRARY_PATH=/home/riolu/HPL/mpich/lib:$LD_LIBRARY_PATH //不知要不要
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;保存后&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token builtin class-name&#34;&gt;source&lt;/span&gt; ~/.bashrc&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;看下 $PATH&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;$ &lt;span class=&#34;token builtin class-name&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;token environment constant&#34;&gt;$PATH&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;/home/riolu/HPL/mpich/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;测试&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;riolu@sinki-virtual-machine:~/HPL/mpich-3.3.2$ mpirun -np &lt;span class=&#34;token number&#34;&gt;10&lt;/span&gt; ./examples/cpi&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;Process &lt;span class=&#34;token number&#34;&gt;4&lt;/span&gt; of &lt;span class=&#34;token number&#34;&gt;10&lt;/span&gt; is on sinki-virtual-machine&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;Process &lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt; of &lt;span class=&#34;token number&#34;&gt;10&lt;/span&gt; is on sinki-virtual-machine&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;Process &lt;span class=&#34;token number&#34;&gt;8&lt;/span&gt; of &lt;span class=&#34;token number&#34;&gt;10&lt;/span&gt; is on sinki-virtual-machine&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;Process &lt;span class=&#34;token number&#34;&gt;2&lt;/span&gt; of &lt;span class=&#34;token number&#34;&gt;10&lt;/span&gt; is on sinki-virtual-machine&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;Process &lt;span class=&#34;token number&#34;&gt;3&lt;/span&gt; of &lt;span class=&#34;token number&#34;&gt;10&lt;/span&gt; is on sinki-virtual-machine&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;Process &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt; of &lt;span class=&#34;token number&#34;&gt;10&lt;/span&gt; is on sinki-virtual-machine&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;Process &lt;span class=&#34;token number&#34;&gt;5&lt;/span&gt; of &lt;span class=&#34;token number&#34;&gt;10&lt;/span&gt; is on sinki-virtual-machine&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;Process &lt;span class=&#34;token number&#34;&gt;7&lt;/span&gt; of &lt;span class=&#34;token number&#34;&gt;10&lt;/span&gt; is on sinki-virtual-machine&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;Process &lt;span class=&#34;token number&#34;&gt;6&lt;/span&gt; of &lt;span class=&#34;token number&#34;&gt;10&lt;/span&gt; is on sinki-virtual-machine&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;11&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;Process &lt;span class=&#34;token number&#34;&gt;9&lt;/span&gt; of &lt;span class=&#34;token number&#34;&gt;10&lt;/span&gt; is on sinki-virtual-machine&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;12&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;pi is approximately &lt;span class=&#34;token number&#34;&gt;3.1415926544231256&lt;/span&gt;, Error is &lt;span class=&#34;token number&#34;&gt;0.0000000008333325&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;13&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;wall clock &lt;span class=&#34;token function&#34;&gt;time&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;0.134519&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;成功！&lt;/p&gt;
 &lt;h2 id=&#34;hpl安装与编译&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#hpl安装与编译&#34;&gt;#&lt;/a&gt; HPL 安装与编译&lt;/h2&gt;
 &lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;官方下载网站下载：&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cubmV0bGliLm9yZy9iZW5jaG1hcmsvaHBs&#34;&gt;hpl.tar.gz&lt;/span&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;进入安装文件夹下的 setup，在 setup 中中找到 &lt;code&gt;Make.Linux_PII_FBLAS&lt;/code&gt; ，&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3huLS1NYWtlLXo5NGY1YjJvbjB2M3ZibXlpZzlhaXo3Y253YWozdnRvZHQ1N2FveDJlODc1YS5teQ==&#34;&gt;将其放置到上层目录并且命名为 Make.my&lt;/span&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3huLS1NYWtlLTQ4NmZ4MTRpLm15&#34;&gt;修改 Make.my&lt;/span&gt;&lt;br&gt;
-ARCH         = my&lt;br&gt;
-TOPdir       = $(HOME)/HPL/hpl-2.3 /&lt;em&gt; 改为 hpl 解压后产生文件夹&lt;/em&gt; /&lt;br&gt;
-MPdir        = $(HOME)/HPL/mpich /&lt;em&gt; 改为 mpich 安装文件夹&lt;/em&gt; /&lt;br&gt;
-MPlib        = $(MPdir)/lib&lt;br&gt;
-LAdir        = $(HOME)/HPL/GotoBLAS2 /&lt;em&gt;GotoBLAS2 解压文件夹&lt;/em&gt; /&lt;br&gt;
-LAinc        =&lt;br&gt;
-LAlib        = $(LAdir)/libgoto2_nehalemp-r1.13.a&lt;br&gt;
-HPL_OPTS     = -DHPL_CALL_CBLAS&lt;br&gt;
-CC           = $(HOME)/HPL/mpich/bin/mpicc&lt;br&gt;
-CCFLAGS      = $(HPL_DEFS) -fomit-frame-pointer -fopenmp -O3 -funroll-loops&lt;br&gt;
-LINKER       = $(HOME)/HPL/mpich/bin/mpif77&lt;br&gt;
-LINKFLAGS = $(CCFLAGS)&lt;br&gt;
- 执行&lt;br&gt;
- make arch=my&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;此时查看安装文件夹下 bin，会看到有 my 文件夹，里面有 &lt;code&gt;HPL.dat&lt;/code&gt; ， &lt;code&gt;xhpl&lt;/code&gt; ，安装完成。&lt;/p&gt;
-&lt;/li&gt;
+&lt;li&gt;官方下载网站下载：&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cubmV0bGliLm9yZy9iZW5jaG1hcmsvaHBs&#34;&gt;hpl.tar.gz&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;进入安装文件夹下的 setup，在 setup 中中找到 &lt;code&gt;Make.Linux_PII_FBLAS&lt;/code&gt; ，&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3huLS1NYWtlLXo5NGY1YjJvbjB2M3ZibXlpZzlhaXo3Y253YWozdnRvZHQ1N2FveDJlODc1YS5teQ==&#34;&gt;将其放置到上层目录并且命名为 Make.my&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3huLS1NYWtlLTQ4NmZ4MTRpLm15&#34;&gt;修改 Make.my&lt;/span&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;        ARCH         = my
+        TOPdir       = $(HOME)/HPL/hpl-2.3 /*改为hpl解压后产生文件夹*/
+        MPdir        = $(HOME)/HPL/mpich /*改为mpich安装文件夹*/
+        MPlib        = $(MPdir)/lib
+        LAdir        = $(HOME)/HPL/GotoBLAS2 /*GotoBLAS2解压文件夹*/
+        LAinc        =
+        LAlib        = $(LAdir)/libgoto2_nehalemp-r1.13.a
+        HPL_OPTS     = -DHPL_CALL_CBLAS
+        CC           = $(HOME)/HPL/mpich/bin/mpicc
+        CCFLAGS      = $(HPL_DEFS) -fomit-frame-pointer -fopenmp -O3 -funroll-loops
+        LINKER       = $(HOME)/HPL/mpich/bin/mpif77
+        LINKFLAGS = $(CCFLAGS)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;执行&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;make&lt;/span&gt; &lt;span class=&#34;token assign-left variable&#34;&gt;arch&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;my&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;此时查看安装文件夹下 bin，会看到有 my 文件夹，里面有 &lt;code&gt;HPL.dat&lt;/code&gt; ， &lt;code&gt;xhpl&lt;/code&gt; ，安装完成。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;结果运行 &lt;code&gt;mpirun -np 2  ./xhpl&lt;/code&gt;  得到报错信息？？&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;** On entry to DTRSM  parameter number  9 had an illegal value
+&lt;pre&gt;&lt;code&gt;    ** On entry to DTRSM  parameter number  9 had an illegal value
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;死了。失败，重新编译前加入 &lt;code&gt;make arch=my clean_arch_all&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;不伺候了，告辞！&lt;/p&gt;
 &lt;h2 id=&#34;集群同步设置&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#集群同步设置&#34;&gt;#&lt;/a&gt; 集群同步设置&lt;/h2&gt;
 &lt;h3 id=&#34;psftp传文件&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#psftp传文件&#34;&gt;#&lt;/a&gt; psftp 传文件&lt;/h3&gt;
-&lt;pre&gt;&lt;code&gt;    psftp&amp;gt; open sinki@10.201.0.6
-    Using username &amp;quot;sinki&amp;quot;.
-    sinki@10.201.0.6&#39;s password:
-    Remote working directory is /home/sinki
-    psftp&amp;gt;put F:\Share\GotoBLAS2-1.13.tar.gz
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;其他用法参考:&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9ranNvbG8ud29yZHByZXNzLmNvbS8yMDEwLzAzLzA4L3BzZnRwJUU3JTk0JUE4JUU2JUIzJTk1Lw==&#34;&gt;PSFTP 用法&lt;/span&gt;&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;psftp&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;open&lt;/span&gt; sinki@10.201.0.6&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;Using username &lt;span class=&#34;token string&#34;&gt;&#34;sinki&#34;&lt;/span&gt;&lt;span class=&#34;token builtin class-name&#34;&gt;.&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;sinki@10.201.0.6&#39;s password:&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;Remote working directory is /home/sinki&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;psftp&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;put F:&lt;span class=&#34;token punctuation&#34;&gt;\&lt;/span&gt;Share&lt;span class=&#34;token punctuation&#34;&gt;\&lt;/span&gt;GotoBLAS2-1.13.tar.gz&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;其他用法参考:&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9ranNvbG8ud29yZHByZXNzLmNvbS8yMDEwLzAzLzA4L3BzZnRwJUU3JTk0JUE4JUU2JUIzJTk1Lw==&#34;&gt;PSFTP 用法&lt;/span&gt;&lt;/p&gt;
 &lt;h3 id=&#34;xming图形界面和jupyter挂起&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#xming图形界面和jupyter挂起&#34;&gt;#&lt;/a&gt; Xming 图形界面和 jupyter 挂起&lt;/h3&gt;
-&lt;pre&gt;&lt;code&gt;    nautilus
-    nohup jupyter notebook --allow-root &amp;gt; jupyter.log 2&amp;gt;&amp;amp;1 &amp;amp;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;hr&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;nautilus&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;nohup&lt;/span&gt; jupyter notebook --allow-root &lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt; jupyter.log &lt;span class=&#34;token operator&#34;&gt;&lt;span class=&#34;token file-descriptor important&#34;&gt;2&lt;/span&gt;&gt;&lt;/span&gt;&lt;span class=&#34;token file-descriptor important&#34;&gt;&amp;amp;1&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;&amp;amp;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;hr&gt;
 &lt;p&gt;&lt;em&gt;修改日期：2020 年 12 月 4 日&lt;/em&gt;&lt;/p&gt;
 </content>
         <category term="Linux" />

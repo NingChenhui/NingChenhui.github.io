@@ -1,4 +1,4 @@
-var CONFIG = {"version":"0.2.5","hostname":"https://ningchenhui.github.io","root":"/","statics":"/","favicon":{"normal":"images/favicon.ico","hidden":"images/failure.ico"},"darkmode":false,"auto_scroll":true,"js":{"valine":"gh/amehime/MiniValine@4.2.2-beta10/dist/MiniValine.min.js","chart":"npm/frappe-charts@1.5.0/dist/frappe-charts.min.iife.min.js","copy_tex":"npm/katex@0.12.0/dist/contrib/copy-tex.min.js","fancybox":"combine/npm/jquery@3.5.1/dist/jquery.min.js,npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js,npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js"},"css":{"valine":"css/comment.css","katex":"npm/katex@0.12.0/dist/katex.min.css","mermaid":"css/mermaid.css","fancybox":"combine/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css,npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"},"loader":{"start":true,"switch":false},"search":{"appID":"MPLKSWCI3Z","apiKey":"72855c4eb67d45001b31646d2d834711","indexName":"shoka","hits":{"per_page":10}},"valine":{"appId":"sfcQVRevNpEsdWCsjVXXc4Ic-MdYXbMMI","appKey":"wL2PamDcU5KyY3hcOGxpxnzU","placeholder":"输入评论♪","avatar":"mp","pageSize":10,"lang":"en","visitor":true,"NoRecordIP":false,"serverURLs":"https://sfcqvrev.api.lncldglobal.com","powerMode":true,"tagMeta":{"visitor":"新朋友","master":"主人","friend":"小伙伴","investor":"会员"},"tagColor":{"master":"var(--color-orange)","friend":"var(--color-aqua)","investor":"var(--color-pink)"},"tagMember":{"master":["ab357eca31e1ca1334db450237b11a04"],"friend":null,"investor":null}},"quicklink":{"timeout":3000,"priority":true},"audio":[{"title":"纯音乐","list":["https://music.163.com/#/playlist?id=6762505277"]}],"fireworks":["rgba(255,182,185,.9)","rgba(250,227,217,.9)","rgba(187,222,214,.9)","rgba(138,198,209,.9)"]};const getRndInteger = function (min, max) {
+var CONFIG = {"version":"0.2.5","hostname":"https://ningchenhui.github.io","root":"/","statics":"/","favicon":{"normal":"images/favicon.ico","hidden":"images/failure.ico"},"darkmode":false,"auto_scroll":true,"js":{"valine":"gh/amehime/MiniValine@4.2.2-beta10/dist/MiniValine.min.js","chart":"npm/frappe-charts@1.5.0/dist/frappe-charts.min.iife.min.js","copy_tex":"npm/katex@0.12.0/dist/contrib/copy-tex.min.js","fancybox":"combine/npm/jquery@3.5.1/dist/jquery.min.js,npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js,npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js"},"css":{"valine":"css/comment.css","katex":"npm/katex@0.12.0/dist/katex.min.css","mermaid":"css/mermaid.css","fancybox":"combine/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css,npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"},"loader":{"start":true,"switch":false},"search":{"appID":"MPLKSWCI3Z","apiKey":"72855c4eb67d45001b31646d2d834711","indexName":"shoka","hits":{"per_page":10}},"valine":{"appId":"sfcQVRevNpEsdWCsjVXXc4Ic-MdYXbMMI","appKey":"wL2PamDcU5KyY3hcOGxpxnzU","placeholder":"输入评论♪ &#xD邮箱仅用于在您的留言被回复后接收通知~","avatar":"mp","pageSize":10,"lang":"zh-CN","visitor":true,"NoRecordIP":true,"serverURLs":"https://sfcqvrev.api.lncldglobal.com","powerMode":true,"tagMeta":{"visitor":"新朋友","master":"主人","friend":"小伙伴","investor":"会员"},"tagColor":{"master":"var(--color-orange)","friend":"var(--color-aqua)","investor":"var(--color-pink)"},"tagMember":{"master":["ab357eca31e1ca1334db450237b11a04"],"friend":null,"investor":null}},"quicklink":{"timeout":3000,"priority":true},"audio":[{"title":"纯音乐","list":["https://music.163.com/#/playlist?id=6762505277"]}],"fireworks":["rgba(255,182,185,.9)","rgba(250,227,217,.9)","rgba(187,222,214,.9)","rgba(138,198,209,.9)"]};const getRndInteger = function (min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
@@ -1783,7 +1783,7 @@ const postBeauty = function () {
       return
     }
 
-    var copyright = $('#copyright')
+    var copyright = 0//$('#copyright') change by hosizuki
     if(window.getSelection().toString().length > 30 && copyright) {
       event.preventDefault();
       var author = "# " + copyright.child('.author').innerText
@@ -1890,7 +1890,7 @@ const postBeauty = function () {
     caption && caption.addEventListener('click', fullscreenHandle);
 
     if(code_container && code_container.find("tr").length > 15) {
-      
+
       code_container.style.maxHeight = "300px";
       code_container.insertAdjacentHTML('beforeend', '<div class="show-btn"><i class="ic i-angle-down"></i></div>');
       var showBtn = code_container.child('.show-btn');

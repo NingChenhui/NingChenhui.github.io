@@ -3,7 +3,7 @@
 
 
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN,en,ja,default">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -15,9 +15,9 @@
   <meta http-equiv="Cache-Control" content="no-siteapp">
 
 
-<link rel="alternate" type="application/rss+xml" title="一切都会好起来的哟" href="https://ningchenhui.github.io/rss.xml" />
-<link rel="alternate" type="application/atom+xml" title="一切都会好起来的哟" href="https://ningchenhui.github.io/atom.xml" />
-<link rel="alternate" type="application/json" title="一切都会好起来的哟" href="https://ningchenhui.github.io/feed.json" />
+<link rel="alternate" type="application/rss+xml" title="欢迎" href="https://ningchenhui.github.io/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="欢迎" href="https://ningchenhui.github.io/atom.xml" />
+<link rel="alternate" type="application/json" title="欢迎" href="https://ningchenhui.github.io/feed.json" />
 
 <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 
@@ -33,7 +33,7 @@
 
   <title>
 高性能计算#01 HPL搭建 - 学习 |
-Ning Chenhui = 一切都会好起来的哟</title>
+Ning Chenhui = 欢迎 = 一切都会好起来的哟</title>
 <meta name="generator" content="Hexo 5.4.2"></head>
 <body itemscope itemtype="http://schema.org/WebPage">
   <div id="loading">
@@ -76,7 +76,7 @@ Ning Chenhui = 一切都会好起来的哟</title>
       <i class="ic i-pen"></i>
     </span>
     <span class="text">本文字数</span>
-    <span>2.8k</span>
+    <span>2.6k</span>
     <span class="text">字</span>
   </span>
   <span class="item" title="阅读时长">
@@ -84,7 +84,7 @@ Ning Chenhui = 一切都会好起来的哟</title>
       <i class="ic i-clock"></i>
     </span>
     <span class="text">阅读时长</span>
-    <span>3 分钟</span>
+    <span>2 分钟</span>
   </span>
 </div>
 
@@ -151,11 +151,11 @@ Ning Chenhui = 一切都会好起来的哟</title>
   <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="image" content="/images/avatar.jpg">
     <meta itemprop="name" content="Ning Chenhui">
-    <meta itemprop="description" content=", 正在建设中...">
+    <meta itemprop="description" content="一切都会好起来的哟, 正在建设中...">
   </span>
 
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="一切都会好起来的哟">
+    <meta itemprop="name" content="欢迎">
   </span>
 
   <div class="body md" itemprop="articleBody">
@@ -165,118 +165,76 @@ Ning Chenhui = 一切都会好起来的哟</title>
 <h2 id="环境搭建"><a class="markdownIt-Anchor" href="#环境搭建">#</a> 环境搭建</h2>
 <h3 id="安装goto库"><a class="markdownIt-Anchor" href="#安装goto库">#</a> 安装 GOTO 库</h3>
 <ol>
-<li>
-<p>官方下载网站下载：<span class="exturl" data-url="aHR0cHM6Ly93d3cudGFjYy51dGV4YXMuZWR1L3Jlc2VhcmNoLWRldmVsb3BtZW50L3RhY2Mtc29mdHdhcmUvZ290b2JsYXMy">GotoBLAS2-1.13.tar.gz</span></p>
-</li>
-<li>
-<p>在 Linux 中解压，执行 <code>make CC=gcc BINARY=64 TARGET=NEHALEM</code>  失败<br>
-…/libgoto2_nehalem-r1.13.a (ssymv_U.o): error adding symbols: 错误的值<br>
- collect2: error: ld returned 1 exit status<br>
- 继续执行<br>
- gedit  f_check<br>
-# 298 行改为如下：<br>
-# print MAKEFILE “FEXTRALIB=$linker_L -lgfortran -lm -lquadmath -lm $linker_a\n”;<br>
-make clean<br>
-make CC=gcc BINARY=64 TARGET=NEHALEM USE_OPENMP=1 INTERFACE64=1<br>
- 成功！<br>
-GotoBLAS build complete.</p>
-<pre><code>   OS               ... Linux             
-   Architecture     ... x86_64               
-   BINARY           ... 64bit                 
-   C compiler       ... GCC  (command line : gcc)
-   Fortran compiler ... G77  (command line : g77)
-   Library Name     ... libgoto2_nehalem-r1.13.a (Single threaded)  
-</code></pre>
-</li>
+<li>官方下载网站下载：<span class="exturl" data-url="aHR0cHM6Ly93d3cudGFjYy51dGV4YXMuZWR1L3Jlc2VhcmNoLWRldmVsb3BtZW50L3RhY2Mtc29mdHdhcmUvZ290b2JsYXMy">GotoBLAS2-1.13.tar.gz</span></li>
+<li>在 Linux 中解压，执行 <code>make CC=gcc BINARY=64 TARGET=NEHALEM</code>  失败</li>
 </ol>
+<pre><code>../libgoto2_nehalem-r1.13.a(ssymv_U.o): error adding symbols: 错误的值
+collect2: error: ld returned 1 exit status
+</code></pre>
+<p>继续执行</p>
+<figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tr><td data-num="1"></td><td><pre>gedit  f_check</pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token comment"># 298 行改为如下：</span></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token comment"># print MAKEFILE "FEXTRALIB=$linker_L -lgfortran -lm -lquadmath -lm $linker_a\n";</span></pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token function">make</span> clean</pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token function">make</span> <span class="token assign-left variable">CC</span><span class="token operator">=</span>gcc <span class="token assign-left variable">BINARY</span><span class="token operator">=</span><span class="token number">64</span> <span class="token assign-left variable">TARGET</span><span class="token operator">=</span>NEHALEM <span class="token assign-left variable">USE_OPENMP</span><span class="token operator">=</span><span class="token number">1</span> <span class="token assign-left variable">INTERFACE64</span><span class="token operator">=</span><span class="token number">1</span></pre></td></tr></table></figure><p>成功！</p>
+<pre><code>  GotoBLAS build complete.
+
+    OS               ... Linux             
+    Architecture     ... x86_64               
+    BINARY           ... 64bit                 
+    C compiler       ... GCC  (command line : gcc)
+    Fortran compiler ... G77  (command line : g77)
+    Library Name     ... libgoto2_nehalem-r1.13.a (Single threaded)  
+</code></pre>
 <h3 id="安装mpich"><a class="markdownIt-Anchor" href="#安装mpich">#</a> 安装 MPICH</h3>
 <ol>
 <li>官方下载网站下载：<span class="exturl" data-url="aHR0cHM6Ly93d3cubXBpY2gub3JnL2Rvd25sb2Fkcy8=">mpich-3.3.2.tar.gz</span></li>
-<li>解压，新建文件夹 <code>mpich</code>  作为安装文件夹<br>
- cd mpich-3.3.2/<br>
-./configure --prefix=/home/riolu/HPL/mpich<br>
- 提示无 Fortran 77 compiler，切换至管理员安装<br>
- sudo apt-get install gfortran<br>
-（虽然但是，我也不会 Fortran 啊……<br>
- 提示无 C++ compiler，再切换至管理员安装……<br>
-sudo apt-get install g++</li>
-<li>好了，接下来<br>
- make<br>
-make install<br>
-gedit ~/.bashrc<br>
- 在后面加上<br>
- export PATH=/home/riolu/HPL/mpich/bin:<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mi>A</mi><mi>T</mi><mi>H</mi><mi>e</mi><mi>x</mi><mi>p</mi><mi>o</mi><mi>r</mi><mi>t</mi><mi>M</mi><mi>A</mi><mi>N</mi><mi>P</mi><mi>A</mi><mi>T</mi><mi>H</mi><mo>=</mo><mi mathvariant="normal">/</mi><mi>h</mi><mi>o</mi><mi>m</mi><mi>e</mi><mi mathvariant="normal">/</mi><mi>r</mi><mi>i</mi><mi>o</mi><mi>l</mi><mi>u</mi><mi mathvariant="normal">/</mi><mi>H</mi><mi>P</mi><mi>L</mi><mi mathvariant="normal">/</mi><mi>m</mi><mi>p</mi><mi>i</mi><mi>c</mi><mi>h</mi><mi mathvariant="normal">/</mi><mi>m</mi><mi>a</mi><mi>n</mi><mo>:</mo></mrow><annotation encoding="application/x-tex">PATH
-     export MANPATH=/home/riolu/HPL/mpich/man:</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mord mathnormal">A</span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="mord mathnormal" style="margin-right:0.08125em;">H</span><span class="mord mathnormal">e</span><span class="mord mathnormal">x</span><span class="mord mathnormal">p</span><span class="mord mathnormal">o</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord mathnormal">t</span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="mord mathnormal">A</span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mord mathnormal">A</span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="mord mathnormal" style="margin-right:0.08125em;">H</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">/</span><span class="mord mathnormal">h</span><span class="mord mathnormal">o</span><span class="mord mathnormal">m</span><span class="mord mathnormal">e</span><span class="mord">/</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord mathnormal">i</span><span class="mord mathnormal">o</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">u</span><span class="mord">/</span><span class="mord mathnormal" style="margin-right:0.08125em;">H</span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mord mathnormal">L</span><span class="mord">/</span><span class="mord mathnormal">m</span><span class="mord mathnormal">p</span><span class="mord mathnormal">i</span><span class="mord mathnormal">c</span><span class="mord mathnormal">h</span><span class="mord">/</span><span class="mord mathnormal">m</span><span class="mord mathnormal">a</span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">:</span></span></span></span>MANPATH<br>
-export LD_LIBRARY_PATH=/home/riolu/HPL/mpich/lib:<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><msub><mi>D</mi><mi>L</mi></msub><mi>I</mi><mi>B</mi><mi>R</mi><mi>A</mi><mi>R</mi><msub><mi>Y</mi><mi>P</mi></msub><mi>A</mi><mi>T</mi><mi>H</mi><mi mathvariant="normal">/</mi><mi mathvariant="normal">/</mi><mtext>不知要不要保存后</mtext><mi>s</mi><mi>o</mi><mi>u</mi><mi>r</mi><mi>c</mi><mi>e</mi><mtext> </mtext><mi mathvariant="normal">/</mi><mi mathvariant="normal">.</mi><mi>b</mi><mi>a</mi><mi>s</mi><mi>h</mi><mi>r</mi><mi>c</mi><mtext>看下</mtext></mrow><annotation encoding="application/x-tex">LD_LIBRARY_PATH //不知要不要
-保存后
-     source ~/.bashrc
-看下</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">L</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">D</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">L</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord mathnormal" style="margin-right:0.07847em;">I</span><span class="mord mathnormal" style="margin-right:0.05017em;">B</span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="mord mathnormal">A</span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.22222em;">Y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.22222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.13889em;">P</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord mathnormal">A</span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="mord mathnormal" style="margin-right:0.08125em;">H</span><span class="mord">/</span><span class="mord">/</span><span class="mord cjk_fallback">不</span><span class="mord cjk_fallback">知</span><span class="mord cjk_fallback">要</span><span class="mord cjk_fallback">不</span><span class="mord cjk_fallback">要</span><span class="mord cjk_fallback">保</span><span class="mord cjk_fallback">存</span><span class="mord cjk_fallback">后</span><span class="mord mathnormal">s</span><span class="mord mathnormal">o</span><span class="mord mathnormal">u</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord mathnormal">c</span><span class="mord mathnormal">e</span><span class="mspace nobreak"> </span><span class="mord">/</span><span class="mord">.</span><span class="mord mathnormal">b</span><span class="mord mathnormal">a</span><span class="mord mathnormal">s</span><span class="mord mathnormal">h</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord mathnormal">c</span><span class="mord cjk_fallback">看</span><span class="mord cjk_fallback">下</span></span></span></span> PATH<br>
-$ echo $PATH<br>
-/home/riolu/HPL/mpich/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games</li>
-<li>测试<br>
- riolu@sinki-virtual-machine:~/HPL/mpich-3.3.2$ mpirun -np 10 ./examples/cpi<br>
-Process 4 of 10 is on sinki-virtual-machine<br>
-Process 1 of 10 is on sinki-virtual-machine<br>
-Process 8 of 10 is on sinki-virtual-machine<br>
-Process 2 of 10 is on sinki-virtual-machine<br>
-Process 3 of 10 is on sinki-virtual-machine<br>
-Process 0 of 10 is on sinki-virtual-machine<br>
-Process 5 of 10 is on sinki-virtual-machine<br>
-Process 7 of 10 is on sinki-virtual-machine<br>
-Process 6 of 10 is on sinki-virtual-machine<br>
-Process 9 of 10 is on sinki-virtual-machine<br>
-pi is approximately 3.1415926544231256, Error is 0.0000000008333325<br>
-wall clock time = 0.134519<br>
- 成功！</li>
+<li>解压，新建文件夹 <code>mpich</code>  作为安装文件夹</li>
 </ol>
+<figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token builtin class-name">cd</span> mpich-3.3.2/</pre></td></tr><tr><td data-num="2"></td><td><pre>./configure --prefix<span class="token operator">=</span>/home/riolu/HPL/mpich</pre></td></tr></table></figure><p>提示无 Fortran 77 compiler，切换至管理员安装</p>
+<figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> gfortran</pre></td></tr></table></figure><p>提示无 C++ compiler，再切换至管理员安装……</p>
+<figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> g++</pre></td></tr></table></figure><ol start="3">
+<li>好了，接下来</li>
+</ol>
+<figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token function">make</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token function">make</span> <span class="token function">install</span></pre></td></tr><tr><td data-num="3"></td><td><pre>gedit ~/.bashrc</pre></td></tr></table></figure><p>在后面加上</p>
+<pre><code>export PATH=/home/riolu/HPL/mpich/bin:$PATH
+export MANPATH=/home/riolu/HPL/mpich/man:$MANPATH
+export LD_LIBRARY_PATH=/home/riolu/HPL/mpich/lib:$LD_LIBRARY_PATH //不知要不要
+</code></pre>
+<p>保存后</p>
+<figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token builtin class-name">source</span> ~/.bashrc</pre></td></tr></table></figure><p>看下 $PATH</p>
+<figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tr><td data-num="1"></td><td><pre>$ <span class="token builtin class-name">echo</span> <span class="token environment constant">$PATH</span></pre></td></tr><tr><td data-num="2"></td><td><pre>/home/riolu/HPL/mpich/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games</pre></td></tr></table></figure><ol start="4">
+<li>测试</li>
+</ol>
+<figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tr><td data-num="1"></td><td><pre>riolu@sinki-virtual-machine:~/HPL/mpich-3.3.2$ mpirun -np <span class="token number">10</span> ./examples/cpi</pre></td></tr><tr><td data-num="2"></td><td><pre>Process <span class="token number">4</span> of <span class="token number">10</span> is on sinki-virtual-machine</pre></td></tr><tr><td data-num="3"></td><td><pre>Process <span class="token number">1</span> of <span class="token number">10</span> is on sinki-virtual-machine</pre></td></tr><tr><td data-num="4"></td><td><pre>Process <span class="token number">8</span> of <span class="token number">10</span> is on sinki-virtual-machine</pre></td></tr><tr><td data-num="5"></td><td><pre>Process <span class="token number">2</span> of <span class="token number">10</span> is on sinki-virtual-machine</pre></td></tr><tr><td data-num="6"></td><td><pre>Process <span class="token number">3</span> of <span class="token number">10</span> is on sinki-virtual-machine</pre></td></tr><tr><td data-num="7"></td><td><pre>Process <span class="token number">0</span> of <span class="token number">10</span> is on sinki-virtual-machine</pre></td></tr><tr><td data-num="8"></td><td><pre>Process <span class="token number">5</span> of <span class="token number">10</span> is on sinki-virtual-machine</pre></td></tr><tr><td data-num="9"></td><td><pre>Process <span class="token number">7</span> of <span class="token number">10</span> is on sinki-virtual-machine</pre></td></tr><tr><td data-num="10"></td><td><pre>Process <span class="token number">6</span> of <span class="token number">10</span> is on sinki-virtual-machine</pre></td></tr><tr><td data-num="11"></td><td><pre>Process <span class="token number">9</span> of <span class="token number">10</span> is on sinki-virtual-machine</pre></td></tr><tr><td data-num="12"></td><td><pre>pi is approximately <span class="token number">3.1415926544231256</span>, Error is <span class="token number">0.0000000008333325</span></pre></td></tr><tr><td data-num="13"></td><td><pre>wall clock <span class="token function">time</span> <span class="token operator">=</span> <span class="token number">0.134519</span></pre></td></tr></table></figure><p>成功！</p>
 <h2 id="hpl安装与编译"><a class="markdownIt-Anchor" href="#hpl安装与编译">#</a> HPL 安装与编译</h2>
 <ol>
-<li>
-<p>官方下载网站下载：<span class="exturl" data-url="aHR0cHM6Ly93d3cubmV0bGliLm9yZy9iZW5jaG1hcmsvaHBs">hpl.tar.gz</span></p>
-</li>
-<li>
-<p>进入安装文件夹下的 setup，在 setup 中中找到 <code>Make.Linux_PII_FBLAS</code> ，<span class="exturl" data-url="aHR0cDovL3huLS1NYWtlLXo5NGY1YjJvbjB2M3ZibXlpZzlhaXo3Y253YWozdnRvZHQ1N2FveDJlODc1YS5teQ==">将其放置到上层目录并且命名为 Make.my</span></p>
-</li>
-<li>
-<p><span class="exturl" data-url="aHR0cDovL3huLS1NYWtlLTQ4NmZ4MTRpLm15">修改 Make.my</span><br>
-ARCH         = my<br>
-TOPdir       = $(HOME)/HPL/hpl-2.3 /<em> 改为 hpl 解压后产生文件夹</em> /<br>
-MPdir        = $(HOME)/HPL/mpich /<em> 改为 mpich 安装文件夹</em> /<br>
-MPlib        = $(MPdir)/lib<br>
-LAdir        = $(HOME)/HPL/GotoBLAS2 /<em>GotoBLAS2 解压文件夹</em> /<br>
-LAinc        =<br>
-LAlib        = $(LAdir)/libgoto2_nehalemp-r1.13.a<br>
-HPL_OPTS     = -DHPL_CALL_CBLAS<br>
-CC           = $(HOME)/HPL/mpich/bin/mpicc<br>
-CCFLAGS      = $(HPL_DEFS) -fomit-frame-pointer -fopenmp -O3 -funroll-loops<br>
-LINKER       = $(HOME)/HPL/mpich/bin/mpif77<br>
-LINKFLAGS = $(CCFLAGS)<br>
- 执行<br>
- make arch=my</p>
-</li>
-<li>
-<p>此时查看安装文件夹下 bin，会看到有 my 文件夹，里面有 <code>HPL.dat</code> ， <code>xhpl</code> ，安装完成。</p>
-</li>
+<li>官方下载网站下载：<span class="exturl" data-url="aHR0cHM6Ly93d3cubmV0bGliLm9yZy9iZW5jaG1hcmsvaHBs">hpl.tar.gz</span></li>
+<li>进入安装文件夹下的 setup，在 setup 中中找到 <code>Make.Linux_PII_FBLAS</code> ，<span class="exturl" data-url="aHR0cDovL3huLS1NYWtlLXo5NGY1YjJvbjB2M3ZibXlpZzlhaXo3Y253YWozdnRvZHQ1N2FveDJlODc1YS5teQ==">将其放置到上层目录并且命名为 Make.my</span></li>
+<li><span class="exturl" data-url="aHR0cDovL3huLS1NYWtlLTQ4NmZ4MTRpLm15">修改 Make.my</span></li>
+</ol>
+<pre><code>        ARCH         = my
+        TOPdir       = $(HOME)/HPL/hpl-2.3 /*改为hpl解压后产生文件夹*/
+        MPdir        = $(HOME)/HPL/mpich /*改为mpich安装文件夹*/
+        MPlib        = $(MPdir)/lib
+        LAdir        = $(HOME)/HPL/GotoBLAS2 /*GotoBLAS2解压文件夹*/
+        LAinc        =
+        LAlib        = $(LAdir)/libgoto2_nehalemp-r1.13.a
+        HPL_OPTS     = -DHPL_CALL_CBLAS
+        CC           = $(HOME)/HPL/mpich/bin/mpicc
+        CCFLAGS      = $(HPL_DEFS) -fomit-frame-pointer -fopenmp -O3 -funroll-loops
+        LINKER       = $(HOME)/HPL/mpich/bin/mpif77
+        LINKFLAGS = $(CCFLAGS)
+</code></pre>
+<p>执行</p>
+<figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token function">make</span> <span class="token assign-left variable">arch</span><span class="token operator">=</span>my</pre></td></tr></table></figure><ol start="4">
+<li>此时查看安装文件夹下 bin，会看到有 my 文件夹，里面有 <code>HPL.dat</code> ， <code>xhpl</code> ，安装完成。</li>
 </ol>
 <p>结果运行 <code>mpirun -np 2  ./xhpl</code>  得到报错信息？？</p>
-<pre><code>** On entry to DTRSM  parameter number  9 had an illegal value
+<pre><code>    ** On entry to DTRSM  parameter number  9 had an illegal value
 </code></pre>
 <p>死了。失败，重新编译前加入 <code>make arch=my clean_arch_all</code></p>
-<p>不伺候了，告辞！</p>
 <h2 id="集群同步设置"><a class="markdownIt-Anchor" href="#集群同步设置">#</a> 集群同步设置</h2>
 <h3 id="psftp传文件"><a class="markdownIt-Anchor" href="#psftp传文件">#</a> psftp 传文件</h3>
-<pre><code>    psftp&gt; open sinki@10.201.0.6
-    Using username &quot;sinki&quot;.
-    sinki@10.201.0.6's password:
-    Remote working directory is /home/sinki
-    psftp&gt;put F:\Share\GotoBLAS2-1.13.tar.gz
-</code></pre>
-<p>其他用法参考:<span class="exturl" data-url="aHR0cHM6Ly9ranNvbG8ud29yZHByZXNzLmNvbS8yMDEwLzAzLzA4L3BzZnRwJUU3JTk0JUE4JUU2JUIzJTk1Lw==">PSFTP 用法</span></p>
+<figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tr><td data-num="1"></td><td><pre>psftp<span class="token operator">></span> <span class="token function">open</span> sinki@10.201.0.6</pre></td></tr><tr><td data-num="2"></td><td><pre>Using username <span class="token string">"sinki"</span><span class="token builtin class-name">.</span></pre></td></tr><tr><td data-num="3"></td><td><pre>sinki@10.201.0.6's password:</pre></td></tr><tr><td data-num="4"></td><td><pre>Remote working directory is /home/sinki</pre></td></tr><tr><td data-num="5"></td><td><pre>psftp<span class="token operator">></span>put F:<span class="token punctuation">\</span>Share<span class="token punctuation">\</span>GotoBLAS2-1.13.tar.gz</pre></td></tr></table></figure><p>其他用法参考:<span class="exturl" data-url="aHR0cHM6Ly9ranNvbG8ud29yZHByZXNzLmNvbS8yMDEwLzAzLzA4L3BzZnRwJUU3JTk0JUE4JUU2JUIzJTk1Lw==">PSFTP 用法</span></p>
 <h3 id="xming图形界面和jupyter挂起"><a class="markdownIt-Anchor" href="#xming图形界面和jupyter挂起">#</a> Xming 图形界面和 jupyter 挂起</h3>
-<pre><code>    nautilus
-    nohup jupyter notebook --allow-root &gt; jupyter.log 2&gt;&amp;1 &amp;
-</code></pre>
-<hr>
+<figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tr><td data-num="1"></td><td><pre>nautilus</pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token function">nohup</span> jupyter notebook --allow-root <span class="token operator">></span> jupyter.log <span class="token operator"><span class="token file-descriptor important">2</span>></span><span class="token file-descriptor important">&amp;1</span> <span class="token operator">&amp;</span></pre></td></tr></table></figure><hr>
 <p><em>修改日期：2020 年 12 月 4 日</em></p>
 
       <div class="tags">
@@ -292,7 +250,7 @@ LINKFLAGS = $(CCFLAGS)<br>
       <i class="ic i-calendar-check"></i>
     </span>
     <span class="text">更新于</span>
-    <time title="修改时间：2022-04-10 20:42:37" itemprop="dateModified" datetime="2022-04-10T20:42:37+08:00">2022-04-10</time>
+    <time title="修改时间：2022-04-13 21:15:28" itemprop="dateModified" datetime="2022-04-13T21:15:28+08:00">2022-04-13</time>
   </span>
   <span id="计算机科学/hpc1202/" class="item leancloud_visitors" data-flag-title="高性能计算#01 HPL搭建" title="阅读次数">
       <span class="icon">
@@ -306,21 +264,6 @@ LINKFLAGS = $(CCFLAGS)<br>
 
       
 
-<div id="copyright">
-<ul>
-  <li class="author">
-    <strong>本文作者： </strong>Ning Chenhui <i class="ic i-at"><em>@</em></i>一切都会好起来的哟
-  </li>
-  <li class="link">
-    <strong>本文链接：</strong>
-    <a href="https://ningchenhui.github.io/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/hpc1202/" title="高性能计算#01 HPL搭建">https://ningchenhui.github.io/计算机科学/hpc1202/</a>
-  </li>
-  <li class="license">
-    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
-  </li>
-</ul>
-</div>
-
   </footer>
 
 </article>
@@ -332,7 +275,7 @@ LINKFLAGS = $(CCFLAGS)<br>
     <div class="item left">
       
 
-  <a href="/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/%E7%89%A9%E7%90%86%E6%B5%B7%E6%B4%8B%E5%AD%A6/ocean1120/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva3.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gicit4jrvuj20zk0m8785.jpg" title="物理海洋学基础 笔记#02">
+  <a href="/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/%E7%89%A9%E7%90%86%E6%B5%B7%E6%B4%8B%E5%AD%A6/ocean1120/" itemprop="url" rel="prev" data-background-image="http:&#x2F;&#x2F;wx4.sinaimg.cn&#x2F;large&#x2F;6833939bly1gicitzannuj20zk0m8b29.jpg" title="物理海洋学基础 笔记#02">
   <span class="type">上一篇</span>
   <span class="category"><i class="ic i-flag"></i> 物理海洋学</span>
   <h3>物理海洋学基础 笔记#02</h3>
@@ -342,7 +285,7 @@ LINKFLAGS = $(CCFLAGS)<br>
     <div class="item right">
       
 
-  <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/hpc1204/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva3.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipeybxm1pj20zk0m8niv.jpg" title="高性能计算#02 HPL再次搭建">
+  <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/hpc1204/" itemprop="url" rel="next" data-background-image="http:&#x2F;&#x2F;wx4.sinaimg.cn&#x2F;large&#x2F;6833939bly1giclh3brzpj20zk0m8ann.jpg" title="高性能计算#02 HPL再次搭建">
   <span class="type">下一篇</span>
   <span class="category"><i class="ic i-flag"></i> 学习</span>
   <h3>高性能计算#02 HPL再次搭建</h3>
@@ -439,6 +382,11 @@ LINKFLAGS = $(CCFLAGS)<br>
   </li>
 
   </ul>
+    
+  <li class="item">
+    <a href="/board/" rel="section"><i class="ic i-comments"></i>留言</a>
+  </li>
+
 
 </ul>
 
@@ -475,42 +423,22 @@ LINKFLAGS = $(CCFLAGS)<br>
   <li class="item">
     
 <div class="breadcrumb">
+<a href="/categories/%E5%AD%A6%E4%B9%A0/" title="分类于 学习">学习</a>
+</div>
+
+    <span><a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/linuxA0525/" title="Linux学习 笔记#06 磁盘与文件系统管理">Linux学习 笔记#06 磁盘与文件系统管理</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
 <a href="/categories/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/" title="分类于 地球科学">地球科学</a>
 <i class="ic i-angle-right"></i>
 <a href="/categories/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/%E5%9C%B0%E7%90%83%E7%B3%BB%E7%BB%9F%E7%A7%91%E5%AD%A6/" title="分类于 地球系统科学">地球系统科学</a>
 </div>
 
-    <span><a href="/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/%E5%9C%B0%E7%90%83%E7%B3%BB%E7%BB%9F%E7%A7%91%E5%AD%A6/es1029/" title="地球科学导论 笔记#03">地球科学导论 笔记#03</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/%E5%AD%A6%E4%B9%A0/" title="分类于 学习">学习</a>
-</div>
-
-    <span><a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/sunway02/" title="超算 - 使用指南">超算 - 使用指南</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/%E5%AD%A6%E4%B9%A0/" title="分类于 学习">学习</a>
-</div>
-
-    <span><a href="/omare220205/" title="オマレ入门（一）">オマレ入门（一）</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/%E5%AD%A6%E4%B9%A0/" title="分类于 学习">学习</a>
-</div>
-
-    <span><a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/linux1206/" title="Linux学习 笔记#03 指令集">Linux学习 笔记#03 指令集</a></span>
+    <span><a href="/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/%E5%9C%B0%E7%90%83%E7%B3%BB%E7%BB%9F%E7%A7%91%E5%AD%A6/es1009/" title="地球科学导论 笔记#01">地球科学导论 笔记#01</a></span>
   </li>
 
       
@@ -532,17 +460,27 @@ LINKFLAGS = $(CCFLAGS)<br>
 <a href="/categories/%E5%AD%A6%E4%B9%A0/" title="分类于 学习">学习</a>
 </div>
 
-    <span><a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/linuxA0525/" title="Linux学习 笔记#06 磁盘与文件系统管理">Linux学习 笔记#06 磁盘与文件系统管理</a></span>
+    <span><a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/linux1112/" title="Linux学习 笔记#02">Linux学习 笔记#02</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/" title="分类于 地球科学">地球科学</a>
+<a href="/categories/%E5%AD%A6%E4%B9%A0/" title="分类于 学习">学习</a>
 </div>
 
-    <span><a href="/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/esA0410/" title="北极涛动">北极涛动</a></span>
+    <span><a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/sunway02/" title="超算 - 使用指南">超算 - 使用指南</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E5%AD%A6%E4%B9%A0/" title="分类于 学习">学习</a>
+</div>
+
+    <span><a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/linuxA0703/" title="Linux学习 笔记#07 压缩，备份与Vim">Linux学习 笔记#07 压缩，备份与Vim</a></span>
   </li>
 
       
@@ -562,7 +500,7 @@ LINKFLAGS = $(CCFLAGS)<br>
 <a href="/categories/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/" title="分类于 地球科学">地球科学</a>
 </div>
 
-    <span><a href="/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/esA0324/" title="一些新的和遗忘的知识点">一些新的和遗忘的知识点</a></span>
+    <span><a href="/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/esA0410/" title="北极涛动">北极涛动</a></span>
   </li>
 
       
@@ -574,7 +512,17 @@ LINKFLAGS = $(CCFLAGS)<br>
 <a href="/categories/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/%E5%9C%B0%E7%90%83%E7%B3%BB%E7%BB%9F%E7%A7%91%E5%AD%A6/" title="分类于 地球系统科学">地球系统科学</a>
 </div>
 
-    <span><a href="/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/%E5%9C%B0%E7%90%83%E7%B3%BB%E7%BB%9F%E7%A7%91%E5%AD%A6/es1111/" title="地球科学导论 笔记#04">地球科学导论 笔记#04</a></span>
+    <span><a href="/%E5%9C%B0%E7%90%83%E7%A7%91%E5%AD%A6/%E5%9C%B0%E7%90%83%E7%B3%BB%E7%BB%9F%E7%A7%91%E5%AD%A6/es1116/" title="地球科学导论 笔记#05">地球科学导论 笔记#05</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E5%AD%A6%E4%B9%A0/" title="分类于 学习">学习</a>
+</div>
+
+    <span><a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/linuxA0705/" title="Linux学习 笔记#08 bash">Linux学习 笔记#08 bash</a></span>
   </li>
 
   </ul>
@@ -599,7 +547,7 @@ LINKFLAGS = $(CCFLAGS)<br>
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="站点总字数">83k 字</span>
+    <span title="站点总字数">82k 字</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="ic i-eye"></i>
@@ -613,7 +561,7 @@ LINKFLAGS = $(CCFLAGS)<br>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="站点阅读时长">1:16</span>
+    <span title="站点阅读时长">1:15</span>
   </div>
   <div class="powered-by">
     基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
@@ -627,8 +575,8 @@ LINKFLAGS = $(CCFLAGS)<br>
   var LOCAL = {
     path: '计算机科学/hpc1202/',
     favicon: {
-      show: "（●´3｀●）やれやれだぜ",
-      hide: "(´Д｀)大変だ！"
+      show: "（●´3｀●）啧啧",
+      hide: "(´Д｀)出大事！"
     },
     search : {
       placeholder: "文章搜索",
