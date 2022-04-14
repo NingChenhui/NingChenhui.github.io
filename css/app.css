@@ -2520,12 +2520,6 @@ main >.inner {
 .social .item.github i {
   color: #191717;
 }
-.social .item.twitter::before {
-  background-color: #00aff0;
-}
-.social .item.twitter i {
-  color: #00aff0;
-}
 .social .item.email::before {
   background-color: #55acd5;
 }
@@ -3883,6 +3877,7 @@ main >.inner {
 }
 #loading {
   background-color: var(--grey-1);
+  display: none;
 }
 .cat {
   position: relative;
@@ -5317,7 +5312,6 @@ span.label {
   position: relative;
 }
 .tabs .nav {
-  overflow: hidden;
   border-bottom: 0.0625rem solid var(--grey-1-a7);
   height: 2.6875rem;
 }
