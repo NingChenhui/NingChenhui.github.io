@@ -5,17 +5,17 @@
     "home_page_url": "https://ningchenhui.github.io",
     "items": [
         {
-            "id": "https://ningchenhui.github.io/home/",
-            "url": "https://ningchenhui.github.io/home/",
-            "title": "帝春的小窝",
-            "date_published": "2022-04-13T03:50:13.000Z",
-            "content_html": "<p>有一堆事但又什么都来不及做 —    </p>\n<span id=\"more\"></span>\n<!--### $\\textit{It is hard to stay mad when there is so much beauty in the world.}$-->\n<h2 id=\"动态\"><a class=\"markdownIt-Anchor\" href=\"#动态\">#</a> 📅 动态</h2>\n<ol>\n<li><strong>2022.04.10</strong> 新站建设中</li>\n</ol>\n<!--1. **2022.02.16** -->\n<!--\n\n## 📂 收藏夹\n\n\n- [![中国知网](https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2163172745,1462559328&fm=26&gp=0.jpg)](https://www.cnki.net/ \"中国知网\")\n- [![东南大学图书馆](https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3485460136,3144865596&fm=26&gp=0.jpg)](http://lib.seu.edu.cn/ \"东大图书馆\")\n- [![清华大学地球系统科学系](https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2820993826,1523413229&fm=26&gp=0.jpg)](http://www.dess.tsinghua.edu.cn/publish/ess/index.html \"清华地学系\")\n- [![谷歌学术](https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2358909955,1650458245&fm=26&gp=0.jpg)](https://scholar.google.com/ \"谷歌学术\")\n- [![Bestdori!](bangdream.jpg)](https://bestdori.com/ \"Bestdori!\")\n- [![bilibili](https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=380991828,2500863034&fm=26&gp=0.jpg)](https://www.bilibili.com/ \"Bilibili\")\n\n\n\n## 🔖 友人帐\n\n -->\n<h2 id=\"天气\"><a class=\"markdownIt-Anchor\" href=\"#天气\">#</a> 🌈 天气</h2>\n<ol>\n<li><span class=\"exturl\" data-url=\"aHR0cDovL3d3dy53ZWF0aGVyLmNvbS5jbi93ZWF0aGVyLzEwMTAxMDEwMC5zaHRtbA==\">北京天气</span></li>\n<li><span class=\"exturl\" data-url=\"aHR0cDovL3d3dy53ZWF0aGVyLmNvbS5jbi9odG1sL3dlYXRoZXIvMTAxMjIwNzAxLnNodG1s\">宿州天气</span></li>\n<li><span class=\"exturl\" data-url=\"aHR0cDovL3d3dy53ZWF0aGVyLmNvbS5jbi93ZWF0aGVyLzEwMTE5MDEwMS5zaHRtbA==\">南京天气</span></li>\n</ol>\n <!--\n## 🚀 起飞\n\n<a href=/donate.html>赞助单移到这了--</a>\n -->\n",
+            "id": "https://ningchenhui.github.io/news/",
+            "url": "https://ningchenhui.github.io/news/",
+            "title": "近日动态·Recent News",
+            "date_published": "2022-04-14T11:19:13.000Z",
+            "content_html": "<ul>\n<li><strong>2022.04.10</strong> 新站建设中・Now building this website.</li>\n<li><strong>2022.03.14</strong> 工位确认・Got my spot.</li>\n</ul>\n<!--1. **2022.02.16** -->\n<span id=\"more\"></span>\n<style>\n.box{ font-family:\"Noto Serif SC\";font-size:20px;font-weight:bold}\n</style>\n<div class=\"tab\" data-id=\"id1\" data-title=\"中文\">\n<p class='box'>  目前正在做</p>\n<ol>\n<li>海冰动力学评估</li>\n<li>ML 辅助的共形映射网格生成</li>\n<li>学习 NEMO 海洋模式</li>\n</ol>\n<p>欢迎交流讨论！</p>\n</div>\n<div class=\"tab\" data-id=\"id1\" data-title=\"English\">\n<p class='box'>  Now doing</p>\n<ol>\n<li>Evaluation of sea ice kinematics.</li>\n<li>ML-assisted conformal mapping mesh generation.</li>\n<li>Studying NEMO ocean model.</li>\n</ol>\n<p>You are welcome to discuss these with me!</p>\n</div>\n",
             "tags": []
         },
         {
             "id": "https://ningchenhui.github.io/omare220205/",
             "url": "https://ningchenhui.github.io/omare220205/",
-            "title": "オマレ入门（一）",
+            "title": "OMARE 入门（一）",
             "date_published": "2022-02-05T11:19:13.000Z",
             "content_html": "<p>模式学习使用记录（一）<span id=\"more\"></span></p>\n<p>step 1 - 解压源代码后，在目录里创建 build 文件夹<br>\n step 2 - 修改文件中的路径</p>\n<pre><code>a. CMakeLists.txt\n  set(JASMIN_VERSION 新路径)\nb. input/GYRE/namelist_cfg (之后可以在build中改)\n  nn_GYRE  resolution\n</code></pre>\n<p>step 3 - 进入 build 文件夹，执行～/jasmin4/bin/cmake …/<br>\nstep 4 - 执行 make (make -j 50 多线程？)<br>\n step 5 - ./main2d …/input/nemo-2d.input  运行不完 / 测试时可 ctrl+c 中止<br>\n step 6 - ctrl+r teravap 查看数据 （/usr/local/teravap/teravap2_2_0.linux- x86_64/bin/teravap）<br>\n         数据在 ./build/javis…/dumps.javis 中，打开后 Add - Mesh , Draw。更换数据需要重启。</p>\n<p>修改完 h 文件后执行 step 4</p>\n<p>虚拟机 mpi 运行</p>\n<pre><code>mpirun -n 4 ./main2d ../input/nemo-2d.input\n</code></pre>\n",
             "tags": [

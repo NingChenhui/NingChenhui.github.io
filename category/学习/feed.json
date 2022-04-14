@@ -7,7 +7,7 @@
         {
             "id": "https://ningchenhui.github.io/omare220205/",
             "url": "https://ningchenhui.github.io/omare220205/",
-            "title": "オマレ入门（一）",
+            "title": "OMARE 入门（一）",
             "date_published": "2022-02-05T11:19:13.000Z",
             "content_html": "<p>模式学习使用记录（一）<span id=\"more\"></span></p>\n<p>step 1 - 解压源代码后，在目录里创建 build 文件夹<br>\n step 2 - 修改文件中的路径</p>\n<pre><code>a. CMakeLists.txt\n  set(JASMIN_VERSION 新路径)\nb. input/GYRE/namelist_cfg (之后可以在build中改)\n  nn_GYRE  resolution\n</code></pre>\n<p>step 3 - 进入 build 文件夹，执行～/jasmin4/bin/cmake …/<br>\nstep 4 - 执行 make (make -j 50 多线程？)<br>\n step 5 - ./main2d …/input/nemo-2d.input  运行不完 / 测试时可 ctrl+c 中止<br>\n step 6 - ctrl+r teravap 查看数据 （/usr/local/teravap/teravap2_2_0.linux- x86_64/bin/teravap）<br>\n         数据在 ./build/javis…/dumps.javis 中，打开后 Add - Mesh , Draw。更换数据需要重启。</p>\n<p>修改完 h 文件后执行 step 4</p>\n<p>虚拟机 mpi 运行</p>\n<pre><code>mpirun -n 4 ./main2d ../input/nemo-2d.input\n</code></pre>\n",
             "tags": [

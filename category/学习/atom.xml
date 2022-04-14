@@ -10,7 +10,7 @@
     <category term="Linux" />
     <entry>
         <id>https://ningchenhui.github.io/omare220205/</id>
-        <title>オマレ入门（一）</title>
+        <title>OMARE 入门（一）</title>
         <link rel="alternate" href="https://ningchenhui.github.io/omare220205/"/>
         <content type="html">&lt;p&gt;模式学习使用记录（一）&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;step 1 - 解压源代码后，在目录里创建 build 文件夹&lt;br&gt;

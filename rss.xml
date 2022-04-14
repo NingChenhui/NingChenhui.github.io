@@ -4,59 +4,50 @@
         <title>欢迎</title>
         <link>https://ningchenhui.github.io</link>
         <description>正在建设中...</description>
-        <language>zh-CN,en,ja,default</language>
-        <pubDate>Wed, 13 Apr 2022 11:50:13 +0800</pubDate>
-        <lastBuildDate>Wed, 13 Apr 2022 11:50:13 +0800</lastBuildDate>
+        <language>zh-CN,en,default</language>
+        <pubDate>Thu, 14 Apr 2022 19:19:13 +0800</pubDate>
+        <lastBuildDate>Thu, 14 Apr 2022 19:19:13 +0800</lastBuildDate>
         <category>模式</category>
         <category>课程资料</category>
         <category>地球科学</category>
         <category>Linux</category>
         <item>
-            <guid isPermalink="true">https://ningchenhui.github.io/home/</guid>
-            <title>帝春的小窝</title>
-            <link>https://ningchenhui.github.io/home/</link>
-            <pubDate>Wed, 13 Apr 2022 11:50:13 +0800</pubDate>
-            <description><![CDATA[ &lt;p&gt;有一堆事但又什么都来不及做 —    &lt;/p&gt;
-&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
-&lt;!--### $\textit{It is hard to stay mad when there is so much beauty in the world.}$--&gt;
-&lt;h2 id=&#34;动态&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#动态&#34;&gt;#&lt;/a&gt; 📅 动态&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;2022.04.10&lt;/strong&gt; 新站建设中&lt;/li&gt;
-&lt;/ol&gt;
+            <guid isPermalink="true">https://ningchenhui.github.io/news/</guid>
+            <title>近日动态·Recent News</title>
+            <link>https://ningchenhui.github.io/news/</link>
+            <pubDate>Thu, 14 Apr 2022 19:19:13 +0800</pubDate>
+            <description><![CDATA[ &lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;2022.04.10&lt;/strong&gt; 新站建设中・Now building this website.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;2022.03.14&lt;/strong&gt; 工位确认・Got my spot.&lt;/li&gt;
+&lt;/ul&gt;
 &lt;!--1. **2022.02.16** --&gt;
-&lt;!--
-
-## 📂 收藏夹
-
-
-- [![中国知网](https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2163172745,1462559328&amp;fm=26&amp;gp=0.jpg)](https://www.cnki.net/ &#34;中国知网&#34;)
-- [![东南大学图书馆](https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3485460136,3144865596&amp;fm=26&amp;gp=0.jpg)](http://lib.seu.edu.cn/ &#34;东大图书馆&#34;)
-- [![清华大学地球系统科学系](https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2820993826,1523413229&amp;fm=26&amp;gp=0.jpg)](http://www.dess.tsinghua.edu.cn/publish/ess/index.html &#34;清华地学系&#34;)
-- [![谷歌学术](https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2358909955,1650458245&amp;fm=26&amp;gp=0.jpg)](https://scholar.google.com/ &#34;谷歌学术&#34;)
-- [![Bestdori!](bangdream.jpg)](https://bestdori.com/ &#34;Bestdori!&#34;)
-- [![bilibili](https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=380991828,2500863034&amp;fm=26&amp;gp=0.jpg)](https://www.bilibili.com/ &#34;Bilibili&#34;)
-
-
-
-## 🔖 友人帐
-
- --&gt;
-&lt;h2 id=&#34;天气&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#天气&#34;&gt;#&lt;/a&gt; 🌈 天气&lt;/h2&gt;
+&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
+&lt;style&gt;
+.box{ font-family:&#34;Noto Serif SC&#34;;font-size:20px;font-weight:bold}
+&lt;/style&gt;
+&lt;div class=&#34;tab&#34; data-id=&#34;id1&#34; data-title=&#34;中文&#34;&gt;
+&lt;p class=&#39;box&#39;&gt;  目前正在做&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3d3dy53ZWF0aGVyLmNvbS5jbi93ZWF0aGVyLzEwMTAxMDEwMC5zaHRtbA==&#34;&gt;北京天气&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3d3dy53ZWF0aGVyLmNvbS5jbi9odG1sL3dlYXRoZXIvMTAxMjIwNzAxLnNodG1s&#34;&gt;宿州天气&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3d3dy53ZWF0aGVyLmNvbS5jbi93ZWF0aGVyLzEwMTE5MDEwMS5zaHRtbA==&#34;&gt;南京天气&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;海冰动力学评估&lt;/li&gt;
+&lt;li&gt;ML 辅助的共形映射网格生成&lt;/li&gt;
+&lt;li&gt;学习 NEMO 海洋模式&lt;/li&gt;
 &lt;/ol&gt;
- &lt;!--
-## 🚀 起飞
-
-&lt;a href=/donate.html&gt;赞助单移到这了--&lt;/a&gt;
- --&gt;
+&lt;p&gt;欢迎交流讨论！&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;tab&#34; data-id=&#34;id1&#34; data-title=&#34;English&#34;&gt;
+&lt;p class=&#39;box&#39;&gt;  Now doing&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Evaluation of sea ice kinematics.&lt;/li&gt;
+&lt;li&gt;ML-assisted conformal mapping mesh generation.&lt;/li&gt;
+&lt;li&gt;Studying NEMO ocean model.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;You are welcome to discuss these with me!&lt;/p&gt;
+&lt;/div&gt;
  ]]></description>
         </item>
         <item>
             <guid isPermalink="true">https://ningchenhui.github.io/omare220205/</guid>
-            <title>オマレ入门（一）</title>
+            <title>OMARE 入门（一）</title>
             <link>https://ningchenhui.github.io/omare220205/</link>
             <category>模式</category>
             <pubDate>Sat, 05 Feb 2022 19:19:13 +0800</pubDate>
