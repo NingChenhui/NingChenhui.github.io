@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>欢迎 • Posts by &#34;omare&#34; category</title>
+        <link>https://ningchenhui.github.io</link>
+        <description>正在建设中...</description>
+        <language>zh-CN,en,default</language>
+        <pubDate>Sat, 05 Feb 2022 19:19:13 +0800</pubDate>
+        <lastBuildDate>Sat, 05 Feb 2022 19:19:13 +0800</lastBuildDate>
+        <category>Coarse</category>
+        <category>Linux</category>
+        <category>Tool</category>
+        <category>Memo</category>
+        <category>Coding</category>
+        <category>Notes</category>
+        <category>Book</category>
+        <item>
+            <guid isPermalink="true">https://ningchenhui.github.io/ESM/OMARE/omare220205/</guid>
+            <title>OMARE 学习使用（一）</title>
+            <link>https://ningchenhui.github.io/ESM/OMARE/omare220205/</link>
+            <category>Memo</category>
+            <category>Coding</category>
+            <pubDate>Sat, 05 Feb 2022 19:19:13 +0800</pubDate>
+            <description><![CDATA[ &lt;p&gt;Learn to run OMARE（i）&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;step 1 - 解压源代码后，在目录里创建  &lt;code&gt;build&lt;/code&gt;  文件夹&lt;br&gt;
+ step 2 - 修改文件中的路径&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;a. CMakeLists.txt
+  set(JASMIN_VERSION 新路径)
+b. input/GYRE/namelist_cfg (之后可以在build中改)
+  nn_GYRE  resolution
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;step 3 - 进入  &lt;code&gt;build&lt;/code&gt;  文件夹，执行  &lt;code&gt;~/jasmin4/bin/cmake ../&lt;/code&gt; &lt;br&gt;
+step 4 - 执行  &lt;code&gt;make&lt;/code&gt;  ( &lt;code&gt;make -j 50&lt;/code&gt;  多线程)&lt;br&gt;
+step 5 -  &lt;code&gt;./main2d ../input/nemo-2d.input&lt;/code&gt;   运行不完 / 测试时可  &lt;code&gt;ctrl+c&lt;/code&gt;  中止&lt;br&gt;
+ step 6 -  &lt;code&gt;ctrl+r&lt;/code&gt;   &lt;code&gt;teravap&lt;/code&gt;  查看数据 （ &lt;code&gt;/usr/local/teravap/teravap2_2_0.linux- x86_64/bin/teravap&lt;/code&gt; ）&lt;br&gt;
+         数据在  &lt;code&gt;./build/javis../dumps.javis&lt;/code&gt;  中，打开后 Add - Mesh , Draw。更换数据需要重启。&lt;/p&gt;
+&lt;p&gt;修改完 h 文件后执行 step 4&lt;/p&gt;
+&lt;p&gt;虚拟机 mpi 运行&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;mpirun -n &lt;span class=&#34;token number&#34;&gt;4&lt;/span&gt; ./main2d &lt;span class=&#34;token punctuation&#34;&gt;..&lt;/span&gt;/input/nemo-2d.input&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt; ]]></description>
+        </item>
+    </channel>
+</rss>

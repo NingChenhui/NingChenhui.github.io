@@ -1,0 +1,19 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "欢迎 • All posts by \"omare\" category",
+    "description": "正在建设中...",
+    "home_page_url": "https://ningchenhui.github.io",
+    "items": [
+        {
+            "id": "https://ningchenhui.github.io/ESM/OMARE/omare220205/",
+            "url": "https://ningchenhui.github.io/ESM/OMARE/omare220205/",
+            "title": "OMARE 学习使用（一）",
+            "date_published": "2022-02-05T11:19:13.000Z",
+            "content_html": "<p>Learn to run OMARE（i）<span id=\"more\"></span></p>\n<p>step 1 - 解压源代码后，在目录里创建  <code>build</code>  文件夹<br>\n step 2 - 修改文件中的路径</p>\n<pre><code>a. CMakeLists.txt\n  set(JASMIN_VERSION 新路径)\nb. input/GYRE/namelist_cfg (之后可以在build中改)\n  nn_GYRE  resolution\n</code></pre>\n<p>step 3 - 进入  <code>build</code>  文件夹，执行  <code>~/jasmin4/bin/cmake ../</code> <br>\nstep 4 - 执行  <code>make</code>  ( <code>make -j 50</code>  多线程)<br>\nstep 5 -  <code>./main2d ../input/nemo-2d.input</code>   运行不完 / 测试时可  <code>ctrl+c</code>  中止<br>\n step 6 -  <code>ctrl+r</code>   <code>teravap</code>  查看数据 （ <code>/usr/local/teravap/teravap2_2_0.linux- x86_64/bin/teravap</code> ）<br>\n         数据在  <code>./build/javis../dumps.javis</code>  中，打开后 Add - Mesh , Draw。更换数据需要重启。</p>\n<p>修改完 h 文件后执行 step 4</p>\n<p>虚拟机 mpi 运行</p>\n<figure class=\"highlight bash\"><figcaption data-lang=\"bash\"></figcaption><table><tr><td data-num=\"1\"></td><td><pre>mpirun -n <span class=\"token number\">4</span> ./main2d <span class=\"token punctuation\">..</span>/input/nemo-2d.input</pre></td></tr></table></figure>",
+            "tags": [
+                "Memo",
+                "Coding"
+            ]
+        }
+    ]
+}

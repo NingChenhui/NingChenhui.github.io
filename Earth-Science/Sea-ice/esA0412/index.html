@@ -1,0 +1,584 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN,en,default">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="欢迎" href="https://ningchenhui.github.io/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="欢迎" href="https://ningchenhui.github.io/atom.xml" />
+<link rel="alternate" type="application/json" title="欢迎" href="https://ningchenhui.github.io/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+  <meta name="keywords" content="Coding,Notes" />
+
+
+<link rel="canonical" href="https://ningchenhui.github.io/Earth-Science/Sea-ice/esA0412/">
+
+
+
+  <title>
+北极 SIE/SIV 计算 - Sea ice - Earth Science |
+Ning Chenhui = 欢迎 = Welcome</title>
+<meta name="generator" content="Hexo 5.4.2"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">北极 SIE/SIV 计算
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2021-04-12 10:43:05">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2021-04-12T10:43:05+08:00">2021-04-12</time>
+  </span>
+  <span class="item" title="本文字数">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span class="text">本文字数</span>
+    <span>1.6k</span>
+    <span class="text">字</span>
+  </span>
+  <span class="item" title="阅读时长">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span class="text">阅读时长</span>
+    <span>1 分钟</span>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">Ning Chenhui</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+          <img src="/Earth-Science/Sea-ice/esA0412/bering_strait_sea_ice.jpg">
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">首页·Home</a></span><i class="ic i-angle-right"></i>
+<span  itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/Earth-Science/" itemprop="item" rel="index" title="分类于 Earth Science"><span itemprop="name">Earth Science</span></a>
+<meta itemprop="position" content="1" /></span>
+<i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/Earth-Science/Sea-ice/" itemprop="item" rel="index" title="分类于 Sea ice"><span itemprop="name">Sea ice</span></a>
+<meta itemprop="position" content="2" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="https://ningchenhui.github.io/Earth-Science/Sea-ice/esA0412/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/avatar.jpg">
+    <meta itemprop="name" content="Ning Chenhui">
+    <meta itemprop="description" content="Welcome, 正在建设中...">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="欢迎">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <p>Arctic sea ice extent and volume (SIE and SIV)<span id="more"></span></p>
+<h2 id="定义"><a class="markdownIt-Anchor" href="#定义">#</a> 定义</h2>
+<p>Sea ice concentration is the percentage of each pixel that is covered by ice.<br>
+ 海冰浓度是每个网格被冰覆盖的百分比。</p>
+<p>Sea ice extent is calculated by adding up the pixels with an ice concentration of at least 15 percent.<br>
+ 海冰范围的计算方法是将冰浓度至少为 15% 的网格的海冰面积相加。</p>
+<p>In each grid cell the sea ice volume is calculated as thickness multiplied with concentration and with area, with contributions from all grid cells to the total volume.<br>
+ 在每个网格中，海冰体积计算为厚度乘以浓度和面积，所有网格单元累加为总体积。</p>
+<img style="display: inline-block; width: 60%; max-width: 60%; height: auto;" data-src="25km_pixels.jpg"/>
+<p>Satellites measure sea ice concentration on a 25 kilometer by 25 kilometer grid. This image illustrates the area covered by each pixel of the low-resolution microwave instruments superimposed on a higher-resolution, color satellite image. (NASA Earth Observatory image by Joshua Stevens and Robert Simmon, based on <span class="exturl" data-url="aHR0cDovL21vZGlzLmdzZmMubmFzYS5nb3Yv">MODIS</span> data.)</p>
+<p>参考：<span class="exturl" data-url="aHR0cHM6Ly9lYXJ0aG9ic2VydmF0b3J5Lm5hc2EuZ292L2ZlYXR1cmVzL1NlYUljZSM6fjp0ZXh0PVNlYSUyMGljZSUyMGNvbmNlbnRyYXRpb24lMjBpcyUyMHRoZSUyMHBlcmNlbnRhZ2UlMjBvZiUyMGVhY2gsU3RldmVucyUyMGFuZCUyMFJvYmVydCUyMFNpbW1vbiUyQyUyMGJhc2VkJTIwb24lMjBNT0RJUyUyMGRhdGEuJTI5">NASA, sea ice</span>，<span class="exturl" data-url="aHR0cDovL3BvbGFycG9ydGFsLmRrL2VuL3NlYS1pY2UtYW5kLWljZWJlcmdzL3NlYS1pY2UtdGhpY2tuZXNzLWFuZC12b2x1bWUv">Polar Portal, Sea Ice Thickness and Volume</span></p>
+<h2 id="模式数据计算"><a class="markdownIt-Anchor" href="#模式数据计算">#</a> 模式数据计算</h2>
+<p>在 sea ice model: Community Ice Code (CICE) 的月数据输出中，与 SIE/SIV 有关的有</p>
+<ul>
+<li>hi(m): grid cell mean ice thickness (tarea) # ice volume per unit grid cell area</li>
+<li>aice(%): ice area (aggregate) (tarea)</li>
+<li>hisnap(m): ice volume snapshot (tarea)</li>
+<li>aisnap(): ice area snapshot (tarea)</li>
+</ul>
+<p>还有一些 aicen00x (ice volume, category  1~5)；vicen00x (ice area, category  1~5)，不知道类别对应的物理量是什么，估计与后面的分析有关。</p>
+<p>取北纬 30° 以上的数据，aice 对应海冰浓度，筛去小于 15% 的数据后乘以 T 网格面积累加计算海冰范围；<br>
+hi 为网格平均冰厚，乘以 T 网格面积累加计算海冰体积。</p>
+<p>对每年的 12 月数据取平均计算当年的 SIE/SIV，绘制模型 37 年的输出结果。</p>
+<img style="display: inline-block; width: 50%; max-width: 60%; height: auto;" data-src="siev.png"/>
+<p>对每月的 33 至 37 共 5 模型年的数据取平均，计算 SIE/SIV 的气候季节循环，且体积与 PIOMAS（1979-2002）实际数据进行比较。</p>
+<img style="display: inline-block; width: 50%; max-width: 60%; height: auto;" data-src="sea_ice_volume_month.png"/>
+<img style="display: inline-block; width: 50%; max-width: 60%; height: auto;" data-src="sea_ice_extent_month.png"/>
+<img style="display: inline-block; width: 70%; max-width: 70%; height: auto;" data-src="arctic_daily_sea_ice_std_deviation.jpg"/>
+<p>对应代码：</p>
+<figure class="highlight matlab"><figcaption data-lang="MATLAB"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">parfor</span> <span class="token number">i</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token operator">:</span>n</pre></td></tr><tr><td data-num="2"></td><td><pre>    FileName<span class="token operator">=</span>fileName<span class="token punctuation">&#123;</span><span class="token number">i</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="3"></td><td><pre>    start<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>count<span class="token operator">=</span><span class="token punctuation">[</span>Inf<span class="token punctuation">,</span>Inf<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>stride<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="4"></td><td><pre>    iceAreaAve<span class="token operator">=</span><span class="token function">ncread</span><span class="token punctuation">(</span>FileName<span class="token punctuation">,</span><span class="token string">'aice'</span><span class="token punctuation">,</span>start<span class="token punctuation">,</span>count<span class="token punctuation">,</span>stride<span class="token punctuation">)</span><span class="token operator">*</span><span class="token number">0.01</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="5"></td><td><pre>    iceVolumeAve<span class="token operator">=</span><span class="token function">ncread</span><span class="token punctuation">(</span>FileName<span class="token punctuation">,</span><span class="token string">'hi'</span><span class="token punctuation">,</span>start<span class="token punctuation">,</span>count<span class="token punctuation">,</span>stride<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="6"></td><td><pre>    <span class="token function">iceAreaAve</span><span class="token punctuation">(</span>iceAreaAve<span class="token operator">&lt;</span><span class="token number">0.15</span><span class="token punctuation">)</span><span class="token operator">=</span><span class="token keyword">NaN</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="7"></td><td><pre>    <span class="token function">iceArea</span><span class="token punctuation">(</span><span class="token number">i</span><span class="token punctuation">)</span><span class="token operator">=</span><span class="token function">nansum</span><span class="token punctuation">(</span><span class="token function">nansum</span><span class="token punctuation">(</span>iceAreaAve<span class="token operator">.*</span>tarea<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="8"></td><td><pre>    <span class="token function">iceVolume</span><span class="token punctuation">(</span><span class="token number">i</span><span class="token punctuation">)</span><span class="token operator">=</span><span class="token function">nansum</span><span class="token punctuation">(</span><span class="token function">nansum</span><span class="token punctuation">(</span>iceVolumeAve<span class="token operator">.*</span>tarea<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="9"></td><td><pre><span class="token keyword">end</span></pre></td></tr></table></figure><h2 id="空间分布"><a class="markdownIt-Anchor" href="#空间分布">#</a> 空间分布</h2>
+<p>模式 TS045、TS015 的 9 月和 3 月的海冰厚度场，红线为海冰范围（15% 海冰浓度等值线）。</p>
+<img style="display: inline-block; width: 80%; max-width: 80%; height: auto;" data-src="showIceThickness.png"/>
+
+      <div class="tags">
+          <a href="/tags/Coding/" rel="tag"><i class="ic i-tag"></i> Coding</a>
+          <a href="/tags/Notes/" rel="tag"><i class="ic i-tag"></i> Notes</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2022-04-21 21:24:02" itemprop="dateModified" datetime="2022-04-21T21:24:02+08:00">2022-04-21</time>
+  </span>
+  <span id="Earth-Science/Sea-ice/esA0412/" class="item leancloud_visitors" data-flag-title="北极 SIE/SIV 计算" title="阅读次数">
+      <span class="icon">
+        <i class="ic i-eye"></i>
+      </span>
+      <span class="text">阅读次数</span>
+      <span class="leancloud-visitors-count"></span>
+      <span class="text">次</span>
+  </span>
+</div>
+
+      
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/Earth-Science/Arctic/esA0410/" itemprop="url" rel="prev" data-background-image="&#x2F;Earth-Science&#x2F;Arctic&#x2F;esA0410&#x2F;ao.png" title="北极涛动">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> Arctic</span>
+  <h3>北极涛动</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+      
+
+  <a href="/Earth-Science/Ocean/Physical-Oceanography-Coarse/oceanA0703/" itemprop="url" rel="next" data-background-image="http:&#x2F;&#x2F;wx4.sinaimg.cn&#x2F;large&#x2F;6833939bly1giciusoyjnj219g0u0x56.jpg" title="笔记#04 物理海洋学基础">
+  <span class="type">下一篇</span>
+  <span class="category"><i class="ic i-flag"></i> Physical Oceanography Coarse</span>
+  <h3>笔记#04 物理海洋学基础</h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89"><span class="toc-number">1.</span> <span class="toc-text"> 定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A8%A1%E5%BC%8F%E6%95%B0%E6%8D%AE%E8%AE%A1%E7%AE%97"><span class="toc-number">2.</span> <span class="toc-text"> 模式数据计算</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A9%BA%E9%97%B4%E5%88%86%E5%B8%83"><span class="toc-number">3.</span> <span class="toc-text"> 空间分布</span></a></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+        <ul>
+          <li><a href="/Earth-Science/Sea-ice/esA0324/" rel="bookmark" title="Some new or forgotten knowledge points">Some new or forgotten knowledge points</a></li><li><a href="/Earth-Science/Sea-ice/esA0408/" rel="bookmark" title="粗化网格的变形速率计算">粗化网格的变形速率计算</a></li><li class="active"><a href="/Earth-Science/Sea-ice/esA0412/" rel="bookmark" title="北极 SIE/SIV 计算">北极 SIE/SIV 计算</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="Ning Chenhui"
+      data-src="/images/avatar.jpg">
+  <p class="name" itemprop="name">Ning Chenhui</p>
+  <div class="description" itemprop="description">正在建设中...</div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">23</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/categories/">
+        <span class="count">12</span>
+        <span class="name">分类</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">7</span>
+        <span class="name">标签</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL05pbmdDaGVuaHVp" title="https:&#x2F;&#x2F;github.com&#x2F;NingChenhui"><i class="ic i-github"></i></span>
+      <span class="exturl item email" data-url="bWFpbHRvOnNpbmtpaG9zaXp1a2lAZ21haWwuY29t" title="mailto:sinkihosizuki@gmail.com"><i class="ic i-envelope"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>首页·Home</a>
+  </li>
+
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-feather"></i>文章·Posts</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/archives/" rel="section"><i class="ic i-list-alt"></i>归档·Archives</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/categories/" rel="section"><i class="ic i-th"></i>分类·Categories</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/tags/" rel="section"><i class="ic i-tags"></i>标签·Tags</a>
+  </li>
+
+  </ul>
+    
+  <li class="item">
+    <a href="/about/" rel="section"><i class="ic i-user"></i>关于·About</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/board/" rel="section"><i class="ic i-comments"></i>留言·Board</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+        <a href="/Earth-Science/Arctic/esA0410/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+        <a href="/Earth-Science/Ocean/Physical-Oceanography-Coarse/oceanA0703/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章·Random Posts</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/news/" title="近日动态·Recent News">近日动态·Recent News</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/Earth-Science/" title="分类于 Earth Science">Earth Science</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/Earth-Science/Foundations-of-Earth-Science/" title="分类于 Foundations of Earth Science">Foundations of Earth Science</a>
+</div>
+
+    <span><a href="/Earth-Science/Foundations-of-Earth-Science/es1009/" title="笔记#01 地球科学导论">笔记#01 地球科学导论</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/Earth-Science/" title="分类于 Earth Science">Earth Science</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/Earth-Science/Ocean/" title="分类于 Ocean">Ocean</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/Earth-Science/Ocean/Physical-Oceanography-Coarse/" title="分类于 Physical Oceanography Coarse">Physical Oceanography Coarse</a>
+</div>
+
+    <span><a href="/Earth-Science/Ocean/Physical-Oceanography-Coarse/ocean1110/" title="笔记#01 物理海洋学基础">笔记#01 物理海洋学基础</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/Computer-Science/" title="分类于 Computer Science">Computer Science</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/Computer-Science/HPC/" title="分类于 HPC">HPC</a>
+</div>
+
+    <span><a href="/Computer-Science/HPC/hpc1204/" title="高性能计算#02 HPL再次搭建">高性能计算#02 HPL再次搭建</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/Earth-Science/" title="分类于 Earth Science">Earth Science</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/Earth-Science/Sea-ice/" title="分类于 Sea ice">Sea ice</a>
+</div>
+
+    <span><a href="/Earth-Science/Sea-ice/esA0412/" title="北极 SIE&#x2F;SIV 计算">北极 SIE/SIV 计算</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/Computer-Science/" title="分类于 Computer Science">Computer Science</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/Computer-Science/HPC/" title="分类于 HPC">HPC</a>
+</div>
+
+    <span><a href="/Computer-Science/HPC/hpc1202/" title="高性能计算#01 HPL搭建">高性能计算#01 HPL搭建</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/Earth-Science/" title="分类于 Earth Science">Earth Science</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/Earth-Science/Sea-ice/" title="分类于 Sea ice">Sea ice</a>
+</div>
+
+    <span><a href="/Earth-Science/Sea-ice/esA0408/" title="粗化网格的变形速率计算">粗化网格的变形速率计算</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/Earth-Science/" title="分类于 Earth Science">Earth Science</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/Earth-Science/Ocean/" title="分类于 Ocean">Ocean</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/Earth-Science/Ocean/Physical-Oceanography-Coarse/" title="分类于 Physical Oceanography Coarse">Physical Oceanography Coarse</a>
+</div>
+
+    <span><a href="/Earth-Science/Ocean/Physical-Oceanography-Coarse/oceanA0709/" title="笔记#05 物理海洋学基础">笔记#05 物理海洋学基础</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/Computer-Science/" title="分类于 Computer Science">Computer Science</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/Computer-Science/HPC/" title="分类于 HPC">HPC</a>
+</div>
+
+    <span><a href="/Computer-Science/HPC/hpc1206/" title="高性能计算#04 HPL测试GPU">高性能计算#04 HPL测试GPU</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/Earth-Science/" title="分类于 Earth Science">Earth Science</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/Earth-Science/Foundations-of-Earth-Science/" title="分类于 Foundations of Earth Science">Foundations of Earth Science</a>
+</div>
+
+    <span><a href="/Earth-Science/Foundations-of-Earth-Science/es1116/" title="笔记#05 地球科学导论">笔记#05 地球科学导论</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论·Recent Comments</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2020 – 
+    <span itemprop="copyrightYear">2022</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Ning Chenhui <!--change by hosizuki@ Ning Chenhui--></span>
+  </div>
+  <div class="count">
+    <span class="post-meta-item-icon">
+      <i class="ic i-chart-area"></i>
+    </span>
+    <span title="站点总字数">51k 字</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="ic i-eye"></i>
+    </span>
+    <!-- 不蒜子计数 -->
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span id="busuanzi_container_site_uv" > <span id="busuanzi_value_site_uv"></span>  </span>
+    <!-- 不蒜子计数 -->
+
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="ic i-coffee"></i>
+    </span>
+    <span title="站点阅读时长">47 分钟</span>
+  </div>
+  <div class="powered-by">
+    Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: 'Earth-Science/Sea-ice/esA0412/',
+    favicon: {
+      show: "（●´3｀●）啧啧",
+      hide: "(´Д｀)出大事！"
+    },
+    search : {
+      placeholder: "文章搜索·Search",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,fancybox: true,
+    copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,138 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://ningchenhui.github.io</id>
+    <title>欢迎 • Posts by &#34;esm&#34; category</title>
+    <link href="https://ningchenhui.github.io" />
+    <updated>2022-02-05T11:19:13.000Z</updated>
+    <category term="Coarse" />
+    <category term="Linux" />
+    <category term="Tool" />
+    <category term="Memo" />
+    <category term="Coding" />
+    <category term="Notes" />
+    <category term="Book" />
+    <entry>
+        <id>https://ningchenhui.github.io/ESM/OMARE/omare220205/</id>
+        <title>OMARE 学习使用（一）</title>
+        <link rel="alternate" href="https://ningchenhui.github.io/ESM/OMARE/omare220205/"/>
+        <content type="html">&lt;p&gt;Learn to run OMARE（i）&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;step 1 - 解压源代码后，在目录里创建  &lt;code&gt;build&lt;/code&gt;  文件夹&lt;br&gt;
+ step 2 - 修改文件中的路径&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;a. CMakeLists.txt
+  set(JASMIN_VERSION 新路径)
+b. input/GYRE/namelist_cfg (之后可以在build中改)
+  nn_GYRE  resolution
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;step 3 - 进入  &lt;code&gt;build&lt;/code&gt;  文件夹，执行  &lt;code&gt;~/jasmin4/bin/cmake ../&lt;/code&gt; &lt;br&gt;
+step 4 - 执行  &lt;code&gt;make&lt;/code&gt;  ( &lt;code&gt;make -j 50&lt;/code&gt;  多线程)&lt;br&gt;
+step 5 -  &lt;code&gt;./main2d ../input/nemo-2d.input&lt;/code&gt;   运行不完 / 测试时可  &lt;code&gt;ctrl+c&lt;/code&gt;  中止&lt;br&gt;
+ step 6 -  &lt;code&gt;ctrl+r&lt;/code&gt;   &lt;code&gt;teravap&lt;/code&gt;  查看数据 （ &lt;code&gt;/usr/local/teravap/teravap2_2_0.linux- x86_64/bin/teravap&lt;/code&gt; ）&lt;br&gt;
+         数据在  &lt;code&gt;./build/javis../dumps.javis&lt;/code&gt;  中，打开后 Add - Mesh , Draw。更换数据需要重启。&lt;/p&gt;
+&lt;p&gt;修改完 h 文件后执行 step 4&lt;/p&gt;
+&lt;p&gt;虚拟机 mpi 运行&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;mpirun -n &lt;span class=&#34;token number&#34;&gt;4&lt;/span&gt; ./main2d &lt;span class=&#34;token punctuation&#34;&gt;..&lt;/span&gt;/input/nemo-2d.input&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</content>
+        <category term="Memo" />
+        <category term="Coding" />
+        <updated>2022-02-05T11:19:13.000Z</updated>
+    </entry>
+    <entry>
+        <id>https://ningchenhui.github.io/ESM/Data/model02/</id>
+        <title>安装NCL</title>
+        <link rel="alternate" href="https://ningchenhui.github.io/ESM/Data/model02/"/>
+        <content type="html">&lt;p&gt;NCAR command language (NCL)&lt;/p&gt;
+&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
+&lt;h2 id=&#34;关于&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#关于&#34;&gt;#&lt;/a&gt; 关于&lt;/h2&gt;
+&lt;p&gt;NCAR 命令语言（NCL）是美国国家大气研究中心（NCAR）计算与信息系统实验室的产品，是一种专门为科学数据处理和可视化设计的解释语言。学习使用 NCL 主要是为了处理 NetCDF 格式。&lt;/p&gt;
+&lt;h2 id=&#34;参考网站&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#参考网站&#34;&gt;#&lt;/a&gt; 参考网站&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3d3dy5uY2wudWNhci5lZHUv&#34;&gt;官网&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3d3dy5uY2wudWNhci5lZHUvZ2V0X3N0YXJ0ZWQuc2h0bWw=&#34;&gt;安装指导&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3d3dy5uY2wudWNhci5lZHUvRG9jdW1lbnQvTWFudWFscy9OQ0xfVXNlcl9HdWlkZS8=&#34;&gt;用户指导手册&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3d3dy5uY2wudWNhci5lZHUvRG9jdW1lbnQvTWFudWFscy9OQ0xfVXNlcl9HdWlkZS9EYXRhLw==&#34;&gt;手册的数据文件&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3d3dy5weW5nbC51Y2FyLmVkdS8=&#34;&gt;pyngl&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3d3dy5uY2wudWNhci5lZHUvRG9jdW1lbnQvTWFudWFscy9OQ0xfdG9fUHl0aG9uL1RyYW5zaXRpb25fR3VpZGVfTkNMX1B5TkdMLnBkZg==&#34;&gt;ncl2py Guide&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;安装&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#安装&#34;&gt;#&lt;/a&gt; 安装&lt;/h2&gt;
+&lt;p&gt;NCL 适用于 MacOS，Linux 和运行 Windows 10 Linux 子系统的 Windows 系统。换新笔记本后我安装了 WSL，所以这里在 WSL 中安装。&lt;br&gt;
+首先要安装 conda，这里按提示安装了 miniconda。（难怪我在超算的 &lt;code&gt;.bashrc&lt;/code&gt;  里只看到了 miniconda，没找到 NCL，但找到了 NCO……&lt;br&gt;
+ 然后按照建议在 conda 环境下安装 NCL，新环境为 ncl_stable。&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;conda create -n ncl_stable -c conda-forge ncl&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;每次进入该环境，执行&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token builtin class-name&#34;&gt;source&lt;/span&gt; activate ncl_stable&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;要显示图形化界面，首先启动 Xming 开启 X11 转接…… 然后执行下面的命令检测&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;ncl -V&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;ncl &lt;span class=&#34;token variable&#34;&gt;$NCARG_ROOT&lt;/span&gt;/lib/ncarg/nclex/gsun/gsun02n.ncl&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;ncl &lt;span class=&#34;token variable&#34;&gt;$NCARG_ROOT&lt;/span&gt;/lib/ncarg/nclex/nug/NUG_multi_timeseries.ncl&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;就可以看到很漂亮的图啦！&lt;/p&gt;
+&lt;p&gt;于是又登上超算找 &lt;code&gt;conda&lt;/code&gt; ，结果不能直接用。在 &lt;code&gt;.conda&lt;/code&gt;  文件夹里有个 &lt;code&gt;environment.txt&lt;/code&gt;  里明明看到了有 &lt;code&gt;anaconda&lt;/code&gt;  和 ncl_stable 环境。翻 bashrc 发现有句&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token builtin class-name&#34;&gt;alias&lt;/span&gt; &lt;span class=&#34;token assign-left variable&#34;&gt;wanwb&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;source /home/export/online3/cesm06/wanwb/.bashrc&#39;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;果断执行 &lt;code&gt;wanwb&lt;/code&gt; ，可以用 conda 了！可以用 ncl！&lt;br&gt;
+&lt;img style=&#34;display: inline-block; width: 70%; max-width: 70%; height: auto;&#34; data-src=&#34;1.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;回到 WSL，执行 &lt;code&gt;ng4ex gsun01n&lt;/code&gt;  提示 /bin/csh: bad interpreter: No such file or directory 查一下需要安装 C-shell。再次执行，可以看到一些折线图，且工作路径下多了一个 &lt;code&gt;gsun01n.ncl&lt;/code&gt;  文件。&lt;/p&gt;
+&lt;h2 id=&#34;配置环境&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#配置环境&#34;&gt;#&lt;/a&gt; 配置环境&lt;/h2&gt;
+&lt;p&gt;由于使用了 ncl_stable 环境，就不用再设置变量 &lt;code&gt;NCARG_ROOT&lt;/code&gt;  和路径 &lt;code&gt;$NCARG_ROOT/bin&lt;/code&gt;  了。&lt;br&gt;
+在家目录下放置 &lt;code&gt;.hluresfile&lt;/code&gt;  文件来个性化设置 NCL 图形环境。&lt;br&gt;
+关于代码编辑的高亮，我用了 vscode 连接 WSL，打开 ncl 文件后安装 NCL 扩展即可。不得不说这真的好用。&lt;/p&gt;
+&lt;h2 id=&#34;准备学习&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#准备学习&#34;&gt;#&lt;/a&gt; 准备学习&lt;/h2&gt;
+&lt;p&gt;把手册下载下来进行学习！有些大的数据文件在官网上，参考中已经列出来了。&lt;/p&gt;
+&lt;img style=&#34;display: inline-block; width: 70%; max-width: 70%; height: auto;&#34; data-src=&#34;2.png&#34; /&gt;
+&lt;p&gt;加载公用函数库： &lt;code&gt;load &amp;quot;$NCARG_ROOT/lib/ncarg/nclscripts/csm/contributed.ncl&amp;quot;&lt;/code&gt; &lt;br&gt;
+ 运行样例： &lt;code&gt;ng4ex file.ncl&lt;/code&gt; &lt;br&gt;
+ 样例数据： &lt;code&gt;$NCARG_ROOT/lib/ncarg/data/nug/&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;几天后&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#几天后&#34;&gt;#&lt;/a&gt; 几天后&lt;/h2&gt;
+&lt;p&gt;把手册大致过了一遍，对某些语法感到不适外，在手册最后看到了一章 PyNGL 和 PyNIO 的。于是很疑惑地到官网再一看……&lt;br&gt;
+ 好家伙，NCAR 已经不更新 NCL 了，官方都转 python 了&lt;/p&gt;
+&lt;p&gt;（3.22：问了师姐，他们那篇论文用的代码基本是 matlab…… 而我没能找到机器上有没有 matlab……）&lt;br&gt;
+（续：matlab 在另一个账号下…… 代码放机器上被清了…… ）&lt;/p&gt;
+&lt;h2 id=&#34;pyngl-pynio&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#pyngl-pynio&#34;&gt;#&lt;/a&gt; PyNGL &amp;amp; PyNIO&lt;/h2&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;conda create --name pyn_env --channel conda-forge pynio pyngl&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token builtin class-name&#34;&gt;source&lt;/span&gt; activate pyn_env&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;报错了，可能版本不兼容。删除环境重建&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;conda &lt;span class=&#34;token function&#34;&gt;env&lt;/span&gt; remove --name pyn_env&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;conda create --name pyn_env --channel conda-forge/label/cf201901 xarray netcdf4 scipy pyngl pynio&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token builtin class-name&#34;&gt;source&lt;/span&gt; activate pyn_env&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;最后清理下安装的包&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;conda clean -a&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;conda clean -p&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;conda clean -t&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</content>
+        <category term="Tool" />
+        <updated>2021-03-17T16:00:00.000Z</updated>
+    </entry>
+    <entry>
+        <id>https://ningchenhui.github.io/ESM/Data/model01/</id>
+        <title>初识NetCDF</title>
+        <link rel="alternate" href="https://ningchenhui.github.io/ESM/Data/model01/"/>
+        <content type="html">&lt;p&gt;Network Common Data Form (NetCDF)&lt;/p&gt;
+&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
+&lt;!--ncl--&gt;
+&lt;h2 id=&#34;关于&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#关于&#34;&gt;#&lt;/a&gt; 关于&lt;/h2&gt;
+&lt;p&gt;Unidata 网络通用数据格式（netCDF）是用于科学数据访问的接口，并且是一个自由分发的提供了该接口的实现软件库。netCDF 库还定义了用于表示科学数据数据格式。 接口，库和格式共同支持科学数据的创建，访问和共享。&lt;/p&gt;
+&lt;h2 id=&#34;参考网站&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#参考网站&#34;&gt;#&lt;/a&gt; 参考网站&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cudW5pZGF0YS51Y2FyLmVkdS9zb2Z0d2FyZS9uZXRjZGYv&#34;&gt;官网&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9naXRodWIuY29tL1VuaWRhdGEvbmV0Y2RmLWM=&#34;&gt;GitHub&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93dzIubWF0aHdvcmtzLmNuL2hlbHAvbWF0bGFiL25ldHdvcmstY29tbW9uLWRhdGEtZm9ybS5odG1sP3NfdGlkPUNSVVhfbGZ0bmF2&#34;&gt;Matlab&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;开始&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#开始&#34;&gt;#&lt;/a&gt; 开始&lt;/h2&gt;
+&lt;p&gt;因为还不太熟悉超算服务器，我先把其中一个月的数据传到了本地，然后用 Matlab 查看。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;ncdisp&lt;/code&gt;  在命令行窗口中显示 NetCDF 数据源内容&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt; FileName=&#39;T045_D.cice.h.0036-01.nc&#39;;
+ ncdisp(FileName)
+&lt;/code&gt;&lt;/pre&gt;
+ &lt;img style=&#34;display: inline-block; width: 70%; max-width: 70%; height: auto;&#34; data-src=&#34;1.png&#34; /&gt;
+&lt;p&gt;后面有非常多的变量……&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;ncinfo&lt;/code&gt;  以结构体形式返回有关 NetCDF 数据源的信息&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt; finfo = ncinfo(FileName);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;ncread&lt;/code&gt;  读取 NetCDF 数据源中的变量数据&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt; iceVolume=ncread(FileName,&#39;vicen001_d&#39;); %读取全部
+ start=[100,200,1];count=[Inf,Inf,1];stride=[5,5,1];%读取部分，分别是起始点、数量、间隔
+ iceVolumePart=ncread(FileName,&#39;vicen001_d&#39;,start,count,stride);
+ surf(double(iceVolumePart));
+ title(&#39;Ice Volume&#39;);
+&lt;/code&gt;&lt;/pre&gt;
+ &lt;img style=&#34;display: inline-block; width: 70%; max-width: 70%; height: auto;&#34; data-src=&#34;2.png&#34; /&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;NetCDF 包&lt;br&gt;
+为了对读写过程进行更多控制，可使用包含低级函数的 NetCDF 库程序包。详细可查看 matlab 官方文档。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+        <category term="Tool" />
+        <updated>2021-03-16T09:08:20.000Z</updated>
+    </entry>
+</feed>
