@@ -11,6 +11,7 @@
     <category term="Coding" />
     <category term="Notes" />
     <category term="Book" />
+    <category term="pdf" />
     <entry>
         <id>https://ningchenhui.github.io/Computer-Science/HPC/hpc1206/</id>
         <title>高性能计算#04 HPL测试GPU</title>

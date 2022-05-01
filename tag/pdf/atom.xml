@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://ningchenhui.github.io</id>
+    <title>欢迎 • Posts by &#34;pdf&#34; tag</title>
+    <link href="https://ningchenhui.github.io" />
+    <updated>2022-04-20T16:00:00.000Z</updated>
+    <category term="Coarse" />
+    <category term="Linux" />
+    <category term="Tool" />
+    <category term="Memo" />
+    <category term="Coding" />
+    <category term="Notes" />
+    <category term="Book" />
+    <category term="pdf" />
+    <entry>
+        <id>https://ningchenhui.github.io/Document/Seminar/pdf220421/</id>
+        <title>SIREx Part 1</title>
+        <link rel="alternate" href="https://ningchenhui.github.io/Document/Seminar/pdf220421/"/>
+        <content type="html">&lt;p&gt;海冰动力学文献 SIREx Part 1&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;/p&gt;
+
+
+	&lt;div class=&#34;row&#34;&gt;
+    &lt;embed src=&#34;2022.04.21-海冰.pdf&#34; width=&#34;100%&#34; height=&#34;550&#34; type=&#34;application/pdf&#34;&gt;
+	&lt;/div&gt;
+
+
+</content>
+        <category term="pdf" />
+        <updated>2022-04-20T16:00:00.000Z</updated>
+    </entry>
+    <entry>
+        <id>https://ningchenhui.github.io/Document/Seminar/pdf220331/</id>
+        <title>Arctic Sea Ice Deformation</title>
+        <link rel="alternate" href="https://ningchenhui.github.io/Document/Seminar/pdf220331/"/>
+        <content type="html">&lt;p&gt;海冰动力学文献&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;/p&gt;
+
+
+	&lt;div class=&#34;row&#34;&gt;
+    &lt;embed src=&#34;2022.03.31-海冰.pdf&#34; width=&#34;100%&#34; height=&#34;550&#34; type=&#34;application/pdf&#34;&gt;
+	&lt;/div&gt;
+
+
+</content>
+        <category term="pdf" />
+        <updated>2022-03-30T16:00:00.000Z</updated>
+    </entry>
+</feed>
