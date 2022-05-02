@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>欢迎 • Posts by &#34;coarse presentation&#34; category</title>
+        <link>https://ningchenhui.github.io</link>
+        <description>正在建设中...</description>
+        <language>zh-CN,en,default</language>
+        <pubDate>Thu, 30 Dec 2021 00:00:00 +0800</pubDate>
+        <lastBuildDate>Thu, 30 Dec 2021 00:00:00 +0800</lastBuildDate>
+        <category>Coarse</category>
+        <category>Tool</category>
+        <category>Memo</category>
+        <category>Coding</category>
+        <category>Notes</category>
+        <category>Book</category>
+        <category>Linux</category>
+        <category>Presentation</category>
+        <category>Report</category>
+        <item>
+            <guid isPermalink="true">https://ningchenhui.github.io/Document/Coarse-Presentation/cesm2si/</guid>
+            <title>Arctic Sea Ice in CESM2</title>
+            <link>https://ningchenhui.github.io/Document/Coarse-Presentation/cesm2si/</link>
+            <category>Presentation</category>
+            <pubDate>Thu, 30 Dec 2021 00:00:00 +0800</pubDate>
+            <description><![CDATA[ &lt;p&gt;CESM2 的北极海冰 &lt;span id=&#34;more&#34;&gt;&lt;/span&gt; &lt;span class=&#34;label info&#34;&gt;课程展示&lt;/span&gt;&lt;/p&gt;
+&lt;iframe src=&#39;https://view.officeapps.live.com/op/view.aspx?src=https://ningchenhui.github.io/ppt/Arctic Sea Ice in CESM2.pptx&#39; width=&#39;100%&#39; height=&#39;600px&#39; frameborder=&#39;0&#39;&gt;&lt;/iframe&gt; ]]></description>
+        </item>
+    </channel>
+</rss>

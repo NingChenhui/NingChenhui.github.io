@@ -15,6 +15,7 @@
         <category>Book</category>
         <category>Linux</category>
         <category>Presentation</category>
+        <category>Report</category>
         <item>
             <guid isPermalink="true">https://ningchenhui.github.io/Computer-Science/HPC/hpc1206/</guid>
             <title>高性能计算#04 HPL测试GPU</title>
