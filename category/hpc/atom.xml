@@ -5,13 +5,13 @@
     <link href="https://ningchenhui.github.io" />
     <updated>2020-12-06T08:44:18.000Z</updated>
     <category term="Coarse" />
-    <category term="Linux" />
+    <category term="pdf" />
     <category term="Tool" />
     <category term="Memo" />
     <category term="Coding" />
     <category term="Notes" />
     <category term="Book" />
-    <category term="pdf" />
+    <category term="Linux" />
     <entry>
         <id>https://ningchenhui.github.io/Computer-Science/HPC/hpc1206/</id>
         <title>高性能计算#04 HPL测试GPU</title>
