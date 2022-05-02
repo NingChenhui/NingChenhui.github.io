@@ -1,7 +1,7 @@
 {
     "version": "https://jsonfeed.org/version/1",
     "title": "欢迎",
-    "description": "正在建设中...",
+    "description": "Chocolate milk suki!",
     "home_page_url": "https://ningchenhui.github.io",
     "items": [
         {
@@ -19,7 +19,7 @@
             "url": "https://ningchenhui.github.io/news/",
             "title": "近日动态·Recent News",
             "date_published": "2022-04-14T11:19:13.000Z",
-            "content_html": "<ul>\n<li><strong>2022.04.30</strong> Successfully installed NEMO.</li>\n<li><strong>2022.04.10</strong> 新站建设中・Now building this website.</li>\n</ul>\n<!--- **2022.03.14** 工位确认·Got my spot. -->\n<span id=\"more\"></span>\n<style>\n.box{ font-family:\"Noto Serif SC\";font-size:20px;font-weight:bold}\n</style>\n<div class=\"tab\" data-id=\"id1\" data-title=\"中文\">\n<p class='box'>  目前正在做</p>\n<ol>\n<li>海冰动力学评估</li>\n<li>ML 辅助的共形映射网格生成</li>\n<li>学习 NEMO 海洋模式</li>\n</ol>\n<p>欢迎交流讨论！</p>\n</div>\n<div class=\"tab\" data-id=\"id1\" data-title=\"English\">\n<p class='box'>  Now doing</p>\n<ol>\n<li>Evaluation of sea ice kinematics.</li>\n<li>ML-assisted conformal mapping mesh generation.</li>\n<li>Studying NEMO ocean model.</li>\n</ol>\n<p>You are welcome to discuss these with me!</p>\n</div>\n",
+            "content_html": "<ul>\n<li><strong>2022.04.30</strong> Successfully installed NEMO.</li>\n<li><strong>2022.04.10</strong> Now building this website.</li>\n</ul>\n<!--- **2022.03.14** 工位确认·Got my spot. -->\n<span id=\"more\"></span>\n<style>\n.box{ font-family:\"Noto Serif SC\";font-size:20px;font-weight:bold}\n</style>\n<div class=\"tab\" data-id=\"id1\" data-title=\"中文\">\n<p class='box'>  目前正在做</p>\n<ol>\n<li>海冰动力学评估</li>\n<li>ML 辅助的共形映射网格生成</li>\n<li>学习 NEMO 海洋模式</li>\n</ol>\n<p>欢迎交流讨论！</p>\n</div>\n<div class=\"tab\" data-id=\"id1\" data-title=\"English\">\n<p class='box'>  Now doing</p>\n<ol>\n<li>Evaluation of sea ice kinematics.</li>\n<li>ML-assisted conformal mapping mesh generation.</li>\n<li>Studying NEMO ocean model.</li>\n</ol>\n<p>You are welcome to discuss these with me!</p>\n</div>\n",
             "tags": []
         },
         {
