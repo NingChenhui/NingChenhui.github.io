@@ -8,14 +8,14 @@
         <pubDate>Sun, 06 Dec 2020 16:44:18 +0800</pubDate>
         <lastBuildDate>Sun, 06 Dec 2020 16:44:18 +0800</lastBuildDate>
         <category>Coarse</category>
-        <category>Tool</category>
         <category>Memo</category>
         <category>Coding</category>
+        <category>Presentation</category>
         <category>Notes</category>
         <category>Book</category>
-        <category>Linux</category>
-        <category>Presentation</category>
         <category>Report</category>
+        <category>Tool</category>
+        <category>Linux</category>
         <item>
             <guid isPermalink="true">https://ningchenhui.github.io/Computer-Science/HPC/hpc1206/</guid>
             <title>高性能计算#04 HPL测试GPU</title>
