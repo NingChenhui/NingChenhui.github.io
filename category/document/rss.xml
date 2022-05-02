@@ -8,28 +8,27 @@
         <pubDate>Thu, 21 Apr 2022 00:00:00 +0800</pubDate>
         <lastBuildDate>Thu, 21 Apr 2022 00:00:00 +0800</lastBuildDate>
         <category>Coarse</category>
-        <category>pdf</category>
         <category>Tool</category>
         <category>Memo</category>
         <category>Coding</category>
         <category>Notes</category>
         <category>Book</category>
         <category>Linux</category>
+        <category>Presentation</category>
         <item>
             <guid isPermalink="true">https://ningchenhui.github.io/Document/Seminar/pdf220421/</guid>
             <title>SIREx Part 1</title>
             <link>https://ningchenhui.github.io/Document/Seminar/pdf220421/</link>
-            <category>pdf</category>
+            <category>Presentation</category>
             <pubDate>Thu, 21 Apr 2022 00:00:00 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;[文献阅读汇报] 海冰动力学 SIREx Part 1&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;iframe src=&#34;/tools/pdf/web/viewer.html?file=2022.04.21-seaice.pdf&#34; width=&#34;100%&#34; height=&#34;600px&#34;&gt;&lt;/iframe&gt;
- ]]></description>
+&lt;iframe src=&#39;https://view.officeapps.live.com/op/view.aspx?src=https://ningchenhui.github.io/ppt/2022.04.21-海冰.pptx&#39; width=&#39;100%&#39; height=&#39;600px&#39; frameborder=&#39;0&#39;&gt;&lt;/iframe&gt; ]]></description>
         </item>
         <item>
             <guid isPermalink="true">https://ningchenhui.github.io/Document/Seminar/pdf220331/</guid>
             <title>Arctic Sea Ice Deformation</title>
             <link>https://ningchenhui.github.io/Document/Seminar/pdf220331/</link>
-            <category>pdf</category>
+            <category>Presentation</category>
             <pubDate>Thu, 31 Mar 2022 00:00:00 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;[文献阅读汇报] 海冰动力学&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;iframe src=&#34;/tools/pdf/web/viewer.html?file=2022.03.31-海冰.pdf&#34; width=&#34;100%&#34; height=&#34;600px&#34;&gt;&lt;/iframe&gt; ]]></description>

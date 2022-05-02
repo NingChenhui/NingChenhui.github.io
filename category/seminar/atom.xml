@@ -5,21 +5,20 @@
     <link href="https://ningchenhui.github.io" />
     <updated>2022-04-20T16:00:00.000Z</updated>
     <category term="Coarse" />
-    <category term="pdf" />
     <category term="Tool" />
     <category term="Memo" />
     <category term="Coding" />
     <category term="Notes" />
     <category term="Book" />
     <category term="Linux" />
+    <category term="Presentation" />
     <entry>
         <id>https://ningchenhui.github.io/Document/Seminar/pdf220421/</id>
         <title>SIREx Part 1</title>
         <link rel="alternate" href="https://ningchenhui.github.io/Document/Seminar/pdf220421/"/>
         <content type="html">&lt;p&gt;[文献阅读汇报] 海冰动力学 SIREx Part 1&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;iframe src=&#34;/tools/pdf/web/viewer.html?file=2022.04.21-seaice.pdf&#34; width=&#34;100%&#34; height=&#34;600px&#34;&gt;&lt;/iframe&gt;
-</content>
-        <category term="pdf" />
+&lt;iframe src=&#39;https://view.officeapps.live.com/op/view.aspx?src=https://ningchenhui.github.io/ppt/2022.04.21-海冰.pptx&#39; width=&#39;100%&#39; height=&#39;600px&#39; frameborder=&#39;0&#39;&gt;&lt;/iframe&gt;</content>
+        <category term="Presentation" />
         <updated>2022-04-20T16:00:00.000Z</updated>
     </entry>
     <entry>
@@ -28,7 +27,7 @@
         <link rel="alternate" href="https://ningchenhui.github.io/Document/Seminar/pdf220331/"/>
         <content type="html">&lt;p&gt;[文献阅读汇报] 海冰动力学&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;iframe src=&#34;/tools/pdf/web/viewer.html?file=2022.03.31-海冰.pdf&#34; width=&#34;100%&#34; height=&#34;600px&#34;&gt;&lt;/iframe&gt;</content>
-        <category term="pdf" />
+        <category term="Presentation" />
         <updated>2022-03-30T16:00:00.000Z</updated>
     </entry>
 </feed>
