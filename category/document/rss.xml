@@ -5,8 +5,8 @@
         <link>https://ningchenhui.github.io</link>
         <description>Chocolate milk suki!</description>
         <language>zh-CN,en,default</language>
-        <pubDate>Thu, 21 Apr 2022 00:00:00 +0800</pubDate>
-        <lastBuildDate>Thu, 21 Apr 2022 00:00:00 +0800</lastBuildDate>
+        <pubDate>Mon, 09 May 2022 00:00:00 +0800</pubDate>
+        <lastBuildDate>Mon, 09 May 2022 00:00:00 +0800</lastBuildDate>
         <category>Coarse</category>
         <category>Memo</category>
         <category>Coding</category>
@@ -16,6 +16,15 @@
         <category>Report</category>
         <category>Tool</category>
         <category>Linux</category>
+        <item>
+            <guid isPermalink="true">https://ningchenhui.github.io/Document/Group-Meeting/pdf220509/</guid>
+            <title>SIREx Part 2</title>
+            <link>https://ningchenhui.github.io/Document/Group-Meeting/pdf220509/</link>
+            <category>Report</category>
+            <pubDate>Mon, 09 May 2022 00:00:00 +0800</pubDate>
+            <description><![CDATA[ &lt;p&gt;海冰动力学 SIREx Part 2&lt;span id=&#34;more&#34;&gt;&lt;/span&gt; &lt;span class=&#34;label info&#34;&gt;文献阅读汇报&lt;/span&gt;&lt;/p&gt;
+&lt;iframe src=&#39;https://view.officeapps.live.com/op/view.aspx?src=https://ningchenhui.github.io/ppt/2022.05.09-海冰.pptx&#39; width=&#39;100%&#39; height=&#39;600px&#39; frameborder=&#39;0&#39;&gt;&lt;/iframe&gt; ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">https://ningchenhui.github.io/Document/Group-Meeting/pdf220421/</guid>
             <title>SIREx Part 1</title>
@@ -35,9 +44,9 @@
 &lt;iframe src=&#34;/tools/pdf/web/viewer.html?file=2022.03.31-海冰.pdf&#34; width=&#34;100%&#34; height=&#34;600px&#34;&gt;&lt;/iframe&gt; ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://ningchenhui.github.io/Document/Coarse-Presentation/cesm2si/</guid>
+            <guid isPermalink="true">https://ningchenhui.github.io/Document/Course-Presentation/cesm2si/</guid>
             <title>Arctic Sea Ice in CESM2</title>
-            <link>https://ningchenhui.github.io/Document/Coarse-Presentation/cesm2si/</link>
+            <link>https://ningchenhui.github.io/Document/Course-Presentation/cesm2si/</link>
             <category>Presentation</category>
             <pubDate>Thu, 30 Dec 2021 00:00:00 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;CESM2 的北极海冰 &lt;span id=&#34;more&#34;&gt;&lt;/span&gt; &lt;span class=&#34;label info&#34;&gt;课程展示&lt;/span&gt;&lt;/p&gt;

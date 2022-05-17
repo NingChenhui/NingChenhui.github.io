@@ -3,7 +3,7 @@
     <id>https://ningchenhui.github.io</id>
     <title>欢迎</title>
     <link href="https://ningchenhui.github.io" />
-    <updated>2022-05-01T15:19:13.000Z</updated>
+    <updated>2022-05-08T16:00:00.000Z</updated>
     <category term="Coarse" />
     <category term="Memo" />
     <category term="Coding" />
@@ -13,6 +13,15 @@
     <category term="Report" />
     <category term="Tool" />
     <category term="Linux" />
+    <entry>
+        <id>https://ningchenhui.github.io/Document/Group-Meeting/pdf220509/</id>
+        <title>SIREx Part 2</title>
+        <link rel="alternate" href="https://ningchenhui.github.io/Document/Group-Meeting/pdf220509/"/>
+        <content type="html">&lt;p&gt;海冰动力学 SIREx Part 2&lt;span id=&#34;more&#34;&gt;&lt;/span&gt; &lt;span class=&#34;label info&#34;&gt;文献阅读汇报&lt;/span&gt;&lt;/p&gt;
+&lt;iframe src=&#39;https://view.officeapps.live.com/op/view.aspx?src=https://ningchenhui.github.io/ppt/2022.05.09-海冰.pptx&#39; width=&#39;100%&#39; height=&#39;600px&#39; frameborder=&#39;0&#39;&gt;&lt;/iframe&gt;</content>
+        <category term="Report" />
+        <updated>2022-05-08T16:00:00.000Z</updated>
+    </entry>
     <entry>
         <id>https://ningchenhui.github.io/ESM/NEMO/install/</id>
         <title>Install NEMO notes</title>
@@ -141,9 +150,9 @@ step 5 -  &lt;code&gt;./main2d ../input/nemo-2d.input&lt;/code&gt;   运行不�
         <updated>2022-02-05T11:19:13.000Z</updated>
     </entry>
     <entry>
-        <id>https://ningchenhui.github.io/Document/Coarse-Presentation/cesm2si/</id>
+        <id>https://ningchenhui.github.io/Document/Course-Presentation/cesm2si/</id>
         <title>Arctic Sea Ice in CESM2</title>
-        <link rel="alternate" href="https://ningchenhui.github.io/Document/Coarse-Presentation/cesm2si/"/>
+        <link rel="alternate" href="https://ningchenhui.github.io/Document/Course-Presentation/cesm2si/"/>
         <content type="html">&lt;p&gt;CESM2 的北极海冰 &lt;span id=&#34;more&#34;&gt;&lt;/span&gt; &lt;span class=&#34;label info&#34;&gt;课程展示&lt;/span&gt;&lt;/p&gt;
 &lt;iframe src=&#39;https://view.officeapps.live.com/op/view.aspx?src=https://ningchenhui.github.io/ppt/Arctic Sea Ice in CESM2.pptx&#39; width=&#39;100%&#39; height=&#39;600px&#39; frameborder=&#39;0&#39;&gt;&lt;/iframe&gt;</content>
         <category term="Presentation" />

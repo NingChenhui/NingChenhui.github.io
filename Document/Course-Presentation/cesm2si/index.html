@@ -1,0 +1,571 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="欢迎" href="https://ningchenhui.github.io/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="欢迎" href="https://ningchenhui.github.io/atom.xml" />
+<link rel="alternate" type="application/json" title="欢迎" href="https://ningchenhui.github.io/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+  <meta name="keywords" content="Presentation" />
+
+
+<link rel="canonical" href="https://ningchenhui.github.io/Document/Course-Presentation/cesm2si/">
+
+
+
+  <title>
+Arctic Sea Ice in CESM2 - Course Presentation - Document |
+Ning Chenhui = 欢迎 = Welcome</title>
+<meta name="generator" content="Hexo 5.4.2"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">Arctic Sea Ice in CESM2
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="Created: 2021-12-30 00:00:00">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">Posted on</span>
+    <time itemprop="dateCreated datePublished" datetime="2021-12-30T00:00:00+08:00">2021-12-30</time>
+  </span>
+  <span class="item" title="Symbols count in article">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span class="text">Symbols count in article</span>
+    <span>14</span>
+    <span class="text">words</span>
+  </span>
+  <span class="item" title="Reading time">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span class="text">Reading time</span>
+    <span>1 mins.</span>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">Ning Chenhui</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+        <ul>
+          <li class="item" data-background-image="http://wx4.sinaimg.cn/large/6833939bly1giph47e9vtj20zk0m8x6l.jpg"></li>
+          <li class="item" data-background-image="http://wx4.sinaimg.cn/large/6833939bly1giph47e9vtj20zk0m8x6l.jpg"></li>
+          <li class="item" data-background-image="http://wx4.sinaimg.cn/large/6833939bly1gicitht3xtj20zk0m8k5v.jpg"></li>
+          <li class="item" data-background-image="http://wx4.sinaimg.cn/large/6833939bly1giciszlczyj20zk0m816d.jpg"></li>
+          <li class="item" data-background-image="http://wx4.sinaimg.cn/large/6833939bly1gicitf0kl1j20zk0m87fe.jpg"></li>
+          <li class="item" data-background-image="http://wx4.sinaimg.cn/large/6833939bly1giclh5u05ej20zk0m87df.jpg"></li>
+          <li class="item" data-background-image="https://tvax4.sinaimg.cn/large/007YLcQ6ly1h1685nkov5j31hc0u012l"></li>
+          <li class="item" data-background-image="http://wx4.sinaimg.cn/large/6833939bly1gipeu1usa7j20zk0m8b29.jpg"></li>
+          <li class="item" data-background-image="http://wx4.sinaimg.cn/large/6833939bly1giciundwu5j20zk0m8n9e.jpg"></li>
+          <li class="item" data-background-image="https://tvax4.sinaimg.cn/large/007YLcQ6ly1h1k3l4xb1sj31hc0u0484"></li>
+          <li class="item" data-background-image="http://wx4.sinaimg.cn/large/6833939bly1gicliierfjj20zk0m8npd.jpg"></li>
+          <li class="item" data-background-image="http://wx4.sinaimg.cn/large/6833939bly1giclflwv2aj20zk0m84qp.jpg"></li>
+          <li class="item" data-background-image="http://wx4.sinaimg.cn/large/6833939bly1gipex2cdtbj20zk0m8x6p.jpg"></li>
+          <li class="item" data-background-image="https://tvax4.sinaimg.cn/large/007YLcQ6ly1h1685nkov5j31hc0u012l"></li>
+          <li class="item" data-background-image="http://wx4.sinaimg.cn/large/6833939bly1giph4baakhj20zk0m8h5q.jpg"></li>
+          <li class="item" data-background-image="http://wx4.sinaimg.cn/large/6833939bly1gipevgoki5j20zk0m84qp.jpg"></li>
+        </ul>
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">Home</a></span><i class="ic i-angle-right"></i>
+<span  itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/Document/" itemprop="item" rel="index" title="In Document"><span itemprop="name">Document</span></a>
+<meta itemprop="position" content="1" /></span>
+<i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/Document/Course-Presentation/" itemprop="item" rel="index" title="In Course Presentation"><span itemprop="name">Course Presentation</span></a>
+<meta itemprop="position" content="2" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="en">
+  <link itemprop="mainEntityOfPage" href="https://ningchenhui.github.io/Document/Course-Presentation/cesm2si/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/avatar.jpg">
+    <meta itemprop="name" content="Ning Chenhui">
+    <meta itemprop="description" content="Welcome, Chocolate milk suki!">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="欢迎">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <p>CESM2 的北极海冰 <span id="more"></span> <span class="label info">课程展示</span></p>
+<iframe src='https://view.officeapps.live.com/op/view.aspx?src=https://ningchenhui.github.io/ppt/Arctic Sea Ice in CESM2.pptx' width='100%' height='600px' frameborder='0'></iframe>
+      <div class="tags">
+          <a href="/tags/Presentation/" rel="tag"><i class="ic i-tag"></i> Presentation</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">Edited on</span>
+    <time title="Modified: 2022-05-17 17:51:28" itemprop="dateModified" datetime="2022-05-17T17:51:28+08:00">2022-05-17</time>
+  </span>
+  <span id="Document/Course-Presentation/cesm2si/" class="item leancloud_visitors" data-flag-title="Arctic Sea Ice in CESM2" title="Views">
+      <span class="icon">
+        <i class="ic i-eye"></i>
+      </span>
+      <span class="text">Views</span>
+      <span class="leancloud-visitors-count"></span>
+      <span class="text">times</span>
+  </span>
+</div>
+
+      
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/Earth-Science/Ocean/Physical-Oceanography-Coarse/oceanA0709/" itemprop="url" rel="prev" data-background-image="http:&#x2F;&#x2F;wx4.sinaimg.cn&#x2F;large&#x2F;6833939bly1giclg5ms2rj20zk0m8u0x.jpg" title="笔记#05 物理海洋学基础">
+  <span class="type">Previous Post</span>
+  <span class="category"><i class="ic i-flag"></i> Physical Oceanography Coarse</span>
+  <h3>笔记#05 物理海洋学基础</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+      
+
+  <a href="/ESM/OMARE/omare220205/" itemprop="url" rel="next" data-background-image="http:&#x2F;&#x2F;wx4.sinaimg.cn&#x2F;large&#x2F;6833939bly1gipeuibk9fj20zk0m8ay2.jpg" title="OMARE 学习使用（一）">
+  <span class="type">Next Post</span>
+  <span class="category"><i class="ic i-flag"></i> OMARE</span>
+  <h3>OMARE 学习使用（一）</h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="Contents">
+      </div>
+      <div class="related panel pjax" data-title="Related">
+        <ul>
+          <li class="active"><a href="/Document/Course-Presentation/cesm2si/" rel="bookmark" title="Arctic Sea Ice in CESM2">Arctic Sea Ice in CESM2</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="Overview">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="Ning Chenhui"
+      data-src="/images/avatar.jpg">
+  <p class="name" itemprop="name">Ning Chenhui</p>
+  <div class="description" itemprop="description">Chocolate milk suki!</div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">28</span>
+        <span class="name">posts</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/categories/">
+        <span class="count">15</span>
+        <span class="name">categories</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">9</span>
+        <span class="name">tags</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL05pbmdDaGVuaHVp" title="https:&#x2F;&#x2F;github.com&#x2F;NingChenhui"><i class="ic i-github"></i></span>
+      <span class="exturl item email" data-url="bWFpbHRvOnNpbmtpaG9zaXp1a2lAZ21haWwuY29t" title="mailto:sinkihosizuki@gmail.com"><i class="ic i-envelope"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>Home</a>
+  </li>
+
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-feather"></i>Posts</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/archives/" rel="section"><i class="ic i-list-alt"></i>Archives</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/categories/" rel="section"><i class="ic i-th"></i>Categories</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/tags/" rel="section"><i class="ic i-tags"></i>Tags</a>
+  </li>
+
+  </ul>
+    
+  <li class="item">
+    <a href="/about/" rel="section"><i class="ic i-user"></i>About</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/board/" rel="section"><i class="ic i-comments"></i>Board</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+        <a href="/Earth-Science/Ocean/Physical-Oceanography-Coarse/oceanA0709/" rel="prev" title="Previous Post"><i class="ic i-chevron-left"></i></a>
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+        <a href="/ESM/OMARE/omare220205/" rel="next" title="Next Post"><i class="ic i-chevron-right"></i></a>
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>Random Posts</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/Earth-Science/" title="In Earth Science">Earth Science</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/Earth-Science/Foundations-of-Earth-Science/" title="In Foundations of Earth Science">Foundations of Earth Science</a>
+</div>
+
+    <span><a href="/Earth-Science/Foundations-of-Earth-Science/es1023/" title="笔记#02 地球科学导论">笔记#02 地球科学导论</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/Earth-Science/" title="In Earth Science">Earth Science</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/Earth-Science/Ocean/" title="In Ocean">Ocean</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/Earth-Science/Ocean/Physical-Oceanography-Coarse/" title="In Physical Oceanography Coarse">Physical Oceanography Coarse</a>
+</div>
+
+    <span><a href="/Earth-Science/Ocean/Physical-Oceanography-Coarse/oceanA0709/" title="笔记#05 物理海洋学基础">笔记#05 物理海洋学基础</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/Earth-Science/" title="In Earth Science">Earth Science</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/Earth-Science/Ocean/" title="In Ocean">Ocean</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/Earth-Science/Ocean/Physical-Oceanography-Coarse/" title="In Physical Oceanography Coarse">Physical Oceanography Coarse</a>
+</div>
+
+    <span><a href="/Earth-Science/Ocean/Physical-Oceanography-Coarse/oceanA0703/" title="笔记#04 物理海洋学基础">笔记#04 物理海洋学基础</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/Computer-Science/" title="In Computer Science">Computer Science</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/Computer-Science/HPC/" title="In HPC">HPC</a>
+</div>
+
+    <span><a href="/Computer-Science/HPC/hpc1206/" title="高性能计算#04 HPL测试GPU">高性能计算#04 HPL测试GPU</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/Computer-Science/" title="In Computer Science">Computer Science</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/Computer-Science/HPC/" title="In HPC">HPC</a>
+</div>
+
+    <span><a href="/Computer-Science/HPC/hpc1204/" title="高性能计算#02 HPL再次搭建">高性能计算#02 HPL再次搭建</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/Document/" title="In Document">Document</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/Document/Group-Meeting/" title="In Group Meeting">Group Meeting</a>
+</div>
+
+    <span><a href="/Document/Group-Meeting/pdf220331/" title="Arctic Sea Ice Deformation">Arctic Sea Ice Deformation</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/ESM/" title="In ESM">ESM</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/ESM/NEMO/" title="In NEMO">NEMO</a>
+</div>
+
+    <span><a href="/ESM/NEMO/install/" title="Install NEMO notes">Install NEMO notes</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/ESM/" title="In ESM">ESM</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/ESM/Data/" title="In Data">Data</a>
+</div>
+
+    <span><a href="/ESM/Data/model01/" title="初识NetCDF">初识NetCDF</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/Earth-Science/" title="In Earth Science">Earth Science</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/Earth-Science/Foundations-of-Earth-Science/" title="In Foundations of Earth Science">Foundations of Earth Science</a>
+</div>
+
+    <span><a href="/Earth-Science/Foundations-of-Earth-Science/es1009/" title="笔记#01 地球科学导论">笔记#01 地球科学导论</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/Computer-Science/" title="In Computer Science">Computer Science</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/Computer-Science/HPC/" title="In HPC">HPC</a>
+</div>
+
+    <span><a href="/Computer-Science/HPC/hpc1205/" title="高性能计算#03 HPCG搭建">高性能计算#03 HPCG搭建</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>Recent Comments</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2020 – 
+    <span itemprop="copyrightYear">2022</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Ning Chenhui <!--change by hosizuki@ Ning Chenhui--></span>
+  </div>
+  <div class="count">
+    <span class="post-meta-item-icon">
+      <i class="ic i-chart-area"></i>
+    </span>
+    <span title="站点总字数">55k 字</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="ic i-eye"></i>
+    </span>
+    <!-- 不蒜子计数 -->
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span id="busuanzi_container_site_uv" > <span id="busuanzi_value_site_uv"></span>  </span>
+    <!-- 不蒜子计数 -->
+
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="ic i-coffee"></i>
+    </span>
+    <span title="站点阅读时长">50 分钟</span>
+  </div>
+  <div class="powered-by">
+    Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: 'Document/Course-Presentation/cesm2si/',
+    favicon: {
+      show: "（●´3｀●）Goooood",
+      hide: "(´Д｀)Booooom"
+    },
+    search : {
+      placeholder: "Search for Posts",
+      empty: "We didn't find any results for the search: ${query}",
+      stats: "${hits} results found in ${time} ms"
+    },
+    valine: true,fancybox: true,
+    copyright: 'Copied to clipboard successfully! <br> All articles in this blog are licensed under <i class="ic i-creative-commons"></i>BY-NC-SA.',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>
