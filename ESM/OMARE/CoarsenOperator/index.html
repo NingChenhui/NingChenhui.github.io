@@ -1,0 +1,584 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN,en,default">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="欢迎" href="https://ningchenhui.github.io/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="欢迎" href="https://ningchenhui.github.io/atom.xml" />
+<link rel="alternate" type="application/json" title="欢迎" href="https://ningchenhui.github.io/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+  <meta name="keywords" content="Memo,Coding" />
+
+
+<link rel="canonical" href="https://ningchenhui.github.io/ESM/OMARE/CoarsenOperator/">
+
+
+
+  <title>
+OMARE 粗化算子 - OMARE - ESM |
+Ning Chenhui = 欢迎 = Welcome</title>
+<meta name="generator" content="Hexo 5.4.2"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">OMARE 粗化算子
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2022-06-22 18:47:52">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2022-06-22T18:47:52+08:00">2022-06-22</time>
+  </span>
+  <span class="item" title="本文字数">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span class="text">本文字数</span>
+    <span>4.7k</span>
+    <span class="text">字</span>
+  </span>
+  <span class="item" title="阅读时长">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span class="text">阅读时长</span>
+    <span>4 分钟</span>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">Ning Chenhui</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+        <ul>
+          <li class="item" data-background-image="http://wx4.sinaimg.cn/large/6833939bly1giclflwv2aj20zk0m84qp.jpg"></li>
+          <li class="item" data-background-image="http://wx4.sinaimg.cn/large/6833939bly1gipeu1usa7j20zk0m8b29.jpg"></li>
+          <li class="item" data-background-image="http://wx4.sinaimg.cn/large/6833939bly1giph4fomxoj20zk0m8axp.jpg"></li>
+          <li class="item" data-background-image="https://tvax4.sinaimg.cn/large/007YLcQ6ly1h1685nkov5j31hc0u012l"></li>
+          <li class="item" data-background-image="https://tvax4.sinaimg.cn/large/007Tv3Vmly1h1nkgjiw02j31hc0u012k"></li>
+          <li class="item" data-background-image="http://wx4.sinaimg.cn/large/6833939bly1giciszlczyj20zk0m816d.jpg"></li>
+          <li class="item" data-background-image="http://wx4.sinaimg.cn/large/6833939bly1giph47e9vtj20zk0m8x6l.jpg"></li>
+          <li class="item" data-background-image="http://wx4.sinaimg.cn/large/6833939bly1gipevgoki5j20zk0m84qp.jpg"></li>
+          <li class="item" data-background-image="https://tvax4.sinaimg.cn/large/007Tv3Vmly1h1nkgjiw02j31hc0u012k"></li>
+          <li class="item" data-background-image="http://wx4.sinaimg.cn/large/6833939bly1gipetfk5zwj20zk0m8e81.jpg"></li>
+          <li class="item" data-background-image="http://wx4.sinaimg.cn/large/6833939bly1gipesng5oej20zk0m87d4.jpg"></li>
+          <li class="item" data-background-image="http://wx4.sinaimg.cn/large/6833939bly1gicitf0kl1j20zk0m87fe.jpg"></li>
+          <li class="item" data-background-image="http://wx4.sinaimg.cn/large/6833939bly1gicitzannuj20zk0m8b29.jpg"></li>
+          <li class="item" data-background-image="http://wx4.sinaimg.cn/large/6833939bly1gicitzannuj20zk0m8b29.jpg"></li>
+          <li class="item" data-background-image="http://wx4.sinaimg.cn/large/6833939bly1gicitht3xtj20zk0m8k5v.jpg"></li>
+          <li class="item" data-background-image="http://wx4.sinaimg.cn/large/6833939bly1gipew8gmvyj20zk0m87wh.jpg"></li>
+        </ul>
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">首页·Home</a></span><i class="ic i-angle-right"></i>
+<span  itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/ESM/" itemprop="item" rel="index" title="分类于 ESM"><span itemprop="name">ESM</span></a>
+<meta itemprop="position" content="1" /></span>
+<i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/ESM/OMARE/" itemprop="item" rel="index" title="分类于 OMARE"><span itemprop="name">OMARE</span></a>
+<meta itemprop="position" content="2" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="https://ningchenhui.github.io/ESM/OMARE/CoarsenOperator/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/avatar.jpg">
+    <meta itemprop="name" content="Ning Chenhui">
+    <meta itemprop="description" content="Welcome, DESS, THU">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="欢迎">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <p>OMARE CoarsenOperator <span id="more"></span></p>
+<h1 id="新增自定义插值算子"><a class="markdownIt-Anchor" href="#新增自定义插值算子">#</a> 新增自定义插值算子</h1>
+<p>参考  <code>NemoSpaceInterpCenter.h</code>  中的实现。</p>
+<figure class="highlight cpp"><figcaption data-lang="C++"><span>NemoSpaceMeanCenter.h</span></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">class</span> <span class="token class-name">NemoSpaceMeanCenter</span> <span class="token operator">:</span> <span class="token base-clause"><span class="token keyword">public</span> xfer<span class="token double-colon punctuation">::</span><span class="token class-name">CoarsenOperator</span><span class="token operator">&lt;</span><span class="token class-name">NDIM</span><span class="token operator">></span></span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token keyword">public</span><span class="token operator">:</span></pre></td></tr><tr><td data-num="3"></td><td><pre>  <span class="token function">NemoSpaceMeanCenter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="4"></td><td><pre>		d_name_id <span class="token operator">=</span> <span class="token string">"NEMO_MEAN_INTERP"</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="5"></td><td><pre>		alpha <span class="token operator">=</span> <span class="token number">0.5</span><span class="token punctuation">;</span>   <span class="token comment">//TODO 粗化时细网格值的权重</span></pre></td></tr><tr><td data-num="6"></td><td><pre>  <span class="token punctuation">&#125;</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="7"></td><td><pre>  <span class="token comment">/**</pre></td></tr><tr><td data-num="8"></td><td><pre>   * @brief 在指定的粗网格内，</pre></td></tr><tr><td data-num="9"></td><td><pre>   * 将细网格片上指定的数据片插值到粗网格片上指定的数据片上.</pre></td></tr><tr><td data-num="10"></td><td><pre>   * @param fine 输入参数，Patch 类，表示细网格片.</pre></td></tr><tr><td data-num="11"></td><td><pre>   * @param coarse 输入参数，Patch 类，表示粗网格片.</pre></td></tr><tr><td data-num="12"></td><td><pre>   * @param dst_component 输入参数，整型，表示目的数据片.</pre></td></tr><tr><td data-num="13"></td><td><pre>   * @param src_component 输入参数，整型，表示源数据片.</pre></td></tr><tr><td data-num="14"></td><td><pre>   * @param  coarse_box 输入参数，Box 类，表示粗化网格.</pre></td></tr><tr><td data-num="15"></td><td><pre>   * @param ratio 输入参数，整型向量类，表示粗化比率.</pre></td></tr><tr><td data-num="16"></td><td><pre>   */</span></pre></td></tr><tr><td data-num="17"></td><td><pre>  <span class="token keyword">void</span> <span class="token function">coarsen</span><span class="token punctuation">(</span>hier<span class="token double-colon punctuation">::</span>Patch<span class="token operator">&lt;</span>NDIM<span class="token operator">></span><span class="token operator">&amp;</span> coarse<span class="token punctuation">,</span> <span class="token keyword">const</span> hier<span class="token double-colon punctuation">::</span>Patch<span class="token operator">&lt;</span>NDIM<span class="token operator">></span><span class="token operator">&amp;</span> fine<span class="token punctuation">,</span></pre></td></tr><tr><td data-num="18"></td><td><pre>               <span class="token keyword">const</span> <span class="token keyword">int</span> dst_component<span class="token punctuation">,</span> <span class="token keyword">const</span> <span class="token keyword">int</span> src_component<span class="token punctuation">,</span></pre></td></tr><tr><td data-num="19"></td><td><pre>               <span class="token keyword">const</span> hier<span class="token double-colon punctuation">::</span>Box<span class="token operator">&lt;</span>NDIM<span class="token operator">></span><span class="token operator">&amp;</span> coarse_box<span class="token punctuation">,</span></pre></td></tr><tr><td data-num="20"></td><td><pre>               <span class="token keyword">const</span> hier<span class="token double-colon punctuation">::</span>IntVector<span class="token operator">&lt;</span>NDIM<span class="token operator">></span><span class="token operator">&amp;</span> ratio<span class="token punctuation">)</span> <span class="token keyword">const</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="21"></td><td><pre>    <span class="token keyword">const</span> hier<span class="token double-colon punctuation">::</span>Box<span class="token operator">&lt;</span>NDIM<span class="token operator">></span> fine_box <span class="token operator">=</span> hier<span class="token double-colon punctuation">::</span><span class="token class-name">Box</span><span class="token operator">&lt;</span>NDIM<span class="token operator">></span><span class="token double-colon punctuation">::</span><span class="token function">refine</span><span class="token punctuation">(</span>coarse_box<span class="token punctuation">,</span> ratio<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr></table></figure><figure class="highlight cpp"><figcaption data-lang="C++"><span>NemoFort.h</span></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">extern</span> <span class="token keyword">void</span> <span class="token function">space_mean_center_</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token operator">&amp;</span> ir00<span class="token punctuation">,</span> <span class="token keyword">int</span><span class="token operator">&amp;</span> jr00<span class="token punctuation">,</span> <span class="token keyword">int</span><span class="token operator">&amp;</span> ic00<span class="token punctuation">,</span> <span class="token keyword">int</span><span class="token operator">&amp;</span> jc00<span class="token punctuation">,</span></pre></td></tr><tr><td data-num="2"></td><td><pre>                            <span class="token keyword">int</span><span class="token operator">&amp;</span> ir0<span class="token punctuation">,</span> <span class="token keyword">int</span><span class="token operator">&amp;</span> jr0<span class="token punctuation">,</span> <span class="token keyword">int</span><span class="token operator">&amp;</span> ir1<span class="token punctuation">,</span> <span class="token keyword">int</span><span class="token operator">&amp;</span> jr1<span class="token punctuation">,</span></pre></td></tr><tr><td data-num="3"></td><td><pre>                            <span class="token keyword">int</span><span class="token operator">&amp;</span> ic0<span class="token punctuation">,</span> <span class="token keyword">int</span><span class="token operator">&amp;</span> jc0<span class="token punctuation">,</span> <span class="token keyword">int</span><span class="token operator">&amp;</span> ic1<span class="token punctuation">,</span> <span class="token keyword">int</span><span class="token operator">&amp;</span> jc1<span class="token punctuation">,</span></pre></td></tr><tr><td data-num="4"></td><td><pre>                            <span class="token keyword">int</span><span class="token operator">&amp;</span> jpir<span class="token punctuation">,</span> <span class="token keyword">int</span><span class="token operator">&amp;</span> jpjr<span class="token punctuation">,</span> <span class="token keyword">double</span><span class="token operator">*</span> ur<span class="token punctuation">,</span></pre></td></tr><tr><td data-num="5"></td><td><pre>                            <span class="token keyword">int</span><span class="token operator">&amp;</span> jpic<span class="token punctuation">,</span> <span class="token keyword">int</span><span class="token operator">&amp;</span> jpjc<span class="token punctuation">,</span> <span class="token keyword">double</span><span class="token operator">*</span> uc<span class="token punctuation">,</span></pre></td></tr><tr><td data-num="6"></td><td><pre>                            <span class="token keyword">int</span><span class="token operator">*</span> ratio<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr></table></figure><h1 id="fortran-实现"><a class="markdownIt-Anchor" href="#fortran-实现">#</a> Fortran 实现</h1>
+<figure class="highlight fortran"><figcaption data-lang="fortran"><span>JASMIN_FILLGHOST.F90</span></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">SUBROUTINE</span> space_mean_center<span class="token punctuation">(</span> ir00<span class="token punctuation">,</span> jr00<span class="token punctuation">,</span> ic00<span class="token punctuation">,</span> jc00<span class="token punctuation">,</span> <span class="token punctuation">&amp;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>                                ir0<span class="token punctuation">,</span> jr0<span class="token punctuation">,</span> ir1<span class="token punctuation">,</span> jr1<span class="token punctuation">,</span> <span class="token punctuation">&amp;</span></pre></td></tr><tr><td data-num="3"></td><td><pre>                                ic0<span class="token punctuation">,</span> jc0<span class="token punctuation">,</span> ic1<span class="token punctuation">,</span> jc1<span class="token punctuation">,</span> <span class="token punctuation">&amp;</span></pre></td></tr><tr><td data-num="4"></td><td><pre>                                jpir<span class="token punctuation">,</span> jpjr<span class="token punctuation">,</span> uf<span class="token punctuation">,</span> <span class="token punctuation">&amp;</span></pre></td></tr><tr><td data-num="5"></td><td><pre>                                jpic<span class="token punctuation">,</span> jpjc<span class="token punctuation">,</span> uc<span class="token punctuation">,</span> <span class="token punctuation">&amp;</span></pre></td></tr><tr><td data-num="6"></td><td><pre>                                ratio<span class="token punctuation">)</span> bind<span class="token punctuation">(</span>c<span class="token punctuation">,</span> name<span class="token operator">=</span><span class="token string">"space_mean_center_"</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="7"></td><td><pre>    <span class="token comment">! input &amp; output            </span></pre></td></tr><tr><td data-num="8"></td><td><pre>    <span class="token keyword">INTEGER</span><span class="token punctuation">,</span>                        <span class="token keyword">INTENT</span><span class="token punctuation">(</span><span class="token keyword">in</span><span class="token punctuation">)</span> <span class="token operator">::</span>   ir00<span class="token punctuation">,</span> jr00<span class="token punctuation">,</span> ic00<span class="token punctuation">,</span> jc00      <span class="token comment">!patch lower index (ghost included)</span></pre></td></tr><tr><td data-num="9"></td><td><pre>    <span class="token keyword">INTEGER</span><span class="token punctuation">,</span>                        <span class="token keyword">INTENT</span><span class="token punctuation">(</span><span class="token keyword">in</span><span class="token punctuation">)</span> <span class="token operator">::</span>   ir0<span class="token punctuation">,</span> jr0<span class="token punctuation">,</span> ir1<span class="token punctuation">,</span> jr1          <span class="token comment">!refine box start/end index</span></pre></td></tr><tr><td data-num="10"></td><td><pre>    <span class="token keyword">INTEGER</span><span class="token punctuation">,</span>                        <span class="token keyword">INTENT</span><span class="token punctuation">(</span><span class="token keyword">in</span><span class="token punctuation">)</span> <span class="token operator">::</span>   ic0<span class="token punctuation">,</span> jc0<span class="token punctuation">,</span> ic1<span class="token punctuation">,</span> jc1          <span class="token comment">!coarse box start/end index</span></pre></td></tr><tr><td data-num="11"></td><td><pre>    <span class="token keyword">INTEGER</span><span class="token punctuation">,</span>                        <span class="token keyword">INTENT</span><span class="token punctuation">(</span><span class="token keyword">in</span><span class="token punctuation">)</span> <span class="token operator">::</span>   jpir<span class="token punctuation">,</span> jpjr                  <span class="token comment">!refine patch size (ghost included)</span></pre></td></tr><tr><td data-num="12"></td><td><pre>    <span class="token keyword">REAL</span><span class="token punctuation">(</span>wp<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token keyword">DIMENSION</span><span class="token punctuation">(</span>jpir<span class="token punctuation">,</span>jpjr<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token keyword">INTENT</span><span class="token punctuation">(</span><span class="token keyword">in</span><span class="token punctuation">)</span> <span class="token operator">::</span>   uf                          <span class="token comment">!refine patch data</span></pre></td></tr><tr><td data-num="13"></td><td><pre>    <span class="token keyword">INTEGER</span><span class="token punctuation">,</span>                        <span class="token keyword">INTENT</span><span class="token punctuation">(</span><span class="token keyword">in</span><span class="token punctuation">)</span> <span class="token operator">::</span>   jpic<span class="token punctuation">,</span> jpjc                  <span class="token comment">!coarse patch size (ghost included)</span></pre></td></tr><tr><td data-num="14"></td><td><pre>    <span class="token keyword">REAL</span><span class="token punctuation">(</span>wp<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token keyword">DIMENSION</span><span class="token punctuation">(</span>jpic<span class="token punctuation">,</span>jpjc<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token keyword">INTENT</span><span class="token punctuation">(</span><span class="token keyword">inout</span><span class="token punctuation">)</span> <span class="token operator">::</span>   uc                       <span class="token comment">!coarse patch data</span></pre></td></tr><tr><td data-num="15"></td><td><pre>    <span class="token keyword">INTEGER</span><span class="token punctuation">,</span>  <span class="token keyword">DIMENSION</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span>         <span class="token keyword">INTENT</span><span class="token punctuation">(</span><span class="token keyword">in</span><span class="token punctuation">)</span> <span class="token operator">::</span>   ratio                       <span class="token comment">!x refinement ratio NDIM?</span></pre></td></tr><tr><td data-num="16"></td><td><pre>    </pre></td></tr><tr><td data-num="17"></td><td><pre>    <span class="token comment">! local</span></pre></td></tr><tr><td data-num="18"></td><td><pre>    <span class="token keyword">INTEGER</span> <span class="token operator">::</span> ic<span class="token punctuation">,</span> jc</pre></td></tr><tr><td data-num="19"></td><td><pre>    <span class="token keyword">INTEGER</span> <span class="token operator">::</span> ic_loc<span class="token punctuation">,</span> jc_loc</pre></td></tr><tr><td data-num="20"></td><td><pre>    <span class="token keyword">REAL</span><span class="token punctuation">(</span>wp<span class="token punctuation">)</span> <span class="token operator">::</span> sum_</pre></td></tr><tr><td data-num="21"></td><td><pre></pre></td></tr><tr><td data-num="22"></td><td><pre>    <span class="token keyword">DO</span> jc <span class="token operator">=</span> jc0<span class="token punctuation">,</span> jc1</pre></td></tr><tr><td data-num="23"></td><td><pre>    <span class="token keyword">DO</span> ic <span class="token operator">=</span> ic0<span class="token punctuation">,</span> ic1</pre></td></tr><tr><td data-num="24"></td><td><pre>        sum_ <span class="token operator">=</span> SUM<span class="token punctuation">(</span>uf<span class="token punctuation">(</span><span class="token punctuation">(</span>ic<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">*</span>ratio<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token number">1</span> <span class="token operator">-</span>ir00<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">:</span>ic<span class="token operator">*</span>ratio<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">-</span>ir00<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token punctuation">(</span>jc<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">*</span>ratio<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token number">1</span> <span class="token operator">-</span>jr00<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">:</span>jc<span class="token operator">*</span>ratio<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token operator">-</span>jr00<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="25"></td><td><pre>        <span class="token comment">! coarse local index</span></pre></td></tr><tr><td data-num="26"></td><td><pre>        ic_loc <span class="token operator">=</span> ic <span class="token operator">-</span> ic00 <span class="token operator">+</span><span class="token number">1</span></pre></td></tr><tr><td data-num="27"></td><td><pre>        jc_loc <span class="token operator">=</span> jc <span class="token operator">-</span> jc00 <span class="token operator">+</span><span class="token number">1</span></pre></td></tr><tr><td data-num="28"></td><td><pre>        uc<span class="token punctuation">(</span>ic_loc<span class="token punctuation">,</span> jc_loc<span class="token punctuation">)</span> <span class="token operator">=</span> sum_ <span class="token operator">/</span> <span class="token keyword">REAL</span><span class="token punctuation">(</span>ratio<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">*</span>ratio<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span>wp<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="29"></td><td><pre>    <span class="token keyword">ENDDO</span></pre></td></tr><tr><td data-num="30"></td><td><pre>    <span class="token keyword">ENDDO</span></pre></td></tr><tr><td data-num="31"></td><td><pre></pre></td></tr><tr><td data-num="32"></td><td><pre><span class="token keyword">END SUBROUTINE</span> space_mean_center</pre></td></tr></table></figure><h1 id="启用-overlay"><a class="markdownIt-Anchor" href="#启用-overlay">#</a> 启用 Overlay</h1>
+<p>这里  <code>sync_time % 1 != 0</code>  的  <code>1</code>  改为 Overlay 的步长。</p>
+<figure class="highlight c"><figcaption data-lang="c"><span>NemoLevelIntegrator_body.C Producer.py</span></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token comment">/****************************************************************</pre></td></tr><tr><td data-num="2"></td><td><pre> * AMR, 同步粗网格层.</pre></td></tr><tr><td data-num="3"></td><td><pre> *****************************************************************/</span></pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token keyword">void</span> NemoLevelIntegrator<span class="token operator">::</span><span class="token function">synchronizeCoarserLevel</span><span class="token punctuation">(</span></pre></td></tr><tr><td data-num="5"></td><td><pre>  <span class="token keyword">const</span> JASMIN<span class="token operator">::</span>tbox<span class="token operator">::</span>Pointer<span class="token operator">&lt;</span>JASMIN<span class="token operator">::</span>hier<span class="token operator">::</span>BasePatchHierarchy<span class="token operator">&lt;</span>NDIM<span class="token operator">>></span></pre></td></tr><tr><td data-num="6"></td><td><pre>    hierarchy<span class="token punctuation">,</span></pre></td></tr><tr><td data-num="7"></td><td><pre>  <span class="token keyword">const</span> <span class="token keyword">int</span> finer_level_number<span class="token punctuation">,</span> <span class="token keyword">const</span> <span class="token keyword">double</span> sync_time<span class="token punctuation">,</span></pre></td></tr><tr><td data-num="8"></td><td><pre>  <span class="token keyword">const</span> <span class="token keyword">double</span> coarser_old_time<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="9"></td><td><pre>  using namespace std<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="10"></td><td><pre>  using namespace JASMIN<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="11"></td><td><pre></pre></td></tr><tr><td data-num="12"></td><td><pre>  <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span>sync_time <span class="token operator">%</span> <span class="token number">1</span> <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token keyword">return</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="13"></td><td><pre>  tbox<span class="token operator">::</span>pout<span class="token operator">&lt;&lt;</span><span class="token string">"***********************************************"</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="14"></td><td><pre>  tbox<span class="token operator">::</span>pout<span class="token operator">&lt;&lt;</span><span class="token string">"Synchronize (Overlay) Coarser Level... "</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="15"></td><td><pre>  tbox<span class="token operator">::</span>pout<span class="token operator">&lt;&lt;</span><span class="token string">"     finer_level_number=="</span><span class="token operator">&lt;&lt;</span>finer_level_number<span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="16"></td><td><pre>  tbox<span class="token operator">::</span>pout<span class="token operator">&lt;&lt;</span><span class="token string">"     sync_time=="</span><span class="token operator">&lt;&lt;</span>sync_time<span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="17"></td><td><pre>  tbox<span class="token operator">::</span>pout<span class="token operator">&lt;&lt;</span><span class="token string">"     coarser_old_time=="</span><span class="token operator">&lt;&lt;</span>coarser_old_time<span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="18"></td><td><pre>  tbox<span class="token operator">::</span>pout<span class="token operator">&lt;&lt;</span><span class="token string">"***********************************************"</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="19"></td><td><pre></pre></td></tr><tr><td data-num="20"></td><td><pre>  <span class="token comment">// 校正相邻粗网格层的通量</span></pre></td></tr><tr><td data-num="21"></td><td><pre>  tbox<span class="token operator">::</span>Pointer<span class="token operator">&lt;</span>hier<span class="token operator">::</span>PatchLevel<span class="token operator">&lt;</span>NDIM<span class="token operator">>></span> finer_level <span class="token operator">=</span></pre></td></tr><tr><td data-num="22"></td><td><pre>    hierarchy<span class="token operator">-></span><span class="token function">getPatchLevel</span><span class="token punctuation">(</span>finer_level_number<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="23"></td><td><pre>  tbox<span class="token operator">::</span>Pointer<span class="token operator">&lt;</span>hier<span class="token operator">::</span>PatchLevel<span class="token operator">&lt;</span>NDIM<span class="token operator">>></span> coarser_level <span class="token operator">=</span></pre></td></tr><tr><td data-num="24"></td><td><pre>    hierarchy<span class="token operator">-></span><span class="token function">getPatchLevel</span><span class="token punctuation">(</span>finer_level_number <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="25"></td><td><pre></pre></td></tr><tr><td data-num="26"></td><td><pre>  <span class="token keyword">const</span> <span class="token keyword">double</span> actual_dt <span class="token operator">=</span> sync_time <span class="token operator">-</span> coarser_old_time<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="27"></td><td><pre></pre></td></tr><tr><td data-num="28"></td><td><pre>  <span class="token comment">// 细网格 -> 粗网格 (具体方法在初始化构件中)</span></pre></td></tr><tr><td data-num="29"></td><td><pre>  sync_overlay_intc<span class="token operator">-></span><span class="token function">synchronizeCoarserLevel</span><span class="token punctuation">(</span>finer_level<span class="token punctuation">,</span> sync_time<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="30"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr></table></figure><h1 id="注册使用插值算子的变量"><a class="markdownIt-Anchor" href="#注册使用插值算子的变量">#</a> 注册使用插值算子的变量</h1>
+<figure class="highlight python"><figcaption data-lang="python"><span>Producer.py var_db.py</span></figcaption><table><tr><td data-num="1"></td><td><pre>OVERLAY_DOUBLE_INTERP_CENTER <span class="token operator">=</span> <span class="token string">"NEMO_MEAN_INTERP"</span></pre></td></tr><tr><td data-num="2"></td><td><pre>t_field_list <span class="token operator">=</span> <span class="token punctuation">[</span></pre></td></tr><tr><td data-num="3"></td><td><pre>    <span class="token string">"tsn"</span><span class="token punctuation">,</span> <span class="token string">"tsb"</span><span class="token punctuation">,</span> </pre></td></tr><tr><td data-num="4"></td><td><pre>    <span class="token string">"sshn"</span><span class="token punctuation">,</span> <span class="token string">"sshb"</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="5"></td><td><pre>    <span class="token string">"avm_k"</span></pre></td></tr><tr><td data-num="6"></td><td><pre><span class="token punctuation">]</span></pre></td></tr><tr><td data-num="7"></td><td><pre><span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">"Overlayregister.h"</span><span class="token punctuation">,</span> <span class="token string">"w"</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span></pre></td></tr><tr><td data-num="8"></td><td><pre>	<span class="token comment"># T</span></pre></td></tr><tr><td data-num="9"></td><td><pre>	<span class="token keyword">for</span> field <span class="token keyword">in</span> t_field_list<span class="token punctuation">:</span></pre></td></tr><tr><td data-num="10"></td><td><pre>        f<span class="token punctuation">.</span>write<span class="token punctuation">(</span><span class="token string">"intc->registerCoarsenPatchData(manager->"</span><span class="token operator">+</span>field<span class="token operator">+</span><span class="token string">"_id,\n"</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="11"></td><td><pre>        f<span class="token punctuation">.</span>write<span class="token punctuation">(</span><span class="token string">"                        \""</span><span class="token operator">+</span>OVERLAY_DOUBLE_INTERP_CENTER<span class="token operator">+</span><span class="token string">"\",\n"</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="12"></td><td><pre>        f<span class="token punctuation">.</span>write<span class="token punctuation">(</span><span class="token string">"                        manager->"</span><span class="token operator">+</span>field<span class="token operator">+</span><span class="token string">"_id);\n"</span><span class="token punctuation">)</span></pre></td></tr></table></figure><figure class="highlight c"><figcaption data-lang="c"><span>main_Nemo.C</span></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">"NemoSpaceMeanCenter.h"</span></span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token comment">// add user-define sapce refine operator</span></pre></td></tr><tr><td data-num="3"></td><td><pre>tbox<span class="token operator">::</span>Pointer<span class="token operator">&lt;</span>JASMIN<span class="token operator">::</span>pdat<span class="token operator">::</span>NemoSpaceMeanCenter<span class="token operator">></span> nemo_space_mean_center_operator</pre></td></tr><tr><td data-num="4"></td><td><pre>    <span class="token operator">=</span> new JASMIN<span class="token operator">::</span>pdat<span class="token operator">::</span><span class="token function">NemoSpaceMeanCenter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="5"></td><td><pre>grid_geometry<span class="token operator">-></span><span class="token function">addSpatialCoarsenOperator</span><span class="token punctuation">(</span>nemo_space_mean_center_operator<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr></table></figure><h1 id="与-conservative_coarsen-比较"><a class="markdownIt-Anchor" href="#与-conservative_coarsen-比较">#</a> 与 “CONSERVATIVE_COARSEN” 比较</h1>
+<figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tr><td data-num="1"></td><td><pre>h5diff omare_mean/build/exp_l2/javis_dump.00006/processor_cluster.00000.jasmin omare_220608/build/exp_l2/javis_dump.00006/processor_cluster.00000.jasmin</pre></td></tr></table></figure><pre><code>size:           [2400]           [2400]
+position        sshn            sshn            difference          
+------------------------------------------------------------
+[ 900 ]          6.04414e-07     6.04414e-07     5.68434e-14    
+1 differences found
+dataset: &lt;/processor.00000/level.00001/patch.00000/un.38&gt; and &lt;/processor.00000/level.00001/patch.00000/un.38&gt;
+size:           [15000]           [15000]
+position        un.38           un.38           difference          
+------------------------------------------------------------
+[ 145 ]          -1.00591e-05    -1.00591e-05    9.09495e-13    
+[ 210 ]          -1.2723e-06     -1.2723e-06     1.13687e-13    
+[ 1985 ]          -8.53e-07       -8.53e-07       5.68434e-14    
+[ 2438 ]          -1.50793e-05    -1.50793e-05    9.09495e-13    
+</code></pre>
+<p>加上  <code>1e-10</code>  的限制后只有 14 个差异值。</p>
+<h2 id="sshn"><a class="markdownIt-Anchor" href="#sshn">#</a> sshn</h2>
+<p class="gallery" data-height="400"><img data-src="0608.png" alt="" title="jasmin"><br>
+<img data-src="mean.png" alt="mean"><br>
+<img data-src="bug.png" alt="赋0"></p>
+
+      <div class="tags">
+          <a href="/tags/Memo/" rel="tag"><i class="ic i-tag"></i> Memo</a>
+          <a href="/tags/Coding/" rel="tag"><i class="ic i-tag"></i> Coding</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2022-06-22 20:30:20" itemprop="dateModified" datetime="2022-06-22T20:30:20+08:00">2022-06-22</time>
+  </span>
+  <span id="ESM/OMARE/CoarsenOperator/" class="item leancloud_visitors" data-flag-title="OMARE 粗化算子" title="阅读次数">
+      <span class="icon">
+        <i class="ic i-eye"></i>
+      </span>
+      <span class="text">阅读次数</span>
+      <span class="leancloud-visitors-count"></span>
+      <span class="text">次</span>
+  </span>
+</div>
+
+      
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/Document/Group-Meeting/pdf220509/" itemprop="url" rel="prev" data-background-image="http:&#x2F;&#x2F;wx4.sinaimg.cn&#x2F;large&#x2F;6833939bly1gipew8gmvyj20zk0m87wh.jpg" title="SIREx Part 2">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> Group Meeting</span>
+  <h3>SIREx Part 2</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%96%B0%E5%A2%9E%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8F%92%E5%80%BC%E7%AE%97%E5%AD%90"><span class="toc-number">1.</span> <span class="toc-text"> 新增自定义插值算子</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#fortran-%E5%AE%9E%E7%8E%B0"><span class="toc-number">2.</span> <span class="toc-text"> Fortran 实现</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%90%AF%E7%94%A8-overlay"><span class="toc-number">3.</span> <span class="toc-text"> 启用 Overlay</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B3%A8%E5%86%8C%E4%BD%BF%E7%94%A8%E6%8F%92%E5%80%BC%E7%AE%97%E5%AD%90%E7%9A%84%E5%8F%98%E9%87%8F"><span class="toc-number">4.</span> <span class="toc-text"> 注册使用插值算子的变量</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%8E-conservative_coarsen-%E6%AF%94%E8%BE%83"><span class="toc-number">5.</span> <span class="toc-text"> 与 “CONSERVATIVE_COARSEN” 比较</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#sshn"><span class="toc-number">5.1.</span> <span class="toc-text"> sshn</span></a></li></ol></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+        <ul>
+          <li><a href="/ESM/OMARE/omare220205/" rel="bookmark" title="OMARE 学习使用（一）">OMARE 学习使用（一）</a></li><li class="active"><a href="/ESM/OMARE/CoarsenOperator/" rel="bookmark" title="OMARE 粗化算子">OMARE 粗化算子</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="Ning Chenhui"
+      data-src="/images/avatar.jpg">
+  <p class="name" itemprop="name">Ning Chenhui</p>
+  <div class="description" itemprop="description">DESS, THU</div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">29</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/categories/">
+        <span class="count">15</span>
+        <span class="name">分类</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">9</span>
+        <span class="name">标签</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL05pbmdDaGVuaHVp" title="https:&#x2F;&#x2F;github.com&#x2F;NingChenhui"><i class="ic i-github"></i></span>
+      <span class="exturl item email" data-url="bWFpbHRvOnNpbmtpaG9zaXp1a2lAZ21haWwuY29t" title="mailto:sinkihosizuki@gmail.com"><i class="ic i-envelope"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>首页·Home</a>
+  </li>
+
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-feather"></i>文章·Posts</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/archives/" rel="section"><i class="ic i-list-alt"></i>归档·Archives</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/categories/" rel="section"><i class="ic i-th"></i>分类·Categories</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/tags/" rel="section"><i class="ic i-tags"></i>标签·Tags</a>
+  </li>
+
+  </ul>
+    
+  <li class="item">
+    <a href="/about/" rel="section"><i class="ic i-user"></i>关于·About</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/board/" rel="section"><i class="ic i-comments"></i>留言·Board</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章·Random Posts</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/Earth-Science/" title="分类于 Earth Science">Earth Science</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/Earth-Science/Sea-ice/" title="分类于 Sea ice">Sea ice</a>
+</div>
+
+    <span><a href="/Earth-Science/Sea-ice/esA0408/" title="粗化网格的变形速率计算">粗化网格的变形速率计算</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/Earth-Science/" title="分类于 Earth Science">Earth Science</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/Earth-Science/Foundations-of-Earth-Science/" title="分类于 Foundations of Earth Science">Foundations of Earth Science</a>
+</div>
+
+    <span><a href="/Earth-Science/Foundations-of-Earth-Science/es1111/" title="笔记#04 地球科学导论">笔记#04 地球科学导论</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/Earth-Science/" title="分类于 Earth Science">Earth Science</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/Earth-Science/Foundations-of-Earth-Science/" title="分类于 Foundations of Earth Science">Foundations of Earth Science</a>
+</div>
+
+    <span><a href="/Earth-Science/Foundations-of-Earth-Science/es1023/" title="笔记#02 地球科学导论">笔记#02 地球科学导论</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/Earth-Science/" title="分类于 Earth Science">Earth Science</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/Earth-Science/Ocean/" title="分类于 Ocean">Ocean</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/Earth-Science/Ocean/Physical-Oceanography-Coarse/" title="分类于 Physical Oceanography Coarse">Physical Oceanography Coarse</a>
+</div>
+
+    <span><a href="/Earth-Science/Ocean/Physical-Oceanography-Coarse/oceanA0709/" title="笔记#05 物理海洋学基础">笔记#05 物理海洋学基础</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/news/" title="近日动态·Recent News">近日动态·Recent News</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/Earth-Science/" title="分类于 Earth Science">Earth Science</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/Earth-Science/Ocean/" title="分类于 Ocean">Ocean</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/Earth-Science/Ocean/Physical-Oceanography-Coarse/" title="分类于 Physical Oceanography Coarse">Physical Oceanography Coarse</a>
+</div>
+
+    <span><a href="/Earth-Science/Ocean/Physical-Oceanography-Coarse/oceanA0703/" title="笔记#04 物理海洋学基础">笔记#04 物理海洋学基础</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/Document/" title="分类于 Document">Document</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/Document/Group-Meeting/" title="分类于 Group Meeting">Group Meeting</a>
+</div>
+
+    <span><a href="/Document/Group-Meeting/pdf220421/" title="SIREx Part 1">SIREx Part 1</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/Computer-Science/" title="分类于 Computer Science">Computer Science</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/Computer-Science/HPC/" title="分类于 HPC">HPC</a>
+</div>
+
+    <span><a href="/Computer-Science/HPC/hpc1204/" title="高性能计算#02 HPL再次搭建">高性能计算#02 HPL再次搭建</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/ESM/" title="分类于 ESM">ESM</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/ESM/OMARE/" title="分类于 OMARE">OMARE</a>
+</div>
+
+    <span><a href="/ESM/OMARE/omare220205/" title="OMARE 学习使用（一）">OMARE 学习使用（一）</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/Document/" title="分类于 Document">Document</a>
+</div>
+
+    <span><a href="/Document/seufile/" title="课程资料分享">课程资料分享</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论·Recent Comments</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2020 – 
+    <span itemprop="copyrightYear">2022</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Ning Chenhui <!--change by hosizuki@ Ning Chenhui--></span>
+  </div>
+  <div class="count">
+    <span class="post-meta-item-icon">
+      <i class="ic i-chart-area"></i>
+    </span>
+    <span title="站点总字数">60k 字</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="ic i-eye"></i>
+    </span>
+    <!-- 不蒜子计数 -->
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span id="busuanzi_container_site_uv" > <span id="busuanzi_value_site_uv"></span>  </span>
+    <!-- 不蒜子计数 -->
+
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="ic i-coffee"></i>
+    </span>
+    <span title="站点阅读时长">54 分钟</span>
+  </div>
+  <div class="powered-by">
+    Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: 'ESM/OMARE/CoarsenOperator/',
+    favicon: {
+      show: "（●´3｀●）啧啧",
+      hide: "(´Д｀)出大事！"
+    },
+    search : {
+      placeholder: "文章搜索·Search",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,fancybox: true,
+    copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>
