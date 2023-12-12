@@ -5,6 +5,14 @@
     "home_page_url": "https://ningchenhui.github.io",
     "items": [
         {
+            "id": "https://ningchenhui.github.io/agu23/",
+            "url": "https://ningchenhui.github.io/agu23/",
+            "title": "AGU23 Info",
+            "date_published": "2023-12-12T11:19:13.000Z",
+            "content_html": "<p>Title:</p>\n<p>Lagrangian tracking of sea ice in CICE (version 5.0)</p>\n<p>iPoster:</p>\n<p><span class=\"exturl\" data-url=\"aHR0cHM6Ly9hZ3UyMy5pcG9zdGVyc2Vzc2lvbnMuY29tL2RlZmF1bHQuYXNweD9zPTkzLUUxLTk5LUM5LTIxLUJFLUQ2LTdDLURELUQ4LUM5LTdDLUFFLTAyLTdELTI2JmFtcDtndWVzdHZpZXc9dHJ1ZQ==\">https://agu23.ipostersessions.com/default.aspx?s=93-E1-99-C9-21-BE-D6-7C-DD-D8-C9-7C-AE-02-7D-26&amp;guestview=true</span></p>\n<p>Contact me:</p>\n<p><span class=\"exturl\" data-url=\"bWFpbHRvOm5jaDIxQG1haWxzLnRzaW5naHVhLmVkdS5jbg==\">nch21@mails.tsinghua.edu.cn</span></p>\n<p>Abstract:</p>\n<p>Sea ice models characterize the dynamic and thermodynamic process of the sea ice, as well as the coupling with the polar atmosphere and ocean. Multi-scale, fractal sea ice dynamic processes and deformations can be simulated with current rheology models such as Viscous-Plastic. However, most models are based on Eulerian grids, and the model output cannot directly reflect the temporal scaling of sea ice deformations. Therefore, we design and implement an online tracking module for Lagrangian points in the sea ice model of Community Ice CodE (CICE, version 5). The Lagrangian tracking scheme is validated at the resolution of 1° and 0.15°. The lifecycle of Lagrangian points under normal-year forcing mainly consists of two characteristics: (1) a considerable portion of the loss through the advection from the Fram Strait; (2) surviving points circulating within the Beaufort Gyre. Furthermore, historical simulation result is compared with the observational dataset of buoys for the period between 1979 and 2001. With the 0.15° (7km-resolution in the Arctic) run, we evaluate the temporal-spatial scaling analysis of sea ice deformations. We find that model can reproduce the spatial and temporal scaling law as well as the temporal-spatial coupling, mostly exhibiting the power law relationship. One exception is the logarithm-quadratic relationship between spatial scaling curvature and temporal scales. We further propose a unified perspective on temporal-spatial coupling. However, the scaling law represented by the model is still weak compared with the observation, which indicates future improvement that are needed, including: the numerical simulation, the dynamics component of the model such as the sea ice rheology.</p>\n",
+            "tags": []
+        },
+        {
             "id": "https://ningchenhui.github.io/ESM/OMARE/omareInstall/",
             "url": "https://ningchenhui.github.io/ESM/OMARE/omareInstall/",
             "title": "JASMIN & NEMO 安装（新）",

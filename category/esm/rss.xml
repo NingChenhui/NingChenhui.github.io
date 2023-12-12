@@ -5,8 +5,8 @@
         <link>https://ningchenhui.github.io</link>
         <description>DESS, THU</description>
         <language>zh-CN,en,default</language>
-        <pubDate>Tue, 12 Sep 2023 18:19:13 +0800</pubDate>
-        <lastBuildDate>Tue, 12 Sep 2023 18:19:13 +0800</lastBuildDate>
+        <pubDate>Tue, 12 Sep 2023 03:19:13 -0700</pubDate>
+        <lastBuildDate>Tue, 12 Sep 2023 03:19:13 -0700</lastBuildDate>
         <category>Coarse</category>
         <category>Memo</category>
         <category>Coding</category>
@@ -22,7 +22,7 @@
             <title>JASMIN &amp; NEMO 安装（新）</title>
             <link>https://ningchenhui.github.io/ESM/OMARE/omareInstall/</link>
             <category>Memo</category>
-            <pubDate>Tue, 12 Sep 2023 18:19:13 +0800</pubDate>
+            <pubDate>Tue, 12 Sep 2023 03:19:13 -0700</pubDate>
             <description><![CDATA[ &lt;p&gt;JASMIN &amp;amp; NEMO Installation (new)&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;h1 id=&#34;所用平台&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#所用平台&#34;&gt;#&lt;/a&gt; 所用平台&lt;/h1&gt;
 &lt;p&gt;系统：Fedora 38 Workstation Edition 64 位&lt;br&gt;
@@ -101,7 +101,7 @@ root 登录，启用 GCC 4.8.5 后 &lt;em&gt;→参考本页环境变量配置&l
             <link>https://ningchenhui.github.io/ESM/OMARE/NW2SBC/</link>
             <category>Memo</category>
             <category>Info</category>
-            <pubDate>Fri, 16 Jun 2023 20:47:52 +0800</pubDate>
+            <pubDate>Fri, 16 Jun 2023 05:47:52 -0700</pubDate>
             <description><![CDATA[ &lt;p&gt;NeverWorld2 初始状态与边界条件 &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;h1 id=&#34;initial-condition&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#initial-condition&#34;&gt;#&lt;/a&gt; Initial condition&lt;/h1&gt;
 &lt;h2 id=&#34;ocean&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ocean&#34;&gt;#&lt;/a&gt; Ocean&lt;/h2&gt;
@@ -159,7 +159,7 @@ Then we add a seasonal cycle to the EMP flux, which is&lt;br&gt;
             <link>https://ningchenhui.github.io/ESM/OMARE/Overlay/</link>
             <category>Memo</category>
             <category>Coding</category>
-            <pubDate>Tue, 06 Sep 2022 20:47:52 +0800</pubDate>
+            <pubDate>Tue, 06 Sep 2022 05:47:52 -0700</pubDate>
             <description><![CDATA[ &lt;p&gt;OMARE Overlay &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;JASMIN 版本要求 &amp;gt;= 4.5.2&lt;/p&gt;
 &lt;h1 id=&#34;修改目的数据片为读写模式&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#修改目的数据片为读写模式&#34;&gt;#&lt;/a&gt; 修改目的数据片为读写模式&lt;/h1&gt;
@@ -171,7 +171,7 @@ Then we add a seasonal cycle to the EMP flux, which is&lt;br&gt;
             <title>JASMIN 安装</title>
             <link>https://ningchenhui.github.io/ESM/OMARE/jasminInstall/</link>
             <category>Memo</category>
-            <pubDate>Sat, 13 Aug 2022 18:19:13 +0800</pubDate>
+            <pubDate>Sat, 13 Aug 2022 03:19:13 -0700</pubDate>
             <description><![CDATA[ &lt;p&gt;JASMIN Installation &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;h1 id=&#34;所用平台&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#所用平台&#34;&gt;#&lt;/a&gt; 所用平台&lt;/h1&gt;
 &lt;p&gt;系统：Fedora 33 Workstation Edition 64 位&lt;br&gt;
@@ -249,7 +249,7 @@ root 登录，启用 GCC 4.8.5 后 &lt;em&gt;→参考本页环境变量配置&l
             <link>https://ningchenhui.github.io/ESM/OMARE/CoarsenOperator/</link>
             <category>Memo</category>
             <category>Coding</category>
-            <pubDate>Wed, 22 Jun 2022 18:47:52 +0800</pubDate>
+            <pubDate>Wed, 22 Jun 2022 03:47:52 -0700</pubDate>
             <description><![CDATA[ &lt;p&gt;OMARE CoarsenOperator &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;h1 id=&#34;新增自定义插值算子&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#新增自定义插值算子&#34;&gt;#&lt;/a&gt; 新增自定义插值算子&lt;/h1&gt;
 &lt;p&gt;参考  &lt;code&gt;NemoSpaceInterpCenter.h&lt;/code&gt;  中的实现。&lt;/p&gt;
@@ -285,7 +285,7 @@ position        un.38           un.38           difference
             <link>https://ningchenhui.github.io/ESM/NEMO/install/</link>
             <category>Memo</category>
             <category>Coding</category>
-            <pubDate>Sun, 01 May 2022 23:19:13 +0800</pubDate>
+            <pubDate>Sun, 01 May 2022 08:19:13 -0700</pubDate>
             <description><![CDATA[ &lt;p&gt;NEMO 安装&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;h1 id=&#34;prerequisites&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#prerequisites&#34;&gt;#&lt;/a&gt; Prerequisites&lt;/h1&gt;
 &lt;div class=&#34;note info&#34;&gt;
@@ -350,7 +350,7 @@ Then just following [6].&lt;/p&gt;
             <link>https://ningchenhui.github.io/ESM/OMARE/omare220205/</link>
             <category>Memo</category>
             <category>Coding</category>
-            <pubDate>Sat, 05 Feb 2022 19:19:13 +0800</pubDate>
+            <pubDate>Sat, 05 Feb 2022 03:19:13 -0800</pubDate>
             <description><![CDATA[ &lt;p&gt;Learn to run OMARE（i）&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;step 1 - 解压源代码后，在目录里创建  &lt;code&gt;build&lt;/code&gt;  文件夹&lt;br&gt;
  step 2 - 修改文件中的路径&lt;/p&gt;
@@ -380,7 +380,7 @@ step 5 -  &lt;code&gt;./main2d ../input/nemo-2d.input&lt;/code&gt;   运行不�
             <title>安装NCL</title>
             <link>https://ningchenhui.github.io/ESM/Data/model02/</link>
             <category>Tool</category>
-            <pubDate>Thu, 18 Mar 2021 00:00:00 +0800</pubDate>
+            <pubDate>Wed, 17 Mar 2021 09:00:00 -0700</pubDate>
             <description><![CDATA[ &lt;p&gt;NCAR command language (NCL)&lt;/p&gt;
 &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
 &lt;h2 id=&#34;关于&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#关于&#34;&gt;#&lt;/a&gt; 关于&lt;/h2&gt;
@@ -430,7 +430,7 @@ step 5 -  &lt;code&gt;./main2d ../input/nemo-2d.input&lt;/code&gt;   运行不�
             <title>初识NetCDF</title>
             <link>https://ningchenhui.github.io/ESM/Data/model01/</link>
             <category>Tool</category>
-            <pubDate>Tue, 16 Mar 2021 17:08:20 +0800</pubDate>
+            <pubDate>Tue, 16 Mar 2021 02:08:20 -0700</pubDate>
             <description><![CDATA[ &lt;p&gt;Network Common Data Form (NetCDF)&lt;/p&gt;
 &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
 &lt;!--ncl--&gt;

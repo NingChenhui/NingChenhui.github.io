@@ -5,8 +5,8 @@
         <link>https://ningchenhui.github.io</link>
         <description>DESS, THU</description>
         <language>zh-CN,en,default</language>
-        <pubDate>Tue, 12 Sep 2023 18:19:13 +0800</pubDate>
-        <lastBuildDate>Tue, 12 Sep 2023 18:19:13 +0800</lastBuildDate>
+        <pubDate>Tue, 12 Dec 2023 03:19:13 -0800</pubDate>
+        <lastBuildDate>Tue, 12 Dec 2023 03:19:13 -0800</lastBuildDate>
         <category>Coarse</category>
         <category>Memo</category>
         <category>Coding</category>
@@ -18,11 +18,26 @@
         <category>Linux</category>
         <category>Info</category>
         <item>
+            <guid isPermalink="true">https://ningchenhui.github.io/agu23/</guid>
+            <title>AGU23 Info</title>
+            <link>https://ningchenhui.github.io/agu23/</link>
+            <pubDate>Tue, 12 Dec 2023 03:19:13 -0800</pubDate>
+            <description><![CDATA[ &lt;p&gt;Title:&lt;/p&gt;
+&lt;p&gt;Lagrangian tracking of sea ice in CICE (version 5.0)&lt;/p&gt;
+&lt;p&gt;iPoster:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9hZ3UyMy5pcG9zdGVyc2Vzc2lvbnMuY29tL2RlZmF1bHQuYXNweD9zPTkzLUUxLTk5LUM5LTIxLUJFLUQ2LTdDLURELUQ4LUM5LTdDLUFFLTAyLTdELTI2JmFtcDtndWVzdHZpZXc9dHJ1ZQ==&#34;&gt;https://agu23.ipostersessions.com/default.aspx?s=93-E1-99-C9-21-BE-D6-7C-DD-D8-C9-7C-AE-02-7D-26&amp;amp;guestview=true&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Contact me:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;bWFpbHRvOm5jaDIxQG1haWxzLnRzaW5naHVhLmVkdS5jbg==&#34;&gt;nch21@mails.tsinghua.edu.cn&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Abstract:&lt;/p&gt;
+&lt;p&gt;Sea ice models characterize the dynamic and thermodynamic process of the sea ice, as well as the coupling with the polar atmosphere and ocean. Multi-scale, fractal sea ice dynamic processes and deformations can be simulated with current rheology models such as Viscous-Plastic. However, most models are based on Eulerian grids, and the model output cannot directly reflect the temporal scaling of sea ice deformations. Therefore, we design and implement an online tracking module for Lagrangian points in the sea ice model of Community Ice CodE (CICE, version 5). The Lagrangian tracking scheme is validated at the resolution of 1° and 0.15°. The lifecycle of Lagrangian points under normal-year forcing mainly consists of two characteristics: (1) a considerable portion of the loss through the advection from the Fram Strait; (2) surviving points circulating within the Beaufort Gyre. Furthermore, historical simulation result is compared with the observational dataset of buoys for the period between 1979 and 2001. With the 0.15° (7km-resolution in the Arctic) run, we evaluate the temporal-spatial scaling analysis of sea ice deformations. We find that model can reproduce the spatial and temporal scaling law as well as the temporal-spatial coupling, mostly exhibiting the power law relationship. One exception is the logarithm-quadratic relationship between spatial scaling curvature and temporal scales. We further propose a unified perspective on temporal-spatial coupling. However, the scaling law represented by the model is still weak compared with the observation, which indicates future improvement that are needed, including: the numerical simulation, the dynamics component of the model such as the sea ice rheology.&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
             <guid isPermalink="true">https://ningchenhui.github.io/ESM/OMARE/omareInstall/</guid>
             <title>JASMIN &amp; NEMO 安装（新）</title>
             <link>https://ningchenhui.github.io/ESM/OMARE/omareInstall/</link>
             <category>Memo</category>
-            <pubDate>Tue, 12 Sep 2023 18:19:13 +0800</pubDate>
+            <pubDate>Tue, 12 Sep 2023 03:19:13 -0700</pubDate>
             <description><![CDATA[ &lt;p&gt;JASMIN &amp;amp; NEMO Installation (new)&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;h1 id=&#34;所用平台&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#所用平台&#34;&gt;#&lt;/a&gt; 所用平台&lt;/h1&gt;
 &lt;p&gt;系统：Fedora 38 Workstation Edition 64 位&lt;br&gt;
@@ -101,7 +116,7 @@ root 登录，启用 GCC 4.8.5 后 &lt;em&gt;→参考本页环境变量配置&l
             <link>https://ningchenhui.github.io/ESM/OMARE/NW2SBC/</link>
             <category>Memo</category>
             <category>Info</category>
-            <pubDate>Fri, 16 Jun 2023 20:47:52 +0800</pubDate>
+            <pubDate>Fri, 16 Jun 2023 05:47:52 -0700</pubDate>
             <description><![CDATA[ &lt;p&gt;NeverWorld2 初始状态与边界条件 &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;h1 id=&#34;initial-condition&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#initial-condition&#34;&gt;#&lt;/a&gt; Initial condition&lt;/h1&gt;
 &lt;h2 id=&#34;ocean&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ocean&#34;&gt;#&lt;/a&gt; Ocean&lt;/h2&gt;
@@ -159,7 +174,7 @@ Then we add a seasonal cycle to the EMP flux, which is&lt;br&gt;
             <link>https://ningchenhui.github.io/ESM/OMARE/Overlay/</link>
             <category>Memo</category>
             <category>Coding</category>
-            <pubDate>Tue, 06 Sep 2022 20:47:52 +0800</pubDate>
+            <pubDate>Tue, 06 Sep 2022 05:47:52 -0700</pubDate>
             <description><![CDATA[ &lt;p&gt;OMARE Overlay &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;JASMIN 版本要求 &amp;gt;= 4.5.2&lt;/p&gt;
 &lt;h1 id=&#34;修改目的数据片为读写模式&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#修改目的数据片为读写模式&#34;&gt;#&lt;/a&gt; 修改目的数据片为读写模式&lt;/h1&gt;
@@ -171,7 +186,7 @@ Then we add a seasonal cycle to the EMP flux, which is&lt;br&gt;
             <title>JASMIN 安装</title>
             <link>https://ningchenhui.github.io/ESM/OMARE/jasminInstall/</link>
             <category>Memo</category>
-            <pubDate>Sat, 13 Aug 2022 18:19:13 +0800</pubDate>
+            <pubDate>Sat, 13 Aug 2022 03:19:13 -0700</pubDate>
             <description><![CDATA[ &lt;p&gt;JASMIN Installation &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;h1 id=&#34;所用平台&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#所用平台&#34;&gt;#&lt;/a&gt; 所用平台&lt;/h1&gt;
 &lt;p&gt;系统：Fedora 33 Workstation Edition 64 位&lt;br&gt;
@@ -249,7 +264,7 @@ root 登录，启用 GCC 4.8.5 后 &lt;em&gt;→参考本页环境变量配置&l
             <link>https://ningchenhui.github.io/ESM/OMARE/CoarsenOperator/</link>
             <category>Memo</category>
             <category>Coding</category>
-            <pubDate>Wed, 22 Jun 2022 18:47:52 +0800</pubDate>
+            <pubDate>Wed, 22 Jun 2022 03:47:52 -0700</pubDate>
             <description><![CDATA[ &lt;p&gt;OMARE CoarsenOperator &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;h1 id=&#34;新增自定义插值算子&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#新增自定义插值算子&#34;&gt;#&lt;/a&gt; 新增自定义插值算子&lt;/h1&gt;
 &lt;p&gt;参考  &lt;code&gt;NemoSpaceInterpCenter.h&lt;/code&gt;  中的实现。&lt;/p&gt;
@@ -284,7 +299,7 @@ position        un.38           un.38           difference
             <title>SIREx Part 2</title>
             <link>https://ningchenhui.github.io/Document/Group-Meeting/pdf220509/</link>
             <category>Report</category>
-            <pubDate>Mon, 09 May 2022 00:00:00 +0800</pubDate>
+            <pubDate>Sun, 08 May 2022 09:00:00 -0700</pubDate>
             <description><![CDATA[ &lt;p&gt;海冰动力学 SIREx Part 2&lt;span id=&#34;more&#34;&gt;&lt;/span&gt; &lt;span class=&#34;label info&#34;&gt;文献阅读汇报&lt;/span&gt;&lt;/p&gt;
 &lt;iframe src=&#39;https://view.officeapps.live.com/op/view.aspx?src=https://ningchenhui.github.io/ppt/2022.05.09-海冰.pptx&#39; width=&#39;100%&#39; height=&#39;600px&#39; frameborder=&#39;0&#39;&gt;&lt;/iframe&gt; ]]></description>
         </item>
@@ -294,7 +309,7 @@ position        un.38           un.38           difference
             <link>https://ningchenhui.github.io/ESM/NEMO/install/</link>
             <category>Memo</category>
             <category>Coding</category>
-            <pubDate>Sun, 01 May 2022 23:19:13 +0800</pubDate>
+            <pubDate>Sun, 01 May 2022 08:19:13 -0700</pubDate>
             <description><![CDATA[ &lt;p&gt;NEMO 安装&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;h1 id=&#34;prerequisites&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#prerequisites&#34;&gt;#&lt;/a&gt; Prerequisites&lt;/h1&gt;
 &lt;div class=&#34;note info&#34;&gt;
@@ -358,7 +373,7 @@ Then just following [6].&lt;/p&gt;
             <title>SIREx Part 1</title>
             <link>https://ningchenhui.github.io/Document/Group-Meeting/pdf220421/</link>
             <category>Report</category>
-            <pubDate>Thu, 21 Apr 2022 00:00:00 +0800</pubDate>
+            <pubDate>Wed, 20 Apr 2022 09:00:00 -0700</pubDate>
             <description><![CDATA[ &lt;p&gt;海冰动力学 SIREx Part 1&lt;span id=&#34;more&#34;&gt;&lt;/span&gt; &lt;span class=&#34;label info&#34;&gt;文献阅读汇报&lt;/span&gt;&lt;/p&gt;
 &lt;iframe src=&#39;https://view.officeapps.live.com/op/view.aspx?src=https://ningchenhui.github.io/ppt/2022.04.21-海冰.pptx&#39; width=&#39;100%&#39; height=&#39;600px&#39; frameborder=&#39;0&#39;&gt;&lt;/iframe&gt; ]]></description>
         </item>
@@ -366,7 +381,7 @@ Then just following [6].&lt;/p&gt;
             <guid isPermalink="true">https://ningchenhui.github.io/news/</guid>
             <title>近日动态·Recent News</title>
             <link>https://ningchenhui.github.io/news/</link>
-            <pubDate>Thu, 14 Apr 2022 19:19:13 +0800</pubDate>
+            <pubDate>Thu, 14 Apr 2022 04:19:13 -0700</pubDate>
             <description><![CDATA[ &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;2023.06.14&lt;/strong&gt; Attending &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3d3dy5hcGVjcy50b3AvZ2JfbmV3cy5waHA/bW9kaWQ9MTYwMDImaWQ9MTM2MTI0&#34;&gt;China Polar Youth Forum&lt;/span&gt;  at Beijing.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;2023.05.07&lt;/strong&gt; Attending &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3d3dy5xbmR4bHQuY29tL2luZGV4Lmh0bWw=&#34;&gt;China Youth Geoscience Forum&lt;/span&gt; at Wuhan.&lt;/li&gt;
@@ -404,7 +419,7 @@ Then just following [6].&lt;/p&gt;
             <title>Arctic Sea Ice Deformation</title>
             <link>https://ningchenhui.github.io/Document/Group-Meeting/pdf220331/</link>
             <category>Report</category>
-            <pubDate>Thu, 31 Mar 2022 00:00:00 +0800</pubDate>
+            <pubDate>Wed, 30 Mar 2022 09:00:00 -0700</pubDate>
             <description><![CDATA[ &lt;p&gt;海冰动力学&lt;span id=&#34;more&#34;&gt;&lt;/span&gt; &lt;span class=&#34;label info&#34;&gt;文献阅读汇报&lt;/span&gt;&lt;/p&gt;
 &lt;iframe src=&#34;/tools/pdf/web/viewer.html?file=2022.03.31-海冰.pdf&#34; width=&#34;100%&#34; height=&#34;600px&#34;&gt;&lt;/iframe&gt; ]]></description>
         </item>
@@ -414,7 +429,7 @@ Then just following [6].&lt;/p&gt;
             <link>https://ningchenhui.github.io/ESM/OMARE/omare220205/</link>
             <category>Memo</category>
             <category>Coding</category>
-            <pubDate>Sat, 05 Feb 2022 19:19:13 +0800</pubDate>
+            <pubDate>Sat, 05 Feb 2022 03:19:13 -0800</pubDate>
             <description><![CDATA[ &lt;p&gt;Learn to run OMARE（i）&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;step 1 - 解压源代码后，在目录里创建  &lt;code&gt;build&lt;/code&gt;  文件夹&lt;br&gt;
  step 2 - 修改文件中的路径&lt;/p&gt;
@@ -444,7 +459,7 @@ step 5 -  &lt;code&gt;./main2d ../input/nemo-2d.input&lt;/code&gt;   运行不�
             <title>Arctic Sea Ice in CESM2</title>
             <link>https://ningchenhui.github.io/Document/Course-Presentation/cesm2si/</link>
             <category>Presentation</category>
-            <pubDate>Thu, 30 Dec 2021 00:00:00 +0800</pubDate>
+            <pubDate>Wed, 29 Dec 2021 08:00:00 -0800</pubDate>
             <description><![CDATA[ &lt;p&gt;CESM2 的北极海冰 &lt;span id=&#34;more&#34;&gt;&lt;/span&gt; &lt;span class=&#34;label info&#34;&gt;课程展示&lt;/span&gt;&lt;/p&gt;
 &lt;iframe src=&#39;https://view.officeapps.live.com/op/view.aspx?src=https://ningchenhui.github.io/ppt/Arctic Sea Ice in CESM2.pptx&#39; width=&#39;100%&#39; height=&#39;600px&#39; frameborder=&#39;0&#39;&gt;&lt;/iframe&gt; ]]></description>
         </item>
@@ -454,7 +469,7 @@ step 5 -  &lt;code&gt;./main2d ../input/nemo-2d.input&lt;/code&gt;   运行不�
             <link>https://ningchenhui.github.io/Earth-Science/Ocean/Physical-Oceanography-Coarse/oceanA0709/</link>
             <category>Coarse</category>
             <category>Notes</category>
-            <pubDate>Fri, 09 Jul 2021 20:08:52 +0800</pubDate>
+            <pubDate>Fri, 09 Jul 2021 05:08:52 -0700</pubDate>
             <description><![CDATA[ &lt;p&gt;Note#05 Fundamentals of Physical Oceanography&lt;/p&gt;
 &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
 &lt;h2 id=&#34;第七章海洋波动&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#第七章海洋波动&#34;&gt;#&lt;/a&gt; 第七章：海洋波动&lt;/h2&gt;
@@ -494,7 +509,7 @@ step 5 -  &lt;code&gt;./main2d ../input/nemo-2d.input&lt;/code&gt;   运行不�
             <link>https://ningchenhui.github.io/Earth-Science/Ocean/Physical-Oceanography-Coarse/oceanA0703/</link>
             <category>Coarse</category>
             <category>Notes</category>
-            <pubDate>Sat, 03 Jul 2021 20:08:52 +0800</pubDate>
+            <pubDate>Sat, 03 Jul 2021 05:08:52 -0700</pubDate>
             <description><![CDATA[ &lt;p&gt;Note#04 Fundamentals of Physical Oceanography&lt;/p&gt;
 &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
 &lt;h2 id=&#34;第六章海洋环流&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#第六章海洋环流&#34;&gt;#&lt;/a&gt; 第六章：海洋环流&lt;/h2&gt;
@@ -609,7 +624,7 @@ ENSO 的影响：&lt;br&gt;
             <link>https://ningchenhui.github.io/Earth-Science/Sea-ice/esA0412/</link>
             <category>Coding</category>
             <category>Notes</category>
-            <pubDate>Mon, 12 Apr 2021 10:43:05 +0800</pubDate>
+            <pubDate>Sun, 11 Apr 2021 19:43:05 -0700</pubDate>
             <description><![CDATA[ &lt;p&gt;Arctic sea ice extent and volume (SIE and SIV)&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;h2 id=&#34;定义&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#定义&#34;&gt;#&lt;/a&gt; 定义&lt;/h2&gt;
 &lt;p&gt;Sea ice concentration is the percentage of each pixel that is covered by ice.&lt;br&gt;
@@ -649,7 +664,7 @@ hi 为网格平均冰厚，乘以 T 网格面积累加计算海冰体积。&lt;/
             <title>北极涛动</title>
             <link>https://ningchenhui.github.io/Earth-Science/Arctic/esA0410/</link>
             <category>Notes</category>
-            <pubDate>Sat, 10 Apr 2021 12:12:03 +0800</pubDate>
+            <pubDate>Fri, 09 Apr 2021 21:12:03 -0700</pubDate>
             <description><![CDATA[ &lt;p&gt;Arctic Oscillation (AO) &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;h2 id=&#34;北极涛动&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#北极涛动&#34;&gt;#&lt;/a&gt; 北极涛动&lt;/h2&gt;
 &lt;p&gt;北极涛动（AO）是指北半球中纬度地区（约北纬 45 度）与北极地区气压形势差别的变化。它是一个代表北极地区大气环流的重要气候指数，可分为正位相和负位相。&lt;/p&gt;
@@ -701,7 +716,7 @@ a_{N,1} &amp;amp; a_{N,2} &amp;amp; \cdots &amp;amp;a_{N,M}
             <title>粗化网格的变形速率计算</title>
             <link>https://ningchenhui.github.io/Earth-Science/Sea-ice/esA0408/</link>
             <category>Coding</category>
-            <pubDate>Thu, 08 Apr 2021 18:12:04 +0800</pubDate>
+            <pubDate>Thu, 08 Apr 2021 03:12:04 -0700</pubDate>
             <description><![CDATA[ &lt;p&gt;Calculate deformation rate of coarse-mesh&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;h2 id=&#34;网格&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#网格&#34;&gt;#&lt;/a&gt; 网格&lt;/h2&gt;
 &lt;h3 id=&#34;b-grid&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#b-grid&#34;&gt;#&lt;/a&gt; B-grid&lt;/h3&gt;
@@ -757,7 +772,7 @@ M1001 80h400000v40h-400000z&#39;/&gt;&lt;/svg&gt;&lt;/span&gt;&lt;/span&gt;&lt;/
             <title>Some new or forgotten knowledge points</title>
             <link>https://ningchenhui.github.io/Earth-Science/Sea-ice/esA0324/</link>
             <category>Notes</category>
-            <pubDate>Wed, 24 Mar 2021 00:00:00 +0800</pubDate>
+            <pubDate>Tue, 23 Mar 2021 09:00:00 -0700</pubDate>
             <description><![CDATA[ &lt;p&gt;一些新的和遗忘的知识点&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;h2 id=&#34;strain-rate-应变速率-deformation-rate-变形速率&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#strain-rate-应变速率-deformation-rate-变形速率&#34;&gt;#&lt;/a&gt; Strain rate 应变速率 /deformation rate 变形速率&lt;/h2&gt;
 &lt;p&gt;根据论文中的定义，&lt;br&gt;
@@ -829,7 +844,7 @@ M1001 80h400000v40h-400000z&#39;/&gt;&lt;/svg&gt;&lt;/span&gt;&lt;/span&gt;&lt;/
             <title>安装NCL</title>
             <link>https://ningchenhui.github.io/ESM/Data/model02/</link>
             <category>Tool</category>
-            <pubDate>Thu, 18 Mar 2021 00:00:00 +0800</pubDate>
+            <pubDate>Wed, 17 Mar 2021 09:00:00 -0700</pubDate>
             <description><![CDATA[ &lt;p&gt;NCAR command language (NCL)&lt;/p&gt;
 &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
 &lt;h2 id=&#34;关于&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#关于&#34;&gt;#&lt;/a&gt; 关于&lt;/h2&gt;
@@ -879,7 +894,7 @@ M1001 80h400000v40h-400000z&#39;/&gt;&lt;/svg&gt;&lt;/span&gt;&lt;/span&gt;&lt;/
             <title>初识NetCDF</title>
             <link>https://ningchenhui.github.io/ESM/Data/model01/</link>
             <category>Tool</category>
-            <pubDate>Tue, 16 Mar 2021 17:08:20 +0800</pubDate>
+            <pubDate>Tue, 16 Mar 2021 02:08:20 -0700</pubDate>
             <description><![CDATA[ &lt;p&gt;Network Common Data Form (NetCDF)&lt;/p&gt;
 &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
 &lt;!--ncl--&gt;
@@ -929,7 +944,7 @@ M1001 80h400000v40h-400000z&#39;/&gt;&lt;/svg&gt;&lt;/span&gt;&lt;/span&gt;&lt;/
             <title>高性能计算#04 HPL测试GPU</title>
             <link>https://ningchenhui.github.io/Computer-Science/HPC/hpc1206/</link>
             <category>Linux</category>
-            <pubDate>Sun, 06 Dec 2020 16:44:18 +0800</pubDate>
+            <pubDate>Sun, 06 Dec 2020 00:44:18 -0800</pubDate>
             <description><![CDATA[ &lt;p&gt;- HPL 测试 MKL+MPICH - &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;h2 id=&#34;环境搭建&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#环境搭建&#34;&gt;#&lt;/a&gt; 环境搭建&lt;/h2&gt;
 &lt;ol&gt;
@@ -1162,7 +1177,7 @@ GPU 5: Tesla P100-PCIE-16GB (UUID: GPU-16423caf-0037-6742-2977-ba03f4937b9b)
             <title>高性能计算#03 HPCG搭建</title>
             <link>https://ningchenhui.github.io/Computer-Science/HPC/hpc1205/</link>
             <category>Linux</category>
-            <pubDate>Sat, 05 Dec 2020 16:13:18 +0800</pubDate>
+            <pubDate>Sat, 05 Dec 2020 00:13:18 -0800</pubDate>
             <description><![CDATA[ &lt;p&gt;- HPCG 测试 OPENBLAS+OPENMPI - &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;h2 id=&#34;环境搭建&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#环境搭建&#34;&gt;#&lt;/a&gt; 环境搭建&lt;/h2&gt;
 &lt;p&gt;前几篇中已经配置好了 c++ 编译器，以及 openmpi 并行环境。&lt;/p&gt;
@@ -1323,7 +1338,7 @@ KiB Swap:  7999484 total,  1274312 used,  6725172 free. 88929968 cached Mem
             <title>高性能计算#02 HPL再次搭建</title>
             <link>https://ningchenhui.github.io/Computer-Science/HPC/hpc1204/</link>
             <category>Linux</category>
-            <pubDate>Fri, 04 Dec 2020 18:57:06 +0800</pubDate>
+            <pubDate>Fri, 04 Dec 2020 02:57:06 -0800</pubDate>
             <description><![CDATA[ &lt;p&gt;- Linpack 测试 OPENBLAS+OPENMPI+HPL -&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;h2 id=&#34;环境搭建&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#环境搭建&#34;&gt;#&lt;/a&gt; 环境搭建&lt;/h2&gt;
 &lt;h3 id=&#34;安装openblas&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#安装openblas&#34;&gt;#&lt;/a&gt; 安装 OpenBLAS&lt;/h3&gt;
@@ -1432,7 +1447,7 @@ LINKFLAGS = $(CCFLAGS)
             <title>高性能计算#01 HPL搭建</title>
             <link>https://ningchenhui.github.io/Computer-Science/HPC/hpc1202/</link>
             <category>Linux</category>
-            <pubDate>Wed, 02 Dec 2020 16:50:40 +0800</pubDate>
+            <pubDate>Wed, 02 Dec 2020 00:50:40 -0800</pubDate>
             <description><![CDATA[ &lt;p&gt;- Linpack 测试 GOTOBLAS+MPICH+HPL -&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;h2 id=&#34;环境搭建&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#环境搭建&#34;&gt;#&lt;/a&gt; 环境搭建&lt;/h2&gt;
 &lt;h3 id=&#34;安装goto库&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#安装goto库&#34;&gt;#&lt;/a&gt; 安装 GOTO 库&lt;/h3&gt;
@@ -1516,7 +1531,7 @@ export LD_LIBRARY_PATH=/home/riolu/HPL/mpich/lib:$LD_LIBRARY_PATH //不知要不
             <link>https://ningchenhui.github.io/Earth-Science/Ocean/Physical-Oceanography-Coarse/ocean1124/</link>
             <category>Coarse</category>
             <category>Notes</category>
-            <pubDate>Tue, 24 Nov 2020 00:00:00 +0800</pubDate>
+            <pubDate>Mon, 23 Nov 2020 08:00:00 -0800</pubDate>
             <description><![CDATA[ &lt;p&gt;Note#03 Fundamentals of Physical Oceanography&lt;/p&gt;
 &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
 &lt;h2 id=&#34;第四章海洋观测数据与观测方法&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#第四章海洋观测数据与观测方法&#34;&gt;#&lt;/a&gt; 第四章：海洋观测数据与观测方法&lt;/h2&gt;
@@ -1655,7 +1670,7 @@ export LD_LIBRARY_PATH=/home/riolu/HPL/mpich/lib:$LD_LIBRARY_PATH //不知要不
             <link>https://ningchenhui.github.io/Earth-Science/Ocean/Physical-Oceanography-Coarse/ocean1120/</link>
             <category>Coarse</category>
             <category>Notes</category>
-            <pubDate>Fri, 20 Nov 2020 14:32:21 +0800</pubDate>
+            <pubDate>Thu, 19 Nov 2020 22:32:21 -0800</pubDate>
             <description><![CDATA[ &lt;p&gt;Note#02 Fundamentals of Physical Oceanography&lt;/p&gt;
 &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
 &lt;h2 id=&#34;第二章海水性质&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#第二章海水性质&#34;&gt;#&lt;/a&gt; 第二章：海水性质&lt;/h2&gt;
@@ -1720,7 +1735,7 @@ QA 为水平方向上的海洋热平流。&lt;br&gt;
             <link>https://ningchenhui.github.io/Earth-Science/Foundations-of-Earth-Science/es1116/</link>
             <category>Notes</category>
             <category>Book</category>
-            <pubDate>Mon, 16 Nov 2020 10:08:33 +0800</pubDate>
+            <pubDate>Sun, 15 Nov 2020 18:08:33 -0800</pubDate>
             <description><![CDATA[ &lt;p&gt;Note#05 &lt;em&gt;Foundations of Earth Science&lt;/em&gt;&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;h2 id=&#34;第4章-冰川&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#第4章-冰川&#34;&gt;#&lt;/a&gt; 第 4 章 冰川&lt;/h2&gt;
 &lt;h3 id=&#34;两个基本循环的一部分&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#两个基本循环的一部分&#34;&gt;#&lt;/a&gt; 两个基本循环的一部分&lt;/h3&gt;
@@ -1759,7 +1774,7 @@ QA 为水平方向上的海洋热平流。&lt;br&gt;
             <link>https://ningchenhui.github.io/Earth-Science/Foundations-of-Earth-Science/es1111/</link>
             <category>Notes</category>
             <category>Book</category>
-            <pubDate>Wed, 11 Nov 2020 21:06:26 +0800</pubDate>
+            <pubDate>Wed, 11 Nov 2020 05:06:26 -0800</pubDate>
             <description><![CDATA[ &lt;p&gt;Note#04 &lt;em&gt;Foundations of Earth Science&lt;/em&gt;&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;h2 id=&#34;第10章-动荡的海洋-续&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#第10章-动荡的海洋-续&#34;&gt;#&lt;/a&gt; 第 10 章 动荡的海洋 续&lt;/h2&gt;
 &lt;h3 id=&#34;波浪&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#波浪&#34;&gt;#&lt;/a&gt; 波浪&lt;/h3&gt;
@@ -1846,7 +1861,7 @@ QA 为水平方向上的海洋热平流。&lt;br&gt;
             <link>https://ningchenhui.github.io/Earth-Science/Ocean/Physical-Oceanography-Coarse/ocean1110/</link>
             <category>Coarse</category>
             <category>Notes</category>
-            <pubDate>Tue, 10 Nov 2020 15:26:13 +0800</pubDate>
+            <pubDate>Mon, 09 Nov 2020 23:26:13 -0800</pubDate>
             <description><![CDATA[ &lt;p&gt;Note#01 Fundamentals of Physical Oceanography&lt;/p&gt;
 &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
 &lt;h2 id=&#34;第一章物理海洋的研究方法&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#第一章物理海洋的研究方法&#34;&gt;#&lt;/a&gt; 第一章：物理海洋的研究方法&lt;/h2&gt;
@@ -1914,7 +1929,7 @@ QA 为水平方向上的海洋热平流。&lt;br&gt;
             <link>https://ningchenhui.github.io/Earth-Science/Foundations-of-Earth-Science/es1029/</link>
             <category>Notes</category>
             <category>Book</category>
-            <pubDate>Thu, 29 Oct 2020 10:45:09 +0800</pubDate>
+            <pubDate>Wed, 28 Oct 2020 19:45:09 -0700</pubDate>
             <description><![CDATA[ &lt;p&gt;Note#03 &lt;em&gt;Foundations of Earth Science&lt;/em&gt;&lt;/p&gt;
 &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
 &lt;h2 id=&#34;第10章-动荡的海洋&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#第10章-动荡的海洋&#34;&gt;#&lt;/a&gt; 第 10 章 动荡的海洋&lt;/h2&gt;
@@ -1966,7 +1981,7 @@ QA 为水平方向上的海洋热平流。&lt;br&gt;
             <link>https://ningchenhui.github.io/Earth-Science/Foundations-of-Earth-Science/es1023/</link>
             <category>Notes</category>
             <category>Book</category>
-            <pubDate>Fri, 23 Oct 2020 19:07:40 +0800</pubDate>
+            <pubDate>Fri, 23 Oct 2020 04:07:40 -0700</pubDate>
             <description><![CDATA[ &lt;p&gt;Note#02 &lt;em&gt;Foundations of Earth Science&lt;/em&gt;&lt;/p&gt;
 &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
 &lt;h2 id=&#34;第9章-海洋最后的净土&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#第9章-海洋最后的净土&#34;&gt;#&lt;/a&gt; 第 9 章 海洋：最后的净土&lt;/h2&gt;
@@ -2055,7 +2070,7 @@ QA 为水平方向上的海洋热平流。&lt;br&gt;
             <link>https://ningchenhui.github.io/Earth-Science/Foundations-of-Earth-Science/es1009/</link>
             <category>Notes</category>
             <category>Book</category>
-            <pubDate>Fri, 09 Oct 2020 14:34:31 +0800</pubDate>
+            <pubDate>Thu, 08 Oct 2020 23:34:31 -0700</pubDate>
             <description><![CDATA[ &lt;p&gt;Note#01 &lt;em&gt;Foundations of Earth Science&lt;/em&gt;&lt;/p&gt;
 &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
 &lt;h2 id=&#34;第0章-地球科学导论&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#第0章-地球科学导论&#34;&gt;#&lt;/a&gt; 第 0 章 地球科学导论&lt;/h2&gt;
@@ -2113,7 +2128,7 @@ QA 为水平方向上的海洋热平流。&lt;br&gt;
             <title>课程资料分享</title>
             <link>https://ningchenhui.github.io/Document/seufile/</link>
             <category>Coarse</category>
-            <pubDate>Sat, 26 Sep 2020 20:04:31 +0800</pubDate>
+            <pubDate>Sat, 26 Sep 2020 05:04:31 -0700</pubDate>
             <description><![CDATA[ &lt;p&gt;Course Documents Sharing   &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;最近开始整理学过的课程的资料，包括课件、笔记等等。&lt;br&gt;
 提取码无说明则为 tzsg&lt;/p&gt;

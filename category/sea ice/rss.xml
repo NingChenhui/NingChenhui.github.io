@@ -5,8 +5,8 @@
         <link>https://ningchenhui.github.io</link>
         <description>DESS, THU</description>
         <language>zh-CN,en,default</language>
-        <pubDate>Mon, 12 Apr 2021 10:43:05 +0800</pubDate>
-        <lastBuildDate>Mon, 12 Apr 2021 10:43:05 +0800</lastBuildDate>
+        <pubDate>Sun, 11 Apr 2021 19:43:05 -0700</pubDate>
+        <lastBuildDate>Sun, 11 Apr 2021 19:43:05 -0700</lastBuildDate>
         <category>Coarse</category>
         <category>Memo</category>
         <category>Coding</category>
@@ -23,7 +23,7 @@
             <link>https://ningchenhui.github.io/Earth-Science/Sea-ice/esA0412/</link>
             <category>Coding</category>
             <category>Notes</category>
-            <pubDate>Mon, 12 Apr 2021 10:43:05 +0800</pubDate>
+            <pubDate>Sun, 11 Apr 2021 19:43:05 -0700</pubDate>
             <description><![CDATA[ &lt;p&gt;Arctic sea ice extent and volume (SIE and SIV)&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;h2 id=&#34;定义&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#定义&#34;&gt;#&lt;/a&gt; 定义&lt;/h2&gt;
 &lt;p&gt;Sea ice concentration is the percentage of each pixel that is covered by ice.&lt;br&gt;
@@ -63,7 +63,7 @@ hi 为网格平均冰厚，乘以 T 网格面积累加计算海冰体积。&lt;/
             <title>粗化网格的变形速率计算</title>
             <link>https://ningchenhui.github.io/Earth-Science/Sea-ice/esA0408/</link>
             <category>Coding</category>
-            <pubDate>Thu, 08 Apr 2021 18:12:04 +0800</pubDate>
+            <pubDate>Thu, 08 Apr 2021 03:12:04 -0700</pubDate>
             <description><![CDATA[ &lt;p&gt;Calculate deformation rate of coarse-mesh&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;h2 id=&#34;网格&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#网格&#34;&gt;#&lt;/a&gt; 网格&lt;/h2&gt;
 &lt;h3 id=&#34;b-grid&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#b-grid&#34;&gt;#&lt;/a&gt; B-grid&lt;/h3&gt;
@@ -119,7 +119,7 @@ M1001 80h400000v40h-400000z&#39;/&gt;&lt;/svg&gt;&lt;/span&gt;&lt;/span&gt;&lt;/
             <title>Some new or forgotten knowledge points</title>
             <link>https://ningchenhui.github.io/Earth-Science/Sea-ice/esA0324/</link>
             <category>Notes</category>
-            <pubDate>Wed, 24 Mar 2021 00:00:00 +0800</pubDate>
+            <pubDate>Tue, 23 Mar 2021 09:00:00 -0700</pubDate>
             <description><![CDATA[ &lt;p&gt;一些新的和遗忘的知识点&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;h2 id=&#34;strain-rate-应变速率-deformation-rate-变形速率&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#strain-rate-应变速率-deformation-rate-变形速率&#34;&gt;#&lt;/a&gt; Strain rate 应变速率 /deformation rate 变形速率&lt;/h2&gt;
 &lt;p&gt;根据论文中的定义，&lt;br&gt;

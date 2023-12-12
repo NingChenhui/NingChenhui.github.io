@@ -5,8 +5,8 @@
         <link>https://ningchenhui.github.io</link>
         <description>DESS, THU</description>
         <language>zh-CN,en,default</language>
-        <pubDate>Thu, 18 Mar 2021 00:00:00 +0800</pubDate>
-        <lastBuildDate>Thu, 18 Mar 2021 00:00:00 +0800</lastBuildDate>
+        <pubDate>Wed, 17 Mar 2021 09:00:00 -0700</pubDate>
+        <lastBuildDate>Wed, 17 Mar 2021 09:00:00 -0700</lastBuildDate>
         <category>Coarse</category>
         <category>Memo</category>
         <category>Coding</category>
@@ -22,7 +22,7 @@
             <title>安装NCL</title>
             <link>https://ningchenhui.github.io/ESM/Data/model02/</link>
             <category>Tool</category>
-            <pubDate>Thu, 18 Mar 2021 00:00:00 +0800</pubDate>
+            <pubDate>Wed, 17 Mar 2021 09:00:00 -0700</pubDate>
             <description><![CDATA[ &lt;p&gt;NCAR command language (NCL)&lt;/p&gt;
 &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
 &lt;h2 id=&#34;关于&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#关于&#34;&gt;#&lt;/a&gt; 关于&lt;/h2&gt;
@@ -72,7 +72,7 @@
             <title>初识NetCDF</title>
             <link>https://ningchenhui.github.io/ESM/Data/model01/</link>
             <category>Tool</category>
-            <pubDate>Tue, 16 Mar 2021 17:08:20 +0800</pubDate>
+            <pubDate>Tue, 16 Mar 2021 02:08:20 -0700</pubDate>
             <description><![CDATA[ &lt;p&gt;Network Common Data Form (NetCDF)&lt;/p&gt;
 &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
 &lt;!--ncl--&gt;

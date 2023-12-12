@@ -5,8 +5,8 @@
         <link>https://ningchenhui.github.io</link>
         <description>DESS, THU</description>
         <language>zh-CN,en,default</language>
-        <pubDate>Tue, 06 Sep 2022 20:47:52 +0800</pubDate>
-        <lastBuildDate>Tue, 06 Sep 2022 20:47:52 +0800</lastBuildDate>
+        <pubDate>Tue, 06 Sep 2022 05:47:52 -0700</pubDate>
+        <lastBuildDate>Tue, 06 Sep 2022 05:47:52 -0700</lastBuildDate>
         <category>Coarse</category>
         <category>Memo</category>
         <category>Coding</category>
@@ -23,7 +23,7 @@
             <link>https://ningchenhui.github.io/ESM/OMARE/Overlay/</link>
             <category>Memo</category>
             <category>Coding</category>
-            <pubDate>Tue, 06 Sep 2022 20:47:52 +0800</pubDate>
+            <pubDate>Tue, 06 Sep 2022 05:47:52 -0700</pubDate>
             <description><![CDATA[ &lt;p&gt;OMARE Overlay &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;JASMIN 版本要求 &amp;gt;= 4.5.2&lt;/p&gt;
 &lt;h1 id=&#34;修改目的数据片为读写模式&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#修改目的数据片为读写模式&#34;&gt;#&lt;/a&gt; 修改目的数据片为读写模式&lt;/h1&gt;
@@ -36,7 +36,7 @@
             <link>https://ningchenhui.github.io/ESM/OMARE/CoarsenOperator/</link>
             <category>Memo</category>
             <category>Coding</category>
-            <pubDate>Wed, 22 Jun 2022 18:47:52 +0800</pubDate>
+            <pubDate>Wed, 22 Jun 2022 03:47:52 -0700</pubDate>
             <description><![CDATA[ &lt;p&gt;OMARE CoarsenOperator &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;h1 id=&#34;新增自定义插值算子&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#新增自定义插值算子&#34;&gt;#&lt;/a&gt; 新增自定义插值算子&lt;/h1&gt;
 &lt;p&gt;参考  &lt;code&gt;NemoSpaceInterpCenter.h&lt;/code&gt;  中的实现。&lt;/p&gt;
@@ -72,7 +72,7 @@ position        un.38           un.38           difference
             <link>https://ningchenhui.github.io/ESM/NEMO/install/</link>
             <category>Memo</category>
             <category>Coding</category>
-            <pubDate>Sun, 01 May 2022 23:19:13 +0800</pubDate>
+            <pubDate>Sun, 01 May 2022 08:19:13 -0700</pubDate>
             <description><![CDATA[ &lt;p&gt;NEMO 安装&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;h1 id=&#34;prerequisites&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#prerequisites&#34;&gt;#&lt;/a&gt; Prerequisites&lt;/h1&gt;
 &lt;div class=&#34;note info&#34;&gt;
@@ -137,7 +137,7 @@ Then just following [6].&lt;/p&gt;
             <link>https://ningchenhui.github.io/ESM/OMARE/omare220205/</link>
             <category>Memo</category>
             <category>Coding</category>
-            <pubDate>Sat, 05 Feb 2022 19:19:13 +0800</pubDate>
+            <pubDate>Sat, 05 Feb 2022 03:19:13 -0800</pubDate>
             <description><![CDATA[ &lt;p&gt;Learn to run OMARE（i）&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;step 1 - 解压源代码后，在目录里创建  &lt;code&gt;build&lt;/code&gt;  文件夹&lt;br&gt;
  step 2 - 修改文件中的路径&lt;/p&gt;
@@ -168,7 +168,7 @@ step 5 -  &lt;code&gt;./main2d ../input/nemo-2d.input&lt;/code&gt;   运行不�
             <link>https://ningchenhui.github.io/Earth-Science/Sea-ice/esA0412/</link>
             <category>Coding</category>
             <category>Notes</category>
-            <pubDate>Mon, 12 Apr 2021 10:43:05 +0800</pubDate>
+            <pubDate>Sun, 11 Apr 2021 19:43:05 -0700</pubDate>
             <description><![CDATA[ &lt;p&gt;Arctic sea ice extent and volume (SIE and SIV)&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;h2 id=&#34;定义&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#定义&#34;&gt;#&lt;/a&gt; 定义&lt;/h2&gt;
 &lt;p&gt;Sea ice concentration is the percentage of each pixel that is covered by ice.&lt;br&gt;
@@ -208,7 +208,7 @@ hi 为网格平均冰厚，乘以 T 网格面积累加计算海冰体积。&lt;/
             <title>粗化网格的变形速率计算</title>
             <link>https://ningchenhui.github.io/Earth-Science/Sea-ice/esA0408/</link>
             <category>Coding</category>
-            <pubDate>Thu, 08 Apr 2021 18:12:04 +0800</pubDate>
+            <pubDate>Thu, 08 Apr 2021 03:12:04 -0700</pubDate>
             <description><![CDATA[ &lt;p&gt;Calculate deformation rate of coarse-mesh&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;h2 id=&#34;网格&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#网格&#34;&gt;#&lt;/a&gt; 网格&lt;/h2&gt;
 &lt;h3 id=&#34;b-grid&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#b-grid&#34;&gt;#&lt;/a&gt; B-grid&lt;/h3&gt;

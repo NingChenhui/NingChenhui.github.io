@@ -5,8 +5,8 @@
         <link>https://ningchenhui.github.io</link>
         <description>DESS, THU</description>
         <language>zh-CN,en,default</language>
-        <pubDate>Fri, 09 Jul 2021 20:08:52 +0800</pubDate>
-        <lastBuildDate>Fri, 09 Jul 2021 20:08:52 +0800</lastBuildDate>
+        <pubDate>Fri, 09 Jul 2021 05:08:52 -0700</pubDate>
+        <lastBuildDate>Fri, 09 Jul 2021 05:08:52 -0700</lastBuildDate>
         <category>Coarse</category>
         <category>Memo</category>
         <category>Coding</category>
@@ -23,7 +23,7 @@
             <link>https://ningchenhui.github.io/Earth-Science/Ocean/Physical-Oceanography-Coarse/oceanA0709/</link>
             <category>Coarse</category>
             <category>Notes</category>
-            <pubDate>Fri, 09 Jul 2021 20:08:52 +0800</pubDate>
+            <pubDate>Fri, 09 Jul 2021 05:08:52 -0700</pubDate>
             <description><![CDATA[ &lt;p&gt;Note#05 Fundamentals of Physical Oceanography&lt;/p&gt;
 &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
 &lt;h2 id=&#34;第七章海洋波动&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#第七章海洋波动&#34;&gt;#&lt;/a&gt; 第七章：海洋波动&lt;/h2&gt;
@@ -63,7 +63,7 @@
             <link>https://ningchenhui.github.io/Earth-Science/Ocean/Physical-Oceanography-Coarse/oceanA0703/</link>
             <category>Coarse</category>
             <category>Notes</category>
-            <pubDate>Sat, 03 Jul 2021 20:08:52 +0800</pubDate>
+            <pubDate>Sat, 03 Jul 2021 05:08:52 -0700</pubDate>
             <description><![CDATA[ &lt;p&gt;Note#04 Fundamentals of Physical Oceanography&lt;/p&gt;
 &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
 &lt;h2 id=&#34;第六章海洋环流&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#第六章海洋环流&#34;&gt;#&lt;/a&gt; 第六章：海洋环流&lt;/h2&gt;
@@ -178,7 +178,7 @@ ENSO 的影响：&lt;br&gt;
             <link>https://ningchenhui.github.io/Earth-Science/Sea-ice/esA0412/</link>
             <category>Coding</category>
             <category>Notes</category>
-            <pubDate>Mon, 12 Apr 2021 10:43:05 +0800</pubDate>
+            <pubDate>Sun, 11 Apr 2021 19:43:05 -0700</pubDate>
             <description><![CDATA[ &lt;p&gt;Arctic sea ice extent and volume (SIE and SIV)&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;h2 id=&#34;定义&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#定义&#34;&gt;#&lt;/a&gt; 定义&lt;/h2&gt;
 &lt;p&gt;Sea ice concentration is the percentage of each pixel that is covered by ice.&lt;br&gt;
@@ -218,7 +218,7 @@ hi 为网格平均冰厚，乘以 T 网格面积累加计算海冰体积。&lt;/
             <title>北极涛动</title>
             <link>https://ningchenhui.github.io/Earth-Science/Arctic/esA0410/</link>
             <category>Notes</category>
-            <pubDate>Sat, 10 Apr 2021 12:12:03 +0800</pubDate>
+            <pubDate>Fri, 09 Apr 2021 21:12:03 -0700</pubDate>
             <description><![CDATA[ &lt;p&gt;Arctic Oscillation (AO) &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;h2 id=&#34;北极涛动&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#北极涛动&#34;&gt;#&lt;/a&gt; 北极涛动&lt;/h2&gt;
 &lt;p&gt;北极涛动（AO）是指北半球中纬度地区（约北纬 45 度）与北极地区气压形势差别的变化。它是一个代表北极地区大气环流的重要气候指数，可分为正位相和负位相。&lt;/p&gt;
@@ -270,7 +270,7 @@ a_{N,1} &amp;amp; a_{N,2} &amp;amp; \cdots &amp;amp;a_{N,M}
             <title>粗化网格的变形速率计算</title>
             <link>https://ningchenhui.github.io/Earth-Science/Sea-ice/esA0408/</link>
             <category>Coding</category>
-            <pubDate>Thu, 08 Apr 2021 18:12:04 +0800</pubDate>
+            <pubDate>Thu, 08 Apr 2021 03:12:04 -0700</pubDate>
             <description><![CDATA[ &lt;p&gt;Calculate deformation rate of coarse-mesh&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;h2 id=&#34;网格&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#网格&#34;&gt;#&lt;/a&gt; 网格&lt;/h2&gt;
 &lt;h3 id=&#34;b-grid&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#b-grid&#34;&gt;#&lt;/a&gt; B-grid&lt;/h3&gt;
@@ -326,7 +326,7 @@ M1001 80h400000v40h-400000z&#39;/&gt;&lt;/svg&gt;&lt;/span&gt;&lt;/span&gt;&lt;/
             <title>Some new or forgotten knowledge points</title>
             <link>https://ningchenhui.github.io/Earth-Science/Sea-ice/esA0324/</link>
             <category>Notes</category>
-            <pubDate>Wed, 24 Mar 2021 00:00:00 +0800</pubDate>
+            <pubDate>Tue, 23 Mar 2021 09:00:00 -0700</pubDate>
             <description><![CDATA[ &lt;p&gt;一些新的和遗忘的知识点&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;h2 id=&#34;strain-rate-应变速率-deformation-rate-变形速率&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#strain-rate-应变速率-deformation-rate-变形速率&#34;&gt;#&lt;/a&gt; Strain rate 应变速率 /deformation rate 变形速率&lt;/h2&gt;
 &lt;p&gt;根据论文中的定义，&lt;br&gt;
@@ -399,7 +399,7 @@ M1001 80h400000v40h-400000z&#39;/&gt;&lt;/svg&gt;&lt;/span&gt;&lt;/span&gt;&lt;/
             <link>https://ningchenhui.github.io/Earth-Science/Ocean/Physical-Oceanography-Coarse/ocean1124/</link>
             <category>Coarse</category>
             <category>Notes</category>
-            <pubDate>Tue, 24 Nov 2020 00:00:00 +0800</pubDate>
+            <pubDate>Mon, 23 Nov 2020 08:00:00 -0800</pubDate>
             <description><![CDATA[ &lt;p&gt;Note#03 Fundamentals of Physical Oceanography&lt;/p&gt;
 &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
 &lt;h2 id=&#34;第四章海洋观测数据与观测方法&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#第四章海洋观测数据与观测方法&#34;&gt;#&lt;/a&gt; 第四章：海洋观测数据与观测方法&lt;/h2&gt;
@@ -538,7 +538,7 @@ M1001 80h400000v40h-400000z&#39;/&gt;&lt;/svg&gt;&lt;/span&gt;&lt;/span&gt;&lt;/
             <link>https://ningchenhui.github.io/Earth-Science/Ocean/Physical-Oceanography-Coarse/ocean1120/</link>
             <category>Coarse</category>
             <category>Notes</category>
-            <pubDate>Fri, 20 Nov 2020 14:32:21 +0800</pubDate>
+            <pubDate>Thu, 19 Nov 2020 22:32:21 -0800</pubDate>
             <description><![CDATA[ &lt;p&gt;Note#02 Fundamentals of Physical Oceanography&lt;/p&gt;
 &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
 &lt;h2 id=&#34;第二章海水性质&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#第二章海水性质&#34;&gt;#&lt;/a&gt; 第二章：海水性质&lt;/h2&gt;
@@ -603,7 +603,7 @@ QA 为水平方向上的海洋热平流。&lt;br&gt;
             <link>https://ningchenhui.github.io/Earth-Science/Foundations-of-Earth-Science/es1116/</link>
             <category>Notes</category>
             <category>Book</category>
-            <pubDate>Mon, 16 Nov 2020 10:08:33 +0800</pubDate>
+            <pubDate>Sun, 15 Nov 2020 18:08:33 -0800</pubDate>
             <description><![CDATA[ &lt;p&gt;Note#05 &lt;em&gt;Foundations of Earth Science&lt;/em&gt;&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;h2 id=&#34;第4章-冰川&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#第4章-冰川&#34;&gt;#&lt;/a&gt; 第 4 章 冰川&lt;/h2&gt;
 &lt;h3 id=&#34;两个基本循环的一部分&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#两个基本循环的一部分&#34;&gt;#&lt;/a&gt; 两个基本循环的一部分&lt;/h3&gt;
@@ -642,7 +642,7 @@ QA 为水平方向上的海洋热平流。&lt;br&gt;
             <link>https://ningchenhui.github.io/Earth-Science/Foundations-of-Earth-Science/es1111/</link>
             <category>Notes</category>
             <category>Book</category>
-            <pubDate>Wed, 11 Nov 2020 21:06:26 +0800</pubDate>
+            <pubDate>Wed, 11 Nov 2020 05:06:26 -0800</pubDate>
             <description><![CDATA[ &lt;p&gt;Note#04 &lt;em&gt;Foundations of Earth Science&lt;/em&gt;&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;h2 id=&#34;第10章-动荡的海洋-续&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#第10章-动荡的海洋-续&#34;&gt;#&lt;/a&gt; 第 10 章 动荡的海洋 续&lt;/h2&gt;
 &lt;h3 id=&#34;波浪&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#波浪&#34;&gt;#&lt;/a&gt; 波浪&lt;/h3&gt;
@@ -729,7 +729,7 @@ QA 为水平方向上的海洋热平流。&lt;br&gt;
             <link>https://ningchenhui.github.io/Earth-Science/Ocean/Physical-Oceanography-Coarse/ocean1110/</link>
             <category>Coarse</category>
             <category>Notes</category>
-            <pubDate>Tue, 10 Nov 2020 15:26:13 +0800</pubDate>
+            <pubDate>Mon, 09 Nov 2020 23:26:13 -0800</pubDate>
             <description><![CDATA[ &lt;p&gt;Note#01 Fundamentals of Physical Oceanography&lt;/p&gt;
 &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
 &lt;h2 id=&#34;第一章物理海洋的研究方法&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#第一章物理海洋的研究方法&#34;&gt;#&lt;/a&gt; 第一章：物理海洋的研究方法&lt;/h2&gt;
@@ -797,7 +797,7 @@ QA 为水平方向上的海洋热平流。&lt;br&gt;
             <link>https://ningchenhui.github.io/Earth-Science/Foundations-of-Earth-Science/es1029/</link>
             <category>Notes</category>
             <category>Book</category>
-            <pubDate>Thu, 29 Oct 2020 10:45:09 +0800</pubDate>
+            <pubDate>Wed, 28 Oct 2020 19:45:09 -0700</pubDate>
             <description><![CDATA[ &lt;p&gt;Note#03 &lt;em&gt;Foundations of Earth Science&lt;/em&gt;&lt;/p&gt;
 &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
 &lt;h2 id=&#34;第10章-动荡的海洋&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#第10章-动荡的海洋&#34;&gt;#&lt;/a&gt; 第 10 章 动荡的海洋&lt;/h2&gt;
@@ -849,7 +849,7 @@ QA 为水平方向上的海洋热平流。&lt;br&gt;
             <link>https://ningchenhui.github.io/Earth-Science/Foundations-of-Earth-Science/es1023/</link>
             <category>Notes</category>
             <category>Book</category>
-            <pubDate>Fri, 23 Oct 2020 19:07:40 +0800</pubDate>
+            <pubDate>Fri, 23 Oct 2020 04:07:40 -0700</pubDate>
             <description><![CDATA[ &lt;p&gt;Note#02 &lt;em&gt;Foundations of Earth Science&lt;/em&gt;&lt;/p&gt;
 &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
 &lt;h2 id=&#34;第9章-海洋最后的净土&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#第9章-海洋最后的净土&#34;&gt;#&lt;/a&gt; 第 9 章 海洋：最后的净土&lt;/h2&gt;
@@ -938,7 +938,7 @@ QA 为水平方向上的海洋热平流。&lt;br&gt;
             <link>https://ningchenhui.github.io/Earth-Science/Foundations-of-Earth-Science/es1009/</link>
             <category>Notes</category>
             <category>Book</category>
-            <pubDate>Fri, 09 Oct 2020 14:34:31 +0800</pubDate>
+            <pubDate>Thu, 08 Oct 2020 23:34:31 -0700</pubDate>
             <description><![CDATA[ &lt;p&gt;Note#01 &lt;em&gt;Foundations of Earth Science&lt;/em&gt;&lt;/p&gt;
 &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
 &lt;h2 id=&#34;第0章-地球科学导论&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#第0章-地球科学导论&#34;&gt;#&lt;/a&gt; 第 0 章 地球科学导论&lt;/h2&gt;
