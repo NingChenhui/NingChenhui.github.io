@@ -5,6 +5,14 @@
     "home_page_url": "https://ningchenhui.github.io",
     "items": [
         {
+            "id": "https://ningchenhui.github.io/baco25/",
+            "url": "https://ningchenhui.github.io/baco25/",
+            "title": "BACO25 Info",
+            "date_published": "2025-07-12T11:19:13.000Z",
+            "content_html": "<p>Symposia List (Sessions):<br>\nC02 Advances in Sea Ice Forecasting and Modelling</p>\n<p>Title:<br>\nSimulating sea ice kinematics in a diabatic version of the NeverWorld2 case with Adaptive Refinement in OMARE</p>\n<p>Information of Presentation:</p>\n<p>■ Date: Thursday, 24 July 2025, 09:00 - 10:30</p>\n<p>■ Room: Convention Hall 2F, C204</p>\n<p>■ Presentation Author: Chenhui Ning</p>\n<p>■ Presentation Time: 09:45 - 10:00</p>\n<p>Contact me:</p>\n<p><span class=\"exturl\" data-url=\"bWFpbHRvOm5jaDIxQG1haWxzLnRzaW5naHVhLmVkdS5jbg==\">nch21@mails.tsinghua.edu.cn</span></p>\n<p>Abstract:</p>\n<p>Sea ice plays a vital role in the air-sea interactions and the polar climate through both thermodynamic and dynamic processes. In particular, sea ice and its abrupt changes in the Southern Oceans have been the focus of the climate community. However, accurate simulation of related processes requires high-resolution models, which often comes with prohibitive computational costs. In many cases, it limits the feasibility for long-term climate-relevant simulations. In this study, we apply the Ocean Modeling with Adaptive REsolution (OMARE; version 1.0) to investigate sea ice dynamics in a diabatic version of the NeverWorld2 case, an ocean-sea ice coupled configuration representing an idealized Atlantic basin and its Southern Ocean branch under seasonally changing forcings. Through adaptive mesh refinement (AMR), the model dynamically adjusts resolution from 0.5° to 0.1°, effectively capturing seasonal sea ice coverage and mesoscale turbulence in the polar ocean. Our results show that OMARE successfully reproduces multi-fractal sea ice deformations and linear kinematic features at high-resolution while maintaining computational efficiency, demonstrating its feasibility for long-term simulations of the sea ice and the ocean. This study highlights the potential of AMR-based modeling approaches in both improving the modeling of sea ice kinematics and enhancing computational performance. Future studies on sea ice dynamics, including the various rheology models and interactions with the polar ocean, are further discussed.</p>\n",
+            "tags": []
+        },
+        {
             "id": "https://ningchenhui.github.io/agu23/",
             "url": "https://ningchenhui.github.io/agu23/",
             "title": "AGU23 Info",

@@ -5,8 +5,8 @@
         <link>https://ningchenhui.github.io</link>
         <description>DESS, THU</description>
         <language>zh-CN,en,default</language>
-        <pubDate>Tue, 12 Dec 2023 19:19:13 +0800</pubDate>
-        <lastBuildDate>Tue, 12 Dec 2023 19:19:13 +0800</lastBuildDate>
+        <pubDate>Sat, 12 Jul 2025 19:19:13 +0800</pubDate>
+        <lastBuildDate>Sat, 12 Jul 2025 19:19:13 +0800</lastBuildDate>
         <category>Coarse</category>
         <category>Memo</category>
         <category>Coding</category>
@@ -17,6 +17,26 @@
         <category>Tool</category>
         <category>Linux</category>
         <category>Info</category>
+        <item>
+            <guid isPermalink="true">https://ningchenhui.github.io/baco25/</guid>
+            <title>BACO25 Info</title>
+            <link>https://ningchenhui.github.io/baco25/</link>
+            <pubDate>Sat, 12 Jul 2025 19:19:13 +0800</pubDate>
+            <description><![CDATA[ &lt;p&gt;Symposia List (Sessions):&lt;br&gt;
+C02 Advances in Sea Ice Forecasting and Modelling&lt;/p&gt;
+&lt;p&gt;Title:&lt;br&gt;
+Simulating sea ice kinematics in a diabatic version of the NeverWorld2 case with Adaptive Refinement in OMARE&lt;/p&gt;
+&lt;p&gt;Information of Presentation:&lt;/p&gt;
+&lt;p&gt;■ Date: Thursday, 24 July 2025, 09:00 - 10:30&lt;/p&gt;
+&lt;p&gt;■ Room: Convention Hall 2F, C204&lt;/p&gt;
+&lt;p&gt;■ Presentation Author: Chenhui Ning&lt;/p&gt;
+&lt;p&gt;■ Presentation Time: 09:45 - 10:00&lt;/p&gt;
+&lt;p&gt;Contact me:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;bWFpbHRvOm5jaDIxQG1haWxzLnRzaW5naHVhLmVkdS5jbg==&#34;&gt;nch21@mails.tsinghua.edu.cn&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Abstract:&lt;/p&gt;
+&lt;p&gt;Sea ice plays a vital role in the air-sea interactions and the polar climate through both thermodynamic and dynamic processes. In particular, sea ice and its abrupt changes in the Southern Oceans have been the focus of the climate community. However, accurate simulation of related processes requires high-resolution models, which often comes with prohibitive computational costs. In many cases, it limits the feasibility for long-term climate-relevant simulations. In this study, we apply the Ocean Modeling with Adaptive REsolution (OMARE; version 1.0) to investigate sea ice dynamics in a diabatic version of the NeverWorld2 case, an ocean-sea ice coupled configuration representing an idealized Atlantic basin and its Southern Ocean branch under seasonally changing forcings. Through adaptive mesh refinement (AMR), the model dynamically adjusts resolution from 0.5° to 0.1°, effectively capturing seasonal sea ice coverage and mesoscale turbulence in the polar ocean. Our results show that OMARE successfully reproduces multi-fractal sea ice deformations and linear kinematic features at high-resolution while maintaining computational efficiency, demonstrating its feasibility for long-term simulations of the sea ice and the ocean. This study highlights the potential of AMR-based modeling approaches in both improving the modeling of sea ice kinematics and enhancing computational performance. Future studies on sea ice dynamics, including the various rheology models and interactions with the polar ocean, are further discussed.&lt;/p&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">https://ningchenhui.github.io/agu23/</guid>
             <title>AGU23 Info</title>
