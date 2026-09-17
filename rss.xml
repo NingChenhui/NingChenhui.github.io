@@ -8,14 +8,14 @@
         <pubDate>Sat, 12 Jul 2025 19:19:13 +0800</pubDate>
         <lastBuildDate>Sat, 12 Jul 2025 19:19:13 +0800</lastBuildDate>
         <category>Coarse</category>
-        <category>Memo</category>
-        <category>Coding</category>
         <category>Presentation</category>
         <category>Notes</category>
-        <category>Book</category>
-        <category>Report</category>
-        <category>Tool</category>
         <category>Linux</category>
+        <category>Report</category>
+        <category>Book</category>
+        <category>Coding</category>
+        <category>Tool</category>
+        <category>Memo</category>
         <category>Info</category>
         <item>
             <guid isPermalink="true">https://ningchenhui.github.io/baco25/</guid>
@@ -194,8 +194,8 @@ Then we add a seasonal cycle to the EMP flux, which is&lt;br&gt;
             <guid isPermalink="true">https://ningchenhui.github.io/ESM/OMARE/Overlay/</guid>
             <title>OMARE Overlay</title>
             <link>https://ningchenhui.github.io/ESM/OMARE/Overlay/</link>
-            <category>Memo</category>
             <category>Coding</category>
+            <category>Memo</category>
             <pubDate>Tue, 06 Sep 2022 20:47:52 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;OMARE Overlay &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;JASMIN 版本要求 &amp;gt;= 4.5.2&lt;/p&gt;
@@ -284,8 +284,8 @@ root 登录，启用 GCC 4.8.5 后 &lt;em&gt;→参考本页环境变量配置&l
             <guid isPermalink="true">https://ningchenhui.github.io/ESM/OMARE/CoarsenOperator/</guid>
             <title>OMARE 粗化算子</title>
             <link>https://ningchenhui.github.io/ESM/OMARE/CoarsenOperator/</link>
-            <category>Memo</category>
             <category>Coding</category>
+            <category>Memo</category>
             <pubDate>Wed, 22 Jun 2022 18:47:52 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;OMARE CoarsenOperator &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;h1 id=&#34;新增自定义插值算子&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#新增自定义插值算子&#34;&gt;#&lt;/a&gt; 新增自定义插值算子&lt;/h1&gt;
@@ -329,8 +329,8 @@ position        un.38           un.38           difference
             <guid isPermalink="true">https://ningchenhui.github.io/ESM/NEMO/install/</guid>
             <title>Install NEMO notes</title>
             <link>https://ningchenhui.github.io/ESM/NEMO/install/</link>
-            <category>Memo</category>
             <category>Coding</category>
+            <category>Memo</category>
             <pubDate>Sun, 01 May 2022 23:19:13 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;NEMO 安装&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;h1 id=&#34;prerequisites&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#prerequisites&#34;&gt;#&lt;/a&gt; Prerequisites&lt;/h1&gt;
@@ -455,8 +455,8 @@ Then just following [6].&lt;/p&gt;
             <guid isPermalink="true">https://ningchenhui.github.io/ESM/OMARE/omare220205/</guid>
             <title>OMARE 学习使用（一）</title>
             <link>https://ningchenhui.github.io/ESM/OMARE/omare220205/</link>
-            <category>Memo</category>
             <category>Coding</category>
+            <category>Memo</category>
             <pubDate>Sat, 05 Feb 2022 19:19:13 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;Learn to run OMARE（i）&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;step 1 - 解压源代码后，在目录里创建  &lt;code&gt;build&lt;/code&gt;  文件夹&lt;br&gt;
@@ -650,8 +650,8 @@ ENSO 的影响：&lt;br&gt;
             <guid isPermalink="true">https://ningchenhui.github.io/Earth-Science/Sea-ice/esA0412/</guid>
             <title>北极 SIE/SIV 计算</title>
             <link>https://ningchenhui.github.io/Earth-Science/Sea-ice/esA0412/</link>
-            <category>Coding</category>
             <category>Notes</category>
+            <category>Coding</category>
             <pubDate>Mon, 12 Apr 2021 10:43:05 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;Arctic sea ice extent and volume (SIE and SIV)&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;h2 id=&#34;定义&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#定义&#34;&gt;#&lt;/a&gt; 定义&lt;/h2&gt;

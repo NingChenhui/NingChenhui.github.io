@@ -367,7 +367,8 @@ const mediaPlayer = function(t, config) {
               list.push.apply(list, JSON.parse(playlist));
               resolve(list);
             } else {
-              fetch('https://api.i-meto.com/meting/api?server='+meta[0]+'&type='+meta[1]+'&id='+meta[2]+'&r='+ Math.random())
+              //fetch('https://api.i-meto.com/meting/api?server='+meta[0]+'&type='+meta[1]+'&id='+meta[2]+'&r='+ Math.random())
+              fetch('https://meting.mikus.ink/api?server='+meta[0]+'&type='+meta[1]+'&id='+meta[2]+'&r='+ Math.random())
                 .then(function(response) {
                   return response.json()
                 }).then(function(json) {

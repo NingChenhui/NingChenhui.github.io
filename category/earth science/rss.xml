@@ -8,14 +8,14 @@
         <pubDate>Fri, 09 Jul 2021 20:08:52 +0800</pubDate>
         <lastBuildDate>Fri, 09 Jul 2021 20:08:52 +0800</lastBuildDate>
         <category>Coarse</category>
-        <category>Memo</category>
-        <category>Coding</category>
         <category>Presentation</category>
         <category>Notes</category>
-        <category>Book</category>
-        <category>Report</category>
-        <category>Tool</category>
         <category>Linux</category>
+        <category>Report</category>
+        <category>Book</category>
+        <category>Coding</category>
+        <category>Tool</category>
+        <category>Memo</category>
         <category>Info</category>
         <item>
             <guid isPermalink="true">https://ningchenhui.github.io/Earth-Science/Ocean/Physical-Oceanography-Coarse/oceanA0709/</guid>
@@ -176,8 +176,8 @@ ENSO 的影响：&lt;br&gt;
             <guid isPermalink="true">https://ningchenhui.github.io/Earth-Science/Sea-ice/esA0412/</guid>
             <title>北极 SIE/SIV 计算</title>
             <link>https://ningchenhui.github.io/Earth-Science/Sea-ice/esA0412/</link>
-            <category>Coding</category>
             <category>Notes</category>
+            <category>Coding</category>
             <pubDate>Mon, 12 Apr 2021 10:43:05 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;Arctic sea ice extent and volume (SIE and SIV)&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;h2 id=&#34;定义&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#定义&#34;&gt;#&lt;/a&gt; 定义&lt;/h2&gt;

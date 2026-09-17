@@ -8,21 +8,21 @@
         <pubDate>Sun, 01 May 2022 23:19:13 +0800</pubDate>
         <lastBuildDate>Sun, 01 May 2022 23:19:13 +0800</lastBuildDate>
         <category>Coarse</category>
-        <category>Memo</category>
-        <category>Coding</category>
         <category>Presentation</category>
         <category>Notes</category>
-        <category>Book</category>
-        <category>Report</category>
-        <category>Tool</category>
         <category>Linux</category>
+        <category>Report</category>
+        <category>Book</category>
+        <category>Coding</category>
+        <category>Tool</category>
+        <category>Memo</category>
         <category>Info</category>
         <item>
             <guid isPermalink="true">https://ningchenhui.github.io/ESM/NEMO/install/</guid>
             <title>Install NEMO notes</title>
             <link>https://ningchenhui.github.io/ESM/NEMO/install/</link>
-            <category>Memo</category>
             <category>Coding</category>
+            <category>Memo</category>
             <pubDate>Sun, 01 May 2022 23:19:13 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;NEMO 安装&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;h1 id=&#34;prerequisites&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#prerequisites&#34;&gt;#&lt;/a&gt; Prerequisites&lt;/h1&gt;
